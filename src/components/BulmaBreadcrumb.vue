@@ -1,8 +1,8 @@
 <template>
-	<component :is="wrapperTag" class="breadcrumb" :class="alignment">
+	<component :is="wrapperTag" class="breadcrumb" v-bind:class="[alignment,separatorType,getSize]">
 		<ul>
 			<li v-for="(item, index) in list" :key="index" :class="isActiveCrumb(index)">
-				<slot v-bind:breadcrumbItem="item">
+				<slot v-bind:data="item">
 					<a :href="item.href">{{ item.text }}</a>
 				</slot>
 			</li>
@@ -11,7 +11,9 @@
 </template>
 
 <style lang="sass">
+
 @import "~bulma/sass/components/breadcrumb.sass"
+
 </style>
 
 <script lang="ts" setup>
@@ -28,6 +30,10 @@
 		list: BreadcrumbItem[];
 		/// the alignment of the breadcrumb; defaults to 'is-left'
 		alignment?: 'is-centered' | 'is-right' | 'is-left';
+		/// the separator to use between breadcrumbs; defaults to '/'; slash
+		separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
+		/// the size of the breadcrumbs
+		size?: 'small' | 'medium' | 'large';
 	}>();
 	
 	
@@ -40,5 +46,17 @@
 			return 'is-active';
 		return '';
 	};
+	
+	const separatorType = computed(() => {
+		if(props.separator && props.separator !== 'slash')
+			return `has-${props.separator}-separator`;
+		return '';
+	});
+	
+const getSize = computed(() => {
+		if(props.size)
+			return `is-${props.size}`;
+		return '';
+	});
 </script>
 

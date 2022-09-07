@@ -1,6 +1,6 @@
 <template>
 	<img alt="Vue logo" src="https://bulma.io/images/bulma-logo.png">
-	<BulmaBreadcrumb :list="breadcrumbList" last-crumb-is-active alignment="is-centered" />
+	<BulmaBreadcrumb :list="breadcrumbList" alignment="is-centered" last-crumb-is-active separator="succeeds" />
 </template>
 <script lang="ts" setup>
 	import BulmaBreadcrumb from '@/components/BulmaBreadcrumb.vue';
