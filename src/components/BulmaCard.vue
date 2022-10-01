@@ -32,11 +32,11 @@
 
 <style lang="sass">
 //todo: bulma card variables
-@import "../../../../node_modules/bulma/sass/components/card"
+@import "~bulma/sass/components/card"
 </style>
 
 <script lang="ts" setup>
-	import BulmaImage from '@/lib-components/BulmaImage.vue';
+	import BulmaImage from 'src/components/BulmaImage.vue';
 	import {getLinkText, Link} from '../models';
 	import {Component} from 'vue';
 	

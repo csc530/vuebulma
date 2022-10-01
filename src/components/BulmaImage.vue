@@ -8,12 +8,11 @@
 </template>
 
 <style lang="sass">
-@import "../../../../node_modules/bulma/sass/elements/image"
+@import "~bulma/sass/elements/image"
 </style>
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {prop} from 'vue-class-component';
 	
 	const props = defineProps<{
 		dimensions?: 16 | 24 | 32 | 48 | 64 | 96 | 128
