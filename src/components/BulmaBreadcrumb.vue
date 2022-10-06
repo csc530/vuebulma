@@ -17,13 +17,13 @@ $breadcrumb-item-active-color: $text-strong
 $breadcrumb-item-padding-vertical: 0
 $breadcrumb-item-padding-horizontal: 0.75rem
 $breadcrumb-item-separator-color: $border-hover
-@import "~bulma/sass/components/breadcrumb.sass"
+@import "./node_modules/bulma/sass/components/breadcrumb.sass"
 
 </style>
 
 <script lang="ts" setup>
+	import {computed} from 'vue';
 	import {BreadcrumbItem} from '../models';
-	import {Component, computed} from 'vue';
 	
 	type ArrayElement<ArrayType extends readonly unknown[]> =
 			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;

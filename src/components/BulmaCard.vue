@@ -32,13 +32,11 @@
 
 <style lang="sass">
 //todo: bulma card variables
-@import "~bulma/sass/components/card"
+@import "./node_modules/bulma/sass/components/card"
 </style>
 
 <script lang="ts" setup>
-	import BulmaImage from 'src/components/BulmaImage.vue';
-	import {getLinkText, Link} from '../models';
-	import {Component} from 'vue';
+	import { Link} from '../models';
 	
 	const props = defineProps<{
 		tag?: string | Component;

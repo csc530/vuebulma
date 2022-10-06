@@ -8,7 +8,7 @@
 </template>
 
 <style lang="sass">
-@import "~bulma/sass/elements/image"
+@import "./node_modules/bulma/sass/elements/image"
 </style>
 
 <script lang="ts" setup>
