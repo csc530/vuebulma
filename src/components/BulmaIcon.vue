@@ -9,7 +9,7 @@
 </template>
 
 <style lang="sass">
-@import "./node_modules/bulma/sass/elements/icon"
+//@import "./node_modules/bulma/sass/elements/icon"
 </style>
 
 <script lang="ts" setup>

@@ -1,5 +1,5 @@
 <template>
-	<figure :class="[dimen, {'is-fullwidth': !notFullwidth}]" class="image">
+	<figure :class="[dim, {'is-fullwidth': !notFullwidth}]" class="image">
 		<picture :class="{'is-rounded': rounded}" class="is-fullwidth">
 			<slot :class="{'is-rounded': rounded}" />
 		</picture>
@@ -8,7 +8,7 @@
 </template>
 
 <style lang="sass">
-@import "./node_modules/bulma/sass/elements/image"
+//@import "./node_modules/bulma/sass/elements/image"
 </style>
 
 <script lang="ts" setup>
@@ -22,7 +22,7 @@
 		notFullwidth?: boolean
 	}>();
 	
-	const dimen = computed(() => {
+	const dim = computed(() => {
 		if(props.dimensions)
 		{
 			const dimensions = Number(props.dimensions).toFixed(0);
