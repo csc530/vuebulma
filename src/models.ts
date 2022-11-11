@@ -13,3 +13,5 @@ export const getLinkText = (link: Link): string => {
 	}
 	return link.text();
 };
+
+export type TextSizes = 1 | 2 | 3 | 4 | 5 | 6;
