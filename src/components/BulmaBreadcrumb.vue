@@ -22,7 +22,7 @@
 </style>
 
 <script lang="ts" setup>
-	import {computed} from 'vue';
+	import { computed} from 'vue';
 	import {BreadcrumbItem} from '../models';
 	
 	type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -30,7 +30,7 @@
 	
 	const props = defineProps<{
 		/// the tag or component to render as the breadcrumb's ul parent
-		rootTag?: string | Component;
+		rootTag?: string;
 		lastCrumbIsActive?: boolean;
 		/// the list of items to render as breadcrumbs;
 		list: BreadcrumbItem[];
@@ -47,7 +47,6 @@
 	
 	const wrapperTag = computed(() => tag ? tag : 'nav');
 	const isActiveCrumb = (index: number) => {
-		console.log(index, lastCrumbIsActive, list[index].isActive);
 		if((lastCrumbIsActive && index === list.length - 1) || list[index].isActive)
 			return 'is-active';
 		return '';

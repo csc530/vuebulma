@@ -36,17 +36,16 @@
 </style>
 
 <script lang="ts" setup>
-	import {Component} from 'vue';
-	import { Link} from '../models';
+	import {Link} from '../models';
 	
 	const props = defineProps<{
-		tag?: string | Component;
-		headerTag?: string | Component;
+		tag?: string;
+		headerTag?: string;
 		footer?: string | string[] | Link[];
-		footerTag?: string | Component;
+		footerTag?: string;
 	}>();
 	
-	const containerTag = (tag: string | Component) => tag ? tag : 'div';
+	const containerTag = (tag: string) => tag ? tag : 'div';
 	
 	
 	// GUID
