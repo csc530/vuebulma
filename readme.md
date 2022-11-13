@@ -1,4 +1,4 @@
-# Bulma component library for Vue
+# Bulma component library for Vue3
 
 ![](\src\assets\made-with-bulma--black.png "made with Bulma")
 
@@ -16,6 +16,8 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 ## Usage
 
 ```javascript
+// main.js
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import { BulmaVue3 } from 'bulma-vue3'
@@ -26,6 +28,8 @@ app.mount('#app')
 ```
 
 ## Documentation
+
+I highly recommend setting the `tag` prop whenever possible to reduce the amount of **non-semantic** `div` tags in your HTML.
 
 **Need scoped (or global) import of Bulma's CSS/SASS/... when using components.** I kept the import of the actual css
 separate for fear of increased bundle size.
@@ -38,3 +42,5 @@ I don't know yet still testing, so this is really not for public use yet (if at 
 
 - [ ] In vite components do not load if they use vue (vue/runtime) `Component` type
 	- Not sure if it's necessary as component props that'll accept HTML/Vue elements
+- [ ] Add more components
+- [ ] Test for backwards compatibility with Vue 2

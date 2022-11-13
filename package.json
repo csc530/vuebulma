@@ -1,6 +1,6 @@
 {
-  "name": "@csc/vue-bulma",
-  "private": true,
+  "name": "@csc530/vue-bulma",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "files": [
@@ -9,7 +9,7 @@
   "main": "dist/vue-bulma.js",
   "module": "dist/vue-bulma.js",
   "scripts": {
-    "dev": "vite --host --open -d",
+    "dev": "vite --host --open -d --clearScreen",
     "build": "vite build",
     "preview": "vite preview"
   },
