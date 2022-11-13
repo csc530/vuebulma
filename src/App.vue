@@ -7,7 +7,9 @@
 			<img alt="Vue logo" class="logo vue" src="/src/assets/vue.svg" />
 		</a>
 	</div>
-	<img alt="Vue logo" src="https://bulma.io/images/bulma-logo.png" width="150">
+	<a href="https://bulma.io/" target="_blank">
+	<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="150"/>
+	</a>
 	<!--	Initial BulmaHeading display -->
 	<BulmaBox>
 		<BulmaHeading tag="h1">My Bulma Component Library</BulmaHeading>
