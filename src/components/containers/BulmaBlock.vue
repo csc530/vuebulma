@@ -9,6 +9,6 @@
 </style>
 
 <script lang="ts" setup>
-	withDefaults(defineProps<{ tag: string }>(), {tag: 'div'});
+	withDefaults(defineProps<{ tag?: string }>(), {tag: 'div'});
 </script>
 

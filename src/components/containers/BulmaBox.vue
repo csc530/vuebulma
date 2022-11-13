@@ -12,7 +12,8 @@
 	const props = defineProps({
 		tag: {
 			default: 'div',
-			type: String
+			type: String,
+			required: false
 		}
 	});
 </script>
