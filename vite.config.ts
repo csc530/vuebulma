@@ -22,11 +22,11 @@ export default defineConfig({
 		sourcemap: true,
 		lib: {
 			// Could also be a dictionary or array of multiple entry points
-			entry: resolve(__dirname, 'lib/main.js'),
+			entry: resolve(__dirname, 'lib/build.js'),
 			name: 'VueBulma',
 			// the proper extensions will be added
 			fileName: 'vue-bulma',
-			formats: ['es', 'cjs', 'umd', 'iife']
+			formats: ['es', 'umd', 'cjs']
 		},
 		rollupOptions: {
 			// make sure to externalize deps that shouldn't be bundled
