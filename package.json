@@ -1,28 +1,30 @@
 {
-  "name": "@csc530/vue-bulma",
-  "private": false,
-  "version": "0.0.1-14",
-  "type": "module",
-  "files": [
-    "dist/*"
-  ],
-  "main": "dist/vue-bulma.js",
-  "module": "dist/vue-bulma.js",
-  "scripts": {
-    "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
-    "bulma": "^0.9.4",
-    "sass": "^1.55.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0",
-    "vite-plugin-dts": "^1.6.5",
-    "vue": "^3.2.37",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^0.40.4"
-  }
+	"name": "@csc530/vue-bulma",
+	"private": false,
+	"version": "0.0.1-15",
+	"type": "module",
+	"author": "Christofer Cousins",
+	"license": "idk, lol",
+	"files": [
+		"dist/*"
+	],
+	"main": "dist/vue-bulma.js",
+	"module": "dist/vue-bulma.js",
+	"scripts": {
+		"dev": "vite --host --open -d --clearScreen",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^3.1.0",
+		"bulma": "^0.9.4",
+		"sass": "^1.55.0",
+		"typescript": "^4.6.4",
+		"vite": "^3.1.0",
+		"vite-plugin-dts": "^1.6.5",
+		"vue": "^3.2.37",
+		"vue-loader": "^16.8.3",
+		"vue-tsc": "^0.40.4"
+	}
 }
