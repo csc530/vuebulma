@@ -1,10 +1,19 @@
 {
 	"name": "@csc530/vue-bulma",
 	"private": false,
-	"version": "0.0.1-15",
+	"version": "1.0.0-0",
 	"type": "module",
 	"author": "Christofer Cousins",
-	"license": "idk, lol",
+	"description": "Vue3 components for Bulma CSS",
+	"keywords": [
+		"vue",
+		"vue3",
+		"bulma",
+		"css",
+		"components",
+		"vue3-components",
+		"component library"
+	],
 	"files": [
 		"dist/*"
 	],
