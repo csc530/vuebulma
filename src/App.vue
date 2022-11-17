@@ -1,14 +1,15 @@
 <template>
 	<div>
 		<a href="https://vitejs.dev" target="_blank">
-			<img alt="Vite logo" class="logo" src="/src/assets/vite.svg" />
+			<img alt="Vite logo" class="logo" height="150" src="https://vitejs.dev/logo-with-shadow.png" />
 		</a>
 		<a href="https://vuejs.org/" target="_blank">
-			<img alt="Vue logo" class="logo vue" src="/src/assets/vue.svg" />
+			<img alt="Vue logo" class="logo vue"
+			     src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" />
 		</a>
 	</div>
 	<a href="https://bulma.io/" target="_blank">
-	<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="150"/>
+		<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="150" />
 	</a>
 	<!--	Initial BulmaHeading display -->
 	<BulmaBox>
@@ -45,10 +46,10 @@
 			</BulmaBlock>
 		</BulmaBlock>
 		
+		<!-- Is spaced-->
 		<BulmaBlock>
-			<!-- Is spaced-->
 			<BulmaBlock>
-				<BulmaHeading is-spaced size="4.0">4. Still a large title but</BulmaHeading>
+				<BulmaHeading is-spaced size="4">4. Still a large title but</BulmaHeading>
 				<BulmaHeading is-spaced size="4.0" type="subtitle">4. notice the spacing of this subtitle</BulmaHeading>
 			</BulmaBlock>
 			<BulmaBlock>
@@ -56,15 +57,73 @@
 				<BulmaHeading is-spaced size="5" type="subtitle">5. with its spaced Smaller subtitle</BulmaHeading>
 			</BulmaBlock>
 			<BulmaBlock>
-				<BulmaHeading is-spaced size="6" type="subtitle">5. Smallest subtitle on top of</BulmaHeading>
+				<BulmaHeading is-spaced size="6" type="subtitle">5. Smallest subtitle spaced on top of</BulmaHeading>
 				<BulmaHeading is-spaced size="6">5. The Smallest title</BulmaHeading>
 			</BulmaBlock>
 		</BulmaBlock>
 	</bulma-box>
 	
+	<!--	Bulma Icons-->
 	<BulmaBox>
 		<BulmaHeading size="2">Icons</BulmaHeading>
-		<BulmaIcon/>
+		<bulma-heading size="3" type="subtitle">Using FontAwesome<small></small></bulma-heading>
+		<!-- Icon basics-->
+		<BulmaBlock>
+			<BulmaIcon :icon="['fa-cross','fa-spaghetti-monster-flying','fa-brain','fa-brands fa-canadian-maple-leaf']"
+			           prefix="fa-solid" />
+			<br />
+			<BulmaIcon icon="fa-solid fa-hat-wizard">Magically prefixes text with icons.</BulmaIcon>
+			<br />
+			<BulmaIcon after-text icon="fa-solid fa-car">Or at the end of your content, however you'd like</BulmaIcon>
+		</BulmaBlock>
+		<!-- Flex Icons -->
+		<BulmaBlock>
+			<BulmaIcon flex icon="fa-person-running fa-solid">Flex Icons with text</BulmaIcon>
+			<BulmaIcon flex icon="fa-square fa-solid">Essentially making them take up a line, flex instead of inline-flex,
+			                                          elements
+			</BulmaIcon>
+		</BulmaBlock>
+		<!-- Icon colours-->
+		<BulmaBlock>
+			<!--				todo wrap light icons in dark background-->
+			<BulmaHeading size="4">Icon Colours</BulmaHeading>
+			<BulmaHeading size="5.0" type="subtitle">Default</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours()" :colour="colour" icon="fa-solid fa-star" />
+			<BulmaHeading size="5.0" type="subtitle">Dark</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours('dark')" :colour="colour" icon="fa-solid fa-phone" />
+			<BulmaHeading size="5.0" type="subtitle">Light</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours('light')" :colour="colour" icon="fa-solid fa-worm" />
+			
+			<BulmaHeading size="4.0" type="title">Background Colours</BulmaHeading>
+			<BulmaHeading size="5" type="subtitle">Default</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours('default')" :bg-colour="colour" icon="fa-solid fa-leaf" />
+			<BulmaHeading size="5" type="subtitle">Dark</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours('dark')" :bg-colour="colour" icon="fa-solid fa-bible" />
+			<BulmaHeading size="5" type="subtitle">Light</BulmaHeading>
+			<BulmaIcon v-for="colour in getColours('light')" :bg-colour="colour" icon="fa-solid fa-earth" />
+			
+			<BulmaHeading size="4.0" type="title">Mix N' Match</BulmaHeading>
+			<template v-for="colour in getColours()">
+				<BulmaIcon v-for="bg in getColours('dark')" :bg-colour="bg" :colour="colour" icon="fa-solid fa-atom" />
+			</template>
+		</BulmaBlock>
+		<!-- Icons Sizes-->
+		<BulmaHeading size="4">Icon Sizes</BulmaHeading>
+		<p>The <a href="https://bulma.io/documentation/elements/icon/#sizes">size prop</a> only affect the container and
+		   will position the icon within the center of it. To resize the icon is up to you.</p>
+		<BulmaIcon container-size="small" icon="fa-solid fa-coffee fa-2xs" />
+		<BulmaIcon container-size="small" icon="fa-solid fa-coffee fa-xs" />
+		<BulmaIcon container-size="" icon="fa-solid fa-coffee fa-sm" />
+		<BulmaIcon container-size="default" icon="fa-solid fa-coffee" />
+		<BulmaIcon container-size="medium" icon="fa-solid fa-coffee fa-lg" />
+		<BulmaIcon container-size="large" icon="fa-solid fa-coffee fa-xl" />
+		<BulmaIcon container-size="large" icon="fa-solid fa-coffee fa-2xl" />
+		<br />
+		<bulma-block>
+		<BulmaIcon afterText :icon="['fas fa-camera fa-stack-1x',{icon:'fas fa-ban fa-stack-2x',colour:{colour:'danger'}}]" container-size="large" stacked="fa-stack">
+			Also support FontAwesome stacked icons
+		</BulmaIcon>
+		</bulma-block>
 	</BulmaBox>
 </template>
 
@@ -87,14 +146,12 @@
 <script lang="ts" setup>
 	import {ref} from 'vue';
 	import BulmaBreadcrumb from './components/BulmaBreadcrumb.vue';
-	import BulmaCard from './components/BulmaCard.vue';
 	import BulmaHeading from './components/BulmaHeading.vue';
 	import BulmaIcon from './components/BulmaIcon.vue';
-	import BulmaImage from './components/BulmaImage.vue';
 	import BulmaBlock from './components/containers/BulmaBlock.vue';
 	import BulmaBox from './components/containers/BulmaBox.vue';
 	
-	import {BreadcrumbItem, Link} from './models';
+	import {BreadcrumbItem, Link, getColours} from './types';
 	
 	const png = import('./assets/made-with-bulma.png');
 	
@@ -127,5 +184,4 @@
 		{href: 'https://vuejs.org', text: 'Vue'},
 		{href: 'https://y.at/✝🧠🍁👽', text: 'Me'},
 	];
-	console.log(socks);
 </script>

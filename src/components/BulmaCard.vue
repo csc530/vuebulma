@@ -36,7 +36,7 @@
 </style>
 
 <script lang="ts" setup>
-	import {Link} from '../models';
+	import {Link} from '../types';
 	
 	const props = defineProps<{
 		tag?: string;

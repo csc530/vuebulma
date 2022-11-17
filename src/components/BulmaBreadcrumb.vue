@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 	import { computed} from 'vue';
-	import {BreadcrumbItem} from '../models';
+	import {BreadcrumbItem} from '../types';
 	
 	type ArrayElement<ArrayType extends readonly unknown[]> =
 			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
