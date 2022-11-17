@@ -20,10 +20,12 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import { BulmaVue3 } from 'bulma-vue3'
+// Import the library
+import { default as vueBulma } from '@csc530/vue-bulma'
 
 const app = createApp(App)
-app.use(BulmaVue3)
+// Use the library
+app.use(vueBulma)
 app.mount('#app')
 ```
 

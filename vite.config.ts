@@ -3,7 +3,6 @@ import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [dts({insertTypesEntry: true}), vue()],
@@ -14,7 +13,8 @@ export default defineConfig({
 				// language=SASS
 				additionalData: ''
 			}
-		}
+		},
+		devSourcemap: true,
 	},
 	build: {
 		minify: false,
