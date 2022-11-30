@@ -105,8 +105,12 @@ export function toIsClassName(name: string): string {
 	return `is-${name}`;
 }
 
-export function returnIsClasses(classes: Record<string, any>): string[] {
+export function getBulma_IS_Classes(classes: Record<string, any>): string[] {
 	return Object.keys(classes)
-	             .filter(key => key.includes('is-') && classes[key])
-	             .map<string>(key => key);
+	             .filter(key => key.includes('is') && classes[key])
+	             .map<string>(key => {
+		             let className = key.toLowerCase();
+		             return className.includes('is-') ? className : className.replace('is', 'is-');
+	             });
+	
 }

@@ -22,13 +22,16 @@
 	<!-- Dropdown -->
 	<bulma-box tag="section">
 		<bulma-heading tag="h2">Dropdown</bulma-heading>
-		<bulma-dropdown :content="breadcrumbList">
+		<bulma-dropdown alignment="right" :content="breadcrumbList">
 			<button>button trigger</button>
 			<!--			todo: make it less clunky to button dropwdown class to parent element-->
 			<template v-slot:dropdown-item="data">
 				<a :href="data['data'].href" v-bind:class="data.class">{{ data.data['text'] }}</a>
 			</template>
 		</bulma-dropdown>
+		<BulmaDropdown tag="p" is-hoverable :content="[1,2,3,443,5,32,123-23,2,-2,-912.34]">
+			<p class="button">Hoverable</p>
+		</BulmaDropdown>
 	</bulma-box>
 	
 	<!--	Breadcrumb display -->
