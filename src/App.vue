@@ -9,7 +9,9 @@
 		</a>
 	</div>
 	<a href="https://bulma.io/" target="_blank">
-		<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="150" />
+		<img alt="Bulma logo" height="150"
+		     src="https://bulma.io/images/bulma-logo.png" srcset="https://bulma.io/images/made-with-bulma--black.png"
+		     width="252" />
 	</a>
 	<!--	Initial BulmaHeading display -->
 	<BulmaBox>
@@ -17,10 +19,23 @@
 		<BulmaHeading :type="'subtitle'">For Vue3 using Composition API and `setup`😁</BulmaHeading>
 	</BulmaBox>
 	
+	<!-- Dropdown -->
+	<bulma-box tag="section">
+		<bulma-heading tag="h2">Dropdown</bulma-heading>
+		<bulma-dropdown :content="breadcrumbList">
+			<button>button trigger</button>
+			<!--			todo: make it less clunky to button dropwdown class to parent element-->
+			<template v-slot:dropdown-item="data">
+				<a :href="data['data'].href" v-bind:class="data.class">{{ data.data['text'] }}</a>
+			</template>
+		</bulma-dropdown>
+	</bulma-box>
+	
 	<!--	Breadcrumb display -->
 	<BulmaBox>
 		<BulmaHeading tag="h2">Breadcrumbs</BulmaHeading>
-		<BulmaBreadcrumb :list="breadcrumbList" alignment="is-centered" last-crumb-is-active separator="succeeds" />
+		<BulmaBreadcrumb :list="breadcrumbList" alignment="is-centered" last-crumb-is-active separator="succeeds"
+		                 size="large" />
 	</BulmaBox>
 	
 	<!--	Bulma Headings display -->
@@ -120,9 +135,11 @@
 		<BulmaIcon container-size="large" icon="fa-solid fa-coffee fa-2xl" />
 		<br />
 		<bulma-block>
-		<BulmaIcon afterText :icon="['fas fa-camera fa-stack-1x',{icon:'fas fa-ban fa-stack-2x',colour:{colour:'danger'}}]" container-size="large" stacked="fa-stack">
-			Also support FontAwesome stacked icons
-		</BulmaIcon>
+			<BulmaIcon :icon="['fas fa-camera fa-stack-1x',{icon:'fas fa-ban fa-stack-2x',colour:{colour:'danger'}}]"
+			           afterText
+			           container-size="large" stacked="fa-stack">
+				Also support FontAwesome stacked icons
+			</BulmaIcon>
 		</bulma-block>
 	</BulmaBox>
 </template>
@@ -150,10 +167,10 @@
 	import BulmaIcon from './components/BulmaIcon.vue';
 	import BulmaBlock from './components/containers/BulmaBlock.vue';
 	import BulmaBox from './components/containers/BulmaBox.vue';
+	import BulmaDropdown from './components/containers/BulmaDropdown.vue';
 	
 	import {BreadcrumbItem, Link, getColours} from './types';
 	
-	const png = import('./assets/made-with-bulma.png');
 	
 	// !* BreadCrumb
 	const path = ref(window.location.pathname.split('/'));
