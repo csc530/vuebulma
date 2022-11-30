@@ -3,7 +3,7 @@
 		<ul>
 			<li v-for="(item, index) in list" :key="index" :class="isActiveCrumb(index)">
 				<slot v-bind:data="item">
-					<a :href="item.href">{{ item.text }}</a>
+					<a :href="item.href.toString()">{{ item.text }}</a>
 				</slot>
 			</li>
 		</ul>
@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 	import { computed} from 'vue';
-	import {BreadcrumbItem} from '../types';
+	import {BreadcrumbItem, getSizeClasses, Size} from '../types';
 	
 	type ArrayElement<ArrayType extends readonly unknown[]> =
 			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -39,7 +39,7 @@
 		/// the separator to use between breadcrumbs; defaults to '/'; slash
 		separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
 		/// the size of the breadcrumbs
-		size?: 'small' | 'medium' | 'large';
+		size?: Size
 	}>();
 	
 	
@@ -58,9 +58,7 @@
 		return '';
 	});
 	
-const getSize = computed(() => {
-		if(props.size)
-			return `is-${props.size}`;
-		return '';
+	const getSize = computed(() => {
+		return getSizeClasses(props.size);
 	});
 </script>

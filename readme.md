@@ -1,6 +1,6 @@
 # Bulma component library for Vue3
 
-![](\src\assets\made-with-bulma--black.png "made with Bulma")
+![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
 
 My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, _and_ it's composition api.
 I really love Bulma, and it's modern styling using CSS without JavaScript. It's definitely my bias over Bootstrap now.
@@ -43,6 +43,6 @@ I don't know yet still testing, so this is really not for public use yet (if at 
 - [ ] make a way to pass sass vars as props to style tags
 
 - [ ] In vite components do not load if they use vue (vue/runtime) `Component` type
-	- Not sure if it's necessary as component props that'll accept HTML/Vue elements
+  - Not sure if it's necessary as component props that'll accept HTML/Vue elements
 - [ ] Add more components
 - [ ] Test for backwards compatibility with Vue 2
