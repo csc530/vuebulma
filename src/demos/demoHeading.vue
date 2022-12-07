@@ -43,7 +43,8 @@
 
 </style>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import BulmaBox from "../components/containers/BulmaBox.vue";
-import BulmaHeading from "../components/BulmaHeading.vue";</script>
+import BulmaHeading from "../components/BulmaHeading.vue";
+import BulmaBlock from "../components/containers/BulmaBlock.vue";</script>
 

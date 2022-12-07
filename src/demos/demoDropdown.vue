@@ -9,7 +9,7 @@
 				{{ value.data }}
 			</template>
 		</bulma-dropdown>
-		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" dropUp is-hoverable tag="p">
+		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" isdropUp is-hoverable tag="p">
 			<p class="button"><code>p</code> trigger</p>
 		</BulmaDropdown>
 		<bulma-dropdown :content="['you got a hover to see me', null, 'hey look a divider', undefined, '🤷🏿‍♂️']"

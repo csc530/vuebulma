@@ -10,13 +10,14 @@
 		            src="https://th.bing.com/th/id/OIP.pejwGwwInuu8HcUqEHCDPQAAAA?pid=ImgDet&rs=1"/>
 		<BulmaImage :dimension="64" alt="mario star"
 		            src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/64/Chrome-icon.png"/>
-		<bulma-image dimension="128.0" alt="bobbing cat" src="https://avatarfiles.alphacoders.com/413/thumb-1920-4139.gif"/>
+		<bulma-image alt="bobbing cat" dimension="128.0" src="https://avatarfiles.alphacoders.com/413/thumb-1920-4139.gif"/>
 		<bulma-heading size="3">Image with rounded corners & Retina images</bulma-heading>
-		<bulma-image dimension="128" rounded="true" alt="bobbing cat"
+		<bulma-image alt="bobbing cat" dimension="128" rounded="true"
 		             src="https://archive.org/download/ipad-2048x2048-thumbnail_00396-256x256/ipad-2048x2048-thumbnail_00396-256x256.jpg"/>
-		<BulmaImage :aspectRatio="'16by9'" :notFullwidth="true" :rounded="true">
-			<iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/oPmdYRJtasc" frameborder="0"
-			        allowfullscreen></iframe>
+		<BulmaImage :aspectRatio="'16by9'" :notFullwidth="true" is-rounded>
+			<iframe allowfullscreen class="has-ratio" frameborder="0" height="360"
+			        src="https://www.youtube.com/embed/oPmdYRJtasc"
+			        width="640"></iframe>
 		</BulmaImage>
 	</BulmaBox>
 </template>
@@ -25,7 +26,8 @@
 
 </style>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import BulmaBox from "../components/containers/BulmaBox.vue";
-import BulmaImage from "../components/BulmaImage.vue";</script>
+import BulmaImage from "../components/BulmaImage.vue";
+import BulmaHeading from "../components/BulmaHeading.vue";</script>
 

@@ -69,8 +69,10 @@
 
 </style>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import BulmaBox from "../components/containers/BulmaBox.vue";
 import BulmaHeading from "../components/BulmaHeading.vue";
-import BulmaIcon from "../components/BulmaIcon.vue";</script>
+import BulmaIcon from "../components/BulmaIcon.vue";
+import BulmaBlock from "../components/containers/BulmaBlock.vue";
+import {getColours} from "../types/types";</script>
 
