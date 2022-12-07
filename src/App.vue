@@ -17,6 +17,7 @@
 		<BulmaHeading :type="'subtitle'">For Vue3 using Composition API and <code>setup</code>😁</BulmaHeading>
 	</BulmaBox>
 
+	<demo-message/>
 	<demo-menu/>
 	<demo-image/>
 	<DemoIcon/>
@@ -54,6 +55,7 @@ import DemoBreadcrimb from "./demos/demoBreadcrumb.vue";
 import DemoHeading from "./demos/demoHeading.vue";
 import DemoIcon from "./demos/demoIcon.vue";
 import DemoMenu from "./demos/demoMenu.vue";
+import DemoMessage from "./demos/demoMessage.vue";
 
 // !* Card
 const socks: (Link)[] = [

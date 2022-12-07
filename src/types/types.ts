@@ -20,7 +20,7 @@ export const getHeaderSize = (size: TextSizes): string => 'is-' + removeDecimals
 
 type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link';
 type Shade = 'white' | 'black' | 'light' | 'dark' | 'default';
-type Colours = StateColours | Shade;
+export type Colours = StateColours | Shade;
 
 export function getColours(shade?: Shade): ColourHelper[] {
 	//from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
@@ -45,7 +45,7 @@ export function getColourClass(colour: ColourHelper, type: 'background' | 'text'
 }
 
 //todo add grayscale option for colour class getters
-type Grayscale =
+export type Grayscale =
 	'black-bis'
 	| 'black-ter'
 	| 'grey-darker'
