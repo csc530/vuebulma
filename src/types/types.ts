@@ -153,3 +153,14 @@ export function getAspectRatioClasses(aspectRatio?: AspectRatios): string {
 function removeDecimals(value: number): string {
 	return Number(value).toFixed().toString();
 }
+
+export interface Menu {
+	/** The menu's label */
+	label: string;
+	/** The menu's items */
+	items: Menu[] | any[];
+}
+
+export function isMenu(menu: Menu): menu is Menu {
+	return (menu as Menu).label !== undefined && menu.items !== undefined;
+}

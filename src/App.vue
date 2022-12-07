@@ -18,12 +18,13 @@
 	</BulmaBox>
 
 	<demo-menu/>
+	<demo-image/>
+	<DemoIcon/>
 	<demo-dropdown/>
 	<demo-breadcrimb/>
-	<demo-image/>
 	<demo-dropdown/>
 	<demo-heading/>
-	<demo-icon/>
+
 </template>
 
 <style scoped>
