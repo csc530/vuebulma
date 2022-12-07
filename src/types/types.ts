@@ -15,7 +15,7 @@ export const getLinkText = (link: Link): string => {
 };
 
 export type TextSizes = 1 | 2 | 3 | 4 | 5 | 6;
-export const getHeaderSize = (size: TextSizes): string => 'is-' + Number(size).toFixed().toString();
+export const getHeaderSize = (size: TextSizes): string => 'is-' + removeDecimals(size);
 
 
 type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link';
@@ -113,4 +113,43 @@ export function getBulma_IS_Classes(classes: Record<string, any>): string[] {
 		             return className.includes('is-') ? className : className.replace('is', 'is-');
 	             });
 
+}
+
+export type Dimensions = 16 | 24 | 32 | 48 | 64 | 96 | 128;
+export const getDimensions = (): Dimensions[] => [16, 24, 32, 48, 64, 96, 128];
+
+export function getDimensionClasses(dimension?: Dimensions): string {
+	if (!dimension)
+		return '';
+	const dim = removeDecimals(dimension);
+	return `is-${dim}x${dim}`;
+}
+
+export type AspectRatios =
+	'square'
+	| '1by1'
+	| '5by4'
+	| '4by3'
+	| '3by2'
+	| '5by3'
+	| '16by9'
+	| '2by1'
+	| '3by1'
+	| '4by5'
+	| '3by4'
+	| '2by3'
+	| '3by5'
+	| '9by16'
+	| '1by2'
+	| '1by3'
+export const getAspectRatios = (): AspectRatios[] => ['square', '1by1', '5by4', '4by3', '3by2', '5by3', '16by9', '2by1', '3by1', '4by5', '3by4', '2by3', '3by5', '9by16', '1by2', '1by3'];
+
+export function getAspectRatioClasses(aspectRatio?: AspectRatios): string {
+	if (!aspectRatio)
+		return '';
+	return `is-${aspectRatio}`;
+}
+
+function removeDecimals(value: number): string {
+	return Number(value).toFixed().toString();
 }
