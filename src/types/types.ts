@@ -8,7 +8,7 @@ export interface Link {
 }
 
 export const getLinkText = (link: Link): string => {
-	if(typeof link.text === 'string') {
+	if (typeof link.text === 'string') {
 		return link.text;
 	}
 	return link.text();
@@ -37,9 +37,9 @@ export type ColourHelper = {
 };
 
 export function getColourClass(colour: ColourHelper, type: 'background' | 'text'): string {
-	if(!colour.shade || colour.shade === 'default')
+	if (!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
-	else if(colour.shade === 'dark' || colour.shade === 'black')
+	else if (colour.shade === 'dark' || colour.shade === 'black')
 		return `has-${type}-${colour.colour}-dark`;
 	return `has-${type}-${colour.colour}-light`;
 }
@@ -73,7 +73,7 @@ export type Size = 'small' | 'default' | 'medium' | 'large';
 export const getSizes = (): Size[] => ['small', 'default', 'medium', 'large'];
 
 export function getSizeClasses(size?: Size): string {
-	if(!size || size === 'default')
+	if (!size || size === 'default')
 		return '';
 	return `is-${size}`;
 }
@@ -82,7 +82,7 @@ export type LeftRight = 'left' | 'right';
 export const getLeftRight = (): LeftRight[] => ['left', 'right'];
 
 export function getLeftRightClasses(leftRight?: LeftRight): string {
-	if(!leftRight)
+	if (!leftRight)
 		return '';
 	return `is-${leftRight}`;
 }
@@ -91,21 +91,20 @@ export type Alignment = 'center' | LeftRight;
 export const getAlignments = (): Alignment[] => ['left', 'center', 'right'];
 
 export function getAlignmentClasses(alignment?: Alignment): string {
-	if(!alignment)
+	if (!alignment)
 		return '';
 	return `is-${alignment}`;
 }
 
-export function toggleActivation(e: Event, element?: HTMLElement): void {
-	const target = element ? element : e.target as HTMLElement;
+export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void {
+	if (!invoke) return;
+	const target = element ? element : event.target as HTMLElement;
 	target.classList.toggle('is-active');
 }
 
-export function toIsClassName(name: string): string {
-	return `is-${name}`;
-}
+export const toIsClassName = (name: string): string => `is-${name}`;
 
-//extend useablility to addd logic if it's alignment, colour, etc
+//todo: extend usability to add logic if it's alignment, colour, etc
 export function getBulma_IS_Classes(classes: Record<string, any>): string[] {
 	return Object.keys(classes)
 	             .filter(key => key.includes('is') && classes[key])
