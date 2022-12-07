@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {getHeaderSize, TextSizes} from '../types';
+	import {getHeaderSize, TextSizes} from '../types/types';
 
 	const props = withDefaults(defineProps<{
 				///If there will be regular spacing between `title`s and `subtitle`s

@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 	import {computed, ref, useSlots} from 'vue';
-	import {ColourHelper, ColourIcon, getColourClass, getSizeClasses, Size} from '../types';
+	import {ColourHelper, ColourIcon, getColourClass, getSizeClasses, Size} from '../types/types';
 	
 	const props = defineProps<{
 		///The icon class name with style prefix, fa-solid fa-shield-cat || [fa-solid, fa-shield-cat]
