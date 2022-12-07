@@ -12,9 +12,9 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 ## Installation
 
-`npm install bulma-vue3`
+`npm install @csc530/vuebulma`
 
-`yarn add bulma-vue3`
+`yarn add @csc530/vuebulma`
 
 ## Usage
 
@@ -57,4 +57,4 @@ separate (*now*).
 - [x] Box
 - [x] Breadcrumb
 - [x] Icon
-- [x] 
+- [x] Title
