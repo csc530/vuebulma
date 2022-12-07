@@ -4,7 +4,8 @@
 			<slot v-if="$slots.header" name="header"/>
 			<p v-else>{{ title }}</p>
 			<!--			todo: replace with bulma button/delete-->
-			<button v-if="deleteBtn" aria-label="delete" class="delete" @click="close"></button>
+			<button v-if="deleteBtn" aria-label="delete" class="delete"
+			        @click="emit('closeMsg',$event, $el)"></button>
 		</component>
 
 		<component :is="bodyTag" class="message-body">
@@ -19,7 +20,11 @@
 
 <script lang="ts" setup>
 import {Colours, getSizeClasses, Size} from "../types/types";
-import {computed} from "vue";
+import {computed, defineEmits} from "vue";
+
+const emit = defineEmits<{
+	(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
+}>();
 
 const props = withDefaults(defineProps<{
 			containerTag?: string;
