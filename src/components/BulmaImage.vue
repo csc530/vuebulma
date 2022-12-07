@@ -1,8 +1,10 @@
 <template>
 	<figure :class="[getDimensionClasses(dimension),getAspectRatioClasses(aspectRatio)]" class="image">
-		<picture :class="{'is-rounded': rounded}">
-			<slot v-if="$slots.default" :class="{'is-rounded': rounded}"/>
-			<img v-bind="$attrs" v-else :alt="alt" :class="{'is-rounded': rounded}" :src="src"/>
+		<picture>
+			<!--! todo: bind is rounded class in some sort of container to work if they slot the image or ifram eor wtv			-->
+			<slot v-if="$slots.default"/>
+			<!--! todo: fix isBulma classes			-->
+			<img v-bind="$attrs" v-else :alt="alt" :class="getBulma_IS_Classes(props)" :src="src"/>
 		</picture>
 	</figure>
 </template>
@@ -12,12 +14,12 @@
 </style>
 
 <script lang="ts" setup>
-import {AspectRatios, Dimensions} from "../types/types";
+import {AspectRatios, Dimensions, getBulma_IS_Classes} from "../types/types";
 import {getAspectRatioClasses, getDimensionClasses} from "../types/types.js";
 
 const props = defineProps<{
 	dimension?: Dimensions
-	rounded?: boolean
+	isRounded?: boolean
 	///needs width to defaults to fullwidth
 	aspectRatio?: AspectRatios
 	// notFullwidth?: boolean, todo:  figure where and how this is used; https://bulma.io/documentation/elements/image/#responsive-images-with-ratios

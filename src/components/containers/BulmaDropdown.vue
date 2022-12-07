@@ -28,8 +28,8 @@
 
 <script lang="ts" setup>
 
-import {computed, PropType, ref} from 'vue';
-import {toggleActivation, getLeftRightClasses, LeftRight, getBulma_IS_Classes} from '../../types/types';
+import {PropType, ref} from 'vue';
+import {getBulma_IS_Classes, getLeftRightClasses, LeftRight, toggleActivation} from '../../types/types';
 //?! wierd stuff happens  in the with defaults macro when wrapping the props in quotes like the 'onClick' not showing up
 // and 'is-hoverable' coming up as an attribute
 const props = defineProps({
@@ -60,7 +60,8 @@ const props = defineProps({
 		type: Boolean as PropType<boolean>,
 		default: false
 	},
-	dropUp: {
+	// todo verify isDropup will work with util class
+	isdropUp: {
 		type: Boolean as PropType<boolean>,
 		default: false
 	}
@@ -68,7 +69,6 @@ const props = defineProps({
 
 
 const classes = getBulma_IS_Classes(props);
-classes.push(props.dropUp ? 'is-up' : '')
 
 const dropdown = ref<HTMLElement | null>(null);
 const item = ref<HTMLElement | null>(null);
