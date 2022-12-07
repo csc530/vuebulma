@@ -2,8 +2,13 @@
 
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
 
+## Disclaimer
+
+This package is very much still under active development. It is not recommended to use this in production. Feel free to
+help or report any issues😃.
+
 My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, _and_ it's composition api.
-I really love Bulma, and it's modern styling using CSS without JavaScript. It's definitely my bias over Bootstrap now.
+I really love Bulma, and it's modern styling using CSS without JavaScript. It's definitely my bias over Bootstrap now😅.
 
 ## Installation
 
@@ -11,17 +16,16 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 `yarn add bulma-vue3`
 
-`pnpm add bulma-vue3`
-
 ## Usage
 
 ```javascript
 // main.js
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
+
 // Import the library
-import { default as vueBulma } from '@csc530/vue-bulma'
+import {default as vueBulma} from '@csc530/vue-bulma'
 
 const app = createApp(App)
 // Use the library
@@ -31,12 +35,11 @@ app.mount('#app')
 
 ## Documentation
 
-I highly recommend setting the `tag` prop whenever possible to reduce the amount of **non-semantic** `div` tags in your HTML.
+I highly recommend setting the `tag` prop whenever possible to reduce the amount of **non-semantic** `div` tags in your
+HTML.
 
 **Need scoped (or global) import of Bulma's CSS/SASS/... when using components.** I kept the import of the actual css
-separate for fear of increased bundle size.
-
-I don't know yet still testing, so this is really not for public use yet (if at all 🤷🏿‍♂).
+separate (*now*).
 
 ## My todo list
 
@@ -46,3 +49,12 @@ I don't know yet still testing, so this is really not for public use yet (if at 
   - Not sure if it's necessary as component props that'll accept HTML/Vue elements
 - [ ] Add more components
 - [ ] Test for backwards compatibility with Vue 2
+
+### Components
+
+- [x] Dropdown
+- [x] Block
+- [x] Box
+- [x] Breadcrumb
+- [x] Icon
+- [x] 
