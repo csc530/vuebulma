@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-1",
+  "version": "0.0.0-5",
   "preview": true,
   "repository": {
     "type": "git",
@@ -13,9 +13,6 @@
   },
   "sponsor": {
     "url": "https://paypal.me/csc530"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "type": "module",
   "author": "Christofer Cousins",
