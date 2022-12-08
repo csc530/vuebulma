@@ -4,7 +4,7 @@
   "preview": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/csc530/vuebulma.git"
+    "url": "https://github.com/csc530/vue-bulma.git"
   },
   "homepage": "https://github.com/csc530/vuebulma",
   "bugs": {
@@ -13,6 +13,9 @@
   },
   "sponsor": {
     "url": "https://paypal.me/csc530"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "type": "module",
   "author": "Christofer Cousins",
@@ -30,9 +33,7 @@
   "scripts": {
     "dev": "vite --host --open -d --clearScreen",
     "build": "vite build",
-    "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.2.45"
