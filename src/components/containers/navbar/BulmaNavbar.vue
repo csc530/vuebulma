@@ -38,7 +38,7 @@
 
 <script lang="ts" setup>
 	import {computed, ref} from "vue";
-	import {getBulma_IS_Classes} from "../../../types/types";
+	import {Colours, getBulma_IS_Classes, getColourClass} from "../../../types/types";
 	import BulmaNavbarItem from "./BulmaNavbarItem.vue";
 
 	const emit = defineEmits<{
@@ -46,11 +46,13 @@
 	}>();
 
 	const props = withDefaults(defineProps<{
+		colour?: Colours;
 		middleItems?: any[];
 		endItems?: any[];
 		middleItemTag?: 'div' | 'a',
 		endItemTag?: 'div' | 'a',
 		isTransparent?: boolean,
+		isSpaced?: boolean,
 		isTab?: boolean | 'menu' | 'start' | 'end' | 'brand' | 'brand&end' | 'all',
 		//todo: add emit for activate items
 		activateItems?: boolean
@@ -70,7 +72,10 @@
 	});
 
 	const classes = computed(() => {
-		return getBulma_IS_Classes(props);
+		const is = getBulma_IS_Classes(props);
+		if (props.colour)
+			is.push(getColourClass(props.colour, 'text'));
+		return is;
 	});
 	const tab = ref(props.isTab);
 	const itemModifiers = ref(getBulma_IS_Classes(props));

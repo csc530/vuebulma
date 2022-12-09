@@ -36,8 +36,10 @@ export type ColourHelper = {
 	colour: StateColours;
 };
 
-export function getColourClass(colour: ColourHelper, type: 'background' | 'text'): string {
-	if (!colour.shade || colour.shade === 'default')
+export function getColourClass(colour: ColourHelper | Colours, type: 'background' | 'text'): string {
+	if (typeof colour === 'string')
+		return `is-${colour}`;
+	else if (!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
 	else if (colour.shade === 'dark' || colour.shade === 'black')
 		return `has-${type}-${colour.colour}-dark`;
@@ -189,6 +191,9 @@ export type NavBarItem = object & {
 		items: any[];
 		isHoverable?: boolean;
 		isDropUp?: boolean;
-
+		isBoxed?: boolean;
+		isArrowless?: boolean;
+		isRight?: boolean;
 	};
+	href?: string | URL;
 };

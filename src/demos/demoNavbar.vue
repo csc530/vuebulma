@@ -1,7 +1,8 @@
 <template>
 	<bulma-box>
 		<BulmaHeading :size="2">Navbar</BulmaHeading>
-		<bulma-navbar :end-items="end" :middle-items="start" is-tab start-item-tag="div" v-bind:start-items="elems"/>
+		<bulma-navbar colour="warning" :end-items="end" :middle-items="start" is-tab start-item-tag="div"
+		              v-bind:start-items="elems"/>
 	</bulma-box>
 </template>
 
@@ -63,7 +64,7 @@
 
 	let ball = document.createElement('div');
 	ball.classList.add('lds-dual-ring');
-	let style = `.lds-dual-ring {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n.lds-dual-ring:after {\n  content: " ";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border-color: blue transparent red transparent;\n  animation: lds-dual-ring 1.2s linear infinite;\n}\n@keyframes lds-dual-ring {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n`;
+	let style = `.lds-dual-ring {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n.lds-dual-ring:after {\n  content: " ";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid;\n  border-color: blue transparent red transparent;\n  animation: lds-dual-ring 1.2s linear infinite;\n}\n@keyframes lds-dual-ring {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n`;
 	let styleEl = document.createElement('style');
 	styleEl.innerHTML = style;
 
