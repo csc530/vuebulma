@@ -6,11 +6,12 @@
     "type": "git",
     "url": "https://github.com/csc530/vue-bulma.git"
   },
-  "homepage": "https://github.com/csc530/vuebulma",
+  "homepage": "https://github.com/csc530/vue-bulma#readme",
   "bugs": {
     "url": "https://github.com/csc530/vuebulma/issues",
     "email": "csc530@vivaldi.net"
   },
+  "types": "dist/vuebulma.d.ts",
   "sponsor": {
     "url": "https://paypal.me/csc530"
   },
@@ -44,5 +45,8 @@
     "vue-loader": "^16.8.3",
     "vue-tsc": "^1.0.10",
     "yarn": "^1.22.19"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.45"
   }
 }

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sshh, secrets
+.env
+.env.*
+.npmrc
