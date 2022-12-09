@@ -17,6 +17,7 @@
 		<BulmaHeading :type="'subtitle'">For Vue3 using Composition API and <code>setup</code>😁</BulmaHeading>
 	</BulmaBox>
 
+	<demo-navbar/>
 	<demo-message/>
 	<demo-menu/>
 	<demo-image/>
@@ -45,22 +46,13 @@
 </style>
 
 <script lang="ts" setup>
-import BulmaHeading from './components/BulmaHeading.vue';
-import BulmaBox from './components/containers/BulmaBox.vue';
-
-import {Link} from './types/types';
-import DemoImage from "./demos/demoImage.vue";
-import DemoDropdown from "./demos/demoDropdown.vue";
-import DemoBreadcrimb from "./demos/demoBreadcrumb.vue";
-import DemoHeading from "./demos/demoHeading.vue";
-import DemoIcon from "./demos/demoIcon.vue";
-import DemoMenu from "./demos/demoMenu.vue";
-import DemoMessage from "./demos/demoMessage.vue";
-
-// !* Card
-const socks: (Link)[] = [
-	{href: 'https://bulma.io', text: 'Bulma'},
-	{href: 'https://vuejs.org', text: 'Vue'},
-	{href: 'https://y.at/✝🧠🍁👽', text: 'Me'}
-];
-</script>
+	import BulmaHeading from './components/BulmaHeading.vue';
+	import BulmaBox from './components/containers/BulmaBox.vue';
+	import DemoBreadcrimb from "./demos/demoBreadcrumb.vue";
+	import DemoDropdown from "./demos/demoDropdown.vue";
+	import DemoHeading from "./demos/demoHeading.vue";
+	import DemoIcon from "./demos/demoIcon.vue";
+	import DemoImage from "./demos/demoImage.vue";
+	import DemoMenu from "./demos/demoMenu.vue";
+	import DemoMessage from "./demos/demoMessage.vue";
+	import DemoNavbar from "./demos/demoNavbar.vue";</script>

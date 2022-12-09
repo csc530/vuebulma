@@ -164,3 +164,31 @@ export interface Menu {
 export function isMenu(menu: Menu): menu is Menu {
 	return (menu as Menu).label !== undefined && menu.items !== undefined;
 }
+
+export interface NavBarDropdownItem {
+	/** The dropdown item's label */
+	label: string | any;
+	/** The dropdown items */
+	items: any[];
+	isDropUp?: boolean;
+	isHoverable?: boolean;
+}
+
+export function isNavBarDropdownItem(item: NavBarDropdownItem): item is NavBarDropdownItem {
+	return (item as NavBarDropdownItem).label !== undefined && item.items !== undefined;
+}
+
+export function isHTMLElement(element: any): element is HTMLElement {
+	return element instanceof HTMLElement;
+}
+
+export type NavBarItem = object & {
+	isComponent?: boolean;
+	dropdown?: {
+		link: string;
+		items: any[];
+		isHoverable?: boolean;
+		isDropUp?: boolean;
+
+	};
+};

@@ -19,17 +19,18 @@
 </style>
 
 <script lang="ts" setup>
-import {Colours, getSizeClasses, Size} from "../types/types";
-import {computed, defineEmits} from "vue";
+	import {computed, defineEmits} from "vue";
+	import {Colours, getSizeClasses, Size} from "../types/types";
 
-const emit = defineEmits<{
-	(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
-}>();
+	// todo: create default handlerand to remove message from DOM and see if preventdefault modifier will stop that
+	const emit = defineEmits<{
+		(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
+	}>();
 
-const props = withDefaults(defineProps<{
-			containerTag?: string;
-			headerTag?: string;
-			title?: string;
+	const props = withDefaults(defineProps<{
+				containerTag?: string;
+				headerTag?: string;
+				title?: string;
 			deleteBtn?: boolean;
 			bodyTag?: string;
 			colour?: Colours;
