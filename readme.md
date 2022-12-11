@@ -1,7 +1,7 @@
 # Bulma component library for Vue3
 
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
-
+![npm](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
 ## Disclaimer
 
 This package is very much still under active development. It is not recommended to use this in production. Feel free to
@@ -115,5 +115,9 @@ separate (*now*).
 - Breadcrumb
 - Icon
 - Title => `BulmaHeading`
+- Navbar
+- Image
+- Menu
+- Message
 
 more coming soon
