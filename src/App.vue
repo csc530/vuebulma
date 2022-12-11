@@ -17,12 +17,12 @@
 		<BulmaHeading :type="'subtitle'">For Vue3 using Composition API and <code>setup</code>😁</BulmaHeading>
 	</BulmaBox>
 
+	<demo-dropdown/>
 	<demo-navbar/>
 	<demo-message/>
 	<demo-menu/>
 	<demo-image/>
 	<DemoIcon/>
-	<demo-dropdown/>
 	<demo-breadcrimb/>
 	<demo-dropdown/>
 	<demo-heading/>

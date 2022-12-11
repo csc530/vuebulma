@@ -8,7 +8,8 @@
 		</bulma-message>
 
 		<bulma-heading tag="h3">Colors</bulma-heading>
-		<bulma-message colour="primary" delete-btn title="Primary Colour">Hey look I'm primary <strong>and</strong> I have a
+		<bulma-message colour="primary" close-on-x-click delete-btn title="Primary Colour">Hey look I'm primary
+			<strong>and</strong> I have a
 			delete button... neat
 		</bulma-message>
 		<bulma-message size="large" colour="link" title="Link Colour">Hey look I'm link and large</bulma-message>
@@ -36,7 +37,7 @@
 </style>
 
 <script lang="ts" setup>
-import BulmaBox from "../components/containers/BulmaBox.vue";
-import BulmaHeading from "../components/BulmaHeading.vue";
-import BulmaMessage from "../components/BulmaMessage.vue";</script>
+	import BulmaHeading from "../components/BulmaHeading.vue";
+	import BulmaMessage from "../components/BulmaMessage.vue";
+	import BulmaBox from "../components/containers/BulmaBox.vue";</script>
 

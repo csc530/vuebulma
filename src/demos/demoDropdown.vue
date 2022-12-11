@@ -3,13 +3,11 @@
 	<bulma-box tag="section">
 		<bulma-heading tag="h2">Dropdown</bulma-heading>
 		<bulma-dropdown :content="dropdownList" alignment="right" item-tag="a">
+<!-- todo: replace with bulma button-->
 			<button>Click Me!</button>
 			<!--			todo: make it less clunky to button dropwdown class to parent element-->
-			<template v-slot:dropdown-item="value">
-				{{ value.data }}
-			</template>
 		</bulma-dropdown>
-		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" isdropUp is-hoverable tag="p">
+		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" isDropup is-hoverable tag="p">
 			<p class="button"><code>p</code> trigger</p>
 		</BulmaDropdown>
 		<bulma-dropdown :content="['you got a hover to see me', null, 'hey look a divider', undefined, '🤷🏿‍♂️']"
@@ -25,10 +23,10 @@
 </style>
 
 <script lang="ts" setup>
-import BulmaBox from "../components/containers/BulmaBox.vue";
-import BulmaDropdown from "../components/containers/BulmaDropdown.vue";
-import BulmaHeading from "../components/BulmaHeading.vue";
+	import BulmaHeading from "../components/BulmaHeading.vue";
+	import BulmaBox from "../components/containers/BulmaBox.vue";
+	import BulmaDropdown from "../components/containers/BulmaDropdown.vue";
 
-const dropdownList = ['I', 'have', 'a', 'button', 'trigger', '😎'];
+	const dropdownList = ['I', 'have', 'a', 'button', 'trigger', '😎'];
 </script>
 
