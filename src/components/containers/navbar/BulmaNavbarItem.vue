@@ -1,8 +1,9 @@
 <template>
 	<!--todo: straight binding the item causes sum wonky DOM exceptions need to figure out another way to bind attrs -->
-	<component :is="tag" :class="classes" :href="item?.href" class="navbar-item" @click="emit('activate',$event, $el)">
+	<component :is="tag" :class="classes" ref="parent" :href="item?.href" class="navbar-item"
+	           @click="toggleDropdown($refs.parent)">
 
-		<template v-if="isDropdown">
+		<template v-if="item.dropdown">
 			<component :is="tag" class="navbar-link">{{ item.dropdown.link }}</component>
 			<component :is="tag" class="navbar-dropdown">
 
@@ -27,17 +28,12 @@
 
 
 <script lang="ts" setup>
-
-
 	import {computed, onMounted, ref} from "vue";
 	import {BulmaNavBarItem, getNavbarItemClasses, isHTMLElement} from "../../../types/types.js";
 
-	const emit = defineEmits<{
-		(name: 'activate', event: Event, el: HTMLElement): void;
-	}>();
-
 	const props = withDefaults(defineProps<{
 		tag?: 'div' | 'a',
+		//todo add isActive with implemeentation to have active item by default
 		item: any | BulmaNavBarItem | HTMLElement;
 	}>(), {
 		tag: 'a'
@@ -49,8 +45,11 @@
 			htmlElement.value.outerHTML = props.item.outerHTML;
 	});
 
-	const isDropdown = computed(() => (props.item as BulmaNavBarItem).dropdown !== undefined);
-	//{'has-dropdown': isDropdown, 'is-hoverable': item?.dropdown?.isHoverable, 'is-boxed': item?.dropdown?.isBoxed, 'has-dropdown-up': item?.dropdown?.isDropUp
 	const classes = computed(() => getNavbarItemClasses(props.item));
+
+	const toggleDropdown = (parent: HTMLElement) => {
+		if(props.item.dropdown)
+			parent.classList.toggle('is-active');
+	};
 </script>
 

@@ -2,11 +2,12 @@
 	<nav :class="classes" class="navbar">
 		<!--	Lefthand side Always visible-->
 		<div class="navbar-brand">
-			<bulma-navbar-item v-for="item in startItems" :key="item" :item="item" :tag="startItemTag">
-				<slot v-if="$slots['brand-items']" name="brand-items" v-bind:data="item"/>
+			<bulma-navbar-item @click="activateItem($refs.startItem)" ref="startItem" v-for="item in startItems" :key="item"
+			                   :item="item" :tag="startItemTag">
+				<slot v-if="$slots['start-items']" name="start-items" v-bind:data="item"/>
 			</bulma-navbar-item>
 
-			<button class="navbar-burger" @click="emit('navbarBurger', $event, $el)">
+			<button class="navbar-burger" @click="toggleMenu" ref="burger">
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
@@ -14,37 +15,31 @@
 		</div>
 
 		<!--	Righthand side; hidden on mobile, visible on desktops-->
-		<div class="navbar-menu">
+		<div class="navbar-menu" ref="menu">
 
 			<!--? the left part of the menu, which appears next to the navbar brand on desktop-->
 			<div class="navbar-start">
-				<bulma-navbar-item :is="middleItemTag" v-for="item in middleItems" :item="item">
-					<slot v-if="$slots['menu-start-items']" name="menu-start-items" v-bind:data="item"/>
+				<bulma-navbar-item @click="activateItem($refs.middleItem)" ref="middleItem" :is="middleItemTag"
+				                   v-for="item in middleItems" :item="item">
+					<slot v-if="$slots['middle-items']" name="middle-items" v-bind:data="item"/>
 				</bulma-navbar-item>
 			</div>
 
 			<!--? the right part of the menu, which appears at the end of the navbar-->
 			<div class="navbar-end">
-				<bulma-navbar-item :is="endItemTag" v-for="item in endItems" :item="item">
-					<slot v-if="$slots['menu-end']" name="menu-end" v-bind:data="item"/>
+				<bulma-navbar-item @click="activateItem($refs.endItem)" ref="endItem" :is="endItemTag" v-for="item in endItems"
+				                   :item="item">
+					<slot v-if="$slots['end-items']" name="end-items" v-bind:data="item"/>
 				</bulma-navbar-item>
 			</div>
 		</div>
 	</nav>
 </template>
 
-<style scoped>
-</style>
-
 <script lang="ts" setup>
 	import {computed, ref, watch} from "vue";
 	import {Colours, getBulmaClassesFromProps} from "../../../types/types";
 	import BulmaNavbarItem from "./BulmaNavbarItem.vue";
-
-	const emit = defineEmits<{
-		(name: 'navbarBurger', event: MouseEvent, el: HTMLElement): void;
-		(name: 'itemClick', item: any, event: Event, element: HTMLElement): void;
-	}>();
 
 	const props = withDefaults(defineProps<{
 		colour?: Colours;
@@ -60,6 +55,7 @@
 		startItems?: any[],
 		/**Tag to wrap brand items in */
 		startItemTag?: 'div' | 'a',
+		activateOnClick?: boolean | 'singly',
 	}>(), {
 		middleItemTag: 'a',
 		endItemTag: 'a',
@@ -67,8 +63,6 @@
 	});
 
 	const classes = computed(() => getBulmaClassesFromProps(props));
-	const tab = ref(props.isTab);
-	const itemModifiers = ref(getBulmaClassesFromProps(props));
 
 	watch(props, (props) => {
 		const fixedPos = props.isFixed;
@@ -84,5 +78,25 @@
 			document.body.classList.remove('has-navbar-fixed-bottom');
 		}
 	});
+
+	let activeItem = ref<HTMLElement | null>(null);
+	const activateItem = (element: HTMLElement) => {
+		if(props.activateOnClick === 'singly') {
+			if(activeItem.value)
+				activeItem.value.classList.remove('is-active');
+			activeItem.value = element;
+		}
+		element.classList.add('is-active');
+	}
+
+	const menu = ref<HTMLElement | null>(null);
+	const burger = ref<HTMLElement | null>(null);
+
+	const toggleMenu = () => {
+		if(menu.value)
+			menu.value.classList.toggle('is-active');
+		if(burger.value)
+			burger.value.classList.toggle('is-active');
+	}
 </script>
 

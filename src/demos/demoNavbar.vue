@@ -34,7 +34,7 @@
 			isHoverable: true
 		}
 	}
-	const pokeImg: BulmaNavBarItem & HTMLImageElement = document.createElement('img');
+	const pokeImg = document.createElement('img');
 	pokeImg.src = 'https://th.bing.com/th/id/OIP.AQMEsYkmX3ezJK5xiT4diQHaI4?pid=ImgDet&w=201&h=241&c=7&dpr=1.3';
 	pokeImg.style.height = '2em';
 	pokeImg.style.width = '2em';
@@ -54,11 +54,10 @@
 
 	// create a BulmaImage 'component'
 	const bulmaImg: BulmaNavBarItem = {
-		component: BulmaImage,
 		src: 'https://th.bing.com/th/id/OIP.AQMEsYkmX3ezJK5xiT4diQHaI4?pid=ImgDet&w=201&h=241&c=7&dpr=1.3',
 		size: '32x32',
 		rounded: true,
-		isComponent: true
+		isComponent: BulmaImage
 	}
 
 

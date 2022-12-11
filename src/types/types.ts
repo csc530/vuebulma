@@ -148,7 +148,7 @@ export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {
 	classes.push('has-dropdown');
 	const {isRight, isDropUp, isArrowless, isBoxed, isHoverable} = item.dropdown;
 	if(isDropUp)
-		classes.push('is-up');
+		classes.push('has-dropdown-up');
 	else if(isRight)
 		classes.push('is-right');
 	else if(isHoverable)
