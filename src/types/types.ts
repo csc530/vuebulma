@@ -107,13 +107,57 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 export const toIsClassName = (name: string): string => `is-${name}`;
 
 //todo: extend usability to add logic if it's alignment, colour, etc
-export function getBulma_IS_Classes(classes: Record<string, any>): string[] {
-	return Object.keys(classes)
-	             .filter(key => key.includes('is') && classes[key])
-	             .map<string>(key => {
-		             let className = key.toLowerCase();
-		             return className.includes('is-') ? className : className.replace('is', 'is-');
-	             });
+export function getBulmaClassesFromProps(classes: Record<string, any>): string[] {
+	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
+	const classList: string[] = [];
+	const isClasses = Object.keys(classes)
+	                        .filter(key => classes[key] && key.includes('is'))
+	                        .map(key => {
+		                        let className = key.toLowerCase();
+		                        if(className === 'isdropup')
+			                        className = 'is-up';
+		                        else if(className === 'isfixed')
+			                        className = 'is-fixed-' + classes[key];
+		                        else if(!className.includes('-'))
+			                        className = className.replace('is', 'is-');
+		                        return className;
+	                        });
+	const hasClasses = Object.keys(classes)
+	                         .filter(key => classes[key] && key.includes('has'))
+	                         .map(key => {
+		                         let className = key.toLowerCase();
+		                         if(!className.includes('-'))
+			                         className = className.replace('has', 'has-');
+		                         return toIsClassName(className);
+	                         });
+	classList.push(...isClasses, ...hasClasses);
+	if(classes['colour'])
+		classList.push(getColourClass(classes['colour'], 'text'));
+	return classList
+
+}
+
+export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {
+	const classes: string[] = [];
+	if(!item.dropdown)
+		return classes;
+	// ? used if statements of explicit properties instead of generic bulma `getBulmaClassesFromProps`
+	// ? to avoid any `is` naming conflicts; if the user adds any names prefixed with `is` or `has` adding redundant classes
+	classes.push('has-dropdown');
+	const {isRight, isDropUp, isArrowless, isBoxed, isHoverable} = item.dropdown;
+	if(isDropUp)
+		classes.push('is-up');
+	else if(isRight)
+		classes.push('is-right');
+	else if(isHoverable)
+		classes.push('is-hoverable');
+	else if(isBoxed)
+		classes.push('is-boxed');
+	else if(isArrowless)
+		classes.push('is-arrowless');
+	else if(item.dropdown.isExpanded)
+		classes.push('is-expanded');
+	return classes;
 
 }
 

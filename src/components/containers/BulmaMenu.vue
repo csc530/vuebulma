@@ -3,7 +3,6 @@
 		<template v-for="value in menu">
 			<component :is="labelTag" class="menu-label">{{ value.label }}</component>
 			<ul class="menu-list">
-				<!--! todo: find out how to limit depth level to 2 arrays-->
 				<li v-for="item in value.items" :key="item">
 
 					<template v-if="isMenu(item)">
@@ -30,16 +29,16 @@
 </style>
 
 <script lang="ts" setup>
-import {isMenu, Menu} from "../../types/types";
+	import {isMenu, Menu} from "../../types/types";
 
-const props = withDefaults(defineProps<{
-			tag?: string;
-			menu: Menu[];
-			labelTag?: string;
-		}>(),
-		{
-			tag: 'aside',
-			labelTag: 'p'
-		});
+	const props = withDefaults(defineProps<{
+				tag?: string;
+				menu: Menu[];
+				labelTag?: string;
+			}>(),
+			{
+				tag: 'aside',
+				labelTag: 'p'
+			});
 </script>
 
