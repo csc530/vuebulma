@@ -1,9 +1,6 @@
 <template>
-	<!--	todo: make helper to include 'has' classes as well-->
 	<!--todo: straight binding the item causes sum wonky DOM exceptions need to figure out another way to bind attrs -->
-	<component :is="tag" :class="{'has-dropdown': isDropdown, 'is-hoverable': item?.dropdown?.isHoverable}"
-	           class="navbar-item"
-	           @click="emit('activate',$event, $el)">
+	<component :is="tag" :class="classes" :href="item?.href" class="navbar-item" @click="emit('activate',$event, $el)">
 
 		<template v-if="isDropdown">
 			<component :is="tag" class="navbar-link">{{ item.dropdown.link }}</component>
@@ -20,22 +17,20 @@
 		</template>
 
 		<slot v-else>
-			<!--todo: warn of danger that it's basically html injection-->
+			<!--! todo: improve HTML rendering (add check or sum idk) so its not such plain injection; is it even dangerous🤷🏿‍♂️-->
 			<component :is="item.tagName" v-if="isHTMLElement(item)" ref="htmlElement"/>
-			<component :is="item" v-else-if="item.isComponent" v-bind="item"/>
+			<component :is="item.isComponent" v-else-if="item.isComponent" v-bind="item.props"/>
 			<template v-else>{{ item }}</template>
 		</slot>
 	</component>
 </template>
 
-<style scoped>
-
-</style>
 
 <script lang="ts" setup>
 
+
 	import {computed, onMounted, ref} from "vue";
-	import {isHTMLElement, NavBarItem} from "../../../types/types.js";
+	import {BulmaNavBarItem, getNavbarItemClasses, isHTMLElement} from "../../../types/types.js";
 
 	const emit = defineEmits<{
 		(name: 'activate', event: Event, el: HTMLElement): void;
@@ -43,17 +38,19 @@
 
 	const props = withDefaults(defineProps<{
 		tag?: 'div' | 'a',
-		item: any | NavBarItem | HTMLElement;
+		item: any | BulmaNavBarItem | HTMLElement;
 	}>(), {
 		tag: 'a'
 	});
 
 	const htmlElement = ref<HTMLElement | null>(null);
 	onMounted(() => {
-		if (htmlElement.value)
+		if(htmlElement.value)
 			htmlElement.value.outerHTML = props.item.outerHTML;
 	});
 
-	const isDropdown = computed(() => (props.item as NavBarItem).dropdown !== undefined);
+	const isDropdown = computed(() => (props.item as BulmaNavBarItem).dropdown !== undefined);
+	//{'has-dropdown': isDropdown, 'is-hoverable': item?.dropdown?.isHoverable, 'is-boxed': item?.dropdown?.isBoxed, 'has-dropdown-up': item?.dropdown?.isDropUp
+	const classes = computed(() => getNavbarItemClasses(props.item));
 </script>
 

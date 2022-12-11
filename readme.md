@@ -39,29 +39,40 @@ app.mount('#app')
 
 When working with the `BulmaNavbar` component, you can use the `BulmaNavbarItem` helper type when passing in items. This
 type has the isComponent property to render passed in Vue components as is to the navbar.
-ex.
 
 ```vue
 
 <template>
-	<BulmaNavbar :start-items="items"/>
+	<BulmaNavbar :items="items"/>
 </template>
 
 <script lang="ts" setup>
-	// Import the type
-	import {NavBarItem} from '@csc530/vuebulma/types';
-	import {myCustomComponent} from './myCustomComponent.vue';
+	import {BulmaNavBarItem} from '@csc530/vuebulma/types'
+	//If you are going to dynamically render component from component definitions, it must be explicitly imported
+	import {BulmaImage} from "@csc530/vuebulma";
+	import myCustomComponent from "./MyCustomComponent.vue";
 
-	const myComponent = myCustomComponent;
-	// Add `isComponent` property to the component
-	// This will render the component as is in the navbar
-	myComponent.isComponent = true;
+	const customComponent = {
+		component: 'myCustomComponent',
+		// to apply component props/attributes, use the props property
+		isComponent: true,
+		props: {
+			customProp: true,
+			cutomProp2: 'hello'
+		}
+	};
+	const bulmaImg = {
+		component: BulmaImage,
+		props: {src: 'https://bulma.io/images/bulma-logo.png'},
+		isComponent: true
+	};
 
-	const items: NavBarItem[] = [myComponent];
+	const items: BulmaNavBarItem[] = [customComponent, bulmaImg];
 </script>
 ```
 
-or you can create HTMLElements and render them as such.
+Or, you can create
+HTMLElements and render them as such.
 
 ```vue
 
@@ -70,7 +81,7 @@ or you can create HTMLElements and render them as such.
 </template>
 
 <script lang="ts" setup>
-	import {NavBarItem} from '@csc530/vuebulma/types';
+	import {BulmaNavBarItem} from '@csc530/vuebulma/types';
 
 	const fancyButton = document.createElement('button');
 	fancyButton.innerText = 'Fancy Button';
@@ -79,7 +90,7 @@ or you can create HTMLElements and render them as such.
 
 	// Navbar will test if it's an HTMLElement
 	// if so render it as is
-	const items: NavBarItem[] = [
+	const items: BulmaNavBarItem[] = [
 		document.createElement('a'),
 		fancyButton
 	];
@@ -87,7 +98,7 @@ or you can create HTMLElements and render them as such.
 ```
 
 This is  **not *highly* recommended** as the HTML
-is [basically injected into the DOM](./src/components/containers/navbar/BulmaNavbarItem.vue?line=39).
+is [basically injected into the DOM](./src/components/containers/navbar/BulmaNavbarItem.vue#L39).
 
 ---
 I highly recommend setting the `tag` prop whenever possible to reduce the amount of **non-semantic** `div` tags in your

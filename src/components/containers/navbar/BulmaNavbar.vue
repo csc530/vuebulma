@@ -37,12 +37,13 @@
 </style>
 
 <script lang="ts" setup>
-	import {computed, ref} from "vue";
-	import {Colours, getBulma_IS_Classes, getColourClass} from "../../../types/types";
+	import {computed, ref, watch} from "vue";
+	import {Colours, getBulmaClassesFromProps} from "../../../types/types";
 	import BulmaNavbarItem from "./BulmaNavbarItem.vue";
 
 	const emit = defineEmits<{
 		(name: 'navbarBurger', event: MouseEvent, el: HTMLElement): void;
+		(name: 'itemClick', item: any, event: Event, element: HTMLElement): void;
 	}>();
 
 	const props = withDefaults(defineProps<{
@@ -54,30 +55,34 @@
 		isTransparent?: boolean,
 		isSpaced?: boolean,
 		isTab?: boolean | 'menu' | 'start' | 'end' | 'brand' | 'brand&end' | 'all',
-		//todo: add emit for activate items
-		activateItems?: boolean
-		//todo: add item logic for when an item should have the expanded class but also if it's just one item too (optional)
-		expandActiveItems?: boolean;
-		// todo: add second step or documentation for the html/body element to append the has-navbar-fixed-top class
 		isFixed?: 'top' | 'bottom' | false,
 		/** items which are always visible shown on the lefthandside of the navbar*/
 		startItems?: any[],
 		/**Tag to wrap brand items in */
 		startItemTag?: 'div' | 'a',
-		hasDropdowns?: boolean,
 	}>(), {
 		middleItemTag: 'a',
 		endItemTag: 'a',
 		startItemTag: 'a'
 	});
 
-	const classes = computed(() => {
-		const is = getBulma_IS_Classes(props);
-		if (props.colour)
-			is.push(getColourClass(props.colour, 'text'));
-		return is;
-	});
+	const classes = computed(() => getBulmaClassesFromProps(props));
 	const tab = ref(props.isTab);
-	const itemModifiers = ref(getBulma_IS_Classes(props));
+	const itemModifiers = ref(getBulmaClassesFromProps(props));
+
+	watch(props, (props) => {
+		const fixedPos = props.isFixed;
+		if(fixedPos) {
+			document.body.classList.add(`has-navbar-fixed-${fixedPos}`);
+			const oppositePosition = fixedPos === 'top' ? 'bottom' : 'top';
+			if(document.body.classList.contains(`has-navbar-fixed-${oppositePosition}`)) {
+				document.body.classList.remove(`has-navbar-fixed-${oppositePosition}`);
+			}
+		}
+		else {
+			document.body.classList.remove('has-navbar-fixed-top');
+			document.body.classList.remove('has-navbar-fixed-bottom');
+		}
+	});
 </script>
 

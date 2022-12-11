@@ -1,7 +1,8 @@
 <template>
 	<bulma-box>
+		<component :is="bulmaImg.component" src="https://www.google.com/logo.svg" :alt="3"></component>
 		<BulmaHeading :size="2">Navbar</BulmaHeading>
-		<bulma-navbar colour="warning" :end-items="end" :middle-items="start" is-tab start-item-tag="div"
+		<bulma-navbar :end-items="end" :middle-items="start" colour="warning" is-tab start-item-tag="div"
 		              v-bind:start-items="elems"/>
 	</bulma-box>
 </template>
@@ -15,7 +16,7 @@
 	import BulmaImage from "../components/BulmaImage.vue";
 	import BulmaBox from "../components/containers/BulmaBox.vue";
 	import BulmaNavbar from "../components/containers/navbar/BulmaNavbar.vue";
-	import {NavBarItem} from "../types/types";
+	import {BulmaNavBarItem} from "../types/types";
 
 	const brand = ['Agumon', 'Gabumon', 'Tentomon'];
 	const start = ['Home', 'Documentation', 'Blog'];
@@ -25,7 +26,7 @@
 	digiP.style.padding = '0';
 	//wrap text in digiP
 	digiP.style.whiteSpace = 'pre-wrap';
-	const digimonDD: NavBarItem = {
+	const digimonDD: BulmaNavBarItem = {
 		dropdown: {
 			link: 'Digimon',
 			items: ['Agumon', 'Gabumon', 'Tentomon', 'BlackWarGreymon', digiP, 'MetalGarurumon (X)'],
@@ -33,7 +34,7 @@
 			isHoverable: true
 		}
 	}
-	const pokeImg: NavBarItem & HTMLImageElement = document.createElement('img');
+	const pokeImg: BulmaNavBarItem & HTMLImageElement = document.createElement('img');
 	pokeImg.src = 'https://th.bing.com/th/id/OIP.AQMEsYkmX3ezJK5xiT4diQHaI4?pid=ImgDet&w=201&h=241&c=7&dpr=1.3';
 	pokeImg.style.height = '2em';
 	pokeImg.style.width = '2em';
@@ -42,7 +43,7 @@
 	pokeImg.style.backgroundColor = 'white';
 	pokeImg.style.boxShadow = '0 0 0.5em 0.5em #646CFFAA';
 
-	const pokemonDd: NavBarItem = {
+	const pokemonDd: BulmaNavBarItem = {
 		dropdown: {
 			link: 'Pokemon',
 			items: ['Pikachu', 'Charmander', 'Bulbasaur', pokeImg],
@@ -51,16 +52,15 @@
 	}
 	const end = [pokemonDd, digimonDD, 'I love you💝'];
 
-	// create an instance of BulmaImage component
-	//? which is also very hacky js because if I try and make another one it's simple one object
-	//? and not like a class instance, so I can't just make a new one
-	const img = BulmaImage;
-	// set the props of the component
-	img.src = 'https://bulma.io/images/bulma-logo.png';
-	img.alt = 'Bulma: a modern CSS framework based on Flexbox';
-	img.width = 112;
-	img.height = 28;
-	img.isComponent = true;
+	// create a BulmaImage 'component'
+	const bulmaImg: BulmaNavBarItem = {
+		component: BulmaImage,
+		src: 'https://th.bing.com/th/id/OIP.AQMEsYkmX3ezJK5xiT4diQHaI4?pid=ImgDet&w=201&h=241&c=7&dpr=1.3',
+		size: '32x32',
+		rounded: true,
+		isComponent: true
+	}
+
 
 	let ball = document.createElement('div');
 	ball.classList.add('lds-dual-ring');
@@ -69,7 +69,7 @@
 	styleEl.innerHTML = style;
 
 	const elems = [
-		img,
+		bulmaImg,
 		ball,
 		styleEl
 	]

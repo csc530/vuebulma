@@ -1,3 +1,5 @@
+import {Component} from "vue";
+
 export interface BreadcrumbItem extends Link {
 	isActive: boolean,
 }
@@ -8,7 +10,7 @@ export interface Link {
 }
 
 export const getLinkText = (link: Link): string => {
-	if (typeof link.text === 'string') {
+	if(typeof link.text === 'string') {
 		return link.text;
 	}
 	return link.text();
@@ -37,11 +39,11 @@ export type ColourHelper = {
 };
 
 export function getColourClass(colour: ColourHelper | Colours, type: 'background' | 'text'): string {
-	if (typeof colour === 'string')
+	if(typeof colour === 'string')
 		return `is-${colour}`;
-	else if (!colour.shade || colour.shade === 'default')
+	else if(!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
-	else if (colour.shade === 'dark' || colour.shade === 'black')
+	else if(colour.shade === 'dark' || colour.shade === 'black')
 		return `has-${type}-${colour.colour}-dark`;
 	return `has-${type}-${colour.colour}-light`;
 }
@@ -75,7 +77,7 @@ export type Size = 'small' | 'default' | 'medium' | 'large';
 export const getSizes = (): Size[] => ['small', 'default', 'medium', 'large'];
 
 export function getSizeClasses(size?: Size): string {
-	if (!size || size === 'default')
+	if(!size || size === 'default')
 		return '';
 	return `is-${size}`;
 }
@@ -84,7 +86,7 @@ export type LeftRight = 'left' | 'right';
 export const getLeftRight = (): LeftRight[] => ['left', 'right'];
 
 export function getLeftRightClasses(leftRight?: LeftRight): string {
-	if (!leftRight)
+	if(!leftRight)
 		return '';
 	return `is-${leftRight}`;
 }
@@ -93,13 +95,13 @@ export type Alignment = 'center' | LeftRight;
 export const getAlignments = (): Alignment[] => ['left', 'center', 'right'];
 
 export function getAlignmentClasses(alignment?: Alignment): string {
-	if (!alignment)
+	if(!alignment)
 		return '';
 	return `is-${alignment}`;
 }
 
 export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void {
-	if (!invoke) return;
+	if(!invoke) return;
 	const target = element ? element : event.target as HTMLElement;
 	target.classList.toggle('is-active');
 }
@@ -165,7 +167,7 @@ export type Dimensions = 16 | 24 | 32 | 48 | 64 | 96 | 128;
 export const getDimensions = (): Dimensions[] => [16, 24, 32, 48, 64, 96, 128];
 
 export function getDimensionClasses(dimension?: Dimensions): string {
-	if (!dimension)
+	if(!dimension)
 		return '';
 	const dim = removeDecimals(dimension);
 	return `is-${dim}x${dim}`;
@@ -191,7 +193,7 @@ export type AspectRatios =
 export const getAspectRatios = (): AspectRatios[] => ['square', '1by1', '5by4', '4by3', '3by2', '5by3', '16by9', '2by1', '3by1', '4by5', '3by4', '2by3', '3by5', '9by16', '1by2', '1by3'];
 
 export function getAspectRatioClasses(aspectRatio?: AspectRatios): string {
-	if (!aspectRatio)
+	if(!aspectRatio)
 		return '';
 	return `is-${aspectRatio}`;
 }
@@ -228,16 +230,20 @@ export function isHTMLElement(element: any): element is HTMLElement {
 	return element instanceof HTMLElement;
 }
 
-export type NavBarItem = object & {
-	isComponent?: boolean;
+export type BulmaNavBarItem = {
 	dropdown?: {
-		link: string;
-		items: any[];
-		isHoverable?: boolean;
-		isDropUp?: boolean;
-		isBoxed?: boolean;
 		isArrowless?: boolean;
+		isBoxed?: boolean;
+		isDropUp?: boolean;
+		isExpanded?: boolean;
+		isHoverable?: boolean;
 		isRight?: boolean;
+		items: any[];
+		link: string;
 	};
 	href?: string | URL;
+	/** does not explicitly support vue class component reference (yet) */
+	isComponent?: string | Component;
+	props?: Record<string, any>
+	[other: string]: unknown;
 };
