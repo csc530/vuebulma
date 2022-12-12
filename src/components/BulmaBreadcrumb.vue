@@ -22,9 +22,9 @@
 </style>
 
 <script lang="ts" setup>
-	import { computed} from 'vue';
-	import {BreadcrumbItem, getSizeClasses, Size} from '../types/types';
-	
+	import {computed} from 'vue';
+	import {BreadcrumbItem, BulmaSizes, getSizeClasses} from '../types/types';
+
 	type ArrayElement<ArrayType extends readonly unknown[]> =
 			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 	
@@ -39,7 +39,7 @@
 		/// the separator to use between breadcrumbs; defaults to '/'; slash
 		separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
 		/// the size of the breadcrumbs
-		size?: Size
+		size?: BulmaSizes
 	}>();
 	
 	

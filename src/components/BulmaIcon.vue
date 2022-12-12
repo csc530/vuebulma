@@ -26,8 +26,8 @@
 
 <script lang="ts" setup>
 	import {computed, ref, useSlots} from 'vue';
-	import {ColourHelper, ColourIcon, getColourClass, getSizeClasses, Size} from '../types/types';
-	
+	import {BulmaSizes, ColourHelper, ColourIcon, getColourClass, getSizeClasses} from '../types/types';
+
 	const props = defineProps<{
 		///The icon class name with style prefix, fa-solid fa-shield-cat || [fa-solid, fa-shield-cat]
 		icon: string | string[] | ColourIcon[],
@@ -36,7 +36,7 @@
 		colour?: ColourHelper,
 		//background colour
 		bgColour?: ColourHelper,
-		containerSize?: Size,
+		containerSize?: BulmaSizes,
 		///adds this prefix as a separate class entry to icon element
 		prefix?: string,
 		///if the icon will be placed after the text (slot) element

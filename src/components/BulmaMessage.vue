@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 	import {computed, defineEmits} from "vue";
-	import {Colours, getSizeClasses, Size} from "../types/types";
+	import {BulmaSizes, Colours, getSizeClasses} from "../types/types";
 
 	const emit = defineEmits<{
 		(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
@@ -28,7 +28,7 @@
 				deleteBtn?: boolean;
 				bodyTag?: string;
 				colour?: Colours;
-				size?: Size;
+				size?: BulmaSizes;
 				closeOnXClick?: boolean | 'hide' | 'remove';
 			}>(),
 			{

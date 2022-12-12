@@ -38,7 +38,7 @@ export type ColourHelper = {
 	colour: StateColours;
 };
 
-export function getColourClass(colour: ColourHelper | Colours, type: 'background' | 'text'): string {
+export function getColourClass(colour: ColourHelper | Colours | ButtonColours, type: 'background' | 'text'): string {
 	if(typeof colour === 'string')
 		return `is-${colour}`;
 	else if(!colour.shade || colour.shade === 'default')
@@ -73,13 +73,13 @@ export interface ColourIcon {
 }
 
 
-export type Size = 'small' | 'default' | 'medium' | 'large';
-export const getSizes = (): Size[] => ['small', 'default', 'medium', 'large'];
+export type BulmaSizes = 'small' | 'default' | 'medium' | 'large';
+export const getSizes = (): BulmaSizes[] => ['small', 'default', 'medium', 'large'];
 
-export function getSizeClasses(size?: Size): string {
+export function getSizeClasses(size?: BulmaSizes, areClasses?: boolean): string {
 	if(!size || size === 'default')
 		return '';
-	return `is-${size}`;
+	return areClasses ? `is-${size}` : `are-${size}`;
 }
 
 export type LeftRight = 'left' | 'right';
@@ -95,6 +95,7 @@ export type Alignment = 'center' | LeftRight;
 export const getAlignments = (): Alignment[] => ['left', 'center', 'right'];
 
 export function getAlignmentClasses(alignment?: Alignment): string {
+	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return '';
 	return `is-${alignment}`;
@@ -109,7 +110,7 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 export const toIsClassName = (name: string): string => `is-${name}`;
 
 //todo: extend usability to add logic if it's alignment, colour, etc
-export function getBulmaClassesFromProps(classes: Record<string, any>): string[] {
+export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
 	const classList: string[] = [];
 	const isClasses = Object.keys(classes)
@@ -135,8 +136,11 @@ export function getBulmaClassesFromProps(classes: Record<string, any>): string[]
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
 		classList.push(getColourClass(classes['colour'], 'text'));
+	if(classes.alignment)
+		classList.push(getAlignmentClasses(classes.alignment));
+	if(classes.size)
+		classList.push(getSizeClasses(classes.size, areSizes));
 	return classList
-
 }
 
 export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {
@@ -247,3 +251,26 @@ export type BulmaNavBarItem = {
 	props?: Record<string, any>
 	[other: string]: unknown;
 };
+
+export type ButtonColours = 'text' | 'ghost' & Colours;
+
+export interface BulmaButton {
+	/** The button's label */
+	label: string;
+	tag?: 'button' | 'a';
+	colour?: ButtonColours
+	isLight?: boolean;
+	size?: BulmaSizes
+	isNormal?: boolean;
+	isResponsive?: boolean;
+	isFullWidth?: boolean;
+	isOutlined?: boolean;
+	isInverted?: boolean;
+	isRounded?: boolean;
+	isLoading?: boolean;
+	isStatic?: boolean;
+	hasAddons?: boolean;
+	isActive?: boolean;
+
+	onClick(event: Event): void;
+}
