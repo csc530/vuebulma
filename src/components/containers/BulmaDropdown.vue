@@ -9,10 +9,10 @@
 			<component :is="tag" class="dropdown-content">
 
 				<component :is="itemTag" v-for="(item,i) in content" ref="item" class="dropdown-item"
-				           @click="emit('itemClick', item,$event, $refs.item)">
+				           @click="emit('itemClick', item,$event, $refs.item)" :key="item+'-'+i">
 					<!--!	todo: add better values for a divider-->
-					<hr v-if="item === null || item === undefined " class="dropdown-divider"/>
-					<slot v-else-if="$slots['dropdown-item']" name="dropdown-item" v-bind:data="item"/>
+					<hr v-if="item === null || item === undefined " class="dropdown-divider" />
+					<slot v-else-if="$slots['dropdown-item']" name="dropdown-item" v-bind:data="item" />
 					<component :is="tag" v-else class="dropdown-item">{{ item }}</component>
 				</component>
 
@@ -20,10 +20,6 @@
 		</component>
 	</component>
 </template>
-
-<style scoped>
-
-</style>
 
 <script lang="ts" setup>
 

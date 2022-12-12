@@ -21,7 +21,10 @@
   "keywords": [
     "vue3",
     "Bulma",
-    "vue3-component-library"
+    "vue3 component library",
+    "Vue",
+    "components",
+    "component library"
   ],
   "files": [
     "dist/*"

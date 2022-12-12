@@ -3,8 +3,9 @@ import BulmaHeading from './components/BulmaHeading.vue';
 import BulmaIcon from './components/BulmaIcon.vue';
 import BulmaImage from './components/BulmaImage.vue';
 import BulmaMessage from './components/BulmaMessage.vue'
+import BulmaButton from "./components/button/BulmaButton.vue";
+import BulmaButtons from "./components/button/BulmaButtons.vue";
 import BulmaBlock from './components/containers/BulmaBlock.vue';
-//* Containers
 import BulmaBox from './components/containers/BulmaBox.vue';
 import BulmaDropdown from './components/containers/BulmaDropdown.vue'
 import BulmaMenu from './components/containers/BulmaMenu.vue'
@@ -17,12 +18,14 @@ const vuebulma = {
 		Vue.component('BulmaImage', BulmaImage);
 		Vue.component('BulmaBreadcrumb', BulmaBreadcrumb);
 		Vue.component('BulmaMessage', BulmaMessage);
-		// * Containers
 		Vue.component('BulmaBox', BulmaBox);
 		Vue.component('BulmaBlock', BulmaBlock);
 		Vue.component('BulmaDropdown', BulmaDropdown);
 		Vue.component('BulmaNavBar', BulmaNavbar);
 		Vue.component('BulmaMenu', BulmaMenu);
+		Vue.component('BulmaButton', BulmaButton);
+		//todo: come up with a better name than buttonS to make the difference and use clear
+		Vue.component('BulmaButtons', BulmaButtons);
 	}
 };
 
@@ -37,5 +40,7 @@ export {
 	BulmaMessage,
 	BulmaMenu,
 	BulmaNavbar,
+	BulmaButton,
+	BulmaButtons,
 	vuebulma
 };

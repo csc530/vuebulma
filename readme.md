@@ -1,8 +1,13 @@
 # Bulma component library for Vue3
 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
+
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
 ![npm](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
+
 ## Disclaimer
+
+Developed with/for Vue v3.2.45 and Bulma v0.9.4
 
 This package is very much still under active development. It is not recommended to use this in production. Feel free to
 help or report any issues😃.
@@ -35,6 +40,17 @@ app.mount('#app')
 
 ## Documentation
 
+### Bulma CSS/style
+
+This library is like a wrapper for Bulma and does not modify any of its CSS if you need help using Bulma or its classes,
+refer to the [Bulma documentation](https://bulma.io/documentation/).
+
+### Addition
+
+This library adds some built-in JS to make Bulma's styling and classes work seamlessly
+like [appending is-active](/src/components/containers/BulmaDropdown.vue#L4) to a
+clicked [dropwdown](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)
+
 ### Navbar
 
 When working with the `BulmaNavbar` component, you can use the `BulmaNavbarItem` helper type when passing in items. This
@@ -43,7 +59,7 @@ type has the isComponent property to render passed in Vue components as is to th
 ```vue
 
 <template>
-	<BulmaNavbar :items="items"/>
+	<BulmaNavbar :items="items" />
 </template>
 
 <script lang="ts" setup>
@@ -77,7 +93,7 @@ HTMLElements and render them as such.
 ```vue
 
 <template>
-	<BulmaNavbar :start-items="items"/>
+	<BulmaNavbar :start-items="items" />
 </template>
 
 <script lang="ts" setup>
@@ -101,10 +117,12 @@ This is  **not *highly* recommended** as the HTML
 is [basically injected into the DOM](./src/components/containers/navbar/BulmaNavbarItem.vue#L39).
 
 ---
-I highly recommend setting the `tag` prop whenever possible to reduce the amount of **non-semantic** `div` tags in your
+I highly recommend setting the `tag` prop whenever possible to reduce the amount of [
+*non-semantic*](https://developer.mozilla.org/en-US/docs/Glossary/semantics#semantics_in_html) `div` tags in your
 HTML.
 
-**Need scoped (or global) import of Bulma's CSS/SASS/... when using components.** I kept the import of the actual css
+**Need scoped (or global) import/`<link/>` of Bulma's CSS/SASS/... when using components.** I kept the import of the
+actual css
 separate (*now*).
 
 ## Components
@@ -114,7 +132,7 @@ separate (*now*).
 - Box
 - Breadcrumb
 - Icon
-- Title => `BulmaHeading`
+- Title => [`BulmaHeading`](./src/components/BulmaHeading.vue)
 - Navbar
 - Image
 - Menu
