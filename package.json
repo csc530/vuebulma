@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-3",
+  "version": "0.0.0-4",
   "preview": true,
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "type": "module",
   "author": "Christofer Cousins",
-  "description": "Vue3 components for Bulma CSS",
+  "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
     "vue3",
     "Bulma",
