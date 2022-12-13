@@ -7,10 +7,11 @@
 			<button>Click Me!</button>
 			<!--			todo: make it less clunky to button dropwdown class to parent element-->
 		</bulma-dropdown>
-		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" isDropup is-hoverable tag="p">
+		<BulmaDropdown :content="['we\'re','left', 'aligned', 'and','🆙']" is-dropup is-hoverable tag="p">
 			<p class="button"><code>p</code> trigger</p>
 		</BulmaDropdown>
-		<bulma-dropdown :content="['you got a hover to see me', null, 'hey look a divider', undefined, '🤷🏿‍♂️']"
+		<bulma-dropdown :is-dropup="true"
+		                :content="['you got a hover to see me', null, 'hey look a divider', undefined, '🤷🏿‍♂️']"
 		                :on-click="false" is-hoverable>
 			<p class="button">Hoverable but not clickable</p>
 		</bulma-dropdown>
