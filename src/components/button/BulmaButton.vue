@@ -1,5 +1,7 @@
 <template>
-	<component :is="tag" :class="classes" class="button">{{ label }}</component>
+	<component :is="tag" :class="classes" class="button">
+		<slot>{{ label }}</slot>
+	</component>
 </template>
 
 <script lang="ts" setup>

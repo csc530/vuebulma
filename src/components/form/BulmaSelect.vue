@@ -24,6 +24,8 @@
 		isStatic?: boolean
 		options?: { text: string, value: any }[] | string[]
 		modelValue?: any
+		/** Must pair with BulmaFormControl with isExpanded prop top work; makes select expand to fill its parent */
+		isFullWidth?: boolean
 	}>();
 
 	const emit = defineEmits<{
