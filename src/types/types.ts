@@ -121,7 +121,8 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 			                        className = 'is-up';
 		                        else if(className === 'isfixed')
 			                        className = 'is-fixed-' + classes[key];
-		                        else if(!className.includes('-'))
+		                        // ? no need to check for `-` in key as vue transforms it to camelCase
+		                        else
 			                        className = className.replace('is', 'is-');
 		                        return className;
 	                        });
@@ -129,9 +130,16 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                         .filter(key => classes[key] && key.includes('has'))
 	                         .map(key => {
 		                         let className = key.toLowerCase();
-		                         if(!className.includes('-'))
+		                         if(className === 'hasicons' && classes[key] !== false) {
+			                         className = 'has-icons-';
+			                         if(classes[key] === 'both' || classes[key] === true)
+				                         className += 'left has-icons-right';
+			                         else
+				                         className += classes[key];
+		                         }
+		                         else
 			                         className = className.replace('has', 'has-');
-		                         return toIsClassName(className);
+		                         return className;
 	                         });
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
