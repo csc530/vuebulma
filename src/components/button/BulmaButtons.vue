@@ -9,16 +9,16 @@
 
 <script lang="ts" setup>
 	import {computed, ref} from "vue";
-	import {Alignment, BulmaButton as pp, BulmaSizes, getBulmaClassesFromProps} from "../../types/types";
+	import {BulmaAlignment, BulmaButton as pp, BulmaSizes, getBulmaClassesFromProps} from "../../types/types";
 	import BulmaButton from "./BulmaButton.vue";
 
 	const props = withDefaults(defineProps<{
 		tag?: string
 		size?: BulmaSizes
 		hasAddons?: boolean
-		alignment?: Alignment
+		alignment?: BulmaAlignment
 		activateOnClick?: boolean | 'singly'
-		items?: string[] | pp
+		items?: string[] | pp[]
 	}>(), {
 		tag: 'div'
 	});
@@ -29,7 +29,6 @@
 	const clickHandler = (index: number) => {
 		if(buttons.value)
 			buttons.value.forEach((button, i) => button.isSelected = i === index);
-
 	};
 </script>
 

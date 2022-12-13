@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {getHeaderSize, TextSizes} from '../types/types';
+	import {BulmaHeadingTypes, getHeaderSize, HeaderSizes} from '../types/types';
 
 	const props = withDefaults(defineProps<{
 				///If there will be regular spacing between `title`s and `subtitle`s
@@ -18,9 +18,9 @@
 				///The container element or component for the BulmaHeading, defaults to `p`
 				tag?: string,
 				///Text size 1-6; 1 being the largest, defaults to 1
-				size?: TextSizes,
+				size?: HeaderSizes,
 				///A title or subtitle, defaults to title
-				type?: 'title' | 'subtitle'
+				type?: BulmaHeadingTypes
 			}>(),
 			{tag: 'p', size: 1, type: 'title'});
 	

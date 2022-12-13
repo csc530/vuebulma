@@ -59,7 +59,7 @@
 			type: Boolean as PropType<boolean>,
 			default: false
 		},
-		isDropup: {
+		'is-dropup': {
 			type: Boolean as PropType<boolean>,
 			default: false
 		}

@@ -16,19 +16,19 @@ export const getLinkText = (link: Link): string => {
 	return link.text();
 };
 
-export type TextSizes = 1 | 2 | 3 | 4 | 5 | 6;
-export const getHeaderSize = (size: TextSizes): string => 'is-' + removeDecimals(size);
+export type HeaderSizes = 1 | 2 | 3 | 4 | 5 | 6;
+export const getHeaderSize = (size: HeaderSizes): string => 'is-' + removeDecimals(size);
 
 
 type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link';
 type Shade = 'white' | 'black' | 'light' | 'dark' | 'default';
-export type Colours = StateColours | Shade;
+export type BulmaColours = StateColours | Shade;
 
 export function getColours(shade?: Shade): ColourHelper[] {
 	//from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
 	// const shades: Shade[] = ['white', 'black', 'light', 'dark', 'default'];
 	const states: StateColours[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
-	// const colours: Colours[] = [...states, ...shades];
+	// const colours: BulmaColours[] = [...states, ...shades];
 	//set shade to default if not provided
 	return states.map<ColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
 }
@@ -38,7 +38,7 @@ export type ColourHelper = {
 	colour: StateColours;
 };
 
-export function getColourClass(colour: ColourHelper | Colours | ButtonColours, type: 'background' | 'text'): string {
+export function getColourClass(colour: ColourHelper | BulmaColours | ButtonColours, type: 'background' | 'text'): string {
 	if(typeof colour === 'string')
 		return `is-${colour}`;
 	else if(!colour.shade || colour.shade === 'default')
@@ -65,7 +65,7 @@ const getGrayscale = (): Grayscale[] => {
 };
 
 //? stack question what monstrosity have I created lol
-export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & Colours;
+export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColours;
 
 export interface ColourIcon {
 	icon: string;
@@ -91,10 +91,10 @@ export function getLeftRightClasses(leftRight?: LeftRight): string {
 	return `is-${leftRight}`;
 }
 
-export type Alignment = 'center' | LeftRight;
-export const getAlignments = (): Alignment[] => ['left', 'center', 'right'];
+export type BulmaAlignment = 'center' | LeftRight;
+export const getAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
 
-export function getAlignmentClasses(alignment?: Alignment): string {
+export function getAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return '';
@@ -260,7 +260,7 @@ export type BulmaNavBarItem = {
 	[other: string]: unknown;
 };
 
-export type ButtonColours = 'text' | 'ghost' & Colours;
+export type ButtonColours = 'text' | 'ghost' & BulmaColours;
 
 export interface BulmaButton {
 	/** The button's label */
@@ -282,3 +282,5 @@ export interface BulmaButton {
 
 	onClick(event: Event): void;
 }
+
+export type BulmaHeadingTypes = 'title' | 'subtitle';
