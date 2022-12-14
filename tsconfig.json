@@ -1,4 +1,5 @@
 {
+  //todo: check out typeDoc
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -17,7 +18,9 @@
     "skipLibCheck": true,
     // * For build type declarations
     "outDir": "dist",
-        "declaration": true
+    "declaration": true,
+    "pretty": true,
+    "removeComments": false,
   },
   "include": [
     "src/components",

@@ -14,8 +14,8 @@ import BulmaFileInput from "./components/form/BulmaFileInput.vue";
 import BulmaInput from "./components/form/BulmaInput.vue";
 import BulmaSelect from "./components/form/BulmaSelect.vue";
 import BulmaFormControl from "./components/form/groups/BulmaFormControl.vue";
-import BulmaFormGroup from "./components/form/groups/BulmaFormGroup.vue";
 import BulmaFormField from "./components/form/groups/BulmaFormField.vue";
+import BulmaFormControlGroup  from "./components/form/groups/BulmaFormControlGroup.vue";
 
 const vuebulma = {
 	install(Vue: any) {
@@ -35,7 +35,9 @@ const vuebulma = {
 		Vue.component('BulmaFileInput', BulmaFileInput);
 		Vue.component('BulmaInput', BulmaInput);
 		Vue.component('BulmaSelect', BulmaSelect);
-
+		Vue.component('BulmaFormControl', BulmaFormControl);
+		Vue.component('BulmaFormField', BulmaFormField);
+		Vue.component('BulmaFormControlGroup', BulmaFormControlGroup);
 	}
 };
 
@@ -55,5 +57,8 @@ export {
 	BulmaFileInput,
 	BulmaInput,
 	BulmaSelect,
+	BulmaFormControl,
+	BulmaFormField,
+	BulmaFormControlGroup,
 	vuebulma
 };

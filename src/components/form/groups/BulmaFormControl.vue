@@ -10,6 +10,7 @@
 
 	const props = withDefaults(defineProps<{
 		tag?: string
+		/** If the control should expand in parent; only applicable in BulmaFormGroups	 */
 		isExpanded?: boolean
 		//todo: add icons support https://bulma.io/documentation/form/general/#with-icons
 	}>(), {tag: 'p'});
