@@ -10,6 +10,12 @@ import BulmaBox from './components/containers/BulmaBox.vue';
 import BulmaDropdown from './components/containers/BulmaDropdown.vue'
 import BulmaMenu from './components/containers/BulmaMenu.vue'
 import BulmaNavbar from "./components/containers/navbar/BulmaNavbar.vue";
+import BulmaFileInput from "./components/form/BulmaFileInput.vue";
+import BulmaInput from "./components/form/BulmaInput.vue";
+import BulmaSelect from "./components/form/BulmaSelect.vue";
+import BulmaFormControl from "./components/form/groups/BulmaFormControl.vue";
+import BulmaFormGroup from "./components/form/groups/BulmaFormGroup.vue";
+import BulmaFormField from "./components/form/groups/BulmaFormField.vue";
 
 const vuebulma = {
 	install(Vue: any) {
@@ -26,6 +32,10 @@ const vuebulma = {
 		Vue.component('BulmaButton', BulmaButton);
 		//todo: come up with a better name than buttonS to make the difference and use clear
 		Vue.component('BulmaButtons', BulmaButtons);
+		Vue.component('BulmaFileInput', BulmaFileInput);
+		Vue.component('BulmaInput', BulmaInput);
+		Vue.component('BulmaSelect', BulmaSelect);
+
 	}
 };
 
@@ -42,5 +52,8 @@ export {
 	BulmaNavbar,
 	BulmaButton,
 	BulmaButtons,
+	BulmaFileInput,
+	BulmaInput,
+	BulmaSelect,
 	vuebulma
 };

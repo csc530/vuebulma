@@ -4,22 +4,29 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "noEmit": true,
-    "declaration": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    // * For build type declarations
+    "outDir": "dist",
+        "declaration": true
   },
   "include": [
-	  "src/**/*.ts",
-	  "src/**/*.d.ts",
-	  "src/**/*.tsx",
-	  "src/**/*.vue"
+    "src/components",
+    "src/vuebulma.ts",
+    "src/types"
   ],
-  "references": [{ "path": "./tsconfig.node.json"}]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

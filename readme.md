@@ -23,7 +23,9 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 ## Usage
 
-```javascript
+### Global
+
+```typescript
 // main.js
 
 import {createApp} from 'vue'
@@ -36,6 +38,19 @@ const app = createApp(App)
 // Use the library
 app.use(vuebulma)
 app.mount('#app')
+```
+
+### Local
+
+```vue
+
+<template>
+	<BulmaHeading>I'm a Bulma styled heading</BulmaHeading>
+</template>
+
+<script lang="ts" setup>
+	import {BulmaHeading} from '@csc530/vuebulma'
+</script>
 ```
 
 ## Documentation
