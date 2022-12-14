@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-6",
+  "version": "0.0.0-6.1",
   "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
@@ -15,7 +15,7 @@
 	"type": "git",
 	"url": "https://github.com/csc530/vue-bulma.git"
   },
-  "homepage": "https://github.com/csc530/vue-bulma#readme",
+  "homepage": "https://csc530.github.io/vuebulma/",
   "bugs": {
 	"url": "https://github.com/csc530/vuebulma/issues",
 	"email": "csc530@vivaldi.net"
@@ -28,7 +28,7 @@
   "main": "dist/vuebulma.js",
   "module": "dist/vuebulma.umd.cjs",
   "exports": {
-	".": {
+	"./dist/vuebulma": {
 	  "import": "./dist/vuebulma.js",
 	  "require": "./dist/vuebulma.umd.cjs"
 	}

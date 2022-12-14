@@ -42,7 +42,7 @@ app.use(vuebulma)
 app.mount('#app')
 ```
 
-### Local
+### Local \*(Recommended)\*
 
 ```vue
 
