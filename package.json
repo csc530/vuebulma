@@ -31,6 +31,10 @@
     "./dist/vuebulma": {
       "import": "./dist/vuebulma.js",
       "require": "./dist/vuebulma.umd.cjs"
+    },
+    "./dist/types": {
+      "import": "./dist/types.d.ts",
+      "require": "./dist/types.d.ts"
     }
   },
   "files": [
@@ -38,7 +42,7 @@
   ],
   "scripts": {
     "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/",
     "preview": "vite preview"
   },
   "dependencies": {

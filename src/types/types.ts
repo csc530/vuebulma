@@ -16,15 +16,16 @@ export const getLinkText = (link: Link): string => {
 	return link.text();
 };
 
-export type HeaderSizes = 1 | 2 | 3 | 4 | 5 | 6;
-export const getHeaderSize = (size: HeaderSizes): string => 'is-' + removeDecimals(size);
+export type BulmaHeaderSizes = 1 | 2 | 3 | 4 | 5 | 6;
+export const getBulmaHeaderSizeClass = (size: BulmaHeaderSizes): string => 'is-' + removeDecimals(size);
 
 
 type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link';
 type Shade = 'white' | 'black' | 'light' | 'dark' | 'default';
 export type BulmaColours = StateColours | Shade;
+export const getBulmaColours = (): BulmaColours[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'white', 'black', 'light', 'dark', 'default'];
 
-export function getColours(shade?: Shade): ColourHelper[] {
+export function getBulmaColoursHelpers(shade?: Shade): ColourHelper[] {
 	//from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
 	// const shades: Shade[] = ['white', 'black', 'light', 'dark', 'default'];
 	const states: StateColours[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
@@ -74,7 +75,7 @@ export interface ColourIcon {
 
 
 export type BulmaSizes = 'small' | 'default' | 'medium' | 'large';
-export const getSizes = (): BulmaSizes[] => ['small', 'default', 'medium', 'large'];
+export const getBulmaSizes = (): BulmaSizes[] => ['small', 'default', 'medium', 'large'];
 
 export function getSizeClasses(size?: BulmaSizes, areClasses?: boolean): string {
 	if(!size || size === 'default')
@@ -92,7 +93,7 @@ export function getLeftRightClasses(leftRight?: LeftRight): string {
 }
 
 export type BulmaAlignment = 'center' | LeftRight;
-export const getAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
+export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
 
 export function getAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
@@ -229,7 +230,7 @@ export interface NavBarDropdownItem {
 	/** The dropdown item's label */
 	label: string | any;
 	/** The dropdown items */
-	items: any[];
+	items: BulmaNavBarItem[];
 	isDropUp?: boolean;
 	isHoverable?: boolean;
 }
@@ -251,16 +252,17 @@ export type BulmaNavBarItem = {
 		isHoverable?: boolean;
 		isRight?: boolean;
 		items: any[];
-		link: string;
+		label: string;
 	};
 	href?: string | URL;
-	/** does not explicitly support vue class component reference (yet) */
 	isComponent?: string | Component;
 	props?: Record<string, any>
+	/** array of slot to pass to the component (only valid with isComponent); null name will be the default slot */
+	slot?: { name?: string, content: string }[];
 	[other: string]: unknown;
 };
 
-export type ButtonColours = 'text' | 'ghost' & BulmaColours;
+export type ButtonColours = 'text' | 'ghost' | BulmaColours;
 
 export interface BulmaButton {
 	/** The button's label */
