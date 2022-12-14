@@ -1,10 +1,12 @@
 <template>
-	<component :is="flex ? 'div' : 'span'" v-for="item in iconSet" v-bind:class="[rootClass,colourClass,size]">
-		
+	<component v-bind="$attrs" :is="flex ? 'div' : 'span'" v-for="item in iconSet"
+	           v-bind:class="[rootClass,colourClass,size]">
 		<span v-if="$slots.default && afterText">
 			<slot />
 		</span>
-		
+
+		<!--		todo:improve render of icon and binding of colour classes
+		to deeply nested two spans with class=icon-->
 		<span v-if="!stacked" :class="getIconColour(item)" class="icon">
 			<i :class="[prefix,getIconClass(item),iconModifiers]"></i>
 		</span>
@@ -13,48 +15,47 @@
 			<i :class="[prefix,getIconClass(icon),iconModifiers]"></i>
 			</span>
 		</span>
-		
+
 		<span v-if="$slots.default && !afterText">
 			<slot />
 		</span>
 	</component>
 </template>
 
-<style lang="sass">
-//@import "./node_modules/bulma/sass/elements/icon"
-</style>
-
 <script lang="ts" setup>
 	import {computed, ref, useSlots} from 'vue';
 	import {BulmaSizes, ColourHelper, ColourIcon, getColourClass, getSizeClasses} from '../types/types';
 
+
 	const props = defineProps<{
-		///The icon class name with style prefix, fa-solid fa-shield-cat || [fa-solid, fa-shield-cat]
+		/**The icon class name with style prefix, fa-solid fa-shield-cat || [fa-solid, fa-shield-cat]*/
 		icon: string | string[] | ColourIcon[],
 		flex?: boolean,
-		//Text colour
+		/**Text colour*/
 		colour?: ColourHelper,
-		//background colour
+		/**background colour*/
 		bgColour?: ColourHelper,
 		containerSize?: BulmaSizes,
-		///adds this prefix as a separate class entry to icon element
+		/**adds this prefix as a separate class entry to icon element*/
 		prefix?: string,
 		///if the icon will be placed after the text (slot) element
+		//todo: make a better and more intiuitive name for this
 		afterText?: boolean,
-		///if the icons will be stacked on top of each other rather than side by side
-		///if the icon stack needs a class added to it (e.g. fa-stack) then stacked string value will be appended to the icon's span
+		/** if the icons will be stacked on top of each other rather than side by side
+		 * if the icon stack needs a class added to it (e.g. fa-stack) then stacked string value will be appended to the icon's span
+		 */
 		stacked?: boolean | string,
 		///additional modifiers for the icon, class names will be added to the icon's i element
 		iconModifiers?: string[] | string,
 	}>();
-	
+
 	const rootClass = computed(() => {
 		if(useSlots().default)
 			return 'icon-text';
 		else
 			return 'icon';
 	});
-	
+
 	const iconSet = computed(() => {
 		if(props.stacked && props.icon instanceof Array)
 			return ['dummy entry just to make the loop work (once)'];
@@ -74,7 +75,7 @@
 			}
 		else
 			return [];
-		
+
 	});
 	const stackWrapper = computed(() => {
 		if(typeof props.stacked === 'string')
@@ -94,7 +95,7 @@
 		else
 			return getColourClass(icon.colour, 'text');
 	};
-	
+
 	const colourClass = computed(() => {
 		let classes = [];
 		if(props.colour)
@@ -103,8 +104,8 @@
 			classes.unshift(getColourClass(props.bgColour, 'background'));
 		return classes;
 	});
-	
-	
+
+
 	const size = computed(() => {
 		if(props.containerSize)
 			return getSizeClasses(props.containerSize);

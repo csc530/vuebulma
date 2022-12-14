@@ -2,7 +2,7 @@
 	<component :is="containerTag" :class="classes" class="message">
 		<component :is="headerTag" v-if="title || $slots.header" class="message-header">
 			<slot v-if="$slots.header" name="header"/>
-			<p v-else>{{ title }}</p>
+			<p v-else-if="title">{{ title }}</p>
 			<!--			todo: replace with bulma button/delete-->
 			<button v-if="deleteBtn" class="delete" @click="deleteOnClick($event, $el)"></button>
 		</component>
