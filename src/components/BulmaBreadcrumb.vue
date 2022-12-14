@@ -10,17 +10,6 @@
 	</component>
 </template>
 
-<style lang="sass">
-//$breadcrumb-item-color: $link
-//$breadcrumb-item-hover-color: $link-hover
-//$breadcrumb-item-active-color: $text-strong
-//$breadcrumb-item-padding-vertical: 0
-//$breadcrumb-item-padding-horizontal: 0.75rem
-//$breadcrumb-item-separator-color: $border-hover
-//@import "./node_modules/bulma/sass/components/breadcrumb.sass"
-
-</style>
-
 <script lang="ts" setup>
 	import {computed} from 'vue';
 	import {BreadcrumbItem, BulmaSizes, getSizeClasses} from '../types/types';

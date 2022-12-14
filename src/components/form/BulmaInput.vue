@@ -1,7 +1,7 @@
 <template>
 	<input :class="classes" :value="modelValue" class="input"
 	       v-bind="$attrs" v-on:input="emit('update:modelValue', $event.target.value)" />
-
+	<!-- todo: investigate not working type attri when type=checkbox -->
 </template>
 
 <script lang="ts" setup>

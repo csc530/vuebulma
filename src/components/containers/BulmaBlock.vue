@@ -11,4 +11,3 @@
 <script lang="ts" setup>
 	withDefaults(defineProps<{ tag?: string }>(), {tag: 'div'});
 </script>
-

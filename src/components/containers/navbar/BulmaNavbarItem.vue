@@ -8,9 +8,9 @@
 			<component :is="tag" class="navbar-dropdown">
 
 				<template v-for="dropdownItem in item.dropdown.items">
-					<hr v-if="dropdownItem === undefined || dropdownItem === null" class="navbar-divider"/>
+					<hr v-if="dropdownItem === undefined || dropdownItem === null" class="navbar-divider" />
 					<bulma-navbar-item v-else :item="dropdownItem" :tag="tag">
-						<slot/>
+						<slot />
 					</bulma-navbar-item>
 				</template>
 
@@ -19,8 +19,12 @@
 
 		<slot v-else>
 			<!--! todo: improve HTML rendering (add check or sum idk) so its not such plain injection; is it even dangerous🤷🏿‍♂️-->
-			<component :is="item.tagName" v-if="isHTMLElement(item)" ref="htmlElement"/>
-			<component :is="item.isComponent" v-else-if="item.isComponent" v-bind="item.props"/>
+			<component :is="item.tagName" v-if="isHTMLElement(item)" ref="htmlElement" />
+			<component :is="item.isComponent" v-else-if="item.isComponent" v-bind="item.props">
+				<template v-for="slot in item?.slot" v-slot:[item.name]>
+					{{ slot.content }}
+				</template>
+			</component>
 			<template v-else>{{ item }}</template>
 		</slot>
 	</component>

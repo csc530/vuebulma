@@ -2,9 +2,10 @@
 	<nav :class="classes" class="navbar">
 		<!--	Lefthand side Always visible-->
 		<div class="navbar-brand">
-			<bulma-navbar-item @click="activateItem($refs.startItem)" ref="startItem" v-for="item in startItems" :key="item"
+			<bulma-navbar-item @click="activateItem($refs.startItem[i])" ref="startItem" v-for="(item,i) in startItems"
+			                   :key="item"
 			                   :item="item" :tag="startItemTag">
-				<slot v-if="$slots['start-items']" name="start-items" v-bind:data="item"/>
+				<slot v-if="$slots['start-items']" name="start-items" v-bind:data="item" />
 			</bulma-navbar-item>
 
 			<button class="navbar-burger" @click="toggleMenu" ref="burger">
@@ -19,17 +20,18 @@
 
 			<!--? the left part of the menu, which appears next to the navbar brand on desktop-->
 			<div class="navbar-start">
-				<bulma-navbar-item @click="activateItem($refs.middleItem)" ref="middleItem" :is="middleItemTag"
-				                   v-for="item in middleItems" :item="item">
-					<slot v-if="$slots['middle-items']" name="middle-items" v-bind:data="item"/>
+				<bulma-navbar-item @click="activateItem($refs.middleItem[i])" ref="middleItem" :is="middleItemTag"
+				                   v-for="(item,i) in middleItems" :item="item">
+					<slot v-if="$slots['middle-items']" name="middle-items" v-bind:data="item" />
 				</bulma-navbar-item>
 			</div>
 
 			<!--? the right part of the menu, which appears at the end of the navbar-->
 			<div class="navbar-end">
-				<bulma-navbar-item @click="activateItem($refs.endItem)" ref="endItem" :is="endItemTag" v-for="item in endItems"
+				<bulma-navbar-item @click="activateItem($refs.endItem[i])" ref="endItem" :is="endItemTag"
+				                   v-for="(item,i) in endItems"
 				                   :item="item">
-					<slot v-if="$slots['end-items']" name="end-items" v-bind:data="item"/>
+					<slot v-if="$slots['end-items']" name="end-items" v-bind:data="item" />
 				</bulma-navbar-item>
 			</div>
 		</div>
@@ -86,7 +88,7 @@
 				activeItem.value.classList.remove('is-active');
 			activeItem.value = element;
 		}
-		element.classList.add('is-active');
+		element.classList.toggle('is-active');
 	}
 
 	const menu = ref<HTMLElement | null>(null);
