@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 
 	import {computed} from "vue";
-	import {BulmaAlignment, getBulmaClassesFromProps} from "../../../types/types";
+	import {BulmaAlignment, getBulmaClassesFromProps} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		isGrouped?: false | BulmaAlignment;

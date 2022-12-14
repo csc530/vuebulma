@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 	import {computed, ref, useSlots} from 'vue';
-	import {BulmaSizes, ColourHelper, ColourIcon, getColourClass, getSizeClasses} from '../types/types';
+	import {BulmaSizes, ColourHelper, ColourIcon, getColourClass, getSizeClasses} from '../types';
 
 
 	const props = defineProps<{

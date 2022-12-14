@@ -21,6 +21,7 @@
     "declaration": true,
     "pretty": true,
     "removeComments": false,
+    "noEmit": false
   },
   "include": [
     "src/components",

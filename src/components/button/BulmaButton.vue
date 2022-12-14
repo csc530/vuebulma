@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 	import {computed, ref} from "vue";
-	import {BulmaSizes, ButtonColours, getBulmaClassesFromProps} from "../../types/types";
+	import {BulmaSizes, ButtonColours, getBulmaClassesFromProps} from "../../types";
 
 	const props = withDefaults(defineProps<{
 		tag?: 'button' | 'a';

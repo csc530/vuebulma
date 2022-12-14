@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 	import {computed, useAttrs} from "vue";
-	import {BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types/types";
+	import {BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		tag?: string;

@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BreadcrumbItem, BulmaSizes, getSizeClasses} from '../types/types';
+	import {BreadcrumbItem, BulmaSizes, getSizeClasses} from '../types';
 
 	type ArrayElement<ArrayType extends readonly unknown[]> =
 			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;

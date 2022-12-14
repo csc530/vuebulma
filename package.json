@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-7",
+  "version": "0.0.0-7.1",
   "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
@@ -42,7 +42,7 @@
   ],
   "scripts": {
     "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview"
   },
   "dependencies": {

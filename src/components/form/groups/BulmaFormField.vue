@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaSizes, getBulmaClassesFromProps, getSizeClasses} from "../../../types/types";
+	import {BulmaAlignment, BulmaSizes, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		/**label for this whole group of controls; ONLY render isHorizontal */

@@ -12,3 +12,4 @@
 
 [ ] Mysterious `VueBulma` component is also exported with library🧐
 
+[ ] Make compatible with vuejs Debugger tools

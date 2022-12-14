@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types/types";
+	import {BulmaAlignment, BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		label?: string;

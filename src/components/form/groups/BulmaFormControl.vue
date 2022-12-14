@@ -6,7 +6,7 @@
 <!--todo: simplify or well document/explain how to use and proeprly nest all these form constrols 🙃 so much for making the library an easier version of Bulma to work with-->
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {getBulmaClassesFromProps} from "../../../types/types";
+	import {getBulmaClassesFromProps} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		tag?: string

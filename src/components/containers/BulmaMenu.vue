@@ -29,7 +29,7 @@
 </style>
 
 <script lang="ts" setup>
-	import {isMenu, Menu} from "../../types/types";
+	import {isMenu, Menu} from "../../types";
 
 	const props = withDefaults(defineProps<{
 				tag?: string;

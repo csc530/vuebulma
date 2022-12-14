@@ -14,8 +14,13 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {AspectRatios, Dimensions, getBulmaClassesFromProps} from "../types/types";
-	import {getAspectRatioClasses, getDimensionClasses} from "../types/types.js";
+	import {
+		AspectRatios,
+		Dimensions,
+		getAspectRatioClasses,
+		getBulmaClassesFromProps,
+		getDimensionClasses
+	} from "../types";
 
 	const props = defineProps<{
 		dimension?: Dimensions

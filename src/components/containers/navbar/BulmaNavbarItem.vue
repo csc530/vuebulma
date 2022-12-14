@@ -33,7 +33,7 @@
 
 <script lang="ts" setup>
 	import {computed, onMounted, ref} from "vue";
-	import {BulmaNavBarItem, getNavbarItemClasses, isHTMLElement} from "../../../types/types.js";
+	import {BulmaNavBarItem, getNavbarItemClasses, isHTMLElement} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		tag?: 'div' | 'a',

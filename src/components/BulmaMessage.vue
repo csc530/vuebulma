@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 	import {computed, defineEmits} from "vue";
-	import {BulmaColours, BulmaSizes, getSizeClasses} from "../types/types";
+	import {BulmaColours, BulmaSizes, getSizeClasses} from "../types";
 
 	const emit = defineEmits<{
 		(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void

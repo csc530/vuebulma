@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BulmaHeaderSizes, BulmaHeadingTypes, getBulmaHeaderSizeClass} from '../types/types';
+	import {BulmaHeaderSizes, BulmaHeadingTypes, getBulmaHeaderSizeClass} from '../types';
 
 	const props = withDefaults(defineProps<{
 			/** If there will be regular spacing between `title`s and `subtitle`s*/

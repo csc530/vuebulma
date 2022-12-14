@@ -24,7 +24,7 @@
 <script lang="ts" setup>
 
 	import {PropType, ref} from 'vue';
-	import {getBulmaClassesFromProps, getLeftRightClasses, LeftRight, toggleActivation} from '../../types/types';
+	import {getBulmaClassesFromProps, getLeftRightClasses, LeftRight, toggleActivation} from '../../types';
 
 	const emit = defineEmits<{
 		(name: 'itemClick', item: any, event: Event, element: HTMLElement): void
