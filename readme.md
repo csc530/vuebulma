@@ -5,6 +5,8 @@
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
 ![npm](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
 
+### [Changelog](docs/changelog.md)
+
 ## Disclaimer
 
 Developed with/for Vue v3.2.45 and Bulma v0.9.4
@@ -45,10 +47,12 @@ app.mount('#app')
 ```vue
 
 <template>
+	<!-- Use Bulma component-->
 	<BulmaHeading>I'm a Bulma styled heading</BulmaHeading>
 </template>
 
 <script lang="ts" setup>
+	// import the component you want to use
 	import {BulmaHeading} from '@csc530/vuebulma'
 </script>
 ```

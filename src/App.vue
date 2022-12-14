@@ -1,15 +1,15 @@
 <template>
 	<div>
 		<a href="https://vitejs.dev" target="_blank">
-			<img alt="Vite logo" class="logo" src="https://vitejs.dev/logo.svg" width="150"/>
+			<img alt="Vite logo" class="logo" src="https://vitejs.dev/logo.svg" width="150" />
 		</a>
 		<a href="https://vuejs.org/" target="_blank">
 			<img alt="Vue logo" class="logo vue" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
-			     width="150"/>
+			     width="150" />
 		</a>
 	</div>
 	<a href="https://bulma.io/" target="_blank">
-		<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="200"/>
+		<img alt="Bulma logo" src="https://bulma.io/images/bulma-logo.png" width="200" />
 	</a>
 	<!--	Initial BulmaHeading display -->
 	<BulmaBox>
@@ -17,42 +17,24 @@
 		<BulmaHeading :type="'subtitle'">For Vue3 using Composition API and <code>setup</code>😁</BulmaHeading>
 	</BulmaBox>
 
-	<demo-dropdown/>
-	<demo-navbar/>
-	<demo-message/>
-	<demo-menu/>
-	<demo-image/>
-	<DemoIcon/>
-	<demo-breadcrimb/>
-	<demo-dropdown/>
-	<demo-heading/>
-
 </template>
 
 <style scoped>
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-}
+	.logo {
+		height: 6em;
+		padding: 1.5em;
+		will-change: filter;
+	}
 
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646CFFAA);
-}
+	.logo:hover {
+		filter: drop-shadow(0 0 2em #646CFFAA);
+	}
 
-.logo.vue:hover {
-	filter: drop-shadow(0 0 2em #42B883AA);
-}
+	.logo.vue:hover {
+		filter: drop-shadow(0 0 2em #42B883AA);
+	}
 </style>
 
 <script lang="ts" setup>
 	import BulmaHeading from './components/BulmaHeading.vue';
-	import BulmaBox from './components/containers/BulmaBox.vue';
-	import DemoBreadcrimb from "./demos/demoBreadcrumb.vue";
-	import DemoDropdown from "./demos/demoDropdown.vue";
-	import DemoHeading from "./demos/demoHeading.vue";
-	import DemoIcon from "./demos/demoIcon.vue";
-	import DemoImage from "./demos/demoImage.vue";
-	import DemoMenu from "./demos/demoMenu.vue";
-	import DemoMessage from "./demos/demoMessage.vue";
-	import DemoNavbar from "./demos/demoNavbar.vue";</script>
+	import BulmaBox from './components/containers/BulmaBox.vue';</script>
