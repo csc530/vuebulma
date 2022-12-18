@@ -1,11 +1,13 @@
 # Bulma component library for Vue3
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
+[![Built with Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![Check it out](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)[![Gluten free](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)[![Not a bug; a feature](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)[![Powered by black magic](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
-![npm](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
+![weekly npm downloads](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
 
-### [Changelog](docs/changelog.md)
+*On vacation*
+
+## [Changelog](docs/changelog.md)
 
 ## Disclaimer
 
@@ -14,7 +16,7 @@ Developed with/for Vue v3.2.45 and Bulma v0.9.4
 This package is very much still under active development. It is not recommended to use this in production. Feel free to
 help or report any issues😃.
 
-My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, _and_ it's composition api.
+My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, *and* it's composition api.
 I really love Bulma, and it's modern styling using CSS without JavaScript. It's definitely my bias over Bootstrap now😅.
 
 ## Installation
@@ -47,13 +49,13 @@ app.mount('#app')
 ```vue
 
 <template>
-	<!-- Use Bulma component-->
-	<BulmaHeading>I'm a Bulma styled heading</BulmaHeading>
+ <!-- Use Bulma component-->
+ <BulmaHeading>I'm a Bulma styled heading</BulmaHeading>
 </template>
 
 <script lang="ts" setup>
-	// import the component you want to use
-	import {BulmaHeading} from '@csc530/vuebulma'
+ // import the component you want to use
+ import {BulmaHeading} from '@csc530/vuebulma'
 </script>
 ```
 
@@ -78,31 +80,31 @@ type has the isComponent property to render passed in Vue components as is to th
 ```vue
 
 <template>
-	<BulmaNavbar :items="items" />
+ <BulmaNavbar :items="items" />
 </template>
 
 <script lang="ts" setup>
-	import {BulmaNavBarItem} from '@csc530/vuebulma/types'
-	//If you are going to dynamically render component from component definitions, it must be explicitly imported
-	import {BulmaImage} from "@csc530/vuebulma";
-	import myCustomComponent from "./MyCustomComponent.vue";
+ import {BulmaNavBarItem} from '@csc530/vuebulma/types'
+ //If you are going to dynamically render component from component definitions, it must be explicitly imported
+ import {BulmaImage} from "@csc530/vuebulma";
+ import myCustomComponent from "./MyCustomComponent.vue";
 
-	const customComponent = {
-		component: 'myCustomComponent',
-		// to apply component props/attributes, use the props property
-		isComponent: true,
-		props: {
-			customProp: true,
-			cutomProp2: 'hello'
-		}
-	};
-	const bulmaImg = {
-		component: BulmaImage,
-		props: {src: 'https://bulma.io/images/bulma-logo.png'},
-		isComponent: true
-	};
+ const customComponent = {
+  component: 'myCustomComponent',
+  // to apply component props/attributes, use the props property
+  isComponent: true,
+  props: {
+   customProp: true,
+   cutomProp2: 'hello'
+  }
+ };
+ const bulmaImg = {
+  component: BulmaImage,
+  props: {src: 'https://bulma.io/images/bulma-logo.png'},
+  isComponent: true
+ };
 
-	const items: BulmaNavBarItem[] = [customComponent, bulmaImg];
+ const items: BulmaNavBarItem[] = [customComponent, bulmaImg];
 </script>
 ```
 
@@ -112,23 +114,23 @@ HTMLElements and render them as such.
 ```vue
 
 <template>
-	<BulmaNavbar :start-items="items" />
+ <BulmaNavbar :start-items="items" />
 </template>
 
 <script lang="ts" setup>
-	import {BulmaNavBarItem} from '@csc530/vuebulma/types';
+ import {BulmaNavBarItem} from '@csc530/vuebulma/types';
 
-	const fancyButton = document.createElement('button');
-	fancyButton.innerText = 'Fancy Button';
-	fancyButton.classList.add('button', 'is-primary');
-	fancyButton.style.border = 'thick #ccad46 ridge';
+ const fancyButton = document.createElement('button');
+ fancyButton.innerText = 'Fancy Button';
+ fancyButton.classList.add('button', 'is-primary');
+ fancyButton.style.border = 'thick #ccad46 ridge';
 
-	// Navbar will test if it's an HTMLElement
-	// if so render it as is
-	const items: BulmaNavBarItem[] = [
-		document.createElement('a'),
-		fancyButton
-	];
+ // Navbar will test if it's an HTMLElement
+ // if so render it as is
+ const items: BulmaNavBarItem[] = [
+  document.createElement('a'),
+  fancyButton
+ ];
 </script>
 ```
 
