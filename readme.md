@@ -41,7 +41,7 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 ## Documentation
 
-Refer to the [documentation website](https://github.com/csc/vuebulma/sumn/io.docs) for more information.
+Refer to the [documentation website](https://csc530.github.io/vuebulma/) for more information.
 
 ### Bulma Styling
 
