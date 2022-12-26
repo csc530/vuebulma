@@ -48,6 +48,10 @@ Refer to the [documentation website](https://csc530.github.io/vuebulma/) for mor
 This library is like a wrapper for Bulma and does not modify any of its CSS if you need help using Bulma or its classes,
 refer to the [Bulma documentation](https://bulma.io/documentation/).
 
+### Working with Vue
+
+If you need any help working with Vue components or understanding some of it's features please refer to [their documentation](https://vuejs.org/guide/introduction.html).
+
 ### Custom Additions
 
 This library adds some built-in JS to make Bulma's styling and classes work seamlessly
