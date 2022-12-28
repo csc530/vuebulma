@@ -1,5 +1,5 @@
 <template>
-	<component class="block" :is="tag">
+	<component :is="tag" class="block">
 		<slot />
 	</component>
 </template>
@@ -9,5 +9,11 @@
 </style>
 
 <script lang="ts" setup>
-	withDefaults(defineProps<{ tag?: string }>(), {tag: 'div'});
+	defineProps({
+		tag: {
+			default: 'section',
+			type: String,
+			required: false
+		}
+	});
 </script>
