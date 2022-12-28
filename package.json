@@ -44,7 +44,9 @@
   "scripts": {
 	"dev": "vite --host --open -d --clearScreen",
 	"build": "vite build && vue-tsc --emitDeclarationOnly",
-	"preview": "vite preview"
+	"preview": "vite preview",
+	"docs:dev": "vuepress dev ../vue-bulma/docs",
+	"docs:build": "vuepress build ../vue-bulma/docs"
   },
   "dependencies": {
 	"vue": "^3.2.45"
@@ -52,11 +54,18 @@
   "devDependencies": {
 	"@vitejs/plugin-vue": "^3.1.0",
 	"bulma": "^0.9.4",
-	"typescript": "^4.9.3",
 	"vite": "^3.2.4",
 	"vue-loader": "^16.8.3",
 	"vue-tsc": "^1.0.13",
-	"yarn": "^1.22.19"
+	"yarn": "^1.22.19",
+	"@csc530/vuebulma": "0.0.0-7.1",
+	"@vuepress/client": "2.0.0-beta.59",
+	"nodemon": "^2.0.20",
+	"ts-node": "^10.9.1",
+	"typescript": "^4.9.4",
+	"vue": "^3.2.45",
+	"vuepress": "2.0.0-beta.59",
+	"change-case": "^4.1.2"
   },
   "peerDependencies": {
 	"vue": "^3.2.45"
