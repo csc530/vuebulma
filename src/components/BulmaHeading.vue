@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BulmaHeaderSizes, BulmaHeadingTypes, getBulmaHeaderSizeClass} from '../types';
+	import {BulmaHeadingSizes, BulmaHeadingTypes, getBulmaHeadingSizeClass} from '../types';
 
 	const props = withDefaults(defineProps<{
 			/** If there will be regular spacing between `title`s and `subtitle`s*/
@@ -16,12 +16,12 @@
 			/** The container element or component for the BulmaHeading, defaults to `p` */
 			tag?: string,
 			/** Text size 1-6; 1 being the largest, defaults to 1 */
-			size?: BulmaHeaderSizes,
+			size?: BulmaHeadingSizes,
 			/**A title or subtitle, defaults to title*/
 			type?: BulmaHeadingTypes
 		}>(),
 		{tag: 'p', size: 1, type: 'title'});
 
-	const sizeClass = computed(() => getBulmaHeaderSizeClass(props.size));
+	const sizeClass = computed(() => getBulmaHeadingSizeClass(props.size));
 </script>
 
