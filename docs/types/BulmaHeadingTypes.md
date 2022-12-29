@@ -1,6 +1,6 @@
 # BulmaHeadingTypes
 
-The type of the header.
+The type of the heading.
 
 ## Values
 

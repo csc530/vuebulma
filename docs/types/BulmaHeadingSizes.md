@@ -1,6 +1,6 @@
 # BulmaHeadingSizes
 
-Sizes of [Header component](../components/BulmaHeading.md).
+Sizes of [Heading component](../components/BulmaHeading.md).
 
 ## Values
 

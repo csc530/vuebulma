@@ -30,7 +30,7 @@ Default: `p`
 
 ### [size](https://bulma.io/documentation/elements/title/#sizes)
 
-Type: [BulmaHeadingSizes](../types/BulmaHeaderSizes.md) | `undefined`
+Type: [BulmaHeadingSizes](../types/BulmaHeadingSizes.md) | `undefined`
 
 Default: `1`
 
