@@ -1,5 +1,5 @@
 import {defaultTheme, defineUserConfig} from 'vuepress'
-import navbar from './navbar'
+import {createNavbar} from "./navbar";
 
 export default defineUserConfig({
 	lang: 'en-CA',
@@ -9,13 +9,12 @@ export default defineUserConfig({
 	theme: defaultTheme({
 		// logo: '/logo.png',
 		// logoDark: '/logo-dark.png',
-		navbar: navbar,
-		// todo: copy suto with all items collapsible
+		navbar: createNavbar(false),
+		// todo: copy auto with all items collapsible
 		sidebar: 'auto',
 		repo: 'csc530/vuebulma',
 		repoLabel: 'Source',
 		docsDir: 'docs',
-		docsBranch: 'gh-pages',
 		contributors: true,
 		contributorsText: 'Contributors',
 		lastUpdated: true,

@@ -45,8 +45,8 @@
 	"dev": "vite --host --open -d --clearScreen",
 	"build": "vite build && vue-tsc --emitDeclarationOnly",
 	"preview": "vite preview",
-	"docs:dev": "vuepress dev ../vue-bulma/docs",
-	"docs:build": "vuepress build ../vue-bulma/docs"
+	"docs:dev": "vuepress dev docs",
+	"docs:build": "vuepress build docs"
   },
   "dependencies": {
 	"vue": "^3.2.45"

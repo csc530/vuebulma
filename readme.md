@@ -41,7 +41,7 @@ I really love Bulma, and it's modern styling using CSS without JavaScript. It's 
 
 ## Documentation
 
-Refer to the [documentation website](https://csc530.github.io/vuebulma/) for more information.
+Refer to the [documentation website](https://csc530.github.io/vuebulma/) for more information and the latest updates.
 
 ### Bulma Styling
 
@@ -50,10 +50,15 @@ refer to the [Bulma documentation](https://bulma.io/documentation/).
 
 ### Working with Vue
 
-If you need any help working with Vue components or understanding some of it's features please refer to [their documentation](https://vuejs.org/guide/introduction.html).
+If you need any help working with Vue components or understanding some of it's features please refer
+to [their documentation](https://vuejs.org/guide/introduction.html).
 
 ### Custom Additions
 
 This library adds some built-in JS to make Bulma's styling and classes work seamlessly
 like [appending is-active](/src/components/containers/BulmaDropdown.vue#L4) to a
 clicked [dropdown](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)
+
+## Contributing
+
+Contributions are welcome!

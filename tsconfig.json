@@ -1,36 +1,50 @@
 {
   //todo: check out typeDoc
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
-    "skipLibCheck": true,
-    // * For build type declarations
-    "outDir": "dist",
-    "declaration": true,
-    "pretty": true,
-    "removeComments": false,
-    "noEmit": false
+	"target": "ESNext",
+	"useDefineForClassFields": true,
+	"module": "ESNext",
+	"moduleResolution": "Node",
+	"strict": true,
+	"jsx": "preserve",
+	"sourceMap": true,
+	"resolveJsonModule": true,
+	"isolatedModules": true,
+	"esModuleInterop": true,
+	"lib": [
+	  "ESNext",
+	  "DOM"
+	],
+	"skipLibCheck": true,
+	// * For build type declarations
+	"outDir": "dist",
+	"declaration": true,
+	"pretty": true,
+	"removeComments": false,
+	"noEmit": false
   },
   "include": [
-    "src/components",
-    "src/vuebulma.ts",
-    "src/types"
+	"src/components",
+	"src/vuebulma.ts",
+	"src/types"
   ],
   "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+	{
+	  "path": "./tsconfig.node.json"
+	}
+  ],
+  "ts-node": {
+	// Tell ts-node CLI to install the --loader automatically
+	"esm": true,
+	"emit": false,
+	"transpileOnly": true,
+	"compilerOptions": {
+	  "declaration": false,
+	  "module": "ESNext",
+	  "target": "ESNext",
+	  "emitDeclarationOnly": false,
+	  "outDir": "./",
+	  "allowJs": true
+	}
+  }
 }

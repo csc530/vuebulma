@@ -1,11 +1,16 @@
 import {capitalCase} from "change-case";
 import * as fs from "fs";
+import {resolve} from "path";
 import {NavbarConfig, NavbarGroup, NavbarItem} from "vuepress";
 
-export function createNavbar(home?: boolean): NavbarConfig {
+export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConfig {
 	const navbar: (NavbarItem | NavbarGroup)[] = [];
-	const base = __dirname + "/docs";
-	fs.readdirSync('docs', {withFileTypes: true}).forEach(path => {
+	if(!docsPath)
+		docsPath = resolve('docs');
+	//append / to path if not present
+	if(docsPath.toString().substring(-1) !== '/')
+		docsPath = docsPath + '/';
+	fs.readdirSync(docsPath, {withFileTypes: true}).forEach(path => {
 		if(path.name === ".vuepress" && path.isDirectory())
 			return;
 		else if(path.isDirectory()) {
@@ -13,10 +18,10 @@ export function createNavbar(home?: boolean): NavbarConfig {
 				text: capitalCase(path.name),
 				children: []
 			};
-			fs.readdirSync(base + "/" + path.name, {withFileTypes: true, encoding: 'utf-8'}).forEach(child => {
-				let name_ext = child.name.split(".");
-				if(name_ext[1] && name_ext[1] === "md") {
-					const name = name_ext[0];
+			fs.readdirSync(docsPath + "/" + path.name, {withFileTypes: true, encoding: 'utf-8'}).forEach(child => {
+				let name_extension = child.name.split(".");
+				if(name_extension[1] && name_extension[1] === "md") {
+					const name = name_extension[0];
 					const item: NavbarItem = {
 						text: name === 'index' ? `Overview` : capitalCase(name.replace('Bulma', '')),
 						link: `/${path.name}/${name}.html`
@@ -67,10 +72,6 @@ export function createNavbar(home?: boolean): NavbarConfig {
 
 	return navbar;
 }
-
-const navbar = createNavbar();
-
-export default navbar;
 
 function isNavbarGroup(item: any): item is NavbarGroup {
 	return item.children !== undefined && item.text !== undefined;

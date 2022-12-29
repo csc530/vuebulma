@@ -23,6 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
+#vuepress
+.cache
+.temp
+
 # Sshh, secrets
 .env
 .env.*
