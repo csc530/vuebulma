@@ -2,12 +2,11 @@ name: Build, commit, and deploy documentation to GitHub Pages
 
 on:
    push:
-      branches:
-         - main
+      branches: main
       paths:
          - 'docs/**'
          - '.github/workflows/docs.yml'
-         # trigger deployment manually
+   # trigger deployment manually
    workflow_dispatch:
 
 jobs:
@@ -19,6 +18,7 @@ jobs:
             with:
                # fetch all commits to get last updated time or other git log info
                fetch-depth: 0
+               submodules: true
 
          -  name: Setup pnpm
             uses: pnpm/action-setup@v2
@@ -43,9 +43,10 @@ jobs:
          # please check out the docs of the workflow for more details
          -  name: Deploy to GitHub Pages branch
             uses: peaceiris/actions-gh-pages@v3
+            # If you're changing the branch from main,
+            # also change the `main` in `refs/heads/main`
+            # below accordingly.
+            if: ${{ github.ref == 'refs/heads/main' }}
             with:
                github_token: ${{ secrets.GITHUB_TOKEN }}
-               publish_dir: ./docs/.vuepress/dist
-               publish_branch: gh-pages
-               keep_files: false
-               user_name: github-actions
+               publish_dir: ./public
