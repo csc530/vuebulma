@@ -54,7 +54,7 @@
   "devDependencies": {
     "@csc530/vuebulma": "0.0.0-7.1",
     "@vitejs/plugin-vue": "^3.1.0",
-    "@vuepress/client": "2.0.0-beta.59",
+    "@vuepress/client": "2.0.0-beta.60",
     "bulma": "^0.9.4",
     "change-case": "^4.1.2",
     "nodemon": "^2.0.20",
