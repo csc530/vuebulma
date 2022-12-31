@@ -1,4 +1,0 @@
-const data = JSON.parse('{"key":"v-07ac7ba5","path":"/types/common_types.html","title":"Frequently used types and props","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"Props","slug":"props","link":"#props","children":[{"level":3,"title":"tag","slug":"tag","link":"#tag","children":[]}]},{"level":2,"title":"Types","slug":"types","link":"#types","children":[{"level":3,"title":"BulmaColours","slug":"bulmacolours","link":"#bulmacolours","children":[]},{"level":3,"title":"BulmaSizes","slug":"bulmasizes","link":"#bulmasizes","children":[]},{"level":3,"title":"ColourHelper","slug":"colourhelper","link":"#colourhelper","children":[]},{"level":3,"title":"BulmaAlignment","slug":"bulmaalignment","link":"#bulmaalignment","children":[]}]}],"git":{"updatedTime":1672499677000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":3}]},"filePathRelative":"types/common_types.md"}');
-export {
-  data
-};
