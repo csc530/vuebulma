@@ -1,0 +1,4 @@
+const data = JSON.parse('{"key":"v-194812e8","path":"/getting_started.html","title":"Getting Started","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"WARNING","slug":"warning","link":"#warning","children":[]},{"level":2,"title":"Installation","slug":"installation","link":"#installation","children":[]},{"level":2,"title":"Usage","slug":"usage","link":"#usage","children":[{"level":3,"title":"Import a component","slug":"import-a-component","link":"#import-a-component","children":[]},{"level":3,"title":"Import the library","slug":"import-the-library","link":"#import-the-library","children":[]}]},{"level":2,"title":"Additional help","slug":"additional-help","link":"#additional-help","children":[]}],"git":{"updatedTime":1672263986000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":1}]},"filePathRelative":"getting_started.md"}');
+export {
+  data
+};

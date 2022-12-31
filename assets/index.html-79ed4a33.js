@@ -1,0 +1,4 @@
+const data = JSON.parse('{"key":"v-d32669e2","path":"/types/","title":"Overview","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"Types","slug":"types","link":"#types","children":[{"level":3,"title":"Helpers","slug":"helpers","link":"#helpers","children":[]},{"level":3,"title":"Interfaces","slug":"interfaces","link":"#interfaces","children":[]}]},{"level":2,"title":"Functions","slug":"functions","link":"#functions","children":[{"level":3,"title":"Getters","slug":"getters","link":"#getters","children":[]},{"level":3,"title":"Class transformers","slug":"class-transformers","link":"#class-transformers","children":[]}]}],"git":{"updatedTime":1672263986000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":1}]},"filePathRelative":"types/index.md"}');
+export {
+  data
+};
