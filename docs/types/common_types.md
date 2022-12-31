@@ -17,7 +17,8 @@ and usually defaults to `div`.
 
 Type: `info` | `danger` | `warning` | `success` | `primary` | `link` |`white` | `black` | `light` | `dark` | `default`
 
-The `BulmaColours` type is used to specify the colour of a component. Usually changing the background and text colour.
+The `BulmaColours` type is used to specify the colour of a component. Usually changing the background and/or text
+colour.
 
 ### `BulmaSizes`
 
@@ -38,9 +39,9 @@ For some Bulma elements an `is-normal` class is available which is represented b
 Type:
 
 ```typescript
-interface ColourHelper {
-	shade?: 'white' | 'black' | 'light' | 'dark' | 'default';
-	colour: 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
+type ColourHelper = {
+ shade?: 'white' | 'black' | 'light' | 'dark' | 'default';
+ colour: 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
 };
 ```
 
@@ -53,10 +54,16 @@ and `has-background-info-dark`.
 
 Type: 16 | 24 | 32 | 48 | 64 | 96 | 128
 
-[//]: # (todo: look for uses is it for more than just image..?)
+[// todo]: # (todo: look for uses is it for more than just image..?)
 
 ### BulmaAspectRatio
 
 **string**
 
 Type: `square` | `1by1` | `5by4` | `4by3` | `3by2` | `5by3` | `16by9` | `2by1` | `3by1` | `4by5` | `3by4` | `2by3` | `3by5` | `9by16` | `1by2` | `1by3`
+
+### BulmaAlignment
+
+**string**
+
+Type: `left` | `center` | `right`
