@@ -10,7 +10,7 @@ jumping when it's loaded.
 
 ### dimension
 
-Type: [`BulmaDimensions`](../types/common_types.md#bulmadimensions) | `undefined`
+Type: [`BulmaDimensions`](../types/bulmadimensions) | `undefined`
 
 Standard dimension for the image container to be from 16 to 128
 
@@ -22,7 +22,7 @@ If the container should be rounder; clipping whatever does not fit into the imag
 
 ### aspectRatio
 
-Type: [`BulmaAspectRatios`](../types/common_types.md#bulmaaspectratio) | `undefined`
+Type: [`BulmaAspectRatios`](../types/BulmaAspectRatio.md) | `undefined`
 
 _Requires **width** attribute to be set_
 Sets the height based on given width and aspect ratio.
@@ -46,3 +46,7 @@ Alt attribute for the img element;
 Type: `string` | `undefined`
 
 Optional caption text to display in figcaption
+
+## Additional information
+
+The `src` and `alt` will be used if there is no present slot content.

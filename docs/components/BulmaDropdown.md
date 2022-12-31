@@ -78,7 +78,7 @@ Whether the dropdown is a dropup; opens upwards
 
 ### itemClick
 
-```ts
+```ts:no-line-numbers
 function itemClick(item: any, event: Event, element: HTMLElement): void {}
 ```
 
