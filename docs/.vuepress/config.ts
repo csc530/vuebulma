@@ -1,7 +1,9 @@
-import {defaultTheme, defineUserConfig} from 'vuepress'
-import {createNavbar} from "./navbar";
+import { defaultTheme, defineUserConfig } from 'vuepress'
+import { createNavbar } from "./navbar";
+import { clipboardPlugin } from 'vuepress-plugin-clipboard'
 
 export default defineUserConfig({
+	plugins: [clipboardPlugin({})],
 	lang: 'en-CA',
 	title: 'vuebulma Docs',
 	description: 'Documentation for @csc530 vuebulma component library',
