@@ -10,3 +10,8 @@ updates:
     schedule:
       interval: "weekly"
       day: tuesday
+    commit-message:
+      include: scope
+      prefix: "Dependabot"
+    allow:
+      - dependency-type: development
