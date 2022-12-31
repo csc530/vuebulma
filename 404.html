@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.59">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title> | vuebulma Docs</title><meta name="description" content="Documentation for @csc530 vuebulma component library">
+    <link rel="preload" href="/vuebulma/assets/style-e6cec892.css" as="style"><link rel="stylesheet" href="/vuebulma/assets/style-e6cec892.css">
+    <link rel="modulepreload" href="/vuebulma/assets/app-6e6413f4.js"><link rel="modulepreload" href="/vuebulma/assets/framework-58335e88.js"><link rel="modulepreload" href="/vuebulma/assets/404.html-f8cf36db.js"><link rel="modulepreload" href="/vuebulma/assets/404.html-7061fc41.js"><link rel="prefetch" href="/vuebulma/assets/changelog.html-b360db2c.js" as="script"><link rel="prefetch" href="/vuebulma/assets/considerations.html-201dc8e4.js" as="script"><link rel="prefetch" href="/vuebulma/assets/getting_started.html-6fa59753.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-4b8bb546.js" as="script"><link rel="prefetch" href="/vuebulma/assets/todo.html-8728b2d3.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBlock.html-08ac9cfe.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBox.html-c3a42455.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBreadcrumb.html-2d17847d.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButton.html-fdd2d8ca.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButtons.html-225879a2.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaDropdown.html-14ffc029.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeading.html-b414b6c6.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaIcon.html-00647d42.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaImage.html-d341e1c6.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMenu.html-67502f72.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMessage.html-9a423bc3.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaNavbar.html-030ef8e8.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-a98e70ef.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaAspectRatio.html-adf21bf9.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButtonColours.html-5c881cea.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaDimensions.html-d42867c7.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeadingSizes.html-8297a3dc.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeadingTypes.html-4f5e51e4.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMenu.html-c5afd043.js" as="script"><link rel="prefetch" href="/vuebulma/assets/common_types.html-9eccda95.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-79ed4a33.js" as="script"><link rel="prefetch" href="/vuebulma/assets/changelog.html-6c73606f.js" as="script"><link rel="prefetch" href="/vuebulma/assets/considerations.html-39703152.js" as="script"><link rel="prefetch" href="/vuebulma/assets/getting_started.html-0084e56f.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-dd9b3a3b.js" as="script"><link rel="prefetch" href="/vuebulma/assets/todo.html-ce3b0326.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBlock.html-27b58a3f.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBox.html-eb704a8c.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaBreadcrumb.html-debb7d08.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButton.html-f8fbfcd8.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButtons.html-f52ae6cc.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaDropdown.html-f10f8418.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeading.html-6d8b2797.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaIcon.html-116ebdde.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaImage.html-f4da2d81.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMenu.html-83113f68.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMessage.html-12630fea.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaNavbar.html-77530b54.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-e827685a.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaAspectRatio.html-a99493dd.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaButtonColours.html-14a9d7fc.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaDimensions.html-8b0e4cc6.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeadingSizes.html-3877123a.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaHeadingTypes.html-01df166c.js" as="script"><link rel="prefetch" href="/vuebulma/assets/BulmaMenu.html-d0353b8f.js" as="script"><link rel="prefetch" href="/vuebulma/assets/common_types.html-c37328d7.js" as="script"><link rel="prefetch" href="/vuebulma/assets/index.html-4cb7e5bc.js" as="script"><link rel="prefetch" href="/vuebulma/assets/setupDevtools-EXVHPMXB-f1406f0d.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>That&#39;s a Four-Oh-Four.</blockquote><a href="/vuebulma/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/vuebulma/assets/app-6e6413f4.js" defer></script>
+  </body>
+</html>
