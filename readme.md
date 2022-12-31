@@ -50,7 +50,7 @@ refer to the [Bulma documentation](https://bulma.io/documentation/).
 
 ### Working with Vue
 
-If you need any help working with Vue components or understanding some of it's features please refer
+If you need any help working with Vue components or understanding some of its features please refer
 to [their documentation](https://vuejs.org/guide/introduction.html).
 
 ### Custom Additions
