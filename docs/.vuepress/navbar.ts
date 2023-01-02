@@ -18,6 +18,7 @@ export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConf
 				text: capitalCase(path.name),
 				children: []
 			};
+
 			fs.readdirSync(docsPath + "/" + path.name, {withFileTypes: true, encoding: 'utf-8'}).forEach(child => {
 				let name_extension = child.name.split(".");
 				if(name_extension[1] && name_extension[1] === "md") {
@@ -32,10 +33,17 @@ export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConf
 						group.children.push(item);
 				}
 			});
-			// group.children.sort();
-			// ? if group has no children, don't add it
-			if(group.children.length > 0)
+
+			if(group.children.length > 0) {
 				navbar.unshift(group);
+				(group.children as NavbarItem[]).sort((a, b) => {
+					if(a.text === "Home" || a.text === "Overview")
+						return -1;
+					else if(b.text === "Home" || b.text === "Overview")
+						return 1;
+					else return a.text.localeCompare(b.text)
+				});
+			}
 		}
 		else if(path.isFile() && path.name.endsWith(".md")) {
 			const name = path.name.replace("_", " ").replace("-", " ").slice(0, -3);
@@ -52,7 +60,7 @@ export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConf
 		}
 	});
 
-	(navbar as NavbarItem[] | NavbarGroup[]).sort((a, b) => {
+	(navbar as (NavbarItem | NavbarGroup)[]).sort((a, b) => {
 		if(a.text === "Home" || a.text === "Overview")
 			return -1;
 		else if(b.text === "Home" || b.text === "Overview")
@@ -76,3 +84,5 @@ export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConf
 function isNavbarGroup(item: any): item is NavbarGroup {
 	return item.children !== undefined && item.text !== undefined;
 }
+
+createNavbar(true, '../');
