@@ -5,7 +5,7 @@
 
 	<BulmaFormField is-horizontal label="Items">
 		<BulmaFormControlGroup has-addons>
-			<BulmaFormControl>
+			<BulmaFormControl is-expanded>
 				<BulmaInput v-model="input" />
 			</BulmaFormControl>
 			<BulmaFormControl>
@@ -20,14 +20,14 @@
 
 	<BulmaFormField is-horizontal label="Separators">
 		<bulma-form-control is-expanded>
-			<bulma-select v-model="separator" :options="getBulmaBreadcrumbSeparators()" />
+			<bulma-select is-full-width v-model="separator" :options="getBulmaBreadcrumbSeparators()" />
 		</bulma-form-control>
 	</BulmaFormField>
 
 	<BulmaFormField is-horizontal label="Alignment">
 		<BulmaFormControlGroup has-addons>
 			<bulma-form-control is-expanded>
-				<bulma-input :max="getBulmaAlignments().length" min="1" type="range" :model-value="alignment"
+				<bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
 				             @update:model-value="(newVal)=> alignment = getBulmaAlignments()[newVal-1]" />
 			</bulma-form-control>
 			<bulma-form-control>
@@ -38,10 +38,21 @@
 
 	<BulmaFormField is-horizontal label="Size">
 		<bulma-form-control is-expanded>
-			<bulma-select is-full-width v-model="size" :options="getBulmaSizes()" />
+			<bulma-select v-model="size" :options="getBulmaSizes()" is-full-width />
 		</bulma-form-control>
 	</BulmaFormField>
 </template>
+
+<style lang="sass" scoped>
+  /*@import "../styles/reset.css";*/
+  /*@import "../../node_modules/bulma/css/bulma.min.css"; */
+  /*@import url("~normalize.css/normalize.css");*/
+  @import "../../node_modules/bulma/sass/utilities/all"
+  @import "../../node_modules/bulma/sass/base/all"
+  @import "../../node_modules/bulma/bulma"
+
+
+</style>
 
 <script lang="ts" setup>
 	import {ref, watch} from "vue";
@@ -68,8 +79,6 @@
 	const separator = ref<BulmaBreadcrumbSeparators>('succeeds');
 	const alignment = ref<BulmaAlignments>('left');
 	const size = ref<BulmaSizes>('default');
-
-	console.log(getBulmaSizes());
 
 	watch(list, (newVal) => {
 		window.history.pushState({}, '', newVal.join('/'));

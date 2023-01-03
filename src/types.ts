@@ -6,6 +6,10 @@ export type BulmaBreadcrumbSeparators = 'arrow' | 'bullet' | 'dot' | 'succeeds' 
 /** List of separators for BulmaBreadcrumb component */
 export const getBulmaBreadcrumbSeparators = (): BulmaBreadcrumbSeparators[] => ['arrow', 'bullet', 'dot', 'succeeds', 'slash'];
 
+function toBulmaSeparatorClass(value: BulmaBreadcrumbSeparators): string {
+	return `has-${value}-separator`;
+}
+
 /**Sizes for BulmaHeadingSizes component. 1 is the biggest, 6 is the smallest */
 export type BulmaHeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
 export const getBulmaHeadingSizeClass = (size: BulmaHeadingSizes): string => 'is-' + removeDecimals(size);
@@ -121,7 +125,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		                        // ? no need to check for `-` in key as vue transforms it to camelCase
 		                        else {
 			                        // ? replace `is` followed by a capital letter with `is-`
-			                        const isClassName = className.replace(/is([A-Z])/g, 'is-$1').toLowerCase();
+			                        const isClassName = key.replace(/is([A-Z])/g, 'is-$1').toLowerCase();
 			                        if(isClassName !== className)
 				                        className = isClassName;
 			                        else
@@ -151,6 +155,8 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		classList.push(getAlignmentClasses(classes.alignment));
 	if(classes.size)
 		classList.push(getSizeClasses(classes.size, areSizes));
+	if(classes.separator)
+		classList.push(toBulmaSeparatorClass(classes.separator));
 	//remove blank or undefined entries
 	return classList.filter(x => x);
 }
