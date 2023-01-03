@@ -88,6 +88,14 @@ const pagesData$1 = {
     /* webpackChunkName: "v-66cf740a" */
     "./BulmaDropdown.html-14ffc029.js"
   ), true ? [] : void 0).then(({ data }) => data),
+  "v-6204c9b8": () => __vitePreload(() => import(
+    /* webpackChunkName: "v-6204c9b8" */
+    "./BulmaFileInput.html-beaaefe1.js"
+  ), true ? [] : void 0).then(({ data }) => data),
+  "v-70ee2eff": () => __vitePreload(() => import(
+    /* webpackChunkName: "v-70ee2eff" */
+    "./BulmaFormInputs.html-864b3d6b.js"
+  ), true ? [] : void 0).then(({ data }) => data),
   "v-4d6fa1b8": () => __vitePreload(() => import(
     /* webpackChunkName: "v-4d6fa1b8" */
     "./BulmaHeading.html-b414b6c6.js"
@@ -100,6 +108,10 @@ const pagesData$1 = {
     /* webpackChunkName: "v-704492ab" */
     "./BulmaImage.html-d341e1c6.js"
   ), true ? [] : void 0).then(({ data }) => data),
+  "v-18ea919c": () => __vitePreload(() => import(
+    /* webpackChunkName: "v-18ea919c" */
+    "./BulmaInput.html-e29c901e.js"
+  ), true ? [] : void 0).then(({ data }) => data),
   "v-befd5226": () => __vitePreload(() => import(
     /* webpackChunkName: "v-befd5226" */
     "./BulmaMenu.html-67502f72.js"
@@ -111,6 +123,14 @@ const pagesData$1 = {
   "v-6675c3c8": () => __vitePreload(() => import(
     /* webpackChunkName: "v-6675c3c8" */
     "./BulmaNavbar.html-030ef8e8.js"
+  ), true ? [] : void 0).then(({ data }) => data),
+  "v-608fb8b0": () => __vitePreload(() => import(
+    /* webpackChunkName: "v-608fb8b0" */
+    "./BulmaSelect.html-cfd9623c.js"
+  ), true ? [] : void 0).then(({ data }) => data),
+  "v-fc46f75c": () => __vitePreload(() => import(
+    /* webpackChunkName: "v-fc46f75c" */
+    "./BulmaTextArea.html-97b64786.js"
   ), true ? [] : void 0).then(({ data }) => data),
   "v-1020f180": () => __vitePreload(() => import(
     /* webpackChunkName: "v-1020f180" */
@@ -199,6 +219,14 @@ const pagesComponents = {
     /* webpackChunkName: "v-66cf740a" */
     "./BulmaDropdown.html-f10f8418.js"
   ), true ? ["assets/BulmaDropdown.html-f10f8418.js","assets/framework-58335e88.js"] : void 0)),
+  "v-6204c9b8": defineAsyncComponent(() => __vitePreload(() => import(
+    /* webpackChunkName: "v-6204c9b8" */
+    "./BulmaFileInput.html-7dc508e0.js"
+  ), true ? ["assets/BulmaFileInput.html-7dc508e0.js","assets/framework-58335e88.js"] : void 0)),
+  "v-70ee2eff": defineAsyncComponent(() => __vitePreload(() => import(
+    /* webpackChunkName: "v-70ee2eff" */
+    "./BulmaFormInputs.html-cae21aa5.js"
+  ), true ? ["assets/BulmaFormInputs.html-cae21aa5.js","assets/framework-58335e88.js"] : void 0)),
   "v-4d6fa1b8": defineAsyncComponent(() => __vitePreload(() => import(
     /* webpackChunkName: "v-4d6fa1b8" */
     "./BulmaHeading.html-6d8b2797.js"
@@ -211,6 +239,10 @@ const pagesComponents = {
     /* webpackChunkName: "v-704492ab" */
     "./BulmaImage.html-f4da2d81.js"
   ), true ? ["assets/BulmaImage.html-f4da2d81.js","assets/framework-58335e88.js"] : void 0)),
+  "v-18ea919c": defineAsyncComponent(() => __vitePreload(() => import(
+    /* webpackChunkName: "v-18ea919c" */
+    "./BulmaInput.html-8c9d1986.js"
+  ), true ? ["assets/BulmaInput.html-8c9d1986.js","assets/framework-58335e88.js"] : void 0)),
   "v-befd5226": defineAsyncComponent(() => __vitePreload(() => import(
     /* webpackChunkName: "v-befd5226" */
     "./BulmaMenu.html-83113f68.js"
@@ -223,6 +255,14 @@ const pagesComponents = {
     /* webpackChunkName: "v-6675c3c8" */
     "./BulmaNavbar.html-77530b54.js"
   ), true ? ["assets/BulmaNavbar.html-77530b54.js","assets/framework-58335e88.js"] : void 0)),
+  "v-608fb8b0": defineAsyncComponent(() => __vitePreload(() => import(
+    /* webpackChunkName: "v-608fb8b0" */
+    "./BulmaSelect.html-eb4f4461.js"
+  ), true ? ["assets/BulmaSelect.html-eb4f4461.js","assets/framework-58335e88.js"] : void 0)),
+  "v-fc46f75c": defineAsyncComponent(() => __vitePreload(() => import(
+    /* webpackChunkName: "v-fc46f75c" */
+    "./BulmaTextArea.html-bb3b8d6d.js"
+  ), true ? ["assets/BulmaTextArea.html-bb3b8d6d.js","assets/framework-58335e88.js"] : void 0)),
   "v-1020f180": defineAsyncComponent(() => __vitePreload(() => import(
     /* webpackChunkName: "v-1020f180" */
     "./index.html-e827685a.js"
@@ -372,7 +412,7 @@ var resolvers = reactive({
     ];
     return dedupeHead(head);
   },
-  resolvePageHeadTitle: (page, siteLocale) => `${page.title ? `${page.title}` : ``}${siteLocale.title ? ` | ${siteLocale.title}` : ``}`,
+  resolvePageHeadTitle: (page, siteLocale) => [page.title, siteLocale.title].filter((item) => !!item).join(" | "),
   resolvePageLang: (page) => page.lang || "en",
   resolvePageLayout: (page, layouts) => {
     let layoutName;
@@ -1315,7 +1355,7 @@ const clientConfig4 = defineClientConfig({
     useNprogress();
   }
 });
-const themeData$1 = JSON.parse(`{"navbar":[{"text":"Changelog","link":"/changelog.html"},{"text":"Considerations","link":"/considerations.html"},{"text":"Getting Started","link":"/getting_started.html"},{"text":"Todo","link":"/todo.html"},{"text":"Components","children":[{"text":"Overview","link":"/components/index.html"},{"text":"Block","link":"/components/BulmaBlock.html"},{"text":"Box","link":"/components/BulmaBox.html"},{"text":"Breadcrumb","link":"/components/BulmaBreadcrumb.html"},{"text":"Button","link":"/components/BulmaButton.html"},{"text":"Buttons","link":"/components/BulmaButtons.html"},{"text":"Dropdown","link":"/components/BulmaDropdown.html"},{"text":"Heading","link":"/components/BulmaHeading.html"},{"text":"Icon","link":"/components/BulmaIcon.html"},{"text":"Image","link":"/components/BulmaImage.html"},{"text":"Menu","link":"/components/BulmaMenu.html"},{"text":"Message","link":"/components/BulmaMessage.html"},{"text":"Navbar","link":"/components/BulmaNavbar.html"}]},{"text":"Types","children":[{"text":"Overview","link":"/types/index.html"},{"text":"Aspect Ratio","link":"/types/BulmaAspectRatio.html"},{"text":"Button Colours","link":"/types/BulmaButtonColours.html"},{"text":"Dimensions","link":"/types/BulmaDimensions.html"},{"text":"Heading Sizes","link":"/types/BulmaHeadingSizes.html"},{"text":"Heading Types","link":"/types/BulmaHeadingTypes.html"},{"text":"Menu","link":"/types/BulmaMenu.html"},{"text":"Common Types","link":"/types/common_types.html"}]}],"sidebar":"auto","repo":"csc530/vuebulma","repoLabel":"Source","docsDir":"docs","contributors":true,"contributorsText":"Contributors","lastUpdated":true,"sidebarDepth":2,"locales":{"/":{"selectLanguageName":"English"}},"colorMode":"auto","colorModeSwitch":true,"logo":null,"selectLanguageText":"Languages","selectLanguageAriaLabel":"Select language","editLink":true,"editLinkText":"Edit this page","lastUpdatedText":"Last Updated","notFound":["There's nothing here.","How did we get here?","That's a Four-Oh-Four.","Looks like we've got some broken links."],"backToHome":"Take me home","openInNewWindow":"open in new window","toggleColorMode":"toggle color mode","toggleSidebar":"toggle sidebar"}`);
+const themeData$1 = JSON.parse(`{"navbar":[{"text":"Changelog","link":"/changelog.html"},{"text":"Considerations","link":"/considerations.html"},{"text":"Getting Started","link":"/getting_started.html"},{"text":"Todo","link":"/todo.html"},{"text":"Components","children":[{"text":"Overview","link":"/components/index.html"},{"text":"Block","link":"/components/BulmaBlock.html"},{"text":"Box","link":"/components/BulmaBox.html"},{"text":"Breadcrumb","link":"/components/BulmaBreadcrumb.html"},{"text":"Button","link":"/components/BulmaButton.html"},{"text":"Buttons","link":"/components/BulmaButtons.html"},{"text":"Dropdown","link":"/components/BulmaDropdown.html"},{"text":"File Input","link":"/components/BulmaFileInput.html"},{"text":"Form Inputs","link":"/components/BulmaFormInputs.html"},{"text":"Heading","link":"/components/BulmaHeading.html"},{"text":"Icon","link":"/components/BulmaIcon.html"},{"text":"Image","link":"/components/BulmaImage.html"},{"text":"Input","link":"/components/BulmaInput.html"},{"text":"Menu","link":"/components/BulmaMenu.html"},{"text":"Message","link":"/components/BulmaMessage.html"},{"text":"Navbar","link":"/components/BulmaNavbar.html"},{"text":"Select","link":"/components/BulmaSelect.html"},{"text":"Text Area","link":"/components/BulmaTextArea.html"}]},{"text":"Types","children":[{"text":"Overview","link":"/types/index.html"},{"text":"Aspect Ratio","link":"/types/BulmaAspectRatio.html"},{"text":"Button Colours","link":"/types/BulmaButtonColours.html"},{"text":"Common Types","link":"/types/common_types.html"},{"text":"Dimensions","link":"/types/BulmaDimensions.html"},{"text":"Heading Sizes","link":"/types/BulmaHeadingSizes.html"},{"text":"Heading Types","link":"/types/BulmaHeadingTypes.html"},{"text":"Menu","link":"/types/BulmaMenu.html"}]}],"sidebar":"auto","repo":"csc530/vuebulma","repoLabel":"Source","docsDir":"docs","contributors":true,"contributorsText":"Contributors","lastUpdated":true,"sidebarDepth":2,"locales":{"/":{"selectLanguageName":"English"}},"colorMode":"auto","colorModeSwitch":true,"logo":null,"selectLanguageText":"Languages","selectLanguageAriaLabel":"Select language","editLink":true,"editLinkText":"Edit this page","lastUpdatedText":"Last Updated","notFound":["There's nothing here.","How did we get here?","That's a Four-Oh-Four.","Looks like we've got some broken links."],"backToHome":"Take me home","openInNewWindow":"open in new window","toggleColorMode":"toggle color mode","toggleSidebar":"toggle sidebar"}`);
 const themeData = ref(themeData$1);
 const useThemeData = () => themeData;
 const themeLocaleDataSymbol = Symbol("");
@@ -1532,7 +1572,9 @@ function resolveUnref(r2) {
 }
 function createFilterWrapper(filter, fn) {
   function wrapper(...args) {
-    filter(() => fn.apply(this, args), { fn, thisArg: this, args });
+    return new Promise((resolve, reject) => {
+      Promise.resolve(filter(() => fn.apply(this, args), { fn, thisArg: this, args })).then(resolve).catch(reject);
+    });
   }
   return wrapper;
 }
@@ -2637,7 +2679,6 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
         }
         const currentPath = router.currentRoute.value.path;
         const currentFullPath = router.currentRoute.value.fullPath;
-        const currentHash = router.currentRoute.value.hash;
         const languageDropdown = {
           text: themeLocale.value.selectLanguageText ?? "unknown language",
           ariaLabel: themeLocale.value.selectLanguageAriaLabel ?? themeLocale.value.selectLanguageText ?? "unknown language",
@@ -2656,7 +2697,7 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
                 targetLocalePath
               );
               if (router.getRoutes().some((item) => item.path === targetLocalePage)) {
-                link = `${targetLocalePage}${currentHash}`;
+                link = currentFullPath.replace(currentPath, targetLocalePage);
               } else {
                 link = targetThemeLocale.home ?? targetLocalePath;
               }
@@ -3680,12 +3721,17 @@ const pagesRoutes = [
   ["v-2a4c8f8c", "/components/BulmaButton.html", { "title": "BulmaButton" }, ["/components/BulmaButton", "/components/BulmaButton.md"]],
   ["v-3a35f5f6", "/components/BulmaButtons.html", { "title": "BulmaButtons" }, ["/components/BulmaButtons", "/components/BulmaButtons.md"]],
   ["v-66cf740a", "/components/BulmaDropdown.html", { "title": "BulmaDropdown" }, ["/components/BulmaDropdown", "/components/BulmaDropdown.md"]],
+  ["v-6204c9b8", "/components/BulmaFileInput.html", { "title": "BulmaFileInput" }, ["/components/BulmaFileInput", "/components/BulmaFileInput.md"]],
+  ["v-70ee2eff", "/components/BulmaFormInputs.html", { "title": "Forms and fields" }, ["/components/BulmaFormInputs", "/components/BulmaFormInputs.md"]],
   ["v-4d6fa1b8", "/components/BulmaHeading.html", { "title": "Bulma Heading" }, ["/components/BulmaHeading", "/components/BulmaHeading.md"]],
   ["v-aebcdfda", "/components/BulmaIcon.html", { "title": "BulmaIcon" }, ["/components/BulmaIcon", "/components/BulmaIcon.md"]],
   ["v-704492ab", "/components/BulmaImage.html", { "title": "BulmaImage" }, ["/components/BulmaImage", "/components/BulmaImage.md"]],
+  ["v-18ea919c", "/components/BulmaInput.html", { "title": "BulmaInput" }, ["/components/BulmaInput", "/components/BulmaInput.md"]],
   ["v-befd5226", "/components/BulmaMenu.html", { "title": "BulmaMenu" }, ["/components/BulmaMenu", "/components/BulmaMenu.md"]],
   ["v-282e283f", "/components/BulmaMessage.html", { "title": "BulmaMessage" }, ["/components/BulmaMessage", "/components/BulmaMessage.md"]],
   ["v-6675c3c8", "/components/BulmaNavbar.html", { "title": "BulmaNavbar" }, ["/components/BulmaNavbar", "/components/BulmaNavbar.md"]],
+  ["v-608fb8b0", "/components/BulmaSelect.html", { "title": "BulmaSelect" }, ["/components/BulmaSelect", "/components/BulmaSelect.md"]],
+  ["v-fc46f75c", "/components/BulmaTextArea.html", { "title": "BulmaTextArea" }, ["/components/BulmaTextArea", "/components/BulmaTextArea.md"]],
   ["v-1020f180", "/components/", { "title": "Common attributes" }, ["/components/index.html", "/components/index.md"]],
   ["v-33445b78", "/types/BulmaAspectRatio.html", { "title": "BulmaAspectRatio" }, ["/types/BulmaAspectRatio", "/types/BulmaAspectRatio.md"]],
   ["v-094da602", "/types/BulmaButtonColours.html", { "title": "BulmaButtonColours" }, ["/types/BulmaButtonColours", "/types/BulmaButtonColours.md"]],

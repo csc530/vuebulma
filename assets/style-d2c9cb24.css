@@ -350,6 +350,7 @@ blockquote {
   border-left: 0.2rem solid var(--c-border-dark);
   margin: 1rem 0;
   padding: 0.25rem 0 0.25rem 1rem;
+  overflow-wrap: break-word;
 }
 blockquote > p {
   margin: 0;
@@ -372,6 +373,7 @@ h5,
 h6 {
   font-weight: 600;
   line-height: 1.25;
+  overflow-wrap: break-word;
 }
 h1:focus-visible,
 h2:focus-visible,
@@ -449,6 +451,7 @@ p,
 ul,
 ol {
   line-height: 1.7;
+  overflow-wrap: break-word;
 }
 
 hr {
