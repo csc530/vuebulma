@@ -3,6 +3,10 @@
 [Bulma documentation](https://bulma.io/documentation/components/breadcrumb/)
 [Component source](../../src/components/BulmaBreadcrumb.vue)
 
+[//]: # (## Demo)
+
+[//todo]: # (figure out how to add demos only with bulma styles <breadcrumb></breadcrumb>)
+
 ## Slots
 
 ### default
@@ -59,4 +63,3 @@ Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
 Default: `default`
 
 The size of the breadcrumbs
-

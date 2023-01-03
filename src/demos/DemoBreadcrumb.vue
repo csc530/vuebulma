@@ -64,19 +64,13 @@
 	import BulmaFormControl from "../components/form/groups/BulmaFormControl.vue";
 	import BulmaFormControlGroup from "../components/form/groups/BulmaFormControlGroup.vue";
 	import BulmaFormField from "../components/form/groups/BulmaFormField.vue";
-	import {
-		BulmaAlignments,
-		BulmaBreadcrumbSeparators,
-		BulmaSizes,
-		getBulmaAlignments,
-		getBulmaBreadcrumbSeparators,
-		getBulmaSizes
-	} from "../types";
+	import {BulmaAlignments, BulmaSizes, getBulmaAlignments, getBulmaSizes} from "../types";
+	import {BulmaBreadcrumbSeparator, getBulmaBreadcrumbSeparators} from "../types/BreadcrumbTypes";
 
 
 	const list = ref(window.location.pathname.split('/').filter(x => x));
 	const input = ref('');
-	const separator = ref<BulmaBreadcrumbSeparators>('succeeds');
+	const separator = ref<BulmaBreadcrumbSeparator>('succeeds');
 	const alignment = ref<BulmaAlignments>('left');
 	const size = ref<BulmaSizes>('default');
 

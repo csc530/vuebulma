@@ -12,7 +12,8 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BulmaAlignments, BulmaBreadcrumbSeparators, BulmaSizes, getBulmaClassesFromProps} from '../types';
+	import {BulmaAlignments, BulmaSizes, getBulmaClassesFromProps} from '../types';
+	import {BulmaBreadcrumbSeparator} from "../types/BreadcrumbTypes";
 
 	const props = withDefaults(defineProps<{
 		/** The tag or component to render as the breadcrumb's ul parent
@@ -28,7 +29,7 @@
 		alignment?: BulmaAlignments;
 		/** the separator to use between breadcrumbs
 		 * @default slash => / */
-		separator?: BulmaBreadcrumbSeparators;
+		separator?: BulmaBreadcrumbSeparator;
 		/** the size of the breadcrumbs
 		 * @default default */
 		size?: BulmaSizes
