@@ -30,7 +30,7 @@ Default: `p`
 
 ### [size](https://bulma.io/documentation/elements/title/#sizes)
 
-Type: [BulmaHeadingSizes](../types/BulmaHeadingSizes.md) | `undefined`
+Type: `1` | `2` | `3` | `4` | `5` | `6` | `undefined`
 
 Default: `1`
 
@@ -38,8 +38,8 @@ The size of the header. An integer from 1 to 6.
 
 ### `type`
 
-Type: [BulmaHeadingTypes](../types/BulmaHeadingTypes.md) | `undefined`
+Type: `title` | `subtitle` | `undefined`
 
 Default: `title`
 
-The type of the header. Either `title` or `subtitle`.
+The type of the header.

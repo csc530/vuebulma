@@ -1,23 +1,15 @@
 import {Component} from "vue";
-
-/** Separators for BulmaBreadcrumb component */
-export type BulmaBreadcrumbSeparators = 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
-
-/** List of separators for BulmaBreadcrumb component */
-export const getBulmaBreadcrumbSeparators = (): BulmaBreadcrumbSeparators[] => ['arrow', 'bullet', 'dot', 'succeeds', 'slash'];
-
-function toBulmaSeparatorClass(value: BulmaBreadcrumbSeparators): string {
-	return `has-${value}-separator`;
-}
-
-/**Sizes for BulmaHeadingSizes component. 1 is the biggest, 6 is the smallest */
-export type BulmaHeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
-export const getBulmaHeadingSizeClass = (size: BulmaHeadingSizes): string => 'is-' + removeDecimals(size);
+import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
 
 
+type ArrayElement<ArrayType extends readonly unknown[]> =
+	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
-type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link';
+
+//todo: rename prefix
+type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
 type Shade = 'white' | 'black' | 'light' | 'dark' | 'default';
+/** @description Bulma's colours */
 export type BulmaColours = StateColours | Shade;
 export const getBulmaColours = (): BulmaColours[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'white', 'black', 'light', 'dark', 'default'];
 
@@ -294,7 +286,3 @@ export interface BulmaButton {
 	onClick(event: Event): void;
 }
 
-/**
- * @description The types of headings for the `BulmaHeading` component
- */
-export type BulmaHeadingTypes = 'title' | 'subtitle';

@@ -1,5 +1,5 @@
 <template>
-	<component :is="tag" :class="[sizeClass, type, { 'is-spaced': isSpaced }]">
+	<component :is="tag" :class="[classes,type]">
 		<slot />
 	</component>
 </template>
@@ -8,20 +8,30 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BulmaHeadingSizes, BulmaHeadingTypes, getBulmaHeadingSizeClass} from '../types';
+	import {getBulmaClassesFromProps} from '../types';
+	import {BulmaHeadingSizes, BulmaHeadingTypes} from "../types/HeadingTypes";
 
 	const props = withDefaults(defineProps<{
-			/** If there will be regular spacing between `title`s and `subtitle`s*/
-			isSpaced?: boolean,
-			/** The container element or component for the BulmaHeading, defaults to `p` */
-			tag?: string,
-			/** Text size 1-6; 1 being the largest, defaults to 1 */
-			size?: BulmaHeadingSizes,
-			/**A title or subtitle, defaults to title*/
-			type?: BulmaHeadingTypes
-		}>(),
-		{tag: 'p', size: 1, type: 'title'});
+		/** If there will be regular spacing between `title`s and `subtitle`s as title and subtitle by default are placed closer to one another
+		 * @default false */
+		isSpaced?: boolean,
+		/** Text size 1-6; 1 being the largest and 6 being the smallest
+		 * @default  1 */
+		size?: BulmaHeadingSizes,
+		/** The container element or component for the BulmaHeading
+		 * @default p */
+		tag?: string,
+		/**A title or subtitle
+		 * @defaults to title*/
+		type?: BulmaHeadingTypes
+	}>(), {
+		isSpaced: false,
+		size: 1,
+		tag: 'p',
+		type: 'title'
+	});
 
-	const sizeClass = computed(() => getBulmaHeadingSizeClass(props.size));
+
+	const classes = computed(() => getBulmaClassesFromProps(props));
 </script>
 
