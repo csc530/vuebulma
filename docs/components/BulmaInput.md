@@ -21,19 +21,19 @@ Type: [BulmaSizes](../types/common_types.md#bulmasizes) | `undefined`
 
 Type: `boolean` | `undefined`
 
-Wheter the input is rounded.
+Whether the input is rounded.
 
 ### isLoading
 
 Type: `boolean` | `undefined`
 
-Wheter the input is in a loading state and should show a spinner.
+Whether the input is in a loading state and should show a spinner.
 
 ### isStatic
 
 Type: `boolean` | `undefined`
 
-When `true`, the input styled statically; like a label, uneditable
+When `true`, the input styled statically; like a label, un-editable
 
 ### modelValue
 

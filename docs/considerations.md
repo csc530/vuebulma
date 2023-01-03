@@ -1,4 +1,4 @@
-# hmmmm...?
+# hmm...?
 
 - should I add auto `is-expanded` classes to single item
   navbar [sections](https://bulma.io/documentation/components/navbar/#navbar-menu) or leave it up to the user to add it

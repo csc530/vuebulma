@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaAlignments, BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		label?: string;
@@ -20,13 +20,7 @@
 		size?: BulmaSizes
 		/** The colour of the file input */
 		colour?: BulmaColours;
-		alignment?: BulmaAlignment
-		/** Whether the file input is rounded */
-		isRounded?: boolean;
-		/** Whether the file input is loading */
-		isLoading?: boolean;
-		/** Whether the file input is static */
-		isStatic?: boolean;
+		alignment?: BulmaAlignments
 		/** If the file input should have a boxed display */
 		isBoxed?: boolean;
 		/** Determines if the input file name will expand to fill the available space */

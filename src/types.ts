@@ -96,10 +96,11 @@ export function getLeftRightClasses(leftRight?: LeftRight): string {
 	return `is-${leftRight}`;
 }
 
-export type BulmaAlignment = 'center' | LeftRight;
-export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
+export type BulmaAlignments = 'center' | LeftRight;
+export const getBulmaAlignments = (): BulmaAlignments[] => ['left', 'center', 'right'];
 
-export function getAlignmentClasses(alignment?: BulmaAlignment): string {
+//todo: change name of getXClasses to `toBulmaClass`
+export function getAlignmentClasses(alignment?: BulmaAlignments): string {
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return '';

@@ -9,14 +9,14 @@
 
 <script lang="ts" setup>
 	import {computed, ref} from "vue";
-	import {BulmaAlignment, BulmaButton as pp, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaAlignments, BulmaButton as pp, BulmaSizes, getBulmaClassesFromProps} from "../../types";
 	import BulmaButton from "./BulmaButton.vue";
 
 	const props = withDefaults(defineProps<{
 		tag?: string
 		size?: BulmaSizes
 		hasAddons?: boolean
-		alignment?: BulmaAlignment
+		alignment?: BulmaAlignments
 		activateOnClick?: boolean | 'singly'
 		items?: string[] | pp[]
 	}>(), {

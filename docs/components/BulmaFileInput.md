@@ -33,7 +33,7 @@ The colour of the file input
 
 ### alignment
 
-Type: [`BulmaAlignment`](../types/common_types.md#bulmaalignment) | `undefined`
+Type: [`BulmaAlignments`](../types/common_types.md#bulmaalignments) | `undefined`
 
 ### isBoxed
 

@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaSizes, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
+	import {BulmaAlignments, BulmaSizes, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		/**label for this whole group of controls; ONLY render isHorizontal */
@@ -26,7 +26,8 @@
 		help?: string;
 		tag?: string;
 		/** make form controls [and all children] be inline (on the same line) */
-		isGrouped?: false | BulmaAlignment;
+		// todo: test if this is dup of formcontrolgroup's
+		isGrouped?: false | BulmaAlignments;
 		/** applicable only with isGrouped */
 		isMultiline?: boolean;
 		//todo: finish class logic https://bulma.io/documentation/form/general/#horizontal-form

@@ -34,13 +34,13 @@ appear as a single, joined button element.
 
 ### alignment
 
-Type: [BulmaAlignment](../types/common_types.md#bulmaalignment) | `undefined`
+Type: [BulmaAlignments](../types/common_types.md#bulmaalignments) | `undefined`
 
 The alignment of the buttons.
 
 ### activateOnClick
 
-*Reqires button children to rendered with [items](#items) prop not passed in with [slot](#slots)*
+*Requires button children to rendered with [items](#items) prop not passed in with [slot](#slots)*
 Type: `boolean` | `singly'
 
 When `true`, the buttons will be activated (adding `is-active` class to button) when clicked. When `singly`, only one

@@ -51,11 +51,11 @@ The form [controls](#bulmaformcontrol) to be grouped together.
 
 #### isGrouped
 
-Type: `false` | [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
+Type: `false` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
 
 #### hasAddons
 
-Type: `boolean` | [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
+Type: `boolean` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
 
 ## BulmaFormField
 
@@ -92,7 +92,7 @@ Default: `div`
 
 #### isGrouped
 
-Type: `false` | [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
+Type: `false` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
 
 make form controls [and all children] be inline (on the same line)
 

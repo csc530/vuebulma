@@ -73,7 +73,7 @@ When true, the button will have a transparent (default) background and a coloure
 
 Type:  `boolean` | `undefined`
 
-When true, the button will be invertedl where the text color becomes the background color, and vice-versa
+When true, the button will be inverted; where the text color becomes the background color, and vice-versa
 
 ### isRounded
 
@@ -102,7 +102,7 @@ When true, the button will look non-interactive
 
 Type:  `boolean` | `undefined`
 
-When true, the button will look active, as if it's curently being clicked
+When true, the button will look active, as if it's currently being clicked
 
 ## Exposes
 

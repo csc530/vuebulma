@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Export of types in types.ts for package
-- Fixed navabr activation method on item click
+- Fixed navbar activation method on item click
 - Button prop/ButtonColour type to include all colours + text + ghost
 
 ## [0.0.0-7] - 2022-12-13
@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Typescript defintions to include comments/documentation of props, types, functions, etc.
+- Typescript definitions to include comments/documentation of props, types, functions, etc.
 
 ## [0.0.0-6.1] - 2022-12-13
 
