@@ -1,24 +1,12 @@
 import {Component} from "vue";
 
-export interface BreadcrumbItem extends Link {
-	isActive: boolean,
-}
+/** Separators for BulmaBreadcrumb component */
+export type BulmaBreadcrumbSeparators = 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
 
-export interface Link {
-	href: URL | string,
-	text: string | (() => string),
-}
+/** List of separators for BulmaBreadcrumb component */
+export const getBulmaBreadcrumbSeparators = (): BulmaBreadcrumbSeparators[] => ['arrow', 'bullet', 'dot', 'succeeds', 'slash'];
 
-export const getLinkText = (link: Link): string => {
-	if(typeof link.text === 'string') {
-		return link.text;
-	}
-	return link.text();
-};
-
-/**
- * @description Sizes for BulmaHeadingSizes component. 1 is the biggest, 6 is the smallest.
- */
+/**Sizes for BulmaHeadingSizes component. 1 is the biggest, 6 is the smallest */
 export type BulmaHeadingSizes = 1 | 2 | 3 | 4 | 5 | 6;
 export const getBulmaHeadingSizeClass = (size: BulmaHeadingSizes): string => 'is-' + removeDecimals(size);
 
@@ -83,8 +71,8 @@ export const getBulmaSizes = (): BulmaSizes[] => ['small', 'default', 'medium', 
 
 export function getSizeClasses(size?: BulmaSizes, areClasses?: boolean): string {
 	if(!size || size === 'default')
-		return '';
-	return areClasses ? `is-${size}` : `are-${size}`;
+		return 'is-normal';
+	return areClasses ? `are-${size}` : `is-${size}`;
 }
 
 export type LeftRight = 'left' | 'right';
@@ -104,6 +92,9 @@ export function getAlignmentClasses(alignment?: BulmaAlignments): string {
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return '';
+	//todo: double check and verify this is true for all uses; needed for breadcrumb's at least
+	else if(alignment === 'center')
+		return 'is-centered';
 	return `is-${alignment}`;
 }
 
@@ -128,8 +119,14 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		                        else if(className === 'isfixed')
 			                        className = 'is-fixed-' + classes[key];
 		                        // ? no need to check for `-` in key as vue transforms it to camelCase
-		                        else
-			                        className = className.replace('is', 'is-');
+		                        else {
+			                        // ? replace `is` followed by a capital letter with `is-`
+			                        const isClassName = className.replace(/is([A-Z])/g, 'is-$1').toLowerCase();
+			                        if(isClassName !== className)
+				                        className = isClassName;
+			                        else
+				                        return '';
+		                        }
 		                        return className;
 	                        });
 	const hasClasses = Object.keys(classes)
@@ -154,7 +151,8 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		classList.push(getAlignmentClasses(classes.alignment));
 	if(classes.size)
 		classList.push(getSizeClasses(classes.size, areSizes));
-	return classList
+	//remove blank or undefined entries
+	return classList.filter(x => x);
 }
 
 export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {

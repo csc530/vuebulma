@@ -7,12 +7,14 @@
 
 ### default
 
-Template formatting of the breadcrumb items. The default is an `a` tag with the `href` attribute set to the `href`
-property of the item.
+Template formatting of the breadcrumb items.
+
+The default is an `a` tag with the `href` attribute set to the `href` property of the item and text set to the `text`
+property of the item or the item itself.
 
 ## Props
 
-### [rootTag](../types/common_types.md#tag)
+### [tag](../types/common_types.md#tag)
 
 Type: `string` | `undefined`
 
@@ -24,24 +26,23 @@ the tag to render as the breadcrumb's `ul` parent
 
 Type: `boolean` | `undefined`
 
-Default: `false`
+Default: `true`
 
 Whether the last breadcrumb item should be active
 
 ### list
 
-[//]: # (TODO: add a link to the type definition)
-Type: `BreadcrumbItem[]`
+Type: `any[]`
 
 List of items to render in the breadcrumb
 
 ### alignment
 
-Type: `is-centered` | `is-right` | `is-left` | `undefined`
+Type: [`BulmaAlignments`](../types/common_types.md#bulmaalignments) | `undefined`
 
-Default: `is-left`
+Default: `left`
 
-the alignment of the breadcrumbs within its container
+The alignment of the breadcrumbs within its container
 
 ### separator
 
@@ -58,3 +59,4 @@ Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
 Default: `default`
 
 The size of the breadcrumbs
+

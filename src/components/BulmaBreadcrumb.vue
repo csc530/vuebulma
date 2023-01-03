@@ -1,9 +1,9 @@
 <template>
-	<component :is="wrapperTag" class="breadcrumb" v-bind:class="[alignment,separatorType,getSize]">
+	<component :is="tag" class="breadcrumb" v-bind:class="classes">
 		<ul>
 			<li v-for="(item, index) in list" :key="index" :class="isActiveCrumb(index)">
 				<slot v-bind:data="item">
-					<a :href="item.href.toString()">{{ item.text }}</a>
+					<a :href="item?.href ? item.href : item">{{ item.text ? item.text : item }}</a>
 				</slot>
 			</li>
 		</ul>
@@ -12,42 +12,37 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BreadcrumbItem, BulmaSizes, getSizeClasses} from '../types';
+	import {BulmaAlignments, BulmaBreadcrumbSeparators, BulmaSizes, getBulmaClassesFromProps} from '../types';
 
-	type ArrayElement<ArrayType extends readonly unknown[]> =
-			ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
-	
-	const props = defineProps<{
-		/// the tag or component to render as the breadcrumb's ul parent
-		rootTag?: string;
+	const props = withDefaults(defineProps<{
+		/** The tag or component to render as the breadcrumb's ul parent
+		 * @default nav */
+		tag?: string;
+		/** If the last item in the breadcrumb's list should be active; appending 'is-active' to the item
+		 * @default true */
 		lastCrumbIsActive?: boolean;
-		/// the list of items to render as breadcrumbs;
-		list: BreadcrumbItem[];
-		/// the alignment of the breadcrumb; defaults to 'is-left'
-		alignment?: 'is-centered' | 'is-right' | 'is-left';
-		/// the separator to use between breadcrumbs; defaults to '/'; slash
-		separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds' | 'slash';
-		/// the size of the breadcrumbs
+		/** list of items to render as breadcrumbs */
+		list: any[];
+		/** the alignment of the breadcrumb within container
+		 * @default left */
+		alignment?: BulmaAlignments;
+		/** the separator to use between breadcrumbs
+		 * @default slash => / */
+		separator?: BulmaBreadcrumbSeparators;
+		/** the size of the breadcrumbs
+		 * @default default */
 		size?: BulmaSizes
-	}>();
-	
-	
-	const {rootTag: tag, lastCrumbIsActive, list} = props;
-	
-	const wrapperTag = computed(() => tag ? tag : 'nav');
-	const isActiveCrumb = (index: number) => {
-		if((lastCrumbIsActive && index === list.length - 1) || list[index].isActive)
-			return 'is-active';
-		return '';
-	};
-	
-	const separatorType = computed(() => {
-		if(props.separator && props.separator !== 'slash')
-			return `has-${props.separator}-separator`;
-		return '';
+	}>(), {
+		tag: 'nav',
+		lastCrumbIsActive: true,
+		alignment: 'left',
+		separator: 'slash',
+		size: 'default'
 	});
-	
-	const getSize = computed(() => {
-		return getSizeClasses(props.size);
-	});
+
+	const {lastCrumbIsActive, list} = props;
+
+	const isActiveCrumb = (index: number) => (lastCrumbIsActive && index === list.length - 1) || list[index].isActive ? 'is-active' : false;
+
+	const classes = computed(() => getBulmaClassesFromProps(props, false));
 </script>
