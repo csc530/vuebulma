@@ -11,7 +11,7 @@ A message box component
 
 Text or HTML content to display in the message body
 
-### header
+### heading
 
 Text or HTML content to display in the message header
 
@@ -25,7 +25,7 @@ Default: `article`
 
 HTML or registered component tag for the message
 
-### [headerTag](../types/common_types.md#tag)
+### [headingTag](../types/common_types.md#tag)
 
 Type: `string` | `undefined`
 
@@ -33,7 +33,7 @@ Default: `header`
 
 HTML or registered component tag for the message's header
 
-### title
+### heading
 
 Type: `string` | `undefined`
 
@@ -69,9 +69,9 @@ Display size of the message component
 
 ### closeBehaviour
 
-Type: `boolean` | `hide` | `remove` | `(event: Event, messageElement: HTMLElement) => void`
+Type: `boolean` | `hide` | `remove`
 
-Default: `hide`
+Default: `remove`
 
 Behaviour of the message after close button is clicked
 
@@ -79,11 +79,15 @@ Behaviour of the message after close button is clicked
 
 ### `closeMsg`
 
-```ts
-function closeMsg(event: Event, msgContainer: HTMLElement): void {}
+```ts:no-line-numbers
+function closeMsg(event: Event, msgContainer: HTMLElement, deleteBtn: HTMLButtonElement): void {}
 ```
 
 Emitted when the message is closed; when the close button is clicked.
 
 - `event` is the event that triggered the close;
 - `msgContainer` is the message container element.
+- `deleteBtn` is the close button element.
+
+If you had set the `closeBehaviour` prop to `hide`, you can use the `deleteBtn` click event to show the message again;
+it works as a toggle.

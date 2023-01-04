@@ -1,10 +1,13 @@
 <template>
 	<component :is="containerTag" :class="classes" class="message">
-		<component :is="headerTag" v-if="title || $slots.header || deleteBtn" class="message-header">
-			<slot v-if="$slots.header" name="header" />
-			<p v-else-if="title">{{ title }}</p>
-			<!--			todo: replace with bulma button/delete-->
-			<button v-if="deleteBtn" class="delete" @click="deleteOnClick($event, $el)"></button>
+
+		<component :is="headingTag" v-if="title || $slots.heading || deleteBtn" class="message-header">
+			<slot name="heading">
+				{{ heading }}
+			</slot>
+			<!--todo: replace with bulma button/delete-->
+			<button v-if="deleteBtn" ref="delBtn" class="delete"
+			        @click="deleteOnClick($event, $el,$refs.delBtn)"></button>
 		</component>
 
 		<component :is="bodyTag" class="message-body">
@@ -14,49 +17,63 @@
 </template>
 
 <script lang="ts" setup>
-	import {computed, defineEmits} from "vue";
+	import {computed, defineEmits, ref} from "vue";
 	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../types";
 
 	const emit = defineEmits<{
-		(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
+		/**
+		 * Triggered when delete button is clicked
+		 * @param {"closeMsg"} name Name of the event
+		 * @param {Event} event Event object
+		 * @param {HTMLElement} msgContainer The parent element of the message
+		 * @param {HTMLElement} deleteBtn The delete button element
+		 */
+		(name: 'closeMsg', event: Event, msgContainer: HTMLElement, deleteBtn: HTMLButtonElement): void,
 	}>();
 
 	const props = withDefaults(defineProps<{
-		/**HTML or registered component tag for the message */
-		containerTag?: string;
-			/** HTML or registered component tag for the message's header */
-			headerTag?: string;
+			/**HTML or registered component tag for the message
+			 * @default article */
+			containerTag?: string;
+			/** HTML or registered component tag for the message's header
+			 * @default header */
+			headingTag?: string;
 			/** Display text in message title */
-			title?: string;
+			heading?: string;
 			/** Show close button in the message header */
 			deleteBtn?: boolean;
-			/** HTML or registered component tag to contain message body */
+			/** HTML or registered component tag to contain message body
+			 * @default p*/
 			bodyTag?: string;
 			/** Colour of message */
 			colour?: BulmaColour;
-			/** display size of the message */
+			/** display size of the message
+			 * @default default */
 			size?: BulmaSize;
-			/** Behaviour of the message after close button is clicked */
+			/** Behaviour of the message after close button is clicked
+			 * @default remove */
 			//TODO: remove function type and replace with emit function
-			closeBehaviour?: boolean | 'hide' | 'remove' | ((event: Event, messageElement: HTMLElement) => void);
+			closeBehaviour?: boolean | 'hide' | 'remove';
 		}>(),
 		{
 			containerTag: 'article',
-			headerTag: 'header',
-			bodyTag: 'p'
+			headingTag: 'header',
+			bodyTag: 'p',
+			size: 'default',
+			closeBehaviour: 'remove'
 		});
 
 	const classes = computed(() => getBulmaClassesFromProps(props));
 
+	const delBtn = ref<HTMLButtonElement | null>(null);
+
 	//TODO: investigate default emit function to be used and prevent with .preventDEfault in components
-	const deleteOnClick = (event: Event, target: HTMLElement) => {
-		if (typeof props.closeBehaviour === 'function')
-			props.closeBehaviour(event, target);
-		else if (props.closeBehaviour === 'remove')
+	const deleteOnClick = (event: Event, target: HTMLElement, delBtn: HTMLButtonElement) => {
+		if(props.closeBehaviour === 'remove')
 			target.remove();
-		else if (props.closeBehaviour === 'hide' || props.closeBehaviour === true)
+		else if(props.closeBehaviour)
 			target.classList.toggle('is-hidden');
-		// emit('closeMsg', event, target); temp //!until top todo is finished
+		emit('closeMsg', event, target, delBtn);
 	}
 </script>
 

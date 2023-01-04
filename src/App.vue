@@ -1,6 +1,6 @@
 <template>
-	<demo-image />
+	<demo-message />
 </template>
 
 <script lang="ts" setup>
-	import DemoImage from "./demos/DemoImage.vue";</script>
+	import DemoMessage from "./demos/DemoMessage.vue";</script>

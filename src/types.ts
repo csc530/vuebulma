@@ -150,7 +150,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                         });
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
-		classList.push(getColourClass(classes['colour'], null));
+		classList.push(getColourClass(classes['colour']));
 	if(classes.alignment)
 		classList.push(getAlignmentClasses(classes.alignment));
 	if(classes.size)
