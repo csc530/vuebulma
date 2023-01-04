@@ -5,8 +5,6 @@
 ![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
 ![weekly npm downloads](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
 
-*On vacation back in ~2 weeks*
-
 ## [Changelog](/../gh-pages/docs/changelog.md)
 
 ## Disclaimer
@@ -16,8 +14,8 @@ Developed with/for Vue v3.2.45 and Bulma v0.9.4
 This package is very much still under active development. It is not recommended to use this in production. Feel free to
 help or report any issues😃.
 
-My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, *and* it's composition api.
-I really love Bulma, and it's modern styling using CSS without JavaScript. It's definitely my bias over Bootstrap now😅.
+My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, *and* it's composition api
+because I really love Bulma, and it's styling.
 
 ## Installation
 

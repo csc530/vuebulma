@@ -13,9 +13,11 @@ import BulmaNavbar from "./components/containers/navbar/BulmaNavbar.vue";
 import BulmaFileInput from "./components/form/BulmaFileInput.vue";
 import BulmaInput from "./components/form/BulmaInput.vue";
 import BulmaSelect from "./components/form/BulmaSelect.vue";
+import BulmaTextArea from "./components/form/BulmaTextArea.vue";
 import BulmaFormControl from "./components/form/groups/BulmaFormControl.vue";
+import BulmaFormControlGroup from "./components/form/groups/BulmaFormControlGroup.vue";
 import BulmaFormField from "./components/form/groups/BulmaFormField.vue";
-import BulmaFormControlGroup  from "./components/form/groups/BulmaFormControlGroup.vue";
+
 
 const vuebulma = {
 	install(Vue: any) {
@@ -38,6 +40,7 @@ const vuebulma = {
 		Vue.component('BulmaFormControl', BulmaFormControl);
 		Vue.component('BulmaFormField', BulmaFormField);
 		Vue.component('BulmaFormControlGroup', BulmaFormControlGroup);
+		Vue.component('BulmaTextArea', BulmaTextArea);
 	}
 };
 
@@ -49,6 +52,7 @@ export {
 	BulmaBox,
 	BulmaBlock,
 	BulmaDropdown,
+	BulmaTextArea,
 	BulmaMessage,
 	BulmaMenu,
 	BulmaNavbar,
