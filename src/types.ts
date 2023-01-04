@@ -66,10 +66,6 @@ const getGrayscale = (): Grayscale[] => {
 //? stack question what monstrosity have I created lol
 export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColours;
 
-export interface ColourIcon {
-	icon: string;
-	colour: ColourHelper;
-}
 
 export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
 export const getBulmaSizes = (): BulmaSize[] => ['small', 'default', 'medium', 'large'];

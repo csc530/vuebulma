@@ -1,7 +1,6 @@
 <template>
-	<DemoHeading />
-	<!--	<demo-breadcrumb/>-->
+	<demo-icon />
 </template>
 
 <script lang="ts" setup>
-	import DemoHeading from "./demos/DemoHeading.vue";</script>
+	import DemoIcon from "./demos/DemoIcon.vue";</script>

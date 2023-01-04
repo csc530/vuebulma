@@ -1,116 +1,100 @@
 <template>
-	<component v-bind="$attrs" :is="flex ? 'div' : 'span'" v-for="item in iconSet"
-	           v-bind:class="[rootClass,colourClass,size]">
-		<span v-if="$slots.default && afterText">
-			<slot />
-		</span>
 
-		<!--		todo:improve render of icon and binding of colour classes
-		to deeply nested two spans with class=icon-->
-		<span v-if="!stacked" :class="getIconColour(item)" class="icon">
-			<i :class="[prefix,getIconClass(item),iconModifiers]"></i>
-		</span>
-		<span v-else-if="iconStack.length !== 0" :class="stackWrapper">
-			<span v-for="icon in iconStack" :class="getIconColour(icon)" class="icon">
-			<i :class="[prefix,getIconClass(icon),iconModifiers]"></i>
-			</span>
-		</span>
+	<!-- Icon text -->
+	<component :is="flex ? 'div' : 'span'" v-if="rootClass === 'icon-text'" :class="[rootClass,colourClass]">
+		<slot v-if="textFirst" name="text">{{ text }}</slot>
 
-		<span v-if="$slots.default && !afterText">
-			<slot />
-		</span>
+		<BulmaIcon v-if="$slots.icon" :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
+		           :stacked="stacked">
+			<slot name="icon" />
+		</BulmaIcon>
+		<BulmaIcon v-else :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
+		           :stacked="stacked" />
+
+		<slot v-if="!textFirst" name="text">{{ text }}</slot>
 	</component>
+
+	<!--Icon -->
+	<template v-else>
+		<!--Multiple stacked-->
+		<span v-if="Array.isArray(iconLibraryClass) && stacked" :class="[stacked,sizeClass]" class="icon">
+			<slot name="icon">
+				<i v-for="(icon,i) in iconLibraryClass" :class="[icon,iconColourClass(i),prefix]" />
+			</slot>
+		</span>
+		<!--Multiple sequential-->
+		<span v-for="(icon,i) in iconLibraryClass" v-else-if="Array.isArray(iconLibraryClass)"
+		      :class="[sizeClass,iconColourClass(i)]" class="icon">
+			<slot name="icon">
+				<i :class="[icon,prefix]" />
+			</slot>
+		</span>
+		<!--Single-->
+		<span v-else :class="sizeClass" class="icon">
+			<slot name="icon">
+				<i :class="[iconLibraryClass,prefix]" />
+			</slot>
+		</span>
+	</template>
 </template>
 
 <script lang="ts" setup>
-	import {computed, ref, useSlots} from 'vue';
-	import {BulmaSizes, ColourHelper, ColourIcon, getColourClass, getSizeClasses} from '../types';
+	import {computed, useSlots} from 'vue';
+	import {BulmaColour, BulmaColourHelper, BulmaSize, getColourClass, getSizeClasses} from '../types';
+	import {BulmaColouredIcon} from "../types/IconTypes";
 
 
 	const props = defineProps<{
-		/**The icon class name with style prefix, fa-solid fa-shield-cat || [fa-solid, fa-shield-cat]*/
-		icon: string | string[] | ColourIcon[],
+		/**The icon class name with style prefix
+		 * @example 'fa-solid', 'fa-shield-cat', [fa-solid, fa-shield-cat]*/
+		icon?: string | (string | BulmaColouredIcon)[] | BulmaColouredIcon,
+		/** If the icon element will be a display flex; filling space of parent container
+		 * @default false*/
 		flex?: boolean,
-		/**Text colour*/
-		colour?: ColourHelper,
-		/**background colour*/
-		bgColour?: ColourHelper,
-		containerSize?: BulmaSizes,
+		/** The text to display next to the icon */
+		text?: string,
+		/**Text and icon's colour*/
+		colour?: BulmaColourHelper | BulmaColour,
+		/** The size of the icon and text container
+		 * @default default */
+		containerSize?: BulmaSize,
 		/**adds this prefix as a separate class entry to icon element*/
 		prefix?: string,
-		///if the icon will be placed after the text (slot) element
-		//todo: make a better and more intiuitive name for this
-		afterText?: boolean,
+		/**
+		 * If the text appears before the icon
+		 *
+		 * requires {@link text} or text slot*/
+		textFirst?: boolean,
 		/** if the icons will be stacked on top of each other rather than side by side
+		 *
 		 * if the icon stack needs a class added to it (e.g. fa-stack) then stacked string value will be appended to the icon's span
 		 */
-		stacked?: boolean | string,
-		///additional modifiers for the icon, class names will be added to the icon's i element
-		iconModifiers?: string[] | string,
+		stacked?: boolean | string
 	}>();
 
-	const rootClass = computed(() => {
-		if(useSlots().default)
-			return 'icon-text';
-		else
-			return 'icon';
-	});
-
-	const iconSet = computed(() => {
-		if(props.stacked && props.icon instanceof Array)
-			return ['dummy entry just to make the loop work (once)'];
+	const iconLibraryClass = computed(() => {
 		if(Array.isArray(props.icon))
-			return props.icon;
-		else
-			return [props.icon];
+			return props.icon.map(icon => {
+				if(typeof icon === 'string')
+					return icon;
+				else
+					return icon.icon ? icon.icon : '';
+			}).filter(icon => icon !== '');
+		else if(typeof props.icon === 'string') return props.icon;
+		else if(typeof props.icon === "object") return props.icon.icon;
+		else return;
 	});
-	const colouredStack = ref<boolean>(false);
-	const iconStack = computed(() => {
-		if(props.stacked && props.icon instanceof Array && props.icon.length !== 0)
-			if(typeof props.icon[0] === 'string')
-				return props.icon as string[];
-			else {
-				colouredStack.value = true;
-				return (props.icon as ColourIcon[]).map<string>(x => x.icon);
-			}
-		else
-			return [];
 
-	});
-	const stackWrapper = computed(() => {
-		if(typeof props.stacked === 'string')
-			return props.stacked;
-		else
-			return '';
-	});
-	const getIconClass = (icon: string | ColourIcon) => {
-		if(typeof icon === 'string')
-			return icon;
-		else
-			return icon.icon;
-	};
-	const getIconColour = (icon: string | ColourIcon) => {
-		if(typeof icon === 'string')
-			return undefined;
-		else
-			return getColourClass(icon.colour, 'text');
+	const rootClass = computed(() => useSlots().text || props.text ? 'icon-text' : 'icon');
+
+	const colourClass = computed(() => props.colour ? getColourClass(props.colour, 'text') : null);
+
+	const iconColourClass = (index: number) => {
+		if(props.icon && Array.isArray(props.icon) && typeof props.icon[index] !== 'string')
+			return getColourClass((props.icon[index] as BulmaColouredIcon).colour, 'text')
+		return null;
 	};
 
-	const colourClass = computed(() => {
-		let classes = [];
-		if(props.colour)
-			classes.push(getColourClass(props.colour, 'text'));
-		if(props.bgColour)
-			classes.unshift(getColourClass(props.bgColour, 'background'));
-		return classes;
-	});
-
-
-	const size = computed(() => {
-		if(props.containerSize)
-			return getSizeClasses(props.containerSize);
-		else
-			return '';
-	});
+	const sizeClass = computed(() => getSizeClasses(props.containerSize));
 </script>
 
