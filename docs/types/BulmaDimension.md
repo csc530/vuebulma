@@ -1,4 +1,4 @@
-# BulmaDimensions
+# BulmaDimension
 
 **number**
 

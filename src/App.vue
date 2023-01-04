@@ -1,6 +1,6 @@
 <template>
-	<demo-icon />
+	<demo-image />
 </template>
 
 <script lang="ts" setup>
-	import DemoIcon from "./demos/DemoIcon.vue";</script>
+	import DemoImage from "./demos/DemoImage.vue";</script>

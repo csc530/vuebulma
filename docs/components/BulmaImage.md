@@ -3,16 +3,25 @@
 [Bulma documentation](https://bulma.io/documentation/elements/image/)
 [Component source](../../src/components/BulmaImage.vue)
 
-An element to display an image with Bulma classes; An img with a container to hold it's size allowing for no page
-jumping when it's loaded.
+An img with a container to hold maintain its size allowing for no page jumping when it's loaded.
+
+## Slots
+
+### default
+
+The image to display.
+
+### figcaption
+
+The caption to display for the image.
 
 ## Props
 
-### dimension
+### dimensions
 
-Type: [`BulmaDimensions`](../types/bulmadimensions) | `undefined`
+Type: [`BulmaDimension`](../types/BulmaDimension) | `undefined`
 
-Standard dimension for the image container to be from 16 to 128
+Standard dimensions for the image container to be from 16 to 128
 
 ### isRounded
 
@@ -22,7 +31,7 @@ If the container should be rounder; clipping whatever does not fit into the imag
 
 ### aspectRatio
 
-Type: [`BulmaAspectRatios`](../types/BulmaAspectRatio.md) | `undefined`
+Type: [`BulmaAspectRatio`](../types/BulmaAspectRatio.md) | `undefined`
 
 _Requires **width** attribute to be set_
 Sets the height based on given width and aspect ratio.

@@ -1,5 +1,6 @@
 import {Component} from "vue";
 import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
+import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
 
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -64,7 +65,7 @@ const getGrayscale = (): Grayscale[] => {
 };
 
 //? stack question what monstrosity have I created lol
-export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColours;
+export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColour;
 
 
 export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
@@ -115,7 +116,9 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                        .filter(key => classes[key] && key.includes('is'))
 	                        .map(key => {
 		                        let className = key.toLowerCase();
-		                        if(className === 'isdropup')
+		                        if(className === 'isrounded')
+			                        return '';
+		                        else if(className === 'isdropup')
 			                        className = 'is-up';
 		                        else if(className === 'isfixed')
 			                        className = 'is-fixed-' + classes[key];
@@ -147,13 +150,17 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                         });
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
-		classList.push(getColourClass(classes['colour'], 'text'));
+		classList.push(getColourClass(classes['colour'], null));
 	if(classes.alignment)
 		classList.push(getAlignmentClasses(classes.alignment));
 	if(classes.size)
 		classList.push(getSizeClasses(classes.size, areSizes));
 	if(classes.separator)
 		classList.push(toBulmaSeparatorClass(classes.separator));
+	if(classes.aspectRatio)
+		classList.push(toBulmaAspectRatioClass(classes.aspectRatio));
+	if(classes.dimensions)
+		classList.push(toBulmaDimensionsClass(classes.dimensions));
 	//remove blank or undefined entries
 	return classList.filter(x => x);
 }
@@ -182,42 +189,7 @@ export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {
 
 }
 
-export type Dimensions = 16 | 24 | 32 | 48 | 64 | 96 | 128;
-export const getDimensions = (): Dimensions[] => [16, 24, 32, 48, 64, 96, 128];
-
-export function getDimensionClasses(dimension?: Dimensions): string {
-	if(!dimension)
-		return '';
-	const dim = removeDecimals(dimension);
-	return `is-${dim}x${dim}`;
-}
-
-export type AspectRatios =
-	'square'
-	| '1by1'
-	| '5by4'
-	| '4by3'
-	| '3by2'
-	| '5by3'
-	| '16by9'
-	| '2by1'
-	| '3by1'
-	| '4by5'
-	| '3by4'
-	| '2by3'
-	| '3by5'
-	| '9by16'
-	| '1by2'
-	| '1by3'
-export const getAspectRatios = (): AspectRatios[] => ['square', '1by1', '5by4', '4by3', '3by2', '5by3', '16by9', '2by1', '3by1', '4by5', '3by4', '2by3', '3by5', '9by16', '1by2', '1by3'];
-
-export function getAspectRatioClasses(aspectRatio?: AspectRatios): string {
-	if(!aspectRatio)
-		return '';
-	return `is-${aspectRatio}`;
-}
-
-function removeDecimals(value: number): string {
+export function removeDecimals(value: number): string {
 	return Number(value).toFixed().toString();
 }
 

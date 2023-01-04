@@ -1,11 +1,8 @@
 <template>
-	<figure :class="[getDimensionClasses(dimension), getAspectRatioClasses(aspectRatio)]" class="image">
-		<picture>
-			<!--! todo: bind is rounded class in some sort of container to work if they slot the image or ifram eor wtv			-->
-			<slot v-if="$slots.default" />
-			<!--! todo: fix isBulma classes			-->
-			<img v-else :alt="alt" :class="classes" :src="src" v-bind="$attrs" />
-		</picture>
+	<figure :class="classes" class="image">
+		<slot>
+			<img :alt="alt" :class="{'is-rounded': isRounded}" :src="src" v-bind="$attrs" />
+		</slot>
 		<figcaption v-if="$slots.figcaption || caption">
 			<slot name="figcaption">{{ caption }}</slot>
 		</figcaption>
@@ -13,32 +10,36 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed } from "vue";
-	import {
-		AspectRatios,
-		Dimensions,
-		getAspectRatioClasses,
-		getBulmaClassesFromProps,
-		getDimensionClasses
-	} from "../types";
+	import {computed} from "vue";
+	import {getBulmaClassesFromProps} from "../types";
+	import {BulmaAspectRatio, BulmaDimension} from "../types/ImageTypes";
 
 	const props = defineProps<{
-		/** Standard dimension for the image container to be from 16 - 128 increase by a factor of 2^x */
-		dimension?: Dimensions
-		/** If the container should be rounder; clipping whatever does not fit into the image */
+		/** Standard dimensions for the image container to be from 16 to 128 increase by a factor of 2^x */
+		dimensions?: BulmaDimension
+		/** If the container should be rounder; clipping whatever does not fit into the image
+		 *
+		 * If you slot your own content this must be added on that element
+		 * @see https://bulma.io/documentation/elements/image/#rounded-images
+		 * @default false*/
 		isRounded?: boolean
-		///needs width to defaults to fullwidth
-		aspectRatio?: AspectRatios
-		// notFullwidth?: boolean,
-		//TODO:  figure where and how this is used; https://bulma.io/documentation/elements/image/#responsive-images-with-ratios
-		/**Src attribute for the img elemnet */
+		/** The aspect ratio to apply to the image or content.
+		 * Recommended to have the parent to have a set width or the content will expand to the full width of the parent
+		 */
+		aspectRatio?: BulmaAspectRatio
+		/** If the image doesn't already expand to the parents' width, set the width to expand to available space
+		 * @default false*/
+		isFullwidth?: boolean,
+		/** Src attribute for the img element */
 		src?: string,
-		/** Alt attribute for the img element; RECOMMNENDED */
+		/** Alt attribute for the img element; RECOMMENDED */
 		alt?: string,
 		/** Optional caption text to display in figcaption */
 		caption?: string
 	}>();
 
+
 	const classes = computed(() => getBulmaClassesFromProps(props));
+
 </script>
 
