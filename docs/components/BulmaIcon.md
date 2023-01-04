@@ -33,7 +33,7 @@ Determines if the icon should be a flex box; changing the parent tag to a `div`
 
 ### colour
 
-Type: [ColourHelper](../types/common_types.md#colourHelper) |`undefined`
+Type: [`BulmaColourHelper`](../types/common_types.md#bulmacolourhelper) | [`BulmaColour`](../types/common_types.md#bulmacolour) | `undefined`
 
 Colour of the icon
 
@@ -45,7 +45,7 @@ Background colour of the icon
 
 ### containerSize
 
-Type: [BulmaSizes](../types/common_types.md#bulmasizes) |`undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) |`undefined`
 
 Determines the size of the [icon's container](https://bulma.io/documentation/elements/icon/#sizes)
 

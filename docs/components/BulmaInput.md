@@ -11,11 +11,11 @@ An input element styled with Bulma for [supported types](https://bulma.io/docume
 
 ### colour
 
-Type: [BulmaColours](../types/common_types.md#bulmacolours) | `undefined`
+Type: [BulmaColour](../types/common_types.md#bulmacolour) | `undefined`
 
 ### size
 
-Type: [BulmaSizes](../types/common_types.md#bulmasizes) | `undefined`
+Type: [BulmaSize](../types/common_types.md#bulmasize) | `undefined`
 
 ### isRounded
 

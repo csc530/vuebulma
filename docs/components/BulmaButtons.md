@@ -19,9 +19,9 @@ Type: `string` | `undefined`
 
 Default: `div`
 
-### [size](../types/common_types.md#bulmasizes)
+### [size](../types/common_types.md#bulmasize)
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 Size of all enclosed buttons
 

@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignments, BulmaSizes, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
+	import {BulmaAlignments, BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		/**label for this whole group of controls; ONLY render isHorizontal */
@@ -32,8 +32,9 @@
 		isMultiline?: boolean;
 		//todo: finish class logic https://bulma.io/documentation/form/general/#horizontal-form
 		isHorizontal?: boolean;
-		verticalSize?: BulmaSizes
-		size?: BulmaSizes
+		//todo: test readon and if it's still necessary
+		verticalSize?: BulmaSize
+		size?: BulmaSize
 	}>(), {tag: 'div'});
 
 	const classes = computed(() => getBulmaClassesFromProps(props));

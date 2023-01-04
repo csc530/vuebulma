@@ -55,15 +55,15 @@ Default: `p`
 
 HTML or registered component tag for the message's body
 
-### [colour](../types/common_types.md#bulmacolours)
+### colour
 
-Type: [`BulmaColours`](../types/common_types.md#bulmacolours) | `undefined`
+Type: [`BulmaColour`](../types/common_types.md#bulmacolour) | `undefined`
 
 Colour of the message component
 
-### [`size`](../types/common_types.md#bulmasizes)
+### [`size`](../types/common_types.md#bulmasize)
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 Display size of the message component
 

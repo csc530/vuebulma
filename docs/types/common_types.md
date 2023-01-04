@@ -11,35 +11,35 @@ and usually defaults to `div`.
 
 ## Types
 
-### [`BulmaColours`](https://bulma.io/documentation/helpers/color-helpers/)
+### [`BulmaColour`](https://bulma.io/documentation/helpers/color-helpers/)
 
 **string**
 
 Type: `info` | `danger` | `warning` | `success` | `primary` | `link` |`white` | `black` | `light` | `dark` | `default`
 
-The `BulmaColours` type is used to specify the colour of a component. Usually changing the background and/or text
+The `BulmaColour` type is used to specify the colour of a component. Usually changing the background and/or text
 colour.
 
-### `BulmaSizes`
+### `BulmaSize`
 
 **string**
 
 Type: `small` |  `default`|`medium` | `large`
 
-The `BulmaSizes` type is used to specify the size of a component. Usually changing the font size.
+The `BulmaSize` type is used to specify the size of a component. Usually changing the font size.
 
 For some Bulma elements an `is-normal` class is available which is represented by the `default` value.
 
 [Bulma documentation example](https://bulma.io/documentation/components/message/#sizes)
 
-### `ColourHelper`
+### `BulmaColourHelper`
 
 **string**
 
 Type:
 
 ```typescript:no-line-numbers
-type ColourHelper = {
+type BulmaColourHelper = {
 	shade?: 'white' | 'black' | 'light' | 'dark' | 'default';
 	colour: 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
 };

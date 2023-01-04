@@ -12,13 +12,12 @@
 
 <script lang="ts" setup>
 	import {computed, useAttrs} from "vue";
-	import {BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		tag?: string;
-		isMultiline?: boolean;
-		color?: BulmaColours
-		size?: BulmaSizes
+		color?: BulmaColour
+		size?: BulmaSize
 		isLoading?: boolean
 		isRounded?: boolean
 		isStatic?: boolean

@@ -42,7 +42,7 @@ Example:
 
 ### colour
 
-Type: [`BulmaColours`](../types/common_types.md#BulmaColours) | `undefined`
+Type: [`BulmaColour`](../types/common_types.md#BulmaColour) | `undefined`
 
 The colour of the navbar.
 

@@ -21,13 +21,13 @@ The name of the [selected] file to display
 
 ### size
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 The size of the file input
 
 ### colour
 
-Type: [`BulmaColours`](../types/common_types.md#bulmacolours) | `undefined`
+Type: [`BulmaColour`](../types/common_types.md#bulmacolour) | `undefined`
 
 The colour of the file input
 

@@ -10,16 +10,16 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignments, BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaAlignments, BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		label?: string;
 		/** The name of the file input */
 		fileName?: string;
 		/** The size of the file input */
-		size?: BulmaSizes
+		size?: BulmaSize
 		/** The colour of the file input */
-		colour?: BulmaColours;
+		colour?: BulmaColour;
 		alignment?: BulmaAlignments
 		/** If the file input should have a boxed display */
 		isBoxed?: boolean;

@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 	import {computed} from 'vue';
-	import {BulmaAlignments, BulmaSizes, getBulmaClassesFromProps} from '../types';
+	import {BulmaAlignments, BulmaSize, getBulmaClassesFromProps} from '../types';
 	import {BulmaBreadcrumbSeparator} from "../types/BreadcrumbTypes";
 
 	const props = withDefaults(defineProps<{
@@ -32,7 +32,7 @@
 		separator?: BulmaBreadcrumbSeparator;
 		/** the size of the breadcrumbs
 		 * @default default */
-		size?: BulmaSizes
+		size?: BulmaSize
 	}>(), {
 		tag: 'nav',
 		lastCrumbIsActive: true,

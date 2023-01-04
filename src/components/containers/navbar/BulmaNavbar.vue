@@ -40,11 +40,11 @@
 
 <script lang="ts" setup>
 	import {computed, ref, watch} from "vue";
-	import {BulmaColours, getBulmaClassesFromProps} from "../../../types";
+	import {BulmaColour, getBulmaClassesFromProps} from "../../../types";
 	import BulmaNavbarItem from "./BulmaNavbarItem.vue";
 
 	const props = withDefaults(defineProps<{
-		colour?: BulmaColours;
+		colour?: BulmaColour;
 		middleItems?: any[];
 		endItems?: any[];
 		middleItemTag?: 'div' | 'a',

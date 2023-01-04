@@ -58,7 +58,7 @@ The separator to use between breadcrumbs;
 
 ### size
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 Default: `default`
 

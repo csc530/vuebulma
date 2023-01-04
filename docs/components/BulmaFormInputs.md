@@ -109,8 +109,8 @@ Displays the form field as horizontally
 
 #### verticalSize
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 #### size
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`

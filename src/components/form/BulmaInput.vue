@@ -6,12 +6,12 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 	const props = withDefaults(defineProps<{
 		//todo add documentation of suggested types
-		colour?: BulmaColours
-		size?: BulmaSizes
+		colour?: BulmaColour
+		size?: BulmaSize
 		isRounded?: boolean
 		isLoading?: boolean
 		isStatic?: boolean

@@ -9,4 +9,4 @@ Available colours for Bulma buttons
 - `ghost`
 - `text`
 
-Union (`|`) [BulmaColours](./common_types.md#bulmacolours)
+Union (`|`) [BulmaColour](./common_types.md#bulmacolour)

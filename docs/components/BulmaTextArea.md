@@ -15,13 +15,13 @@ The default content to display within the textarea
 
 ### colour
 
-Type: [`BulmaColours`](../types/common_types.md#bulmacolours) | `undefined`
+Type: [`BulmaColour`](../types/common_types.md#bulmacolour) | `undefined`
 
 Colour of the textarea border
 
 ### size
 
-[`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+[`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 ### rows
 

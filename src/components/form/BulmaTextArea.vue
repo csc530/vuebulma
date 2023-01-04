@@ -2,14 +2,16 @@
 	<textarea class="textarea" :rows="rows" :class="classes" />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaColours, BulmaSizes, getBulmaClassesFromProps} from "../../types";
+	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
+
+	//todo: add v:model support
 
 	const props = defineProps<{
-		colour?: BulmaColours
-		size?: BulmaSizes
-		isRounded?: boolean
+		colour?: BulmaColour
+		size?: BulmaSize
+		//todo: loading needs to go on parent control tag
 		isLoading?: boolean
 		isStatic?: boolean
 		rows?: number

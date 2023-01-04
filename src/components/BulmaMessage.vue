@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed, defineEmits } from "vue";
-	import { BulmaColours, BulmaSizes, getBulmaClassesFromProps, getSizeClasses } from "../types";
+	import {computed, defineEmits} from "vue";
+	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../types";
 
 	const emit = defineEmits<{
 		(name: 'closeMsg', event: Event, msgContainer: HTMLElement): void
@@ -24,21 +24,22 @@
 	const props = withDefaults(defineProps<{
 		/**HTML or registered component tag for the message */
 		containerTag?: string;
-		/** HTML or registered component tag for the message's header */
-		headerTag?: string;
-		/** Display text in message title */
-		title?: string;
-		/** Show close button in the message header */
-		deleteBtn?: boolean;
-		/** HTML or registered component tag to contain message body */
-		bodyTag?: string;
-		/** Colour of message */
-		colour?: BulmaColours;
-		/** display size of the message */
-		size?: BulmaSizes;
-		/** Behaviour of the message after close button is clicked */
-		closeBehaviour?: boolean | 'hide' | 'remove' | ((event: Event, messageElement: HTMLElement) => void);
-	}>(),
+			/** HTML or registered component tag for the message's header */
+			headerTag?: string;
+			/** Display text in message title */
+			title?: string;
+			/** Show close button in the message header */
+			deleteBtn?: boolean;
+			/** HTML or registered component tag to contain message body */
+			bodyTag?: string;
+			/** Colour of message */
+			colour?: BulmaColour;
+			/** display size of the message */
+			size?: BulmaSize;
+			/** Behaviour of the message after close button is clicked */
+			//TODO: remove function type and replace with emit function
+			closeBehaviour?: boolean | 'hide' | 'remove' | ((event: Event, messageElement: HTMLElement) => void);
+		}>(),
 		{
 			containerTag: 'article',
 			headerTag: 'header',

@@ -6,14 +6,15 @@
 
 <script lang="ts" setup>
 	import {computed, ref} from "vue";
-	import {BulmaSizes, ButtonColours, getBulmaClassesFromProps} from "../../types";
+	import {BulmaSize, ButtonColours, getBulmaClassesFromProps} from "../../types";
 
 	const props = withDefaults(defineProps<{
 		tag?: 'button' | 'a';
 		label?: string;
 		colour?: ButtonColours
 		isLight?: boolean;
-		size?: BulmaSizes
+		size?: BulmaSize
+		//todo: remove is-normal becuase it just reverts button to default size, https://bulma.io/documentation/elements/button/#sizes
 		isNormal?: boolean;
 		isResponsive?: boolean;
 		isFullWidth?: boolean;

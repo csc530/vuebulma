@@ -41,7 +41,7 @@ Modifies the colour of the button to be lighter
 
 ### size
 
-Type: [`BulmaSizes`](../types/common_types.md#bulmasizes) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 Button size
 

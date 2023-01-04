@@ -7,29 +7,39 @@ type ArrayElement<ArrayType extends readonly unknown[]> =
 
 
 //todo: rename prefix
-type StateColours = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
-type Shade = 'white' | 'black' | 'light' | 'dark' | 'default';
+export type BulmaStateColour = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
+export const getBulmaStateColours = (): BulmaStateColour[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'default'];
+export type BulmaShade = 'white' | 'black' | 'light' | 'dark' | 'default';
+export const getBulmaShades = (): BulmaShade[] => ['white', 'black', 'light', 'dark', 'default'];
 /** @description Bulma's colours */
-export type BulmaColours = StateColours | Shade;
-export const getBulmaColours = (): BulmaColours[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'white', 'black', 'light', 'dark', 'default'];
+export type BulmaColour = BulmaStateColour | BulmaShade;
+export const getBulmaColours = (): BulmaColour[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'white', 'black', 'light', 'dark', 'default'];
 
-export function getBulmaColoursHelpers(shade?: Shade): ColourHelper[] {
+export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] {
 	//from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
-	// const shades: Shade[] = ['white', 'black', 'light', 'dark', 'default'];
-	const states: StateColours[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
-	// const colours: BulmaColours[] = [...states, ...shades];
+	// const shades: BulmaShade[] = ['white', 'black', 'light', 'dark', 'default'];
+	const states: BulmaStateColour[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
+	// const colours: BulmaColour[] = [...states, ...shades];
 	//set shade to default if not provided
-	return states.map<ColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
+	return states.map<BulmaColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
 }
 
-export type ColourHelper = {
-	shade?: Shade;
-	colour: StateColours;
-};
+//todo: rename prefix
+export type BulmaColourHelper = {
+	shade?: BulmaShade;
+	//todo: add bulma 'white ' and 'black' to this type and make compatible in transformer
+	colour: BulmaStateColour;
+}
 
-export function getColourClass(colour: ColourHelper | BulmaColours | ButtonColours, type: 'background' | 'text'): string {
-	if(typeof colour === 'string')
-		return `is-${colour}`;
+export function getColourClass(colour: BulmaColourHelper | BulmaColour | ButtonColours, type?: 'background' | 'text'): string {
+	//todo fix to work with default in state colours and for more extensive
+	if(!colour || colour === 'default')
+		return '';
+	else if(typeof colour === 'string')
+		if(!type)
+			return `is-${colour}`;
+		else
+			return `has-${type}-${colour}`;
 	else if(!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
 	else if(colour.shade === 'dark' || colour.shade === 'black')
@@ -61,11 +71,10 @@ export interface ColourIcon {
 	colour: ColourHelper;
 }
 
+export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
+export const getBulmaSizes = (): BulmaSize[] => ['small', 'default', 'medium', 'large'];
 
-export type BulmaSizes = 'small' | 'default' | 'medium' | 'large';
-export const getBulmaSizes = (): BulmaSizes[] => ['small', 'default', 'medium', 'large'];
-
-export function getSizeClasses(size?: BulmaSizes, areClasses?: boolean): string {
+export function getSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 	if(!size || size === 'default')
 		return 'is-normal';
 	return areClasses ? `are-${size}` : `is-${size}`;
@@ -263,7 +272,8 @@ export type BulmaNavBarItem = {
 	[other: string]: unknown;
 };
 
-export type ButtonColours = 'text' | 'ghost' | BulmaColours;
+/** Colours for a button */
+export type ButtonColours = 'text' | 'ghost' | BulmaColour;
 
 export interface BulmaButton {
 	/** The button's label */
@@ -271,7 +281,7 @@ export interface BulmaButton {
 	tag?: 'button' | 'a';
 	colour?: ButtonColours
 	isLight?: boolean;
-	size?: BulmaSizes
+	size?: BulmaSize
 	isNormal?: boolean;
 	isResponsive?: boolean;
 	isFullWidth?: boolean;
