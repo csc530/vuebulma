@@ -1,11 +1,9 @@
 import vue from '@vitejs/plugin-vue';
 import {resolve} from 'path';
 import {defineConfig} from 'vite';
-import dts from 'vite-plugin-dts';
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [vue(),
-	          dts({clearPureImport: true, insertTypesEntry: true})
+	plugins: [vue()
 	],
 	clearScreen: false,
 	css: {
@@ -18,14 +16,14 @@ export default defineConfig({
 		devSourcemap: true
 	},
 	build: {
-		minify: false,
 		assetsDir: 'assets',
 		sourcemap: true,
 		copyPublicDir: false,
 		reportCompressedSize: true,
 		lib: {
 			entry: resolve(__dirname, 'src/vuebulma.ts'),
-			name: 'vuebulma', fileName: `vuebulma`
+			name: 'vuebulma',
+			fileName: `vuebulma`
 		},
 		emptyOutDir: true,
 		rollupOptions: {
@@ -39,7 +37,6 @@ export default defineConfig({
 				// for externalized deps
 				globals: {
 					vue: 'Vue'
-
 				}
 			}
 		}

@@ -7,7 +7,7 @@ title: vuebulma Docs
 heroAlt: logo
 ################## heroText: stuff
 
-tagline: On vacation - back soon (~2 weeks)❣️
+tagline: 👨🏿‍💻Development ongoing❣️
 
 actions:
 

@@ -1,6 +1,10 @@
 import {Component} from "vue";
-import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
-import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
+import {toBulmaAspectRatioClass, toBulmaDimensionsClass, toBulmaSeparatorClass} from "./types";
+// ? export all types for build and ease of use
+export * from './types/BreadcrumbTypes';
+export * from './types/ImageTypes';
+export * from './types/HeadingTypes';
+export * from './types/IconTypes';
 
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -69,7 +73,8 @@ export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColour
 
 
 export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
-export const getBulmaSizes = (): BulmaSize[] => ['small', 'default', 'medium', 'large'];
+
+export function getBulmaSizes(): BulmaSize[] { return ['small', 'default', 'medium', 'large']; }
 
 export function getSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 	if(!size || size === 'default')
@@ -116,9 +121,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                        .filter(key => classes[key] && key.includes('is'))
 	                        .map(key => {
 		                        let className = key.toLowerCase();
-		                        if(className === 'isrounded')
-			                        return '';
-		                        else if(className === 'isdropup')
+		                        if(className === 'isdropup')
 			                        className = 'is-up';
 		                        else if(className === 'isfixed')
 			                        className = 'is-fixed-' + classes[key];
@@ -193,11 +196,16 @@ export function removeDecimals(value: number): string {
 	return Number(value).toFixed().toString();
 }
 
-export interface Menu {
+export type Menu = {
 	/** The menu's label */
 	label: string;
 	/** The menu's items */
-	items: Menu[] | any[];
+	items: (any | {
+		/** The submenu's label, shown alongside parent's items */
+		label: string;
+		/** The submenu's items */
+		items: any[];
+	})[];
 }
 
 export function isMenu(menu: Menu): menu is Menu {
