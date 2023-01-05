@@ -1,7 +1,7 @@
 <template>
 	<component :is="containerTag" :class="classes" class="message">
 
-		<component :is="headingTag" v-if="title || $slots.heading || deleteBtn" class="message-header">
+		<component :is="headingTag" v-if="heading || $slots.heading || deleteBtn" class="message-header">
 			<slot name="heading">
 				{{ heading }}
 			</slot>

@@ -39,7 +39,7 @@
 	}>();
 
 
-	const classes = computed(() => getBulmaClassesFromProps(props));
+	const classes = computed(() => getBulmaClassesFromProps(props).filter(c => c !== 'is-rounded'));
 
 </script>
 
