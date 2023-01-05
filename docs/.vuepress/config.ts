@@ -1,9 +1,10 @@
-import { defaultTheme, defineUserConfig } from 'vuepress'
-import { createNavbar } from "./navbar";
-import { clipboardPlugin } from 'vuepress-plugin-clipboard'
+import {defaultTheme, defineUserConfig} from 'vuepress'
+import {clipboardPlugin} from 'vuepress-plugin-clipboard'
+import checkbox from 'vuepress-plugin-markdown-checkbox'
+import {createNavbar} from "./navbar";
 
 export default defineUserConfig({
-	plugins: [clipboardPlugin({})],
+	plugins: [clipboardPlugin({}), checkbox({enabled: false})],
 	lang: 'en-CA',
 	title: 'vuebulma Docs',
 	description: 'Documentation for @csc530 vuebulma component library',
@@ -22,5 +23,5 @@ export default defineUserConfig({
 		lastUpdated: true,
 		sidebarDepth: 2
 	}),
-	debug: true
+	// debug: true
 })

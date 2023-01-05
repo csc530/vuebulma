@@ -10,18 +10,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Documentation to props of
-	- [Breadcrumb](components/BulmaBreadcrumb.md)
-	- [Heading](components/BulmaHeading.md)
+	- [Button](components/BulmaButton.md)
+	- [Button Group](components/BulmaButtonGroup.md)
 
 ### Changed
 
-- Types allowed in [Bulma Breadcrumb](components/BulmaBreadcrumb.md#list) list prop to `any`
+- [Button](components/BulmaButton.md)
+	- `isActive` to `state` and accepts all button states classes
+- Buttons to [BulmaButtonGroup](components/BulmaButtonGroup.md)
 
 ### Deprecated
 
 ### Removed
 
+- [BulmaButtonGroup](components/BulmaButtonGroup.md)
+	- `items` prop
+
 ### Fixed
+
+## [0.0.0-9] - 2023-01-04
+
+### Fixed
+
+- Exports and build of package files
+
+## [0.0.0-8] - 2023-01-03
+
+### Added
+
+- Documentation to props of
+	- [Breadcrumb](components/BulmaBreadcrumb.md)
+	- [Heading](components/BulmaHeading.md)
+	- [Icon](components/BulmaIcon.md)
+	- [Image](components/BulmaImage.md)
+
+### Changed
+
+- Types allowed in [Bulma Breadcrumb](components/BulmaBreadcrumb.md#list) list prop to `any`
 
 ## [0.0.0-7.1] - 2022-12-14
 
