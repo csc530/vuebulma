@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-	import {computed, ref} from "vue";
-	import {BulmaSize, BulmaState, getBulmaClassesFromProps} from "../../types";
-	import {BulmaButtonColour} from "../../types/ButtonTypes";
+	import {computed} from "vue";
+	import {BulmaSize, BulmaState, getBulmaClassesFromProps} from "../types";
+	import {BulmaButtonColour} from "../types/ButtonTypes";
 
 	const props = withDefaults(defineProps<{
 		/** The HTML element to style as a button
@@ -47,14 +47,16 @@
 		isStatic?: boolean;
 		/** The display state of the button */
 		state?: BulmaState;
+		/** Increases the button's z index, rasining it above other elements
+		 * @see [BulmaButtonGroup]{@link https://csc530.github.io/vuebulma/components/bulmabuttongroup.html}
+		 * @default false
+		 */
+		isSelected?: boolean;
 	}>(), {
 		tag: 'button'
 	});
 
-	const isSelected = ref<boolean>(false);
-	//? used for button groups to append 'is-selected' class to the button (ensures its on top)
-	const classes = computed(() => getBulmaClassesFromProps({...props, isSelected: isSelected.value}));
+	const classes = computed(() => getBulmaClassesFromProps(props));
 
-	defineExpose({isSelected});
 </script>
 

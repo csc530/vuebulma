@@ -65,9 +65,9 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
+	import BulmaButton from "../components/BulmaButton.vue";
 
 	import BulmaImage from "../components/BulmaImage.vue";
-	import BulmaButton from "../components/button/BulmaButton.vue";
 	import BulmaBox from "../components/containers/BulmaBox.vue";
 	import BulmaInput from "../components/form/BulmaInput.vue";
 	import BulmaSelect from "../components/form/BulmaSelect.vue";

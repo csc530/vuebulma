@@ -1,7 +1,7 @@
-# BulmaButton**s**
+# BulmaButtonGroup
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/#list-of-buttons)
-[Source code](../../src/components/button/BulmaButtons.vue)
+[Source code](../../src/components/containers/BulmaButtonGroup.vue)
 
 A container for multiple [BulmaButton](BulmaButton.md) components.
 
@@ -38,16 +38,3 @@ Type: [BulmaAlignments](../types/common_types.md#bulmaalignments) | `undefined`
 
 The alignment of the buttons.
 
-### activateOnClick
-
-*Requires button children to rendered with [items](#items) prop not passed in with [slot](#slots)*
-Type: `boolean` | `singly'
-
-When `true`, the buttons will be activated (adding `is-active` class to button) when clicked. When `singly`, only one
-button can be active at a time.
-
-### items
-
-Type: `string[]` | `BulmaButton[]`
-
-The items to be rendered as buttons.

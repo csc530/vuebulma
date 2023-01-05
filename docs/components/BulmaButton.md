@@ -1,7 +1,7 @@
 # BulmaButton
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/)
-[Source code](../../src/components/button/BulmaButton.vue)
+[Source code](../../src/components/BulmaButton.vue)
 
 ## Slots
 
@@ -95,15 +95,14 @@ When true, the button will be static; not responding to hover, focus or active s
 
 ### state
 
-[//todo]: # todo(todo - add link to BulmaButtonState)
+[//todo]: # (todo - add link to BulmaButtonState)
 Type:  [`BulmaState`](../types/bulmastates.md) | `undefined`
 
 Change _only_ the look of the button based on state prop
 
-## Exposes
-
 ### isSelected
 
-Type:  `boolean`
+Type:  `boolean` | `undefined`
 
-Controls the `is-selected` class which will increase the button's z-index
+Controls the `is-selected` class which will increase the button's z-index. useful when using
+the [BulmaButtonGroup](BulmaButtonGroup.md) component to ensure the button is on top for interaction and viewing.

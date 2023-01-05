@@ -57,7 +57,7 @@
 <script lang="ts" setup>
 	import {ref, watch} from "vue";
 	import BulmaBreadcrumb from "../components/BulmaBreadcrumb.vue";
-	import BulmaButton from "../components/button/BulmaButton.vue";
+	import BulmaButton from "../components/BulmaButton.vue";
 	import BulmaBox from "../components/containers/BulmaBox.vue";
 	import BulmaInput from "../components/form/BulmaInput.vue";
 	import BulmaSelect from "../components/form/BulmaSelect.vue";

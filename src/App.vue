@@ -1,6 +1,6 @@
 <template>
-	<demo-message />
+	<demo-button-group />
 </template>
 
 <script lang="ts" setup>
-	import DemoMessage from "./demos/DemoMessage.vue";</script>
+	import DemoButtonGroup from "./demos/DemoButtonGroup.vue";</script>
