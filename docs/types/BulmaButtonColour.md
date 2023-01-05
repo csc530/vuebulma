@@ -1,4 +1,4 @@
-# BulmaButtonColours
+# BulmaButtonColour
 
 Available colours for Bulma buttons
 

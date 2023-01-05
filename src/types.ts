@@ -1,10 +1,12 @@
 import {Component} from "vue";
 import {toBulmaAspectRatioClass, toBulmaDimensionsClass, toBulmaSeparatorClass} from "./types";
+import {BulmaButtonColour} from "./types/ButtonTypes";
 // ? export all types for build and ease of use
 export * from './types/BreadcrumbTypes';
 export * from './types/ImageTypes';
 export * from './types/HeadingTypes';
 export * from './types/IconTypes';
+export * from './types/ButtonTypes';
 
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -36,7 +38,7 @@ export type BulmaColourHelper = {
 	colour: BulmaStateColour;
 }
 
-export function getColourClass(colour: BulmaColourHelper | BulmaColour | ButtonColours, type?: 'background' | 'text'): string {
+export function getColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: 'background' | 'text'): string {
 	//todo fix to work with default in state colours and for more extensive
 	if(!colour || colour === 'default')
 		return '';
@@ -154,7 +156,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
 		classList.push(getColourClass(classes['colour']));
-	if(classes.alignment)
+	if(classes["alignment"])
 		classList.push(getAlignmentClasses(classes.alignment));
 	if(classes.size)
 		classList.push(getSizeClasses(classes.size, areSizes));
@@ -164,6 +166,8 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		classList.push(toBulmaAspectRatioClass(classes.aspectRatio));
 	if(classes.dimensions)
 		classList.push(toBulmaDimensionsClass(classes.dimensions));
+	if(classes['state'])
+		classList.push(toBulmaStateClass(classes.state));
 	//remove blank or undefined entries
 	return classList.filter(x => x);
 }
@@ -248,27 +252,12 @@ export type BulmaNavBarItem = {
 	[other: string]: unknown;
 };
 
-/** Colours for a button */
-export type ButtonColours = 'text' | 'ghost' | BulmaColour;
 
-export interface BulmaButton {
-	/** The button's label */
-	label: string;
-	tag?: 'button' | 'a';
-	colour?: ButtonColours
-	isLight?: boolean;
-	size?: BulmaSize
-	isNormal?: boolean;
-	isResponsive?: boolean;
-	isFullWidth?: boolean;
-	isOutlined?: boolean;
-	isInverted?: boolean;
-	isRounded?: boolean;
-	isLoading?: boolean;
-	isStatic?: boolean;
-	hasAddons?: boolean;
-	isActive?: boolean;
+export type BulmaState = 'active' | 'hovered' | 'focused' | 'default';
 
-	onClick(event: Event): void;
-}
+/** An array of all {@link BulmaState}s */
+export const getBulmaStates = (): BulmaState[] => ['active', 'hovered', 'focused', 'default'];
+
+/** Converts a {@link BulmaState} to its bulma class */
+export function toBulmaStateClass(state: BulmaState): string { return state === 'default' ? '' : `is-${state}`;}
 

@@ -27,9 +27,9 @@ Text to display in the button instead of [slot](#default) content
 
 ### colour
 
-Type: [`ButtonColours`](../types/BulmaButtonColours.md) | `undefined`
+Type: [`BulmaButtonColour`](../types/BulmaButtonColour.md) | `undefined`
 
-Button colour
+The button's colour
 
 ### isLight
 
@@ -43,25 +43,19 @@ Modifies the colour of the button to be lighter
 
 Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
-Button size
-
-### isNormal
-
-Type: `boolean` | `undefined`
-
-When true, the button will be normal size
+Button's size
 
 ### isResponsive
 
-Type: ``boolean` | `undefined`
+Type: `boolean` | `undefined`
 
-When true, the button will be responsive; having a more appropriate relate size based on the screen size
+When true, the button will be responsive; having a more appropriate size based on the screen size
 
 ### isFullWidth
 
 Type:  `boolean` | `undefined`
 
-When true, the button will be the full width of its container
+When true, the button will expand to the width of its container
 
 ### isOutlined
 
@@ -88,21 +82,23 @@ Type:  `boolean` | `undefined`
 When true, the button will have a loading spinner
 
 > You can very easily turn a button into its loading version by appending the is-loading modifier. You don't even need
-> to remove the inner text, which allows the button to maintain its original size between its default and loading states.
+> to remove the inner text, which allows the button to maintain its original size between its default and loading
+> states.
 >
-> [Bulma docs](https://bulma.io/documentation/elements/button/#states):
+> [Bulma docs](https://bulma.io/documentation/elements/button/#states)
 
 ### isStatic
 
 Type:  `boolean` | `undefined`
 
-When true, the button will look non-interactive
+When true, the button will be static; not responding to hover, focus or active states
 
-### isActive
+### state
 
-Type:  `boolean` | `undefined`
+[//todo]: # todo(todo - add link to BulmaButtonState)
+Type:  [`BulmaState`](../types/bulmastates.md) | `undefined`
 
-When true, the button will look active, as if it's currently being clicked
+Change _only_ the look of the button based on state prop
 
 ## Exposes
 
