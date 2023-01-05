@@ -1,32 +1,30 @@
 {
-  //todo: check out typeDoc
   "compilerOptions": {
-	"target": "ESNext",
+	"outDir": "dist",
+	"declarationDir": "dist",
+	"declaration": true,
+	"baseUrl": "./",
+	"target": "esnext",
 	"useDefineForClassFields": true,
-	"module": "ESNext",
-	"moduleResolution": "Node",
+	"module": "esnext",
+	"moduleResolution": "node",
+	"isolatedModules": true,
 	"strict": true,
 	"jsx": "preserve",
 	"sourceMap": true,
 	"resolveJsonModule": true,
-	"isolatedModules": true,
 	"esModuleInterop": true,
 	"lib": [
-	  "ESNext",
-	  "DOM"
+	  "esnext",
+	  "dom",
+	  "dom.iterable",
+	  "scripthost"
 	],
-	"skipLibCheck": true,
-	// * For build type declarations
-	"outDir": "dist",
-	"declaration": true,
-	"pretty": true,
-	"removeComments": false,
-	"noEmit": false
+	"skipLibCheck": true
   },
   "include": [
-	"src/components",
-	"src/vuebulma.ts",
-	"src/types"
+	"src/types/*",
+	"src/types.ts"
   ],
   "references": [
 	{

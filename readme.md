@@ -9,7 +9,7 @@
 
 ## Disclaimer
 
-Developed with/for Vue v3.2.45 and Bulma v0.9.4
+Developed with and for Vue v3.2.45 and Bulma v0.9.4
 
 This package is very much still under active development. It is not recommended to use this in production. Feel free to
 help or report any issues😃.
@@ -57,6 +57,8 @@ This library adds some built-in JS to make Bulma's styling and classes work seam
 like [appending is-active](/src/components/containers/BulmaDropdown.vue#L4) to a
 clicked [dropdown](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)
 
-## Contributing
+---
 
-Contributions are welcome!
+Pronunciation
+
+vuebulma = *vubblema*
