@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-33445b78","path":"/types/BulmaAspectRatio.html","title":"BulmaAspectRatio","lang":"en-CA","frontmatter":{},"headers":[],"git":{"updatedTime":1672499677000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":1}]},"filePathRelative":"types/BulmaAspectRatio.md"}');export{t as data};

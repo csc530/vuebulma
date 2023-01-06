@@ -1,4 +1,0 @@
-const data = JSON.parse('{"key":"v-6afc826a","path":"/types/BulmaHeadingSizes.html","title":"BulmaHeadingSizes","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"Values","slug":"values","link":"#values","children":[]}],"git":{"updatedTime":1672280577000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":1}]},"filePathRelative":"types/BulmaHeadingSizes.md"}');
-export {
-  data
-};

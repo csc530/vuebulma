@@ -1,4 +1,0 @@
-const data = JSON.parse('{"key":"v-1020f180","path":"/components/","title":"Common attributes","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"Slots","slug":"slots","link":"#slots","children":[]}],"git":{"updatedTime":1672499677000,"contributors":[{"name":"csc530","email":"{ID}+{username}@users.noreply.github.com","commits":2}]},"filePathRelative":"components/index.md"}');
-export {
-  data
-};

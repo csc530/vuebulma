@@ -1,4 +1,0 @@
-const data = JSON.parse('{"key":"v-1e877c77","path":"/types/BulmaColouredIcon.html","title":"BulmaColouredIcon","lang":"en-CA","frontmatter":{},"headers":[{"level":2,"title":"Properties","slug":"properties","link":"#properties","children":[]}],"git":{"updatedTime":1672806022000,"contributors":[{"name":"csc530","email":"77406318+csc530@users.noreply.github.com","commits":1}]},"filePathRelative":"types/BulmaColouredIcon.md"}');
-export {
-  data
-};
