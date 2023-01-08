@@ -4,16 +4,11 @@
 	</component>
 </template>
 
-<style scoped>
-
-</style>
-
 <script lang="ts" setup>
-	defineProps({
-		tag: {
-			default: 'section',
-			type: String,
-			required: false
-		}
-	});
+	withDefaults(defineProps<{
+			tag?: string
+		}>(),
+		{
+			tag: 'section'
+		})
 </script>

@@ -14,3 +14,4 @@
 
 - [ ] for [button group](../src/components/containers/BulmaButtonGroup.vue) look into prop to pass buttons instead of
   slots
+- [ ] Add keys to `v-for` loops

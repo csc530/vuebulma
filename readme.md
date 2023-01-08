@@ -2,8 +2,11 @@
 
 [![Built with Love](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![Check it out](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)[![Gluten free](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)[![Not a bug; a feature](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)[![Powered by black magic](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
-![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)
-![weekly npm downloads](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)
+[![Made with Bulma](https://img.shields.io/badge/made%20with-Bulma-00d1b2?style=roundyed-square)](https://bulma.io)
+[![weekly npm downloads](https://img.shields.io/npm/dw/@csc530/vuebulma?label=npm%20downloads)](https://www.npmjs.com/package/@csc530/vuebulma)
+[![npm version](https://img.shields.io/npm/v/@csc530/vuebulma?label=npm%20version&color=teal)](https://www.npmjs.com/package/@csc530/vuebulma?activeTab=versions)
+[![GitHub issues](https://img.shields.io/github/issues/csc530/vuebulma?color=goldenrod)](https://github.com/csc530/vuebulma/issues)
+[![GitHub discussions](https://img.shields.io/badge/Contribute-Discussions-blueviolet)](https://github.com/csc530/vuebulma/discussions)
 
 ## [Changelog](/../gh-pages/docs/changelog.md)
 

@@ -9,12 +9,11 @@
 </style>
 
 <script lang="ts" setup>
-	const props = defineProps({
-		tag: {
-			default: 'section',
-			type: String,
-			required: false
-		}
-	});
+	withDefaults(defineProps<{
+			tag?: string
+		}>(),
+		{
+			tag: 'section'
+		})
 </script>
 
