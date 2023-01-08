@@ -118,7 +118,7 @@
 			dropdown: {
 				isBoxed: true,
 				isRight: true,
-				items: ['Joker', 'Lex Luthor', 'Cheetah']
+				items: ['Joker', null, 'Lex Luthor', null, 'Cheetah']
 			}
 		},
 		{

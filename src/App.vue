@@ -1,6 +1,5 @@
 <template>
-	<DemoNavbar />
+	<demo-dropdown />
 </template>
 
-<script lang="ts" setup>
-	import DemoNavbar from "./demos/DemoNavbar.vue";</script>
+<script lang="ts" setup>import DemoDropdown from "./demos/DemoDropdown.vue";</script>

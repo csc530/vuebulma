@@ -55,6 +55,8 @@ _Recommended type `BulmaNavbarItem[]`_
 
 The dropdown's items
 
+`null` will render a dropdown divider
+
 #### isArrowless
 
 Type: `boolean` | `undefined`

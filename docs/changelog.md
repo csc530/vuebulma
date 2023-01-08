@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- [Button](components/BulmaButton.md)
 	- [Button Group](components/BulmaButtonGroup.md)
 	- [Navbar](components/BulmaNavbar.md)
+	- [Dropdown](components/BulmaDropdown.md)
 - Shadow class to [Navbar](components/BulmaNavbar.md)
 
 ### Changed
@@ -31,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- `items` prop
 
 ### Fixed
+
+- BulmaIcon wrap text in span to prevent collision with icon
 
 ## [0.0.0-9] - 2023-01-04
 

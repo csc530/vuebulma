@@ -9,34 +9,35 @@ A dropdown menu.
 
 ### default
 
-The default slot is the content to display as the dropdown's _trigger_; it is the element that will be clicked to open
-the dropdown.
+The default slot is the (html) `button` to display as the dropdown's _trigger_; it is the element that will be clicked
+to open the dropdown.
 
 ### dropdown-item
 
 This slot is to be used to template the layout of the [dropdown's items](#content). The dropdown item is bound to
-the `data`
-property.
+the `data` property.
 
 ## Props
 
 ### alignment
 
-Type: `string` | `undefined`
+Type: `'left'`| `'right'`| `undefined`
+
+The alignment of the dropdown menu.
 
 ### content
 
-**Required**
+*Required*
 
 Type: `any[]`
 
 Default: `[]`
 
-The content of the dropdown; `null`, `undefined`, `NaN` will render a dropdown divider
+The content of the dropdown; `null` will render a dropdown divider
 
 ### [tag](../types/common_types.md#tag)
 
-Type: `string`
+Type: `string` | `undefined`
 
 Default: `div`
 
@@ -44,35 +45,27 @@ The tag to hold all the dropdown items
 
 ### [itemTag](../types/common_types.md#tag)
 
-Type: `string`
+Type: `string` | `undefined`
 
 Default: `p`
 
 The tag to wrap each dropdown item in.
 
-### onClick
+### isHoverable
 
-Type: `boolean`,
-
-Default: `true`
-
-Whether to toggle the dropdown when it's (trigger is) clicked
-
-### is-hoverable
-
-Type: `boolean`
+Type: `boolean` | `undefined`
 
 Default: `false`
 
-Whether the dropdown toggle when the mouse hovers over it
+Whether the dropdown opens on mouse hover
 
-### is-dropup
+### isDropup
 
-Type: `boolean`
+Type: `boolean` | `undefined`
 
 Default: `false`
 
-Whether the dropdown is a dropup; opens upwards
+Whether the dropdown opens upwards
 
 ## Emits
 

@@ -83,16 +83,9 @@ export function getSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 	return areClasses ? `are-${size}` : `is-${size}`;
 }
 
-export type LeftRight = 'left' | 'right';
-export const getLeftRight = (): LeftRight[] => ['left', 'right'];
-
-export function getLeftRightClasses(leftRight?: LeftRight): string {
-	if(!leftRight)
-		return '';
-	return `is-${leftRight}`;
-}
-
-export type BulmaAlignments = 'center' | LeftRight;
+export type BulmaLeftRight = 'left' | 'right';
+export const getBulmaLeftRight = (): BulmaLeftRight[] => ['left', 'right'];
+export type BulmaAlignments = 'center' | BulmaLeftRight;
 export const getBulmaAlignments = (): BulmaAlignments[] => ['left', 'center', 'right'];
 
 //todo: change name of getXClasses to `toBulmaClass`
