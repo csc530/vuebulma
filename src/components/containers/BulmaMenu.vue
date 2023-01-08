@@ -1,44 +1,44 @@
 <template>
 	<component :is="tag" class="menu">
-		<template v-for="value in menu">
-			<component :is="labelTag" class="menu-label">{{ value.label }}</component>
+		<template v-for="menuItem in menu">
+			<component :is="labelTag" class="menu-label">{{ menuItem.label }}</component>
 			<ul class="menu-list">
-				<li v-for="item in value.items" :key="item">
+				<li v-for="item in menuItem.items" :key="item">
 
-					<template v-if="isMenu(item)">
+					<template v-if="isMenuItem(item)">
 						<component :is="labelTag">{{ item.label }}</component>
-
-						<ul>
-							<li v-for="subItem in item.items" :key="subItem">
-								<slot v-if="$slots.default" v-bind:data="subItem"/>
-								<template v-else>{{ subItem }}</template>
+						<ul v-if="item.items.length > 0">
+							<li v-for="subItem in item.items">
+								<slot v-bind:data="subItem">{{ subItem }}</slot>
 							</li>
 						</ul>
 					</template>
 
-					<slot v-else-if="$slots.default" v-bind:data="item"/>
-					<template v-else>{{ item }}</template>
+					<slot v-else v-bind:data="item">{{ item }}</slot>
 				</li>
 			</ul>
 		</template>
 	</component>
 </template>
 
-<style scoped>
-
-</style>
-
 <script lang="ts" setup>
-	import {isMenu, Menu} from "../../types";
+
+	import {isMenuItem, Menu} from "../../types/MenuTypes";
 
 	const props = withDefaults(defineProps<{
-				tag?: string;
-				menu: Menu[];
-				labelTag?: string;
-			}>(),
-			{
-				tag: 'aside',
-				labelTag: 'p'
-			});
+			/** tag of the menu container
+			 * @default aside */
+			tag?: string;
+			/** items of the menu, maximum of two levels deep
+			 * @see [Menu Type]{@link https://csc530.github.io/vuebulma/types/MenuTypes.html#menu} */
+			menu: Menu;
+			/** tag of the menu labels
+			 * @default p*/
+			labelTag?: string;
+		}>(),
+		{
+			tag: 'aside',
+			labelTag: 'p'
+		});
 </script>
 

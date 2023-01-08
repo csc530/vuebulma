@@ -7,9 +7,8 @@ export * from './types/HeadingTypes';
 export * from './types/IconTypes';
 export * from './types/ButtonTypes';
 export * from './types/NavbarTypes';
+export * from './types/MenuTypes';
 
-type ArrayElement<ArrayType extends readonly unknown[]> =
-	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
 
 //todo: rename prefix
@@ -166,22 +165,6 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 
 export function removeDecimals(value: number): string {
 	return Number(value).toFixed().toString();
-}
-
-export type Menu = {
-	/** The menu's label */
-	label: string;
-	/** The menu's items */
-	items: (any | {
-		/** The submenu's label, shown alongside parent's items */
-		label: string;
-		/** The submenu's items */
-		items: any[];
-	})[];
-}
-
-export function isMenu(menu: Menu): menu is Menu {
-	return (menu as Menu).label !== undefined && menu.items !== undefined;
 }
 
 

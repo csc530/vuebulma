@@ -1,25 +1,46 @@
 # BulmaMenu
 
-A menu item
+An array menu items
 
-## Values
+## BulmaMenuItem
 
 **object**
-
-- `label`: `string`
-- `items`: `BulmaSubMenu`
-
-## BulmaSubMenu
-
-A submenu item
 
 ### Values
 
+#### label
+
+Type: `string`
+
+The label of the menu item.
+
+#### items
+
+Type: `any[]` | `undefined`
+
+Items to display under the label.
+
+To display a [sub menu](https://bulma.io\documentation/components/menu/#submenu) use am array
+of [BulmaSubMenuItem](./../types/BulmaMenu.md#bulmasubmenuitem)s
+
+## BulmaSubMenuItem
+
+A submenu item
+
 **object**
 
-- `label`: `string`
-- items: `any[]`
+### Values
 
-This type is to be used with the [`BulmaMenu` component](../components/BulmaMenu.md). As
-the [Bulma menu](https://bulma.io/documentation/components/menu/) can only have **1** submenu, to access and render any
-properties in the *sub menu* use the [slot](../components/BulmaMenu.md#slots) to properly display them.
+#### label
+
+Type: `string`
+
+The label of the sub menu items.
+
+#### items
+
+Type: `any[]`
+
+Items to display under the label.
+
+Do not use another `SubMenuItem` or object of that form as it will not be displayed as another level of the menu.

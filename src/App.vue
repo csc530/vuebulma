@@ -1,5 +1,5 @@
 <template>
-	<demo-dropdown />
+	<demo-menu />
 </template>
 
-<script lang="ts" setup>import DemoDropdown from "./demos/DemoDropdown.vue";</script>
+<script lang="ts" setup>import DemoMenu from "./demos/DemoMenu.vue";</script>

@@ -7,13 +7,13 @@
 
 ### default
 
-The default slot is used to render the menu items.
+A template to render the menu items, the menu item is bound to the `data` variable.
 
 ## Props
 
 ### [tag](../types/common_types.md#tag)
 
-Type: `string`;
+Type: `string` | `undefined`
 
 Default: `aside`;
 
@@ -25,7 +25,7 @@ The items to render in the menu.
 
 ### labelTag
 
-Type: `string`
+Type: `string` | `undefined`
 
 Default: `p`
 
@@ -33,4 +33,6 @@ Default: `p`
 
 To display a [sub menu](https://bulma.io\documentation/components/menu/#submenu) use
 the [BulmaMenu](./../types/BulmaMenu.md) type and `items` property of
-a [BulmaSubMenu](./../types/BulmaMenu.md#bulmasubmenu) in the `menu` prop.
+a [BulmaSubMenu](./../types/BulmaMenu.md#bulmasubmenuitem) in the `menu` prop.
+
+The menu can display a *max of two* levels. 
