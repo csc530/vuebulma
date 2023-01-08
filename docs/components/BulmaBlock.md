@@ -1,7 +1,7 @@
 # BulmaBlock
 
 [Bulma documentation](https://bulma.io/documentation/elements/block/)
-[Component source](../../src/components/containers/BulmaBlock.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaBlock.vue)
 
 A container to consistently space content.
 

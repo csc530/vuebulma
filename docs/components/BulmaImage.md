@@ -1,7 +1,7 @@
 # BulmaImage
 
 [Bulma documentation](https://bulma.io/documentation/elements/image/)
-[Component source](../../src/components/BulmaImage.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaImage.vue)
 
 An img with a container to hold maintain its size allowing for no page jumping when it's loaded.
 

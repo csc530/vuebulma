@@ -1,7 +1,7 @@
 # BulmaIcon
 
 [Bulma documentation](https://bulma.io/documentation/elements/icon/)
-[Component source](../../src/components/BulmaIcon.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaIcon.vue)
 
 An icon component only compatible with fontawesome
 

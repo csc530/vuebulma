@@ -1,7 +1,7 @@
 # BulmaDropdown
 
 [Bulma documentation](https://bulma.io/documentation/components/dropdown/)
-[Component source](../../src/components/containers/BulmaDropdown.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaDropdown.vue)
 
 A dropdown menu.
 

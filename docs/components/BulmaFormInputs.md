@@ -8,7 +8,7 @@ together.
 ## BulmaFormControl
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-control)
-[Source code](../../src/components/form/groups/BulmaFormControl.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControl.vue)
 
 A form input container to enhance _single form inputs_ and provide a consistent look and styling of form elements.
 
@@ -37,7 +37,7 @@ Whether the form control and input should take up the full width of its containe
 ## BulmaFormControlGroup
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-group)
-[Source code](../../src/components/form/groups/BulmaFormControlGroup.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControlGroup.vue)
 
 An intermediary component to group form controls together.
 
@@ -60,7 +60,7 @@ Type: `boolean` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
 ## BulmaFormField
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-field)
-[Source code](../../src/components/form/groups/BulmaFormField.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormField.vue)
 
 A simple container for a _single_ whole form input; built for a text label, a form control, and an optional help text
 

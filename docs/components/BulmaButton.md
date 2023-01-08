@@ -1,7 +1,7 @@
 # BulmaButton
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/)
-[Source code](../../src/components/BulmaButton.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaButton.vue)
 
 ## Slots
 
@@ -94,6 +94,8 @@ Type:  `boolean` | `undefined`
 When true, the button will be static; not responding to hover, focus or active states
 
 ### state
+
+[//]: # (todo)
 
 [//todo]: # (todo - add link to BulmaButtonState)
 Type:  [`BulmaState`](../types/bulmastates.md) | `undefined`

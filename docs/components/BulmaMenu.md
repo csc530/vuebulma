@@ -1,7 +1,7 @@
 # BulmaMenu
 
 [Bulma documentation](https://bulma.io/documentation/components/menu/)
-[Component source](../../src/components/containers/BulmaMenu.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaMenu.vue)
 
 ## Slots
 

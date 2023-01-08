@@ -1,7 +1,7 @@
 # BulmaTextArea
 
 [Bulma documentation](https://bulma.io/documentation/form/textarea/)
-[Source code](../../src/components/form/BulmaTextArea.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaTextArea.vue)
 
 A multiline textarea
 

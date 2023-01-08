@@ -1,7 +1,7 @@
 # BulmaButtonGroup
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/#list-of-buttons)
-[Source code](../../src/components/containers/BulmaButtonGroup.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaButtonGroup.vue)
 
 A container for multiple [BulmaButton](BulmaButton.md) components.
 

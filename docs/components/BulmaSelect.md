@@ -1,7 +1,7 @@
 # BulmaSelect
 
 [Bulma documentation](https://bulma.io/documentation/form/select/)
-[Source code](../../src/components/form/BulmaSelect.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaSelect.vue)
 
 An input select
 

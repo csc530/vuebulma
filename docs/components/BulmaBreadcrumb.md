@@ -1,9 +1,11 @@
 # BulmaBreadcrumb
 
 [Bulma documentation](https://bulma.io/documentation/components/breadcrumb/)
-[Component source](../../src/components/BulmaBreadcrumb.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaBreadcrumb.vue)
 
 [//]: # (## Demo)
+
+[//]: # (todo: )
 
 [//todo]: # (figure out how to add demos only with bulma styles <breadcrumb></breadcrumb>)
 

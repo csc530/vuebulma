@@ -1,7 +1,7 @@
 # BulmaBox
 
 [Bulma documentation](https://bulma.io/documentation/elements/box/)
-[Component source](../../src/components/containers/BulmaBox.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaBox.vue)
 
 A container element to place content within a visible box.
 

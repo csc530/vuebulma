@@ -1,7 +1,7 @@
 # BulmaInput
 
 [Bulma documentation](https://bulma.io/documentation/form/input/)
-[Source code](../../src/components/form/BulmaInput.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaInput.vue)
 
 An input element styled with Bulma for [supported types](https://bulma.io/documentation/form/input/).
 
@@ -52,5 +52,7 @@ Emitted when the input value changes.
 ```
 
 - `newValue` - The new value of the input, which will be the same type as the `modelValue`.
+
+[//]: # (todo)
 
 [//todo:]: # (add form dir with overview link to custom prop vmodel and default prop name and emit)

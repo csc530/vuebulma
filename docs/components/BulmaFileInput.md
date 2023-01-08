@@ -1,7 +1,7 @@
 # BulmaFileInput
 
 [Bulma documentation](https://bulma.io/documentation/form/file/)
-[Source code](../../src/components/form/BulmaFileInput.vue)
+[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaFileInput.vue)
 
 A file upload input
 

@@ -1,7 +1,7 @@
 # Bulma Heading
 
 [Bulma Documentation](https://bulma.io/documentation/elements/title/)
-[Component source](../../src/components/BulmaHeading.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaHeading.vue)
 
 The component for the Bulma title and subtitle elements.
 

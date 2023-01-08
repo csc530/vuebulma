@@ -1,7 +1,7 @@
 # BulmaMessage
 
 [Bulma documentation](https://bulma.io/documentation/components/message/)
-[Component source](../../src/components/BulmaMessage.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaMessage.vue)
 
 A message box component
 

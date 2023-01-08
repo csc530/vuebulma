@@ -257,7 +257,7 @@ HTML
 ```
 
 This is  **not *highly* recommended** as the HTML
-is [basically injected into the DOM](../.././src/components/containers/navbar/BulmaNavbarItem.vue#L65).
+is [basically injected into the DOM](https://github.com/csc530/vuebulma/blob/main/./src/components/containers/navbar/BulmaNavbarItem.vue#L65).
 
 Dropdown
 
