@@ -1,4 +1,3 @@
-import {Component} from "vue";
 import {toBulmaAspectRatioClass, toBulmaDimensionsClass, toBulmaSeparatorClass} from "./types";
 import {BulmaButtonColour} from "./types/ButtonTypes";
 // ? export all types for build and ease of use
@@ -7,7 +6,7 @@ export * from './types/ImageTypes';
 export * from './types/HeadingTypes';
 export * from './types/IconTypes';
 export * from './types/ButtonTypes';
-
+export * from './types/NavbarTypes';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
 	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -172,30 +171,6 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	return classList.filter(x => x);
 }
 
-export function getNavbarItemClasses(item: BulmaNavBarItem): string[] {
-	const classes: string[] = [];
-	if(!item.dropdown)
-		return classes;
-	// ? used if statements of explicit properties instead of generic bulma `getBulmaClassesFromProps`
-	// ? to avoid any `is` naming conflicts; if the user adds any names prefixed with `is` or `has` adding redundant classes
-	classes.push('has-dropdown');
-	const {isRight, isDropUp, isArrowless, isBoxed, isHoverable} = item.dropdown;
-	if(isDropUp)
-		classes.push('has-dropdown-up');
-	else if(isRight)
-		classes.push('is-right');
-	else if(isHoverable)
-		classes.push('is-hoverable');
-	else if(isBoxed)
-		classes.push('is-boxed');
-	else if(isArrowless)
-		classes.push('is-arrowless');
-	else if(item.dropdown.isExpanded)
-		classes.push('is-expanded');
-	return classes;
-
-}
-
 export function removeDecimals(value: number): string {
 	return Number(value).toFixed().toString();
 }
@@ -215,42 +190,6 @@ export type Menu = {
 export function isMenu(menu: Menu): menu is Menu {
 	return (menu as Menu).label !== undefined && menu.items !== undefined;
 }
-
-export interface NavBarDropdownItem {
-	/** The dropdown item's label */
-	label: string | any;
-	/** The dropdown items */
-	items: BulmaNavBarItem[];
-	isDropUp?: boolean;
-	isHoverable?: boolean;
-}
-
-export function isNavBarDropdownItem(item: NavBarDropdownItem): item is NavBarDropdownItem {
-	return (item as NavBarDropdownItem).label !== undefined && item.items !== undefined;
-}
-
-export function isHTMLElement(element: any): element is HTMLElement {
-	return element instanceof HTMLElement;
-}
-
-export type BulmaNavBarItem = {
-	dropdown?: {
-		isArrowless?: boolean;
-		isBoxed?: boolean;
-		isDropUp?: boolean;
-		isExpanded?: boolean;
-		isHoverable?: boolean;
-		isRight?: boolean;
-		items: any[];
-		label: string;
-	};
-	href?: string | URL;
-	isComponent?: string | Component;
-	props?: Record<string, any>
-	/** array of slot to pass to the component (only valid with isComponent); null name will be the default slot */
-	slot?: { name?: string, content: string }[];
-	[other: string]: unknown;
-};
 
 
 export type BulmaState = 'active' | 'hovered' | 'focused' | 'default';

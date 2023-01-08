@@ -1,6 +1,6 @@
 <template>
-	<demo-button-group />
+	<DemoNavbar />
 </template>
 
 <script lang="ts" setup>
-	import DemoButtonGroup from "./demos/DemoButtonGroup.vue";</script>
+	import DemoNavbar from "./demos/DemoNavbar.vue";</script>

@@ -12,12 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documentation to props of
 	- [Button](components/BulmaButton.md)
 	- [Button Group](components/BulmaButtonGroup.md)
+	- [Navbar](components/BulmaNavbar.md)
+- Shadow class to [Navbar](components/BulmaNavbar.md)
 
 ### Changed
 
 - [Button](components/BulmaButton.md)
 	- `isActive` to `state` and accepts all button states classes
 - Buttons to [BulmaButtonGroup](components/BulmaButtonGroup.md)
+- [BulmaNavbarItem type](types/BulmaNavbarItem.md) to be as concise and clear as possible to help render item
+  in [BulmaNavbar](components/BulmaNavbar.md)
 
 ### Deprecated
 

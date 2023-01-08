@@ -1,7 +1,7 @@
 # BulmaNavbar
 
 [Bulma Documentation](https://bulma.io/documentation/components/navbar/)
-[Component source](../../src/components/containers/navbar/BulmaNavbar.vue)
+[Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/navbar/BulmaNavbar.vue)
 
 The Navbar component with native click handler to open and close
 hamburger menus.
@@ -17,7 +17,8 @@ bound to `data` in the slot.
 
 Example:
 
-```vue:line-numbers
+```vue
+
 <template>
 	<BulmaNavbar :start-items="items">
 		<template #start-items="{ data }">
@@ -38,7 +39,50 @@ Example:
 </script>
 ```
 
+### Recommendation
+
+If you'd like to pass different types of elements such as HTML or other vue components. You can use the `v-if` directive
+to display the correct element.
+
+Example: using dummy list
+
+```vue
+
+<template>
+	<BulmaNavbar :end-items="items">
+		<template #end-items="{ data }">
+			<h1 v-if="data===1">{{ data.title }}</h1>
+			<ul v-if="data === 2">
+				<li>This is not a great way</li>
+				<li>to do this</li>
+				<li>But works for smaller and static elements</li>
+			</ul>
+		</template>
+	</BulmaNavbar>
+</template>
+
+<script setup>
+	import {ref} from 'vue'
+
+	const items = ref([1, 2]);
+</script>
+```
+
 ## Props
+
+### activateOnClick
+
+Type: `boolean` | `'single'`| `undefined`
+
+Default: `'single'`
+
+Whether to activate the clicked navbar item. If `single` is passed, only one item will be active at a time.
+
+### boxedDropdowns
+
+Type: `boolean` | `undefined`
+
+Whether all navbar dropdowns should have a boxed style.
 
 ### colour
 
@@ -53,13 +97,7 @@ Type: `any[]`
 Items which are always visible shown on the left hand side (start/brand) of the navbar. Corresponds to
 the `navbar-brand`.
 
-### startItemTag
 
-Type: `div` | `a`
-
-Default: `a`
-
-Tag to wrap brand items in
 
 ### middleItems
 
@@ -75,13 +113,21 @@ Type: `any[]`
 The items to be displayed in the end of the navbar. This refers to the `navbar-end` items in the `navbar-menu` according
 to the [Bulma documentation](https://bulma.io/documentation/components/navbar/#navbar-start-and-navbar-end).
 
+### startItemTag
+
+Type: `div` | `a`
+
+Default: `a`
+
+Tag to wrap start items in
+
 ### middleItemTag
 
 Type: `div` | `a`
 
 Default: `a`
 
-The tag to be used for the middle items. Defaults to `a`.
+The tag to be used for the middle items
 
 ### endItemTag
 
@@ -93,11 +139,15 @@ The tag to be used for the end items.
 
 ### [isTransparent](https://bulma.io/documentation/components/navbar/#transparent-navbar)
 
+_Requires [colour](#colour) to _really_ be noticed_
+
 Type: `boolean` | `undefined`
 
 Default: `false`
 
-Whether the navbar should have a transparent background (colour).
+> This will remove any hover or active background from the navbar items.
+>
+> [Bulma Documentation](https://bulma.io/documentation/components/navbar/#transparent-navbar)
 
 ### [isSpaced](https://bulma.io/documentation/components/navbar/#navbar-helper-classes)
 
@@ -105,19 +155,20 @@ Type: `boolean` | `undefined`
 
 Default: `false`
 
-Whether the navbar should have an increased spacing between the items.
+Whether the navbar should have increased spacing around its borders
 
-### isTab
+### tabbedItems
 
-Type: `boolean` | `menu` | `start` | `end` | `brand` | `brand&end` | `all`
+Type: `boolean` | `('brand' | 'start' | 'end')[]`
 
 Default: `false`
 
 Determines if the navbar items will have a tabbed style. If true all items will be tabbed and if false all items will
-not be tabbed. If a string is passed, the navbar items will be tabbed according to the string.
+not be tabbed.
 
-If the string is `menu` string will tab the `navbar-menu` items and the `start` string will tab the `navbar-start`
-items and so on and so forth.
+If an array is passed, the items will be tabbed based on the navbar section names.
+
+For example, if `['brand', 'end']` is passed, the brand items and end items will be tabbed.
 
 ### [isFixed](https://bulma.io/documentation/components/navbar/#fixed-navbar)
 
@@ -128,23 +179,33 @@ Default: `false`
 Determines if the navbar should be fixed to the top or bottom of the page. If `false` the navbar will not be fixed. This
 will also add the `is-fixed-top` or `is-fixed-bottom` class to the document's `html` element.
 
-### activateOnClick
+### hasShadow
 
-Type: `boolean` | `singly`
+Type: `boolean` | `undefined`
 
-Default: `false`
-
-Whether to activate the navbar items on click. If `singly` is passed, only one item will be active at a time.
+Whether the navbar should have a shadow.
 
 ## Additional information
 
-When working with the `BulmaNavbar` component, you can use the `BulmaNavbarItem` helper type when passing in items. This
-type has the isComponent property to render passed in Vue components as is to the navbar.
+### Active items
+
+If any navbar item has an `isActive` attribute it will determine if the item is active or not. Like in
+the [`NavbarItem`](../types/BulmaNavbarItem.md#isactive) type.
+
+### Navbar items
+
+When working with the `BulmaNavbar` component, you can use the [`BulmaNavbarItem`](../types/BulmaNavbarItem.md) type
+when passing in items.
+It can help render components, dropdowns, or html, while easily maximizing bulma's capabilities
+
+Examples:
+
+Component
 
 ```vue
 
 <template>
-	<BulmaNavbar :items="items" />
+	<BulmaNavbar :middle-items="items" />
 </template>
 
 <script lang="ts" setup>
@@ -153,27 +214,26 @@ type has the isComponent property to render passed in Vue components as is to th
 	import {BulmaImage} from "@csc530/vuebulma";
 	import myCustomComponent from "./MyCustomComponent.vue";
 
-	const customComponent = {
-		component: 'myCustomComponent',
+	const customComponent: BulmaNavBarItem = {
+		type: 'component',
+		display: myCustomComponent,
 		// to apply component props/attributes, use the props property
-		isComponent: true,
 		props: {
 			customProp: true,
 			cutomProp2: 'hello'
 		}
 	};
 	const bulmaImg = {
+		type: 'component',
 		component: BulmaImage,
 		props: {src: 'https://bulma.io/images/bulma-logo.png'},
-		isComponent: true
 	};
 
 	const items: BulmaNavBarItem[] = [customComponent, bulmaImg];
 </script>
 ```
 
-Or, you can create
-HTMLElements and render them as such.
+HTML
 
 ```vue
 
@@ -189,14 +249,37 @@ HTMLElements and render them as such.
 	fancyButton.classList.add('button', 'is-primary');
 	fancyButton.style.border = 'thick #ccad46 ridge';
 
-	// Navbar will test if it's an HTMLElement
-	// if so render it as is
 	const items: BulmaNavBarItem[] = [
-		document.createElement('a'),
-		fancyButton
+		{type: 'html', display: document.createElement('a')},
+		{type: 'html', display: fancyButton}
 	];
 </script>
 ```
 
 This is  **not *highly* recommended** as the HTML
-is [basically injected into the DOM](../.././src/components/containers/navbar/BulmaNavbarItem.vue#L39).
+is [basically injected into the DOM](../.././src/components/containers/navbar/BulmaNavbarItem.vue#L65).
+
+Dropdown
+
+```vue
+
+<template>
+	<BulmaNavbar :end-items="items" />
+</template>
+
+<script lang="ts" setup>
+	import {BulmaNavBarItem} from '@csc530/vuebulma/types';
+
+	const dropdown: BulmaNavBarItem = {
+		type: 'dropdown',
+		display: 'A Dropdown',
+		dropdown: {
+			items: ['item1', 'item2', 'item3'],
+			isHoverable: true,
+			isBoxed: true
+		}
+	};
+
+	const items: BulmaNavBarItem[] = [dropdown];
+</script>
+```
