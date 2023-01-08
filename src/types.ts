@@ -1,3 +1,4 @@
+import sCase from "case";
 import {toBulmaAspectRatioClass, toBulmaDimensionsClass, toBulmaSeparatorClass} from "./types";
 import {BulmaButtonColour} from "./types/ButtonTypes";
 // ? export all types for build and ease of use
@@ -8,7 +9,6 @@ export * from './types/IconTypes';
 export * from './types/ButtonTypes';
 export * from './types/NavbarTypes';
 export * from './types/MenuTypes';
-
 
 
 //todo: rename prefix
@@ -104,14 +104,13 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 	target.classList.toggle('is-active');
 }
 
-export const toIsClassName = (name: string): string => `is-${name}`;
 
 //todo: extend usability to add logic if it's alignment, colour, etc
 export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
 	const classList: string[] = [];
 	const isClasses = Object.keys(classes)
-	                        .filter(key => classes[key] && key.includes('is'))
+	                        .filter(key => classes[key] && key.startsWith('is'))
 	                        .map(key => {
 		                        let className = key.toLowerCase();
 		                        if(className === 'isdropup')
@@ -119,18 +118,12 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		                        else if(className === 'isfixed')
 			                        className = 'is-fixed-' + classes[key];
 		                        // ? no need to check for `-` in key as vue transforms it to camelCase
-		                        else {
-			                        // ? replace `is` followed by a capital letter with `is-`
-			                        const isClassName = key.replace(/is([A-Z])/g, 'is-$1').toLowerCase();
-			                        if(isClassName !== className)
-				                        className = isClassName;
-			                        else
-				                        return '';
-		                        }
+		                        else
+			                        className = sCase.kebab(className);
 		                        return className;
 	                        });
 	const hasClasses = Object.keys(classes)
-	                         .filter(key => classes[key] && key.includes('has'))
+	                         .filter(key => classes[key] && key.startsWith('has'))
 	                         .map(key => {
 		                         let className = key.toLowerCase();
 		                         if(className === 'hasicons' && classes[key] !== false) {
@@ -141,7 +134,9 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 				                         className += classes[key];
 		                         }
 		                         else
-			                         className = className.replace('has', 'has-');
+			                         // ? replace `has` followed by a capital letter with `has-`
+			                         className = sCase.kebab(key)
+
 		                         return className;
 	                         });
 	classList.push(...isClasses, ...hasClasses);

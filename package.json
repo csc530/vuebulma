@@ -26,8 +26,11 @@
   "type": "module",
   "readme": "readme.md",
   "private": false,
+  "types": "dist/types/types.d.ts",
+  "main": "dist/vuebulma.js",
+  "module": "dist/vuebulma.js",
   "exports": {
-    "./dist/vuebulma": "./dist/vuebulma.js",
+    ".": "./dist/vuebulma.js",
     "./dist/types": "./dist/types.js"
   },
   "files": [
@@ -49,6 +52,7 @@
     "@vitejs/plugin-vue": "^3.1.0",
     "@vuepress/client": "2.0.0-beta.60",
     "bulma": "^0.9.4",
+    "case": "^1.6.3",
     "change-case": "^4.1.2",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
