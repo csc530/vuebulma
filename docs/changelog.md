@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- [Navbar](components/BulmaNavbar.md)
 	- [Dropdown](components/BulmaDropdown.md)
 	- [Menu](components/BulmaMenu.md)
+	- [TextArea](components/BulmaTextArea.md)
 - Shadow class to [Navbar](components/BulmaNavbar.md)
 
 ### Changed
@@ -35,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - BulmaIcon wrap text in span to prevent collision with icon
+- BulmaTextArea `hasFixedSize` prop to apply the `is-fixed-size` class
 
 ## [0.0.0-9] - 2023-01-04
 

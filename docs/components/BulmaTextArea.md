@@ -5,12 +5,6 @@
 
 A multiline textarea
 
-## Slots
-
-### default
-
-The default content to display within the textarea
-
 ## Props
 
 ### colour
@@ -23,14 +17,9 @@ Colour of the textarea border
 
 [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
-### rows
-
-Type:  `number` | `undefined`
-
-Number of rows to display by default
 
 ### hasFixedSize
 
 Type: `boolean` | `undefined`
 
-Whether the textarea has a fixed size
+Whether the textarea has a fixed size; if it can be changed, by the user

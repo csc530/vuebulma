@@ -1,5 +1,5 @@
 <template>
-	<demo-menu />
+	<demo-text-area />
 </template>
 
-<script lang="ts" setup>import DemoMenu from "./demos/DemoMenu.vue";</script>
+<script lang="ts" setup>import DemoTextArea from "./demos/DemoTextArea.vue";</script>
