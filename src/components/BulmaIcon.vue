@@ -2,7 +2,7 @@
 
 	<!-- Icon text -->
 	<component :is="flex ? 'div' : 'span'" v-if="rootClass === 'icon-text'" :class="[rootClass,colourClass]">
-		<slot v-if="textFirst" name="text">{{ text }}</slot>
+		<span v-if=" hasText&&textFirst"><slot name="text">{{ text }}</slot></span>
 
 		<BulmaIcon v-if="$slots.icon" :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
 		           :stacked="stacked">
@@ -11,7 +11,7 @@
 		<BulmaIcon v-else :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
 		           :stacked="stacked" />
 
-		<slot v-if="!textFirst" name="text">{{ text }}</slot>
+		<span v-if=" hasText&&!textFirst"><slot name="text">{{ text }}</slot></span>
 	</component>
 
 	<!--Icon -->
@@ -85,7 +85,8 @@
 		else return;
 	});
 
-	const rootClass = computed(() => useSlots().text || props.text ? 'icon-text' : 'icon');
+	const textSlot = useSlots().text;
+	const rootClass = computed(() => textSlot || props.text ? 'icon-text' : 'icon');
 
 	const colourClass = computed(() => props.colour ? getColourClass(props.colour, 'text') : null);
 
@@ -96,5 +97,7 @@
 	};
 
 	const sizeClass = computed(() => getSizeClasses(props.containerSize));
+
+	const hasText = computed(() => props.text || textSlot);
 </script>
 
