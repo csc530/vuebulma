@@ -34,7 +34,7 @@
 		isMultiple?: boolean | number,
 		//todo: make a type for this
 		//todo: make type for adding optgroups
-		/** The options to display in the select. v-model only works with options prop */
+		/** The options to display in the select */
 		options?: (BulmaOption | BulmaOptionGroup | string)[]
 		/** The initial value of the select. Used for v-model */
 		modelValue?: any
