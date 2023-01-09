@@ -12,3 +12,4 @@
   slots
 - Select and likely all inputs do not maintain state without a `v-model` prop
 	- For example if the colour is reactively changed a selcet would default back whatever was selcected
+- Remove slot in Bulma Select??

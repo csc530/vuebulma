@@ -8,7 +8,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/csc530/vuebulma?color=goldenrod)](https://github.com/csc530/vuebulma/issues)
 [![GitHub discussions](https://img.shields.io/badge/Contribute-Discussions-blueviolet)](https://github.com/csc530/vuebulma/discussions)
 
-## [Changelog](/../gh-pages/docs/changelog.md)
+## [Changelog](https://csc530.github.io/vuebulma/changelog.html)
 
 ## Disclaimer
 

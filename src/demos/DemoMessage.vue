@@ -48,10 +48,10 @@
 	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../types";
 
 	const colour = ref<BulmaColour>('primary');
-	const heading = ref('Hello World');
-	const body = ref('Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit');
-	const deleteBtn = ref(true);
-	const size = ref<BulmaSize>('medium');
+	const heading = ref('John 3:16');
+	const body = ref('For God <strong>so loved</strong> the world that he gave his one and only Son, that whoever believes in him shall not perish but have <em>eternal life</em>.');
+	const deleteBtn = ref(false);
+	const size = ref<BulmaSize>('large');
 
 	const test = () => {
 		console.log('test');

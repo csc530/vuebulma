@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-## [Unreleased]
+
+## [Unreleased] - Date
 
 ### Added
+
+- [Type helpers](types/BulmaOption.md) for BulmaSelect
 
 ### Changed
 
@@ -16,7 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-## [0.0.0-10]
+- `isFullWidth` prop capitalization in BulmaSelect to transform to `is-fullwidth` class
+
+## [0.0.0-10] - 2023-08-01
 
 ### Added
 
@@ -38,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Buttons to [BulmaButtonGroup](components/BulmaButtonGroup.md)
 - [BulmaNavbarItem type](types/BulmaNavbarItem.md) to be as concise and clear as possible to help render item
   in [BulmaNavbar](components/BulmaNavbar.md)
+- `color` prop on BulmaSelect to `colour`
 
 ### Removed
 

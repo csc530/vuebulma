@@ -1,8 +1,9 @@
 <template>
 	<bulma-box>
-		<bulma-select :colour="colour" :is-full-width="fullwidth" :is-multiple="multiple" :is-rounded="round"
-		              @update:model-value="log"
-		              :options="options" :size="size" :state="state" model-value="Yukon" />
+		<bulma-form-control :is-expanded="fullwidth">
+			<bulma-select :colour="colour" :is-fullwidth="fullwidth" :is-multiple="multiple" :is-rounded="round"
+			              :options="options" :size="size" :state="state" model-value="Yukon" />
+		</bulma-form-control>
 	</bulma-box>
 
 	<bulma-form-field is-horizontal label="Size">
@@ -27,16 +28,16 @@
 	</bulma-form-field>
 
 	<bulma-form-field is-horizontal label="Multiple">
-		<input v-model="multiple" type="checkbox" ref="multipleCheckbox" />
+		<input ref="multipleCheckbox" v-model="multiple" type="checkbox" />
 		<bulma-form-control-group has-addons>
 			<bulma-form-control>
-				<bulma-button is-static is-rounded>{{ multiple }}</bulma-button>
+				<bulma-button is-rounded is-static>{{ multiple }}</bulma-button>
 			</bulma-form-control>
 			<bulma-form-control>
-				<bulma-input max="13" min="1" type="range" v-model.number="multiple" />
+				<bulma-input v-model.number="multiple" max="13" min="1" type="range" />
 			</bulma-form-control>
 			<bulma-form-control>
-				<bulma-button @click="multiple = $refs.multipleCheckbox.checked" is-rounded colour="dark">Reset
+				<bulma-button colour="dark" is-rounded @click="multiple = $refs.multipleCheckbox.checked">Reset
 				</bulma-button>
 			</bulma-form-control>
 		</bulma-form-control-group>
@@ -66,6 +67,7 @@
 		getBulmaInputStates,
 		getBulmaSizes
 	} from "../types";
+	import {BulmaOptionGroup} from "../types/SelectTypes";
 
 	const size = ref<BulmaSize>("medium");
 	const state = ref<BulmaInputState>("loading");
@@ -74,7 +76,21 @@
 	const colour = ref<BulmaColour>('default');
 	const multiple = ref<boolean | number>(false);
 
-	const options = ['Ontario', 'Quebec', 'Nova Scotia', 'New Brunswick', 'Manitoba', 'British Columbia', 'Prince Edward Island', 'Saskatchewan', 'Alberta', 'Newfoundland and Labrador', 'Northwest Territories', 'Nunavut', 'Yukon'];
+	const options: BulmaOptionGroup[] = [
+		{
+			label: 'Territories',
+			options: [
+				{label: 'Yukon', value: 'Yukon'},
+				{label: 'Northwest Territories', value: 'Northwest Territories'},
+				{label: 'Nunavut', value: 'Nunavut'}
+			]
+		},
+		{
+			label: 'Provinces',
+			disabled: true,
+			options: ['Ontario', 'Quebec', 'Nova Scotia', 'New Brunswick', 'Manitoba', 'British Columbia', 'Prince Edward Island', 'Saskatchewan', 'Alberta', 'Newfoundland and Labrador']
+		}
+	];
 
 
 </script>

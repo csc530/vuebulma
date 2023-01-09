@@ -1,9 +1,9 @@
 # BulmaSelect
 
 [Bulma documentation](https://bulma.io/documentation/form/select/)
-[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaSelect.vue)
+[Source](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaSelect.vue)
 
-An input select
+A select input
 
 ## Slots
 
@@ -11,15 +11,15 @@ An input select
 
 The `option`s and `optgroup`s for the select element.
 
+Slotted elements are not compatible with `v-model`.
+
 ## Props
 
-### [tag](../types/common_types.md#tag)
-
-Type: `string` | `undefined`
-
-### color
+### colour
 
 Type: [`BulmaColour`](../types/common_types.md#bulmacolour) | `undefined`
+
+The colour of the select element, colours the border
 
 ### size
 
@@ -27,11 +27,11 @@ Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
 
 The size of the select and options
 
-### isLoading
+### state
 
-Type: `boolean` | `undefined`
+Type: [`BulmaInputState`](../types/BulmaState.md#bulmaInputState) | `undefined`
 
-When `true`, the select is in a loading state and shows a spinner.
+The visual state of the select element
 
 ### isRounded
 
@@ -39,20 +39,14 @@ Type: `boolean`| `undefined`
 
 When `true`, the select is rounded.
 
-### isStatic
-
-Type: `boolean` | `undefined`
-
-When `true`, the select is styled statically; like a label, un-editable
 
 ### options
 
-Type: `{ text: string, value: any }[]` | `string[]` | `undefined`
+Type: [`(BulmaOption | BulmaOptionGroup | string)[]`](../types/BulmaOption.md#bulmaoption) | `undefined`
 
 The options for the select element.
 
-If the options are strings, the value will be the same as the text. If the options are objects, the value will be
-the `value` property of the object and the text will be the `text` property of the object.
+If the options are strings, the value will be the same as the text.
 
 Any slot content will override this prop.
 
@@ -60,10 +54,36 @@ Any slot content will override this prop.
 
 Type: `any`
 
+Used for `v-model` binding.
+
 ### isFullWidth
 
-**Requires Must pair with [`BulmaFormControl`](BulmaFormInputs.md#bulmaformcontrol)
-with [`isExpanded` prop](BulmaFormInputs.md#isexpanded) to work; makes select
-expand to fill its parent**
+**Requires parent [`BulmaFormControl`](BulmaFormInputs.md#bulmaformcontrol)
+with [`isExpanded` prop](BulmaFormInputs.md#isexpanded) to work**
+
 Type: `boolean` | `undefined`
 
+Whether the select element should take up the full width of the parent.
+
+### isMultiple
+
+Type: `boolean` | `number` | `undefined`
+
+Whether the select element should allow multiple selections.
+
+If the type is a number it will be used on
+the [size](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-size) attribute.
+
+## Emits
+
+### update:modelValue
+
+```ts
+ (name: 'update:modelValue', newValue: any | any[]) => unknown
+```
+
+Emitted when the value of the select element changes.
+
+If the select element [is multiple](#ismultiple), the value will be an array of the selected values.
+Else the value will be the value of the selected option.
+	

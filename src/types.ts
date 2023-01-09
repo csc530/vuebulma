@@ -1,7 +1,8 @@
 import sCase from "case";
-import {toBulmaAspectRatioClass, toBulmaDimensionsClass, toBulmaSeparatorClass} from "./types";
+import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
 import {BulmaButtonColour} from "./types/ButtonTypes";
-// ? export all types for build and ease of use
+import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
+// ? export all types from ./types/ for build and ease of use
 export * from './types/BreadcrumbTypes';
 export * from './types/ImageTypes';
 export * from './types/HeadingTypes';
@@ -9,6 +10,7 @@ export * from './types/IconTypes';
 export * from './types/ButtonTypes';
 export * from './types/NavbarTypes';
 export * from './types/MenuTypes';
+export * from './types/SelectTypes';
 
 
 //todo: rename prefix
