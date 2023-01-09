@@ -6,12 +6,12 @@
 
 	- Not sure if it's necessary as component props that'll accept HTML/Vue elements
 
-- [ ] Add more components
+- [x] Add more components
 
 - [ ] Backwards compatibility with Vue 2
 
 - [ ] Add vuejs Debugger tools compatibility
 
-- [ ] for [button group](../src/components/containers/BulmaButtonGroup.vue) look into prop to pass buttons instead of
-  slots
+
 - [ ] Add keys to `v-for` loops
+- [ ] use `toggleActivation` to activate items (apply `is-active` class)

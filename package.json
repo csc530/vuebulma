@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-9.1",
+  "version": "0.0.0-10",
   "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly & tsc src/types.ts --declaration --outDir dist --module esnext --target esnext --declarationDir dist/types",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly & tsc src/types.ts --declaration --outDir dist",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "docs:dev": "vuepress dev docs",
