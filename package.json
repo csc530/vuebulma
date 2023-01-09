@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly & tsc src/types.ts --declaration --outDir dist",
+    "build": "vite build && vue-tsc --emitDeclarationOnly & tsc src/types.ts --outDir dist --target esnext",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "docs:dev": "vuepress dev docs",

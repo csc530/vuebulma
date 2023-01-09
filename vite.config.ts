@@ -23,7 +23,8 @@ export default defineConfig({
 		lib: {
 			entry: resolve(__dirname, 'src/vuebulma.ts'),
 			name: 'vuebulma',
-			fileName: `vuebulma`
+			fileName: `vuebulma`,
+			formats: ['es']
 		},
 		emptyOutDir: true,
 		rollupOptions: {
