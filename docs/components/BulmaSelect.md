@@ -11,8 +11,6 @@ A select input
 
 The `option`s and `optgroup`s for the select element.
 
-Slotted elements are not compatible with `v-model`.
-
 ## Props
 
 ### colour

@@ -1,27 +1,29 @@
 <template>
 	<input :class="classes" :value="modelValue" class="input"
-	       v-bind="$attrs" v-on:input="emit('update:modelValue', $event.target.value)" />
-	<!-- todo: investigate not working type attri when type=checkbox -->
+	       v-on:input="emit('update:modelValue', $event.target.value)" />
 </template>
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
+	import {BulmaColour, BulmaSize, BulmaState, getBulmaClassesFromProps} from "../../types";
 
 	const props = withDefaults(defineProps<{
 		//todo add documentation of suggested types
+		/** The colour of the input. */
 		colour?: BulmaColour
+		/** The size of the input. */
 		size?: BulmaSize
-		isRounded?: boolean
-		isLoading?: boolean
+		/** The state of the input. */
+		state?: BulmaState
+		/** display as non-editable input */
 		isStatic?: boolean
 		/** The value to set to the input; used for the v-model */
 		modelValue?: any
-		// isExpanded?: boolean todo: decide if the expand property should be set in the input or field/;group component
 	}>(), {});
 
 	const emit = defineEmits<{
-		(name: 'update:modelValue', newValue: any): any
+		/** The value to set to the input; used for the v-model */
+		(name: 'update:modelValue', newValue: typeof props.modelValue): void
 	}>();
 
 	const classes = computed(() => getBulmaClassesFromProps(props));

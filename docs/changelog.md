@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add docs to props of...
 	- [BulmaFileInput](docs/components/BulmaFileInput.md)
+- Add state prop to BulmaInput
 
 ### Changed
 
@@ -19,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - .umd.js file from package
+- invalid props on bulma input
+	- isLoading
+	- isRounded
 
 ### Fixed
 
