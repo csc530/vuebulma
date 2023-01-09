@@ -16,3 +16,4 @@
 - [ ] Add keys to `v-for` loops
 - [ ] use `toggleActivation` to activate items (apply `is-active` class)
 - [ ] Add `vb` prefix to types, overwrite and duplicate prevention
+- [ ] Remove `<!--v-if-->` comments

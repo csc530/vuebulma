@@ -46,10 +46,6 @@
 </template>
 
 <script lang="ts" setup>
-	function log(val) {
-		console.log(val);
-	}
-
 	import {ref} from "vue";
 	import BulmaButton from "../components/BulmaButton.vue";
 	import BulmaBox from "../components/containers/BulmaBox.vue";

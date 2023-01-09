@@ -5,19 +5,25 @@
 
 A file upload input
 
+## Slots
+
+### default
+
+An icon placed before the file label
+
 ## Props
 
 ### label
 
 Type: `string`
 
-Text to display with the file input
+Text to display with the file input; prompt
 
 ### fileName
 
 Type: `string` | `undefined`
 
-The name of the [selected] file to display
+The name of the file to display, i.e. the selected file
 
 ### size
 
@@ -35,6 +41,8 @@ The colour of the file input
 
 Type: [`BulmaAlignments`](../types/common_types.md#bulmaalignments) | `undefined`
 
+The alignment of the file input
+
 ### isBoxed
 
 Type: `boolean` | `undefined`
@@ -48,3 +56,13 @@ If the file input should have a boxed display; contents are displayed one on top
 Type: `boolean` | `undefined`
 
 expand the name or input to fill up the available space
+
+## Emits
+
+### update:modelValue
+
+Emitted when the file input is changed
+
+```ts
+(name: 'update:modelValue', newValue: FileList | string) => void {}
+```
