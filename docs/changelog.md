@@ -16,7 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- [Dropdown](components/BulmaDropdown.md)
 	- [Menu](components/BulmaMenu.md)
 	- [TextArea](components/BulmaTextArea.md)
+	- [Select](components/BulmaSelect.md)
 - Shadow class to [Navbar](components/BulmaNavbar.md)
+- isMultiple class to [Select](components/BulmaSelect.md)
 
 ### Changed
 
@@ -37,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - BulmaIcon wrap text in span to prevent collision with icon
 - BulmaTextArea `hasFixedSize` prop to apply the `is-fixed-size` class
+- v-model to allow for array of values to be selected in [BulmaSelect](components/BulmaSelect.md)
 
 ## [0.0.0-9] - 2023-01-04
 

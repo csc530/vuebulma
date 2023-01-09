@@ -1,5 +1,6 @@
 <template>
-	<demo-text-area />
+	<demo-select />
 </template>
 
-<script lang="ts" setup>import DemoTextArea from "./demos/DemoTextArea.vue";</script>
+<script lang="ts" setup>
+	import DemoSelect from "./demos/DemoSelect.vue";</script>

@@ -119,7 +119,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 			                        className = 'is-fixed-' + classes[key];
 		                        // ? no need to check for `-` in key as vue transforms it to camelCase
 		                        else
-			                        className = sCase.kebab(className);
+			                        className = sCase.kebab(key);
 		                        return className;
 	                        });
 	const hasClasses = Object.keys(classes)
@@ -169,5 +169,9 @@ export type BulmaState = 'active' | 'hovered' | 'focused' | 'default';
 export const getBulmaStates = (): BulmaState[] => ['active', 'hovered', 'focused', 'default'];
 
 /** Converts a {@link BulmaState} to its bulma class */
-export function toBulmaStateClass(state: BulmaState): string { return state === 'default' ? '' : `is-${state}`;}
+export function toBulmaStateClass(state: BulmaState | BulmaInputState): string { return state === 'default' ? '' : `is-${state}`;}
 
+export type BulmaInputState = BulmaState | 'loading';
+
+/** An array of all {@link BulmaInputState}s */
+export const getBulmaInputStates = (): BulmaInputState[] => ['active', 'hovered', 'focused', 'default', 'loading'];
