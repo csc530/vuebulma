@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-10.1",
+  "version": "0.0.0-10.2",
   "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
@@ -46,14 +46,14 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "case": "^1.6.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vuepress/client": "2.0.0-beta.60",
     "bulma": "^0.9.4",
-    "case": "^1.6.3",
     "change-case": "^4.1.2",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
