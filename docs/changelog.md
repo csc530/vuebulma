@@ -4,36 +4,45 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [Unreleased]
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+## [0.0.0-10]
+
+### Added
+
 - Documentation to props of
-	- [Button](components/BulmaButton.md)
-	- [Button Group](components/BulmaButtonGroup.md)
-	- [Navbar](components/BulmaNavbar.md)
-	- [Dropdown](components/BulmaDropdown.md)
-	- [Menu](components/BulmaMenu.md)
-	- [TextArea](components/BulmaTextArea.md)
-	- [Select](components/BulmaSelect.md)
+  - [Button](components/BulmaButton.md)
+  - [Button Group](components/BulmaButtonGroup.md)
+  - [Navbar](components/BulmaNavbar.md)
+  - [Dropdown](components/BulmaDropdown.md)
+  - [Menu](components/BulmaMenu.md)
+  - [TextArea](components/BulmaTextArea.md)
+  - [Select](components/BulmaSelect.md)
 - Shadow class to [Navbar](components/BulmaNavbar.md)
 - isMultiple class to [Select](components/BulmaSelect.md)
 
 ### Changed
 
 - [Button](components/BulmaButton.md)
-	- `isActive` to `state` and accepts all button states classes
+  - `isActive` to `state` and accepts all button states classes
 - Buttons to [BulmaButtonGroup](components/BulmaButtonGroup.md)
 - [BulmaNavbarItem type](types/BulmaNavbarItem.md) to be as concise and clear as possible to help render item
   in [BulmaNavbar](components/BulmaNavbar.md)
 
-### Deprecated
-
 ### Removed
 
 - [BulmaButtonGroup](components/BulmaButtonGroup.md)
-	- `items` prop
+  - `items` prop
 
 ### Fixed
 
@@ -52,10 +61,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Documentation to props of
-	- [Breadcrumb](components/BulmaBreadcrumb.md)
-	- [Heading](components/BulmaHeading.md)
-	- [Icon](components/BulmaIcon.md)
-	- [Image](components/BulmaImage.md)
+  - [Breadcrumb](components/BulmaBreadcrumb.md)
+  - [Heading](components/BulmaHeading.md)
+  - [Icon](components/BulmaIcon.md)
+  - [Image](components/BulmaImage.md)
 
 ### Changed
 
