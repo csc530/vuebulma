@@ -1,6 +1,6 @@
 <template>
-	<demo-input />
+	<demo-control />
 </template>
 
 <script lang="ts" setup>
-	import DemoInput from "./demos/DemoInput.vue";</script>
+	import DemoControl from "./demos/DemoControl.vue";</script>

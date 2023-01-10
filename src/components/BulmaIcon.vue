@@ -1,38 +1,34 @@
 <template>
-
 	<!-- Icon text -->
 	<component :is="flex ? 'div' : 'span'" v-if="rootClass === 'icon-text'" :class="[rootClass,colourClass]">
 		<span v-if=" hasText&&textFirst"><slot name="text">{{ text }}</slot></span>
 
-		<BulmaIcon v-if="$slots.icon" :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
-		           :stacked="stacked">
+		<BulmaIcon :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix" :stacked="stacked">
 			<slot name="icon" />
 		</BulmaIcon>
-		<BulmaIcon v-else :colour="colour" :container-size="containerSize" :icon="icon" :prefix="prefix"
-		           :stacked="stacked" />
 
 		<span v-if=" hasText&&!textFirst"><slot name="text">{{ text }}</slot></span>
 	</component>
 
 	<!--Icon -->
 	<template v-else>
+		<!--Single-->
+		<span v-if="$slots.icon || !Array.isArray(iconLibraryClass)" :class="sizeClass" class="icon" v-bind="$attrs">
+			<slot name="icon">
+				<i :class="[iconLibraryClass,prefix]" />
+			</slot>
+		</span>
 		<!--Multiple stacked-->
-		<span v-if="Array.isArray(iconLibraryClass) && stacked" :class="[stacked,sizeClass]" class="icon">
+		<span v-else-if="stacked" :class="[stacked,sizeClass]" class="icon" v-bind="$attrs">
 			<slot name="icon">
 				<i v-for="(icon,i) in iconLibraryClass" :class="[icon,iconColourClass(i),prefix]" />
 			</slot>
 		</span>
 		<!--Multiple sequential-->
-		<span v-for="(icon,i) in iconLibraryClass" v-else-if="Array.isArray(iconLibraryClass)"
-		      :class="[sizeClass,iconColourClass(i)]" class="icon">
+		<span v-for="(icon,i) in iconLibraryClass" v-else :class="[sizeClass,iconColourClass(i)]"
+		      class="icon" v-bind="$attrs">
 			<slot name="icon">
 				<i :class="[icon,prefix]" />
-			</slot>
-		</span>
-		<!--Single-->
-		<span v-else :class="sizeClass" class="icon">
-			<slot name="icon">
-				<i :class="[iconLibraryClass,prefix]" />
 			</slot>
 		</span>
 	</template>
