@@ -43,7 +43,8 @@
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+	  "start":"npm run dev"
   },
   "dependencies": {
     "vue": "^3.2.45",
