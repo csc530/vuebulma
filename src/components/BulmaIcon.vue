@@ -13,7 +13,8 @@
 	<!--Icon -->
 	<template v-else>
 		<!--Single-->
-		<span v-if="$slots.icon || !Array.isArray(iconLibraryClass)" :class="sizeClass" class="icon" v-bind="$attrs">
+		<span v-if="$slots.icon || !Array.isArray(iconLibraryClass)" :class="[sizeClass,colourClass]" class="icon"
+		      v-bind="$attrs">
 			<slot name="icon">
 				<i :class="[iconLibraryClass,prefix]" />
 			</slot>
@@ -25,8 +26,8 @@
 			</slot>
 		</span>
 		<!--Multiple sequential-->
-		<span v-for="(icon,i) in iconLibraryClass" v-else :class="[sizeClass,iconColourClass(i)]"
-		      class="icon" v-bind="$attrs">
+		<span v-for="(icon,i) in iconLibraryClass" v-else :class="[sizeClass,iconColourClass(i)]" class="icon"
+		      v-bind="$attrs">
 			<slot name="icon">
 				<i :class="[icon,prefix]" />
 			</slot>
@@ -84,9 +85,17 @@
 	const textSlot = useSlots().text;
 	const rootClass = computed(() => textSlot || props.text ? 'icon-text' : 'icon');
 
-	const colourClass = computed(() => props.colour ? getColourClass(props.colour, 'text') : null);
+	const colourClass = computed(() => {
+		if(props.colour)
+			return getColourClass(props.colour, 'text');
+		else if(typeof props.icon === 'object' && !Array.isArray(props.icon))
+			return getColourClass(props.icon.colour, 'text')
+		else
+			return null;
+	});
 
 	const iconColourClass = (index: number) => {
+
 		if(props.icon && Array.isArray(props.icon) && typeof props.icon[index] !== 'string')
 			return getColourClass((props.icon[index] as BulmaColouredIcon).colour, 'text')
 		return null;

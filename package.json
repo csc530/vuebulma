@@ -4,24 +4,24 @@
   "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
   "keywords": [
-    "vue3",
-    "Bulma",
-    "vue3 component library",
-    "Vue",
-    "components",
-    "component library"
+	"vue3",
+	"Bulma",
+	"vue3 component library",
+	"Vue",
+	"components",
+	"component library"
   ],
   "repository": {
-    "type": "git",
-    "url": "https://github.com/csc530/vuebulma.git"
+	"type": "git",
+	"url": "https://github.com/csc530/vuebulma.git"
   },
   "homepage": "https://csc530.github.io/vuebulma/",
   "bugs": {
-    "url": "https://github.com/csc530/vuebulma/issues",
-    "email": "csc530@vivaldi.net"
+	"url": "https://github.com/csc530/vuebulma/issues",
+	"email": "csc530@vivaldi.net"
   },
   "sponsor": {
-    "url": "https://paypal.me/csc530"
+	"url": "https://paypal.me/csc530"
   },
   "type": "module",
   "readme": "readme.md",
@@ -30,45 +30,45 @@
   "main": "dist/vuebulma.js",
   "module": "dist/vuebulma.js",
   "exports": {
-    ".": "./dist/vuebulma.js",
-    "./dist/vuebulma": "./dist/vuebulma.js",
-    "./dist/types": "./dist/types.js"
+	".": "./dist/vuebulma.js",
+	"./dist/vuebulma": "./dist/vuebulma.js",
+	"./dist/types": "./dist/types.js"
   },
   "files": [
-    "dist/**"
+	"dist/**"
   ],
   "scripts": {
-    "dev": "vite --host --open -d --clearScreen",
-    "build": "vite build && vue-tsc --emitDeclarationOnly & tsc src/types.ts --outDir dist --target esnext",
-    "typecheck": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-	  "start":"npm run dev"
+	"dev": "vite --host --open -d --clearScreen",
+	"build": "vite build && vue-tsc --emitDeclarationOnly & tsc src/types.ts --outDir dist --target esnext",
+	"typecheck": "vue-tsc --noEmit",
+	"preview": "vite preview",
+	"docs:dev": "vuepress dev docs",
+	"docs:build": "vuepress build docs",
+	"start": "npm run dev"
   },
   "dependencies": {
-    "vue": "^3.2.45",
-    "case": "^1.6.3"
+	"vue": "^3.2.45",
+	"case": "^1.6.3"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@vitejs/plugin-vue": "^3.1.0",
-    "@vuepress/client": "2.0.0-beta.60",
-    "bulma": "^0.9.4",
-    "change-case": "^4.1.2",
-    "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4",
-    "vite": "^3.2.4",
-    "vue": "^3.2.45",
-    "vue-loader": "^17.0.1",
-    "vue-tsc": "^1.0.21",
-    "vuepress": "2.0.0-beta.60",
-    "vuepress-plugin-clipboard": "^2.1.4",
-    "vuepress-plugin-markdown-checkbox": "^1.0.8",
-    "yarn": "^1.22.19"
+	"@types/node": "^18.11.18",
+	"@vitejs/plugin-vue": "^3.1.0",
+	"@vuepress/client": "2.0.0-beta.60",
+	"bulma": "^0.9.4",
+	"change-case": "^4.1.2",
+	"nodemon": "^2.0.20",
+	"ts-node": "^10.9.1",
+	"typescript": "^4.9.4",
+	"vite": "^3.2.4",
+	"vue": "^3.2.45",
+	"vue-loader": "^17.0.1",
+	"vue-tsc": "^1.0.24",
+	"vuepress": "2.0.0-beta.60",
+	"vuepress-plugin-clipboard": "^2.1.4",
+	"vuepress-plugin-markdown-checkbox": "^1.0.8",
+	"yarn": "^1.22.19"
   },
   "peerDependencies": {
-    "vue": "^3.2.45"
+	"vue": "^3.2.45"
   }
 }

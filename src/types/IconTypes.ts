@@ -1,11 +1,10 @@
-import {BulmaColour, BulmaColourHelper, BulmaSize} from "../types";
+import {BulmaColour, BulmaColourHelper} from "../types";
 
 export type BulmaColouredIcon = {
 	icon?: string;
 	colour: BulmaColourHelper | BulmaColour;
 }
-export type BulmaStackedIcon = {
+export type BulmaMultiIcon = {
 	icon: (string | BulmaColouredIcon)[]
-	stacked: boolean | string
-	containerSize?: BulmaSize,
+	stacked?: boolean | string
 }

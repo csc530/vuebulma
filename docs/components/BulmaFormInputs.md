@@ -10,7 +10,8 @@ together.
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-control)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControl.vue)
 
-A form input container to enhance _single form inputs_ and provide a consistent look and styling of form elements.
+A form input container to provide a consistent spacing and styling of form elements ([BulmaInput](BulmaInput.md)
+and [BulmaFileInput](BulmaFileInput.md)) .
 
 ### Slots
 
@@ -28,9 +29,27 @@ The HTML tag to use for the form control.
 
 #### isExpanded
 
+*Requires [Control Group](#bulmaformcontrolgroup) parent and siblling control elements*
+
 Type: `boolean` | `undefined`
 
 Whether the form control and input should take up the full width of its container.
+
+#### leftIcon
+
+*Recommended to not colour icons*
+
+Type: `string` | [BulmaColouredIcon](../types/BulmaColouredIcon.md) | [BulmaMultiIcon](../types/BulmaMultiIcon.md) | `undefined`
+
+The icon to display on the left side of the form control.
+
+#### rightIcon
+
+*Recommended to not colour icons*
+
+Type: `string` | [BulmaColouredIcon](../types/BulmaColouredIcon.md) | [BulmaMultiIcon](../types/BulmaMultiIcon.md) | `undefined`
+
+The icon to display on the right side of the form control.
 
 ### Additional information
 

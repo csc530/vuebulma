@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [Unreleased]
+
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+- colour of `BulmaIcon` when a single icon is passed in as a prop or slot
+
 ## [0.0.0-11] - 2023-01-09
 
 ### Added
@@ -12,10 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add docs to props of...
 	- [BulmaFileInput](docs/components/BulmaFileInput.md)
 - Add state prop to BulmaInput
-
-### Changed
-- 
-### Deprecated
+- Icon support for [BulmaControl](components/BulmaFormInputs.md#bulmaformcontrol)
 
 ### Removed
 
@@ -31,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- case to dependecies
+- case to dependencies
 
 ## [0.0.0-10.1] - 2023-01-09
 
