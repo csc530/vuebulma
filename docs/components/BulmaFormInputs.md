@@ -93,13 +93,14 @@ _has no effect if used with `hasAddons`_
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-field)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormField.vue)
 
-A simple container for a _single_ whole form input; built for a text label, a form control, and an optional help text
+A simple container for a _single_ whole form input; built for an optional label and help text, and form control(s) (
+using [BulmaFormControlGroup](#bulmaformcontrolgroup) or [BulmaFormControl](#bulmaformcontrol)).
 
 ### Slots
 
 #### default
 
-The *single* form control
+The *single* form control or form control group
 
 ### Props
 
@@ -121,27 +122,21 @@ Type: `string` | `undefined`
 
 Default: `div`
 
-#### isGrouped
-
-Type: `false` | [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
-
-make form controls [and all children] be inline (on the same line)
-
-#### isMultiline
-
-**Requires isGrouped**
-Type: `boolean` | `undefined`
-
 #### isHorizontal
 
 Type: `boolean` | `undefined`
 
-Displays the form field as horizontally
+Displays the form field horizontally
 
-#### verticalSize
-
-Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
-
-#### size
+#### labelSize
 
 Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
+
+The size of the label. Should correspond to the size of the form control(s).
+
+#### labelFor
+
+Type: `string` | `undefined`
+
+The id of the form control(s) to associate the label with.
+Necessary for accessibility with `isHorizontal` as the input is not a direct child of the label.

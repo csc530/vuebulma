@@ -1,50 +1,53 @@
 <template>
-	<div v-if="!isHorizontal" :class="classes" class="field">
-		<label v-if="label" :class="getSizeClasses(size)" class="label">{{ label }}</label>
-		<slot />
-		<p v-if="help" class="help">{{ help }}</p>
-	</div>
-
-	<div v-else :class="classes" class="field is-horizontal">
-		<div v-if="label" class="field-label is-normal">
-			<label class="label">{{ label }}</label>
-		</div>
+	<!--todo: lots of divs in horizontal field-->
+	<!--Horizontal field-->
+	<div v-if="isHorizontal" :class="classes" class="field is-horizontal">
+		<label v-if="label" :class="labelSizeClass" :for="labelFor" class="field-label label">{{ label }}
+		</label>
 		<div class="field-body">
-			<slot />
-			<p v-if="help" class="help">{{ help }}</p>
+			<div class="field">
+				<slot />
+				<p v-if="help" class="help">{{ help }}</p>
+			</div>
 		</div>
+	</div>
+	<!--Simple field-->
+	<div v-else class="field">
+		<label v-if="label" :for="labelFor" :class="labelSizeClass" class="label">{{ label }}
+			<slot />
+		</label>
+		<slot v-else />
+		<p v-if="help" class="help">{{ help }}</p>
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
+	import {BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
-		/**label for this whole group of controls; ONLY render isHorizontal */
+		/**label for the form field*/
 		label?: string;
+		/**help text for the form field */
 		help?: string;
-		tag?: string;
-		/** make form controls [and all children] be inline (on the same line) */
-		// todo: test if this is dup of formcontrolgroup's
-		isGrouped?: false | BulmaAlignment;
-		/** applicable only with isGrouped */
-		isMultiline?: boolean;
-		//todo: finish class logic https://bulma.io/documentation/form/general/#horizontal-form
+		/** Display the field horizontally
+		 * @default false         */
 		isHorizontal?: boolean;
-		//todo: test readon and if it's still necessary
-		verticalSize?: BulmaSize
-		size?: BulmaSize
-	}>(), {tag: 'div'});
+		/** Size of the label */
+		labelSize?: BulmaSize
+		/** ID of the input element to associate with the label.
+		 * Only necessary with horizontal fields as the input is not a direct child of the label */
+		labelFor?: string
+	}>(), {});
 
 	const classes = computed(() => getBulmaClassesFromProps(props));
-	//todo: figure out how to pass down the size class to the input component when it's horizontal
-	const verticalSizeClass = computed(() => !props.verticalSize ? 'is-normal' : getSizeClasses(props.verticalSize));
+	const labelSizeClass = computed(() => getSizeClasses(props.labelSize));
 
 
 	/*
 	NOTES:
-	is-horizontal: each field takes up a line so to have a multiline form with one label one the side the first horizontal field would have the label and each subsequnet line would be another field
+	is-horizontal: each field takes up a line so to have a multiline form with one label one the side the first
+horizontal field would have the label and each subsequnet line would be another field
 	 */
 </script>
 

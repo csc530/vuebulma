@@ -1,6 +1,6 @@
 <template>
-	<demo-control-group />
+	<demo-field />
 </template>
 
 <script lang="ts" setup>
-	import DemoControlGroup from "./demos/DemoControlGroup.vue";</script>
+	import DemoField from "./demos/DemoField.vue";</script>

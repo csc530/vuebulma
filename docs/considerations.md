@@ -15,3 +15,5 @@
 - Remove slot in Bulma Select??
 - icon prop on fileinput to remove icon span even if there is a slot
 	- i.e if the slot is using v-if (which make a comment which is a slot) but don't want a placeholder for the icon
+- Add help-text ontop option for form field
+	- probably just for non-horizontal as it's not aligned nicely when the help is on top when it's horizontal

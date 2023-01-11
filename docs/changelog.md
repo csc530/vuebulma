@@ -5,15 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [Unreleased]
+### [0.0.0-12] - 2023-01-11
 
 ### Added
 
 - Add docs to props of...
 	- [BulmaControl](components/BulmaFormInputs.md#bulmaformcontrol)
 	- [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
+	- [BulmaFormField](components/BulmaFormInputs.md#bulmaformfield)
 - alignment, multiline and grouped (spacing) classes
   for [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
+- label size and `for` attribute for [BulmaFormField](components/BulmaFormInputs.md#bulmaformfield)
 ### Changed
 
 ### Deprecated
