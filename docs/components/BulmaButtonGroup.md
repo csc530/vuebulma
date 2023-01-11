@@ -34,7 +34,7 @@ appear as a single, joined button element.
 
 ### alignment
 
-Type: [BulmaAlignments](../types/common_types.md#bulmaalignments) | `undefined`
+Type: [BulmaAlignment](../types/common_types.md#bulmaalignment) | `undefined`
 
 The alignment of the buttons.
 

@@ -1,6 +1,6 @@
 <template>
 	<div v-if="!isHorizontal" :class="classes" class="field">
-		<label v-if="label" class="label" :class="getSizeClasses(size)">{{ label }}</label>
+		<label v-if="label" :class="getSizeClasses(size)" class="label">{{ label }}</label>
 		<slot />
 		<p v-if="help" class="help">{{ help }}</p>
 	</div>
@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignments, BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
+	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		/**label for this whole group of controls; ONLY render isHorizontal */
@@ -27,7 +27,7 @@
 		tag?: string;
 		/** make form controls [and all children] be inline (on the same line) */
 		// todo: test if this is dup of formcontrolgroup's
-		isGrouped?: false | BulmaAlignments;
+		isGrouped?: false | BulmaAlignment;
 		/** applicable only with isGrouped */
 		isMultiline?: boolean;
 		//todo: finish class logic https://bulma.io/documentation/form/general/#horizontal-form
@@ -41,5 +41,10 @@
 	//todo: figure out how to pass down the size class to the input component when it's horizontal
 	const verticalSizeClass = computed(() => !props.verticalSize ? 'is-normal' : getSizeClasses(props.verticalSize));
 
+
+	/*
+	NOTES:
+	is-horizontal: each field takes up a line so to have a multiline form with one label one the side the first horizontal field would have the label and each subsequnet line would be another field
+	 */
 </script>
 

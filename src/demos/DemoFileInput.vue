@@ -64,18 +64,11 @@
 	import BulmaFormControl from "../components/form/groups/BulmaFormControl.vue";
 	import BulmaFormControlGroup from "../components/form/groups/BulmaFormControlGroup.vue";
 	import BulmaFormField from "../components/form/groups/BulmaFormField.vue";
-	import {
-		BulmaAlignments,
-		BulmaColour,
-		BulmaSize,
-		getBulmaAlignments,
-		getBulmaColours,
-		getBulmaSizes
-	} from "../types";
+	import {BulmaAlignment, BulmaColour, BulmaSize, getBulmaAlignments, getBulmaColours, getBulmaSizes} from "../types";
 
 	const size = ref<BulmaSize>('default');
 	const colour = ref<BulmaColour>('default');
-	const align = ref<BulmaAlignments>('center');
+	const align = ref<BulmaAlignment>('center');
 	const label = ref<string | null>('Choose a file...');
 	const filename = ref<string | null>('File Name.ext');
 	const full = ref<boolean>(false);

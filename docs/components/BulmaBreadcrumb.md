@@ -44,7 +44,7 @@ List of items to render in the breadcrumb
 
 ### alignment
 
-Type: [`BulmaAlignments`](../types/common_types.md#bulmaalignments) | `undefined`
+Type: [`BulmaAlignment`](../types/common_types.md#bulmaalignment) | `undefined`
 
 Default: `left`
 

@@ -86,11 +86,11 @@ export function getSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 
 export type BulmaLeftRight = 'left' | 'right';
 export const getBulmaLeftRight = (): BulmaLeftRight[] => ['left', 'right'];
-export type BulmaAlignments = 'center' | BulmaLeftRight;
-export const getBulmaAlignments = (): BulmaAlignments[] => ['left', 'center', 'right'];
+export type BulmaAlignment = 'center' | BulmaLeftRight;
+export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
 
 //todo: change name of getXClasses to `toBulmaClass`
-export function getAlignmentClasses(alignment?: BulmaAlignments): string {
+export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return '';
@@ -145,7 +145,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	if(classes['colour'])
 		classList.push(getColourClass(classes['colour']));
 	if(classes["alignment"])
-		classList.push(getAlignmentClasses(classes.alignment));
+		classList.push(toBulmaAlignmentClasses(classes.alignment));
 	if(classes.size)
 		classList.push(getSizeClasses(classes.size, areSizes));
 	if(classes.separator)

@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignments, BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
+	import {BulmaAlignment, BulmaColour, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 	const emit = defineEmits<{ (name: 'update:modelValue', newValue: FileList | string) }>();
 
@@ -26,7 +26,7 @@
 		size?: BulmaSize
 		/** The colour of the file input */
 		colour?: BulmaColour;
-		alignment?: BulmaAlignments
+		alignment?: BulmaAlignment
 		/** If the file input should have a boxed display */
 		isBoxed?: boolean;
 		/** Determines if the input file name will expand to fill the available space

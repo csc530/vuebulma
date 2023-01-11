@@ -36,9 +36,9 @@
 	import BulmaInput from "../components/form/BulmaInput.vue";
 	import BulmaSelect from "../components/form/BulmaSelect.vue";
 	import BulmaFormField from "../components/form/groups/BulmaFormField.vue";
-	import {BulmaAlignments, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../types";
+	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../types";
 
-	const align = ref<BulmaAlignments>('center');
+	const align = ref<BulmaAlignment>('center');
 	const size = ref<BulmaSize>('medium');
 	const tag = ref<string>('div');
 	const addons = ref<boolean>(false);

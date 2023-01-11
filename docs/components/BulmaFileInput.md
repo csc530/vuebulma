@@ -39,7 +39,7 @@ The colour of the file input
 
 ### alignment
 
-Type: [`BulmaAlignments`](../types/common_types.md#bulmaalignments) | `undefined`
+Type: [`BulmaAlignment`](../types/common_types.md#bulmaalignment) | `undefined`
 
 The alignment of the file input
 

@@ -6,14 +6,14 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignments, BulmaSize, getBulmaClassesFromProps} from "../../types";
+	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 
 	const props = withDefaults(defineProps<{
 		tag?: string
 		size?: BulmaSize
 		hasAddons?: boolean
-		alignment?: BulmaAlignments
+		alignment?: BulmaAlignment
 	}>(), {
 		tag: 'div'
 	});

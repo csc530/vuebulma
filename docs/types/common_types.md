@@ -48,7 +48,7 @@ type BulmaColourHelper = {
 This type is used to simply specify the colour and shade, used for classes such as `has-text-primary-light`
 and `has-background-info-dark`.
 
-### BulmaAlignments
+### BulmaAlignment
 
 **string**
 
