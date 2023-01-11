@@ -1,6 +1,6 @@
 <template>
-	<demo-control />
+	<demo-control-group />
 </template>
 
 <script lang="ts" setup>
-	import DemoControl from "./demos/DemoControl.vue";</script>
+	import DemoControlGroup from "./demos/DemoControlGroup.vue";</script>

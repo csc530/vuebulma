@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add docs to props of...
+	- [BulmaControl](components/BulmaFormInputs.md#bulmaformcontrol)
+	- [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
+- alignment, multiline and grouped (spacing) classes
+  for [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
 ### Changed
 
 ### Deprecated

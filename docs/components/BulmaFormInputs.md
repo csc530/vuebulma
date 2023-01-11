@@ -10,8 +10,7 @@ together.
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-control)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControl.vue)
 
-A form input container to provide a consistent spacing and styling of form elements ([BulmaInput](BulmaInput.md)
-and [BulmaFileInput](BulmaFileInput.md)) .
+A form input container to provide a consistent spacing and styling of form inputs elements.
 
 ### Slots
 
@@ -58,7 +57,7 @@ The icon to display on the right side of the form control.
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-group)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControlGroup.vue)
 
-An intermediary component to group form controls together.
+An intermediary component to group form controls (BulmaFormControl) together.
 
 ### Slots
 
@@ -68,13 +67,26 @@ The form [controls](#bulmaformcontrol) to be grouped together.
 
 ### Props
 
-#### isGrouped
-
-Type: `false` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
-
 #### hasAddons
 
-Type: `boolean` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
+Type: `boolean` | `undefined`
+
+Whether the form controls should be grouped together as addons; appearing as a single input, each control connected to
+the next.
+
+#### alignment
+
+Type: [BulmaAlignment](../types/common_types.md#bulmaalignment) | `undefined`
+
+The alignment of the form controls within the group.
+
+#### isMultiline
+
+Type: `boolean` | `undefined`
+
+Whether the form controls should be displayed on multiple lines.
+
+_has no effect if used with `hasAddons`_
 
 ## BulmaFormField
 
@@ -111,7 +123,7 @@ Default: `div`
 
 #### isGrouped
 
-Type: `false` | [`BulmaAlignments`](../types/common_types.md#bulmaalignments)
+Type: `false` | [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
 
 make form controls [and all children] be inline (on the same line)
 
