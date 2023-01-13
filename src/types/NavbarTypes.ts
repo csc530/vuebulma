@@ -5,7 +5,7 @@ import {Component} from "vue";
  * @param {BulmaNavbarItem} item - The dropdown item to obtain styles for
  * @returns {string[]} - The list of class names to apply to the dropdown element
  */
-export function getNavbarItemClasses(item: BulmaNavbarItem): string[] {
+export function toNavbarItemClasses(item: BulmaNavbarItem): string[] {
 	const classes: string[] = [];
 	if(item.isExpanded)
 		classes.push('is-expanded');
@@ -65,4 +65,5 @@ export type BulmaNavbarItem = {
 	/** display the item as active */
 	isActive?: boolean;
 }
+/** valid parent tags for navbar items */
 export type BulmaNavbarItemTag = 'div' | 'a';

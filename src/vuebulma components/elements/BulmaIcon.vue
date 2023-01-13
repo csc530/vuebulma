@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 	import {computed, useSlots} from 'vue';
-	import {BulmaColour, BulmaColourHelper, BulmaSize, getColourClass, getSizeClasses} from '../../types';
+	import {BulmaColour, BulmaColourHelper, BulmaSize, toBulmaColourClass, toSizeClasses} from '../../types';
 	import {BulmaColouredIcon} from "../../types/IconTypes";
 
 
@@ -87,9 +87,9 @@
 
 	const colourClass = computed(() => {
 		if(props.colour)
-			return getColourClass(props.colour, 'text');
+			return toBulmaColourClass(props.colour, 'text');
 		else if(typeof props.icon === 'object' && !Array.isArray(props.icon))
-			return getColourClass(props.icon.colour, 'text')
+			return toBulmaColourClass(props.icon.colour, 'text')
 		else
 			return null;
 	});
@@ -97,11 +97,11 @@
 	const iconColourClass = (index: number) => {
 
 		if(props.icon && Array.isArray(props.icon) && typeof props.icon[index] !== 'string')
-			return getColourClass((props.icon[index] as BulmaColouredIcon).colour, 'text')
+			return toBulmaColourClass((props.icon[index] as BulmaColouredIcon).colour, 'text')
 		return null;
 	};
 
-	const sizeClass = computed(() => getSizeClasses(props.containerSize));
+	const sizeClass = computed(() => toSizeClasses(props.containerSize));
 
 	const hasText = computed(() => props.text || textSlot);
 </script>

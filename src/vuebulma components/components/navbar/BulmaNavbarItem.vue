@@ -51,8 +51,8 @@
 	import {
 		BulmaNavbarItem as navbarItemType,
 		BulmaNavbarItemTag,
-		getNavbarItemClasses,
-		isBulmaNavbarItem
+		isBulmaNavbarItem,
+		toNavbarItemClasses
 	} from "../../../types";
 
 	const props = withDefaults(defineProps<{
@@ -73,7 +73,7 @@
 	const classes = computed(() => {
 		const classes = [];
 		if(isBulmaNavbarItem(props.item))
-			classes.push(getNavbarItemClasses(props.item));
+			classes.push(toNavbarItemClasses(props.item));
 		if(props.isTab)
 			classes.push('is-tab');
 		return classes;

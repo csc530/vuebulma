@@ -5,7 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [0.0.0-12] - 2023-01-11
+## [Unreleased]
+
+### Added
+
+### Changed
+
+- type names of... and prepended `Bulma` to them
+	- Grayscale
+	- getGrayscale
+	- getAspectRatios
+	- SubMenuItem
+	- MenuItem
+	- Menu
+	- isMenuItem
+	- getOptionValue
+- Names of class getter functions to begin with `to`
+	- getColourClass
+	- getSizeClasses
+	- getNavbarItemClasses
+
+### Removed
+
+### Fixed
+
+## Deprecated
+
+## [0.0.0-12] - 2023-01-11
 
 ### Added
 

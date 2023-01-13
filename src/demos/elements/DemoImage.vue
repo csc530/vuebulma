@@ -27,7 +27,7 @@
 			<bulma-form-control :is-expanded="'select'">
 				<bulma-form-control-group has-addons>
 					<bulma-form-control>
-						<bulma-select v-model="ratio" :options="getAspectRatios()" />
+						<bulma-select v-model="ratio" :options="getBulmaAspectRatios()" />
 					</bulma-form-control>
 					<bulma-form-control>
 						<bulma-button :colour="'warning'" @click="ratio = null">Reset</bulma-button>
@@ -65,7 +65,7 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import {BulmaAspectRatio, BulmaDimension, getAspectRatios, getDimensions} from "../../types/ImageTypes";
+	import {BulmaAspectRatio, BulmaDimension, getBulmaAspectRatios, getDimensions} from "../../types/ImageTypes";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
 

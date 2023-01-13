@@ -13,7 +13,6 @@ export * from './types/MenuTypes';
 export * from './types/SelectTypes';
 
 
-//todo: rename prefix
 export type BulmaStateColour = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
 export const getBulmaStateColours = (): BulmaStateColour[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'default'];
 export type BulmaShade = 'white' | 'black' | 'light' | 'dark' | 'default';
@@ -31,15 +30,13 @@ export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] 
 	return states.map<BulmaColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
 }
 
-//todo: rename prefix
 export type BulmaColourHelper = {
 	shade?: BulmaShade;
 	//todo: add bulma 'white ' and 'black' to this type and make compatible in transformer
 	colour: BulmaStateColour;
 }
 
-export function getColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: 'background' | 'text'): string {
-	//todo fix to work with default in state colours and for more extensive
+export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: 'background' | 'text'): string {
 	if(!colour || colour === 'default')
 		return '';
 	else if(typeof colour === 'string')
@@ -55,7 +52,7 @@ export function getColourClass(colour: BulmaColourHelper | BulmaColour | BulmaBu
 }
 
 //todo add grayscale option for colour class getters
-export type Grayscale =
+export type BulmaGrayscale =
 	'black-bis'
 	| 'black-ter'
 	| 'grey-darker'
@@ -65,20 +62,17 @@ export type Grayscale =
 	| 'grey-lighter'
 	| 'white-ter'
 	| 'white-bis';
-// return an array of strings in Grayscale type
-const getGrayscale = (): Grayscale[] => {
+// return an array of strings in BulmaGrayscale type
+const getBulmaGrayscaleValues = (): BulmaGrayscale[] => {
 	return ['black-bis', 'black-ter', 'grey-darker', 'grey-dark', 'grey', 'grey-light', 'grey-lighter', 'white-ter', 'white-bis'];
 };
-
-//? stack question what monstrosity have I created lol
-export type Monstrosity = { isDark?: boolean; isLight?: boolean; } & BulmaColour;
 
 
 export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
 
 export function getBulmaSizes(): BulmaSize[] { return ['small', 'default', 'medium', 'large']; }
 
-export function getSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
+export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 	if(!size || size === 'default')
 		return 'is-normal';
 	return areClasses ? `are-${size}` : `is-${size}`;
@@ -89,7 +83,6 @@ export const getBulmaLeftRight = (): BulmaLeftRight[] => ['left', 'right'];
 export type BulmaAlignment = 'center' | BulmaLeftRight;
 export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'right'];
 
-//todo: change name of getXClasses to `toBulmaClass`
 export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
@@ -107,7 +100,6 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 }
 
 
-//todo: extend usability to add logic if it's alignment, colour, etc
 export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
 	const classList: string[] = [];
@@ -143,11 +135,11 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	                         });
 	classList.push(...isClasses, ...hasClasses);
 	if(classes['colour'])
-		classList.push(getColourClass(classes['colour']));
+		classList.push(toBulmaColourClass(classes['colour']));
 	if(classes["alignment"])
 		classList.push(toBulmaAlignmentClasses(classes.alignment));
 	if(classes.size)
-		classList.push(getSizeClasses(classes.size, areSizes));
+		classList.push(toSizeClasses(classes.size, areSizes));
 	if(classes.separator)
 		classList.push(toBulmaSeparatorClass(classes.separator));
 	if(classes.aspectRatio)

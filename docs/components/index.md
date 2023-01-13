@@ -12,7 +12,7 @@ When a component has a slot any related item will be bound to `data` on the slot
 
 ## Props
 
-All required props are marked with `*`.
+[//]: # (All required props are marked with `*`.)
 
 [//]: # (todo: mark all required props)
 

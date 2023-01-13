@@ -16,7 +16,7 @@ export type BulmaOption = {
 	disabled?: boolean;
 }
 
-export function getOptionValue(option: BulmaOption | string): any {
+export function getBulmaOptionValue(option: BulmaOption | string): any {
 	if(typeof option === 'string')
 		return option;
 	return option.value;

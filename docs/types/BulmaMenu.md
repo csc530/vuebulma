@@ -21,7 +21,7 @@ Type: `any[]` | `undefined`
 Items to display under the label.
 
 To display a [sub menu](https://bulma.io\documentation/components/menu/#submenu) use am array
-of [BulmaSubMenuItem](./../types/BulmaMenu.md#bulmasubmenuitem)s
+of [BulmaSubMenuItem](../types/BulmaMenu.md#bulmasubmenuitem)s
 
 ## BulmaSubMenuItem
 
@@ -43,4 +43,4 @@ Type: `any[]`
 
 Items to display under the label.
 
-Do not use another `SubMenuItem` or object of that form as it will not be displayed as another level of the menu.
+Do not use another `BulmaSubMenuItem` or object of that form as it will not be displayed as another level of the menu.

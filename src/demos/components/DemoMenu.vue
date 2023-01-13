@@ -17,13 +17,13 @@
 
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {Menu} from "../../types";
+	import {BulmaMenu as bm} from "../../types";
 	import BulmaMenu from "../../vuebulma components/components/BulmaMenu.vue";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
 
-	const menu = ref<Menu>([
+	const menu = ref<bm>([
 		{label: 'General', items: ['Dashboard', 'Customers']},
 		{
 			label: 'Administration',

@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaSize, getBulmaClassesFromProps, getSizeClasses} from "../../../types";
+	import {BulmaSize, getBulmaClassesFromProps, toSizeClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
 		/**label for the form field*/
@@ -41,7 +41,7 @@
 	}>(), {});
 
 	const classes = computed(() => getBulmaClassesFromProps(props));
-	const labelSizeClass = computed(() => getSizeClasses(props.labelSize));
+	const labelSizeClass = computed(() => toSizeClasses(props.labelSize));
 
 
 	/*
