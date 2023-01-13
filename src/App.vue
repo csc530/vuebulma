@@ -3,4 +3,4 @@
 </template>
 
 <script lang="ts" setup>
-	import DemoField from "./demos/DemoField.vue";</script>
+	import DemoField from "./demos/form/DemoField.vue";</script>

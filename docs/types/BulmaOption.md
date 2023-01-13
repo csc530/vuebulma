@@ -1,4 +1,4 @@
-# Types for [BulmaSelect](../components/BulmaSelect.md)
+# Types for [BulmaSelect](../components/form/BulmaSelect.md)
 
 ## BulmaOption
 

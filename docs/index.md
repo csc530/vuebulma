@@ -7,7 +7,7 @@ title: vuebulma Docs
 heroAlt: logo
 ################## heroText: stuff
 
-tagline: 👨🏿‍💻Development ongoing❣️
+tagline: 👨🏿‍💻Improving current components⚡
 
 actions:
 
@@ -27,7 +27,7 @@ features:
 - title: TypeScript
   details: A typed superset of JavaScript that compiles to plain JavaScript.
 
-footer: "<a href=https:forthebadge.com><img alt='Built with Love' src='https://forthebadge.com/images/badges/built-with-love.svg' /><img alt='Check it out' src='https://forthebadge.com/images/badges/check-it-out.svg'/><img alt='Gluten free' src='https://forthebadge.com/images/badges/gluten-free.svg' /><img alt='Not a bug; a feature' src='https://forthebadge.com/images/badges/not-a-bug-a-feature.svg' /><img alt='Powered by black magic' src='https://forthebadge.com/images/badges/powered-by-black-magic.svg' /><br/></a><a href='https://github.com/csc530/vuebulma/discussions'><img src='https://img.shields.io/badge/Contribute-Discussions-brightgreen?style=for-the-badge' alt='GitHub discussions; ask questions'/></a>"
+footer: "<a href=https:forthebadge.com><img alt='Built with Love' src='https://forthebadge.com/images/badges/built-with-love.svg' /><img alt='Check it out' src='https://forthebadge.com/images/badges/check-it-out.svg'/><img alt='Gluten free' src='https://forthebadge.com/images/badges/gluten-free.svg' /><img alt='Not a bug; a feature' src='https://forthebadge.com/images/badges/not-a-bug-a-feature.svg' /><img alt='Powered by black magic' src='https://forthebadge.com/images/badges/powered-by-black-magic.svg' /><br/></a>"
 footerHtml: true
 
 ---

@@ -14,11 +14,10 @@
 
 Developed with and for Vue v3.2.45 and Bulma v0.9.4
 
-This package is very much still under active development. It is not recommended to use this in production. Feel free to
-help or report any issues😃.
+This package is very much still under active development.
 
-My attempt at creating a Vue component library using Bulma that's compatible with Vue 3, *and* it's composition api
-because I really love Bulma, and it's styling.
+My attempt at creating a Vue component library for Bulma elements (because I really love Bulma, and it's styling/style)
+that's compatible with Vue 3.
 
 ## Installation
 
@@ -57,7 +56,7 @@ to [their documentation](https://vuejs.org/guide/introduction.html).
 ### Custom Additions
 
 This library adds some built-in JS to make Bulma's styling and classes work seamlessly
-like [appending is-active](/src/components/containers/BulmaDropdown.vue#L4) to a
+like [appending is-active](/src/vuebulma%20components/components/BulmaDropdown.vue#L4) to a
 clicked [dropdown](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)
 
 ---

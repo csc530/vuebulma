@@ -8,7 +8,8 @@
 - Add dropdown type to allow for multiple tags or another slot
 	- idk cuz the library is supposed to make things simpler so if you slot it yourself you'd have to do the work of
 	  wrapping `dropdown-content` idk
-- for [button group](../src/components/containers/BulmaButtonGroup.vue) look into prop to pass buttons instead of
+- for [button group](../src/vuebulma%20components/layouts/BulmaButtonGroup.vue) look into prop to pass buttons instead
+  of
   slots
 - Select and likely all inputs do not maintain state without a `v-model` prop
 	- For example if the colour is reactively changed a select would default back whatever was selected

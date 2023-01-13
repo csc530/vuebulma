@@ -43,6 +43,7 @@
 	  "module": "ESNext",
 	  "target": "ESNext",
 	  "emitDeclarationOnly": false,
+	  "esModuleInterop": true,
 	  "outDir": "./",
 	  "allowJs": true
 	}

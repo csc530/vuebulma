@@ -10,12 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add docs to props of...
-	- [BulmaControl](components/BulmaFormInputs.md#bulmaformcontrol)
-	- [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
-	- [BulmaFormField](components/BulmaFormInputs.md#bulmaformfield)
+	- [BulmaControl](components/form/BulmaFormInputs.md#bulmaformcontrol)
+	- [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
+	- [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
 - alignment, multiline and grouped (spacing) classes
-  for [BulmaControlGroup](components/BulmaFormInputs.md#bulmaformcontrolgroup)
-- label size and `for` attribute for [BulmaFormField](components/BulmaFormInputs.md#bulmaformfield)
+  for [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
+- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
 ### Changed
 
 ### Deprecated
@@ -31,9 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add docs to props of...
-	- [BulmaFileInput](docs/components/BulmaFileInput.md)
+	- [BulmaFileInput](components/form/BulmaFileInput.md)
 - Add state prop to BulmaInput
-- Icon support for [BulmaControl](components/BulmaFormInputs.md#bulmaformcontrol)
+- Icon support for [BulmaControl](components/form/BulmaFormInputs.md#bulmaformcontrol)
 
 ### Removed
 
@@ -73,35 +73,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Documentation to props of
-	- [Button](components/BulmaButton.md)
-	- [Button Group](components/BulmaButtonGroup.md)
+	- [Button](components/elements/BulmaButton.md)
+	- [Button Group](components/layouts/BulmaButtonGroup.md)
 	- [Navbar](components/BulmaNavbar.md)
 	- [Dropdown](components/BulmaDropdown.md)
 	- [Menu](components/BulmaMenu.md)
-	- [TextArea](components/BulmaTextArea.md)
-	- [Select](components/BulmaSelect.md)
+	- [TextArea](components/form/BulmaTextArea.md)
+	- [Select](components/form/BulmaSelect.md)
 - Shadow class to [Navbar](components/BulmaNavbar.md)
-- isMultiple class to [Select](components/BulmaSelect.md)
+- isMultiple class to [Select](components/form/BulmaSelect.md)
 
 ### Changed
 
-- [Button](components/BulmaButton.md)
+- [Button](components/elements/BulmaButton.md)
 	- `isActive` to `state` and accepts all button states classes
-- Buttons to [BulmaButtonGroup](components/BulmaButtonGroup.md)
+- Buttons to [BulmaButtonGroup](components/layouts/BulmaButtonGroup.md)
 - [BulmaNavbarItem type](types/BulmaNavbarItem.md) to be as concise and clear as possible to help render item
   in [BulmaNavbar](components/BulmaNavbar.md)
 - `color` prop on BulmaSelect to `colour`
 
 ### Removed
 
-- [BulmaButtonGroup](components/BulmaButtonGroup.md)
+- [BulmaButtonGroup](components/layouts/BulmaButtonGroup.md)
 	- `items` prop
 
 ### Fixed
 
 - BulmaIcon wrap text in span to prevent collision with icon
 - BulmaTextArea `hasFixedSize` prop to apply the `is-fixed-size` class
-- v-model to allow for array of values to be selected in [BulmaSelect](components/BulmaSelect.md)
+- v-model to allow for array of values to be selected in [BulmaSelect](components/form/BulmaSelect.md)
 
 ## [0.0.0-9] - 2023-01-04
 
@@ -115,9 +115,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Documentation to props of
 	- [Breadcrumb](components/BulmaBreadcrumb.md)
-	- [Heading](components/BulmaHeading.md)
-	- [Icon](components/BulmaIcon.md)
-	- [Image](components/BulmaImage.md)
+	- [Heading](components/elements/BulmaHeading.md)
+	- [Icon](components/elements/BulmaIcon.md)
+	- [Image](components/elements/BulmaImage.md)
 
 ### Changed
 

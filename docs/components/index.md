@@ -9,3 +9,11 @@ The following attributes are common to all components:
 ## Slots
 
 When a component has a slot any related item will be bound to `data` on the slot.
+
+## Props
+
+All required props are marked with `*`.
+
+[//]: # (todo: mark all required props)
+
+If no default is presented, it's value is `undefined`.

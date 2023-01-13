@@ -1,88 +1,150 @@
-import {capitalCase} from "change-case";
+import Case from "case";
 import * as fs from "fs";
+import * as Path from "path";
 import {resolve} from "path";
-import {NavbarConfig, NavbarGroup, NavbarItem} from "vuepress";
+import {NavbarConfig, NavbarGroup, NavbarItem, NavLink} from "vuepress";
 
-export function createNavbar(home?: boolean, docsPath?: fs.PathLike): NavbarConfig {
-	const navbar: (NavbarItem | NavbarGroup)[] = [];
-	if(!docsPath)
-		docsPath = resolve('docs');
-	//append / to path if not present
-	if(docsPath.toString().substring(-1) !== '/')
-		docsPath = docsPath + '/';
-	fs.readdirSync(docsPath, {withFileTypes: true}).forEach(path => {
-		if(path.name === ".vuepress" && path.isDirectory())
-			return;
-		else if(path.isDirectory()) {
-			const group: NavbarGroup = {
-				text: capitalCase(path.name),
-				children: []
-			};
+const sep = Path.sep;
 
-			fs.readdirSync(docsPath + "/" + path.name, {withFileTypes: true, encoding: 'utf-8'}).forEach(child => {
-				let name_extension = child.name.split(".");
-				if(name_extension[1] && name_extension[1] === "md") {
-					const name = name_extension[0];
-					const item: NavbarItem = {
-						text: name === 'index' ? `Overview` : capitalCase(name.replace('Bulma', '')),
-						link: `/${path.name}/${name}.html`
-					};
-					if(name === 'index')
-						group.children.unshift(item);
-					else
-						group.children.push(item);
-				}
-			});
+/**
+ * Creates a navbar item from a directory entry for vuepress markdown file
+ * @returns {NavbarItem} - The navbar item
+ * @param filePath - The path to the markdown file
+ * @param isGroup - Whether the navbar item is in a group
+ */
+function createNavItem(filePath: string, isGroup?: boolean): NavbarItem {
+	const name = Case.sentence(filePath.split(sep).pop().slice(0, -3));
 
-			if(group.children.length > 0) {
-				navbar.unshift(group);
-				(group.children as NavbarItem[]).sort((a, b) => {
-					if(a.text === "Home" || a.text === "Overview")
-						return -1;
-					else if(b.text === "Home" || b.text === "Overview")
-						return 1;
-					else return a.text.localeCompare(b.text)
-				});
-			}
+	const item: NavbarItem = {
+		text: name,
+		link: filePath.slice(0, -3) + ".html"
+	}
+	if(name === "Index" && isGroup)
+		item.text = "Overview";
+	else if(name === "Index")
+		item.text = 'Home';
+	return item;
+}
+
+function sortNav(navbar: NavbarConfig): NavbarConfig {
+	return navbar.sort((a, b) => {
+		const aVal = typeof a === "string" ? a : a.text;
+		const bVal = typeof b === "string" ? b : b.text;
+		if(aVal === "Home" || aVal === "Overview")
+			return -1;
+		else if(bVal === "Home" || bVal === "Overview")
+			return 1;
+		else if(isNavbarGroup(a) && isNavbarGroup(b)) {
+			sortNavbarGroup(a);
+			sortNavbarGroup(b);
+			return a.text.localeCompare(b.text);
 		}
-		else if(path.isFile() && path.name.endsWith(".md")) {
-			const name = path.name.replace("_", " ").replace("-", " ").slice(0, -3);
-			if(name === "index")
-				navbar.unshift({
-					text: 'Home',
-					link: "/" + path.name.replace(".md", ".html")
-				});
-			else
-				navbar.push({
-					text: capitalCase(name),
-					link: "/" + path.name.replace(".md", ".html")
-				});
+		else if(isNavbarGroup(a)) {
+			sortNavbarGroup(a);
+			return 1;
 		}
+		else if(isNavbarGroup(b)) {
+			sortNavbarGroup(b);
+			return -1;
+		}
+		else
+			return aVal.localeCompare(bVal);
 	});
+}
 
-	(navbar as (NavbarItem | NavbarGroup)[]).sort((a, b) => {
+function sortNavbarGroup(group: NavbarGroup) {
+	(group.children as NavbarItem[]).sort((a, b) => {
 		if(a.text === "Home" || a.text === "Overview")
 			return -1;
 		else if(b.text === "Home" || b.text === "Overview")
 			return 1;
-		else if(isNavbarGroup(a) && isNavbarGroup(b))
-			return a.text.localeCompare(b.text);
-		else if(isNavbarGroup(a))
-			return 1;
-		else if(isNavbarGroup(b))
-			return -1;
 		else
-			return a.text.localeCompare(b.text);
+			return a.text.localeCompare(b.text)
+	});
+	for(var i = 1; i < arguments.length; i++)
+		if(isNavbarGroup(arguments[i]))
+			sortNavbarGroup(arguments[i]);
+}
+
+function cleanNavbar(navbar: NavbarConfig, home: boolean): NavbarConfig {
+	const clean = (item: string | NavLink | NavbarGroup): boolean => {
+		if(typeof item === "string")
+			return item && item !== "";
+		else if(isNavbarGroup(item)) {
+			item.children = cleanNavbar(item.children, home);
+			return item.children.length > 0;
+		}
+		else if(isNavbarItem(item))
+			return item && item.text && item.text !== '';
+		else
+			return !!item
+	};
+	const cleaned = navbar.filter(x => x)
+	                      .filter(item => {
+		                      if(typeof item === "string")
+			                      return item && item !== "";
+		                      if(isNavbarGroup(item)) {
+			                      item.children = item.children.filter(clean);
+			                      return item.children.length > 0;
+		                      }
+		                      else
+			                      return item.link !== undefined;
+	                      });
+	//remove bulma prefix from text of clean navbar items and subitems
+	const removeBulmaPrefix = (item: string | NavLink | NavbarGroup) => {
+		if(typeof item === "string")
+			return Case.sentence(item.replace(/^Bulma/, ""));
+		else if(isNavbarGroup(item)) {
+			item.text = Case.sentence(item.text.replace(/^Bulma/, ""));
+			item.children = item.children.map(removeBulmaPrefix);
+			return item;
+		}
+		else if(isNavbarItem(item)) {
+			item.text = Case.sentence(item.text.replace(/^Bulma/, ""));
+			return item;
+		}
+		else
+			return item;
+	}
+	return cleaned.map(removeBulmaPrefix).filter(x => home ? x : x.text !== "Home");
+}
+
+export function createNavbar(home?: boolean, docsPath?: string) {
+	const navbar: (NavbarItem | NavbarGroup)[] = [];
+	docsPath = resolve(docsPath || './docs');
+
+	fs.readdirSync(docsPath, {withFileTypes: true}).forEach(path => {
+		if(path.isDirectory()) {
+			const group = {
+				text: Case.sentence(path.name),
+				children: []
+			};
+			group.children = fs.readdirSync(resolve(docsPath, path.name), {withFileTypes: true}).map(child => {
+				if(child.isFile() && child.name.toLowerCase().endsWith("md"))
+					return createNavItem(path.name + sep + child.name, true);
+				else if(child.isDirectory())
+					return {
+						text: Case.sentence(child.name),
+						children: fs.readdirSync(resolve(docsPath, path.name, child.name), {withFileTypes: true}).map(grandchild => {
+							if(grandchild.isFile() && grandchild.name.toLowerCase().endsWith("md"))
+								return createNavItem(path.name + sep + child.name + sep + grandchild.name, true);
+						})
+					};
+			});
+			navbar.push(group);
+		}
+		else if(path.isFile() && path.name.toLowerCase().endsWith("md"))
+			navbar.push(createNavItem(path.name));
 	});
 
-	if(home === false || home === undefined)
-		navbar.shift();
+	return cleanNavbar(sortNav(navbar), home);
+}
 
-	return navbar;
+
+function isNavbarItem(item: any): item is NavbarItem {
+	return item && item.text !== undefined && item.link !== undefined;
 }
 
 function isNavbarGroup(item: any): item is NavbarGroup {
-	return item.children !== undefined && item.text !== undefined;
+	return item && item.children && item.text;
 }
-
-createNavbar(true, '../');

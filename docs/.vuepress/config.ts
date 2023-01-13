@@ -12,7 +12,7 @@ export default defineUserConfig({
 	theme: defaultTheme({
 		// logo: '/logo.png',
 		// logoDark: '/logo-dark.png',
-		navbar: createNavbar(false),
+		navbar: createNavbar(false, './docs'),
 		// todo: copy auto with all items collapsible
 		sidebar: 'auto',
 		repo: 'csc530/vuebulma',
