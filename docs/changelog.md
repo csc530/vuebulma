@@ -40,8 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
 	- [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
 - alignment, multiline and grouped (spacing) classes
-  for [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
-- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
+  for [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
+- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
 ### Changed
 
 ### Deprecated
