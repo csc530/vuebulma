@@ -49,7 +49,7 @@ importing a locally defined component.
 
 ### Import the library
 
-This is not the recommended approach as many of the IDE code hints (don't seem to be) aren't available.
+This is not the recommended approach as many of IDE code hints (don't seem to be) aren't available.
 
 ```js
 import {createApp} from 'vue';

@@ -1,8 +1,8 @@
 {
   "name": "@csc530/vuebulma",
   "version": "0.0.0-12",
-  "author": "Christofer Cousins",
   "description": "Bulma CSS framework components for Vue 3",
+  "author": "Christofer Cousins",
   "keywords": [
 	"vue3",
 	"Bulma",
@@ -23,20 +23,31 @@
   "sponsor": {
 	"url": "https://paypal.me/csc530"
   },
-  "type": "module",
   "readme": "readme.md",
   "private": false,
-  "types": "dist/types/types.d.ts",
-  "main": "dist/vuebulma.js",
-  "module": "dist/vuebulma.js",
+  "files": [
+	"dist"
+  ],
+  "module": "./dist/vuebulma.js",
+  "main": "./dist/vuebulma.js",
+  "directories": {
+	"doc": "docs",
+	"lib": "dist"
+  },
+  "esnext": "./dist/vuebulma.js",
+  "type": "module",
   "exports": {
-	".": "./dist/vuebulma.js",
-	"./dist/vuebulma": "./dist/vuebulma.js",
+	".": {
+	  "import": "./dist/vuebulma.js",
+	  "default": "./dist/vuebulma.js"
+	},
+	"./types": {
+	  "import": "./dist/types.js",
+	  "default": "./dist/types.js",
+	  "types": "./dist/types.d.ts"
+	},
 	"./dist/types": "./dist/types.js"
   },
-  "files": [
-	"dist/**"
-  ],
   "scripts": {
 	"dev": "vite --host --open -d --clearScreen",
 	"build": "vite build && vue-tsc --emitDeclarationOnly & tsc src/types.ts --outDir dist --target esnext",

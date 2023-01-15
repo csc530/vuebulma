@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `./types` export to package.json for all related package exports
+
 ### Changed
+
+- update package.json to include `.` export of `dist/vuebulma`
 
 - type names of... and prepended `Bulma` to them
 	- Grayscale
@@ -36,12 +40,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add docs to props of...
-	- [BulmaControl](components/form/BulmaFormInputs.md#bulmaformcontrol)
-	- [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
-	- [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
+	- [BulmaControl](components/form/BulmaFormFields.md#bulmaformcontrol)
+	- [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
+	- [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
 - alignment, multiline and grouped (spacing) classes
-  for [BulmaControlGroup](components/form/BulmaFormInputs.md#bulmaformcontrolgroup)
-- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormInputs.md#bulmaformfield)
+  for [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
+- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
 ### Changed
 
 ### Deprecated
@@ -59,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add docs to props of...
 	- [BulmaFileInput](components/form/BulmaFileInput.md)
 - Add state prop to BulmaInput
-- Icon support for [BulmaControl](components/form/BulmaFormInputs.md#bulmaformcontrol)
+- Icon support for [BulmaControl](components/form/BulmaFormFields.md#bulmaformcontrol)
 
 ### Removed
 

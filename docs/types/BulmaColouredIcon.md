@@ -13,7 +13,7 @@ Represents an icon class with a colour
 
 ## BulmaMultiIcon
 
-Represents a collection of icons for [Bulma Control](../components/form/BulmaFormInputs.md#bulmaformcontrol)
+Represents a collection of icons for [Bulma Control](../components/form/BulmaFormFields.md#bulmaformcontrol)
 
 **object**
 
