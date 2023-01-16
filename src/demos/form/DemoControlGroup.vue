@@ -1,34 +1,18 @@
 <template>
-	<bulma-box>
-		<bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
-			<bulma-form-control>
-				<bulma-button colour="danger" is-static>Name</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-input placeholder="Text input" />
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button>Submit</bulma-button>
-			</bulma-form-control>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 
-			<bulma-form-control>
-				<bulma-button is-static>Age</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-input type="number" placeholder="Number input" />
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="warning">Submit</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-select>
-					<option>Family</option>
-					<option>Friends</option>
-					<option>Work</option>
-					<option>Money</option>
-					<option>Power</option>
-				</bulma-select>
-			</bulma-form-control>
+		<bulma-box>
+			<bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
+				<bulma-form-control>
+					<bulma-button colour="danger" is-static>Name</bulma-button>
+				</bulma-form-control>
+				<bulma-form-control>
+					<bulma-input placeholder="Text input" />
+				</bulma-form-control>
+				<bulma-form-control>
+					<bulma-button>Submit</bulma-button>
+				</bulma-form-control>
+
 		</bulma-form-control-group>
 	</bulma-box>
 	<bulma-box>
@@ -86,26 +70,33 @@
 			</bulma-form-control>
 		</bulma-form-control-group>
 	</bulma-box>
+	</bulma-box>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<bulma-form-field is-horizontal label="Addons">
+				<input v-model="addons" type="checkbox" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Addons">
-		<input v-model="addons" type="checkbox" />
-	</bulma-form-field>
+			<BulmaFormField is-horizontal label="Alignment">
+				<BulmaFormControlGroup has-addons>
+					<bulma-form-control is-expanded>
+						<bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
+						             @update:model-value="(newVal)=> alignment = getBulmaAlignments()[newVal-1]" />
+					</bulma-form-control>
+					<bulma-form-control>
+						<BulmaButton is-static>{{ alignment }}</BulmaButton>
+					</bulma-form-control>
+				</BulmaFormControlGroup>
+			</BulmaFormField>
 
-	<BulmaFormField is-horizontal label="Alignment">
-		<BulmaFormControlGroup has-addons>
-			<bulma-form-control is-expanded>
-				<bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
-				             @update:model-value="(newVal)=> alignment = getBulmaAlignments()[newVal-1]" />
-			</bulma-form-control>
-			<bulma-form-control>
-				<BulmaButton is-static>{{ alignment }}</BulmaButton>
-			</bulma-form-control>
-		</BulmaFormControlGroup>
-	</BulmaFormField>
-
-	<bulma-form-field is-horizontal label="Multiline">
-		<input v-model="multiline" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Multiline">
+				<input v-model="multiline" type="checkbox" />
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
 
 <script setup lang="ts">
@@ -114,6 +105,7 @@
 	import {BulmaAlignment, getBulmaAlignments} from "../../types";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaFileInput from "../../vuebulma components/form/BulmaFileInput.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";

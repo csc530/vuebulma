@@ -1,38 +1,46 @@
 <template>
-	<bulma-box>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 		<bulma-button-group :alignment="align" :has-addons="addons" :items="buttons" :size="size" :tag="tag">
 			<BulmaButton colour="danger">poppy</BulmaButton>
 			<BulmaButton is-static>seeds</BulmaButton>
-			<BulmaButton is-inverted colour="success">are</BulmaButton>
+			<BulmaButton colour="success" is-inverted>are</BulmaButton>
 			<BulmaButton colour="info" is-outlined>the</BulmaButton>
 			<BulmaButton colour="warning" is-rounded>best</BulmaButton>
 			<BulmaButton colour="primary" is-loading>ever</BulmaButton>
 		</bulma-button-group>
 	</bulma-box>
 
-	<bulma-form-field is-horizontal label="Alignment">
-		<bulma-select v-model="align" :options="getBulmaAlignments()" />
-	</bulma-form-field>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<bulma-form-field is-horizontal label="Alignment">
+				<bulma-select v-model="align" :options="getBulmaAlignments()" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Size">
-		<bulma-select v-model="size" :options="getBulmaSizes()" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Size">
+				<bulma-select v-model="size" :options="getBulmaSizes()" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Tag">
-		<bulma-input v-model="tag" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Tag">
+				<bulma-input v-model="tag" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Has Addons">
-		<input v-model="addons" type="checkbox" />
-	</bulma-form-field>
-
+			<bulma-form-field is-horizontal label="Has Addons">
+				<input v-model="addons" type="checkbox" />
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
+
 
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
 	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";

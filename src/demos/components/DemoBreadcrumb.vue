@@ -1,19 +1,24 @@
 <template>
-	<BulmaBox>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 		<bulma-breadcrumb :alignment="alignment" :list="list" :separator="separator" :size="size" />
-	</BulmaBox>
+	</bulma-box>
 
-	<BulmaFormField is-horizontal label="Items">
-		<BulmaFormControlGroup has-addons>
-			<BulmaFormControl is-expanded>
-				<BulmaInput v-model="input" />
-			</BulmaFormControl>
-			<BulmaFormControl>
-				<BulmaButton colour="primary" @click="list.push(input)">Add</BulmaButton>
-			</BulmaFormControl>
-			<BulmaFormControl>
-				<BulmaButton colour="danger" @click="input?list=list.filter(x=>x!==input):list.pop()">Remove
-				</BulmaButton>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<BulmaFormField is-horizontal label="Items">
+				<BulmaFormControlGroup has-addons>
+					<BulmaFormControl is-expanded>
+						<BulmaInput v-model="input" />
+					</BulmaFormControl>
+					<BulmaFormControl>
+						<BulmaButton colour="primary" @click="list.push(input)">Add</BulmaButton>
+					</BulmaFormControl>
+					<BulmaFormControl>
+						<BulmaButton colour="danger" @click="input?list=list.filter(x=>x!==input):list.pop()">Remove
+						</BulmaButton>
 			</BulmaFormControl>
 		</BulmaFormControlGroup>
 	</BulmaFormField>
@@ -36,23 +41,14 @@
 		</BulmaFormControlGroup>
 	</BulmaFormField>
 
-	<BulmaFormField is-horizontal label="Size">
-		<bulma-form-control is-expanded>
-			<bulma-select v-model="size" :options="getBulmaSizes()" is-full-width />
-		</bulma-form-control>
-	</BulmaFormField>
+			<BulmaFormField is-horizontal label="Size">
+				<bulma-form-control is-expanded>
+					<bulma-select v-model="size" :options="getBulmaSizes()" is-full-width />
+				</bulma-form-control>
+			</BulmaFormField>
+		</fieldset>
+	</bulma-box>
 </template>
-
-<style lang="sass" scoped>
-  /*@import "../styles/reset.css";*/
-  /*@import "../../node_modules/bulma/css/bulma.min.css"; */
-  /*@import url("~normalize.css/normalize.css");*/
-  @import "../../../node_modules/bulma/sass/utilities/all"
-  @import "../../../node_modules/bulma/sass/base/all"
-  @import "../../../node_modules/bulma/bulma"
-
-
-</style>
 
 <script lang="ts" setup>
 	import {ref, watch} from "vue";
@@ -61,12 +57,12 @@
 	import BulmaBreadcrumb from "../../vuebulma components/components/BulmaBreadcrumb.vue";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
 	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";
 	import BulmaFormControlGroup from "../../vuebulma components/form/groups/BulmaFormControlGroup.vue";
 	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
-
 
 	const list = ref(window.location.pathname.split('/').filter(x => x));
 	const input = ref('');

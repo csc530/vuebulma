@@ -56,9 +56,6 @@ Used for `v-model` binding.
 
 ### isFullWidth
 
-**Requires parent [`BulmaFormControl`](BulmaFormInputs.md#bulmaformcontrol)
-with [`isExpanded` prop](BulmaFormInputs.md#isexpanded) to work**
-
 Type: `boolean` | `undefined`
 
 Whether the select element should take up the full width of the parent.

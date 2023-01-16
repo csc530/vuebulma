@@ -1,5 +1,5 @@
 <template>
-	<bulma-box>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 		<bulma-navbar :boxed-dropdowns="boxed" :colour="colour" :end-items="characters" :has-shadow="shadow"
 		              :is-fixed="fixed" :is-spaced="space" :is-transparent="transparent" :middle-items="tags"
 		              :start-items="start" :tabbed-items="tab">
@@ -9,46 +9,50 @@
 		</bulma-navbar>
 	</bulma-box>
 
-	<bulma-form-field is-horizontal label="Colour">
-		<bulma-select v-model="colour" :options="getBulmaColours()" />
-	</bulma-form-field>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap"
+		          name="props">
 
-	<bulma-form-field is-horizontal label="Fixed">
-		<bulma-select v-model="fixed">
-			<option :value="undefined">False</option>
-			<option :value="'top'">Top</option>
-			<option value="bottom">Bottom</option>
-		</bulma-select>
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Space">
+				<input v-model="space" type="checkbox" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Space">
-		<input v-model="space" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Transparent">
+				<input v-model="transparent" type="checkbox" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Transparent">
-		<input v-model="transparent" type="checkbox" />
-	</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Tab">
-		<!--		todo fix select for arrays -->
-		<!--		<bulma-select v-model="tab" multiple :options="['brand','start','end']"/>-->
-		<input v-model="tab" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Shadows">
+				<input v-model="shadow" type="checkbox" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Shadows">
-		<input v-model="shadow" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Boxed Dropdowns">
+				<input v-model="boxed" type="checkbox" />
+			</bulma-form-field>
+			<bulma-form-field is-horizontal label="Colour">
+				<bulma-select v-model="colour" :options="getBulmaColours()" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Boxed Dropdowns">
-		<input v-model="boxed" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Fixed">
+				<bulma-select v-model="fixed">
+					<option :value="undefined">False</option>
+					<option :value="'top'">Top</option>
+					<option value="bottom">Bottom</option>
+				</bulma-select>
+			</bulma-form-field>
+
+			<bulma-form-field is-horizontal label="Tab">
+				<bulma-select v-model="tab" :options="['brand','start','end']" is-multiple />
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
 
 <script lang="ts" setup>
 	import {ref, shallowRef} from "vue";
 	import {BulmaColour, BulmaNavbarItem, getBulmaColours} from "../../types";
 	import BulmaNavbar from "../../vuebulma components/components/navbar/BulmaNavbar.vue";
-
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaImage from "../../vuebulma components/elements/BulmaImage.vue";
@@ -60,7 +64,7 @@
 	const fixed = ref<false | 'top' | 'bottom'>(false);
 	const space = ref<boolean>(false);
 	const transparent = ref<boolean>(false);
-	const tab = ref(false);
+	const tab = ref<any[]>([]);
 	const shadow = ref(false);
 	const boxed = ref(false);
 
@@ -79,7 +83,7 @@
 		type: 'component',
 		display: BulmaImage,
 		props: {
-			src: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1966.png'
+			src: 'https://www.svgrepo.com/show/485626/batman.svg'
 		}
 	});
 
@@ -94,7 +98,7 @@
 		type: 'component',
 		display: BulmaImage,
 		props: {
-			src: 'https://1000logos.net/wp-content/uploads/2021/05/Wonder-Woman-logo.png'
+			src: 'https://www.svgrepo.com/show/303166/wonder-woman-logo.svg'
 		},
 		isExpanded: true
 	});
@@ -127,7 +131,12 @@
 			dropdown: {
 				isDropUp: true,
 				isHoverable: true,
-				items: [{isComponent: BulmaHeading, props: {size: 6}, slot: {default: 'You cutie..😘'}}]
+				items: <BulmaNavbarItem[]> [{
+					type: 'component',
+					display: BulmaHeading,
+					props: {size: 6},
+					slot: {default: 'You cutie..😘'}
+				}]
 			}
 		}
 	]);

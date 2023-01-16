@@ -1,22 +1,26 @@
 <template>
-	<bulma-box>
-		<bulma-button :colour="colour" :is-full-width="fullwidth" :is-inverted="inverted" :is-light="light"
-		              :is-loading="loading"
-		              :is-outlined="outlined" :is-rounded="rounded" :is-static="isStatic" :label="text"
-		              :size="size" :state="state" is-responsive />
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<bulma-button :is-responsive="respons" :colour="colour" :is-full-width="fullwidth" :is-inverted="inverted"
+		              :is-light="light" :is-loading="loading" :is-outlined="outlined" :is-rounded="rounded"
+		              :is-static="isStatic" :label="text" :size="size" :state="state" />
 	</bulma-box>
 
-	<bulma-form-field is-horizontal label="Colour">
-		<bulma-form-control>
-			<bulma-select v-model="colour" :options="getBulmaButtonColours()" />
-		</bulma-form-control>
-	</bulma-form-field>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<bulma-form-field is-horizontal label="Colour">
+				<bulma-form-control>
+					<bulma-select v-model="colour" :options="getBulmaButtonColours()" />
+				</bulma-form-control>
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Size">
-		<bulma-form-control>
-			<bulma-select v-model="size" :options="getBulmaSizes()" />
-		</bulma-form-control>
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Size">
+				<bulma-form-control>
+					<bulma-select v-model="size" :options="getBulmaSizes()" />
+				</bulma-form-control>
+			</bulma-form-field>
 
 	<bulma-form-field is-horizontal label="Text">
 		<bulma-form-control>
@@ -64,12 +68,19 @@
 		</bulma-form-control>
 	</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Fullwidth">
-		<bulma-form-control>
-			<input v-model="fullwidth" type="checkbox" />
-		</bulma-form-control>
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Fullwidth">
+				<bulma-form-control>
+					<input v-model="fullwidth" type="checkbox" />
+				</bulma-form-control>
+			</bulma-form-field>
 
+			<bulma-form-field is-horizontal label="Responsive">
+				<bulma-form-control>
+					<input v-model="respons" type="checkbox" />
+				</bulma-form-control>
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
 
 
@@ -80,12 +91,13 @@
 	import {getBulmaButtonColours} from "../../types/ButtonTypes";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
 	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";
 	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
 
-	const colour = ref<BulmaColour>("primary");
+	const colour = ref<BulmaColour>("warning");
 	const size = ref<BulmaSize>("medium");
 	const text = ref<string>("Button");
 	const inverted = ref<boolean>(false);
@@ -96,5 +108,6 @@
 	const isStatic = ref<boolean>(false);
 	const fullwidth = ref<boolean>(false);
 	const state = ref<BulmaState>("default");
+	const respons = ref<boolean>(false);
 </script>
 

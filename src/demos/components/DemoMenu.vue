@@ -1,17 +1,23 @@
 <template>
-	<bulma-box>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 		<bulma-menu :menu="menu" :tag="menuTag" :labelTag="menuLabelTag" />
 
 	</bulma-box>
 
-	<bulma-form-field is-horizontal label="Menu tag">
-		<bulma-input v-model="menuTag" />
-	</bulma-form-field>
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<bulma-form-field is-horizontal label="Menu tag">
+				<bulma-input v-model="menuTag" />
+			</bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Menu item tag">
-		<bulma-input v-model="menuLabelTag" />
-	</bulma-form-field>
-
+			<bulma-form-field is-horizontal label="Menu item tag">
+				<bulma-input v-model="menuLabelTag" />
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
 
 
@@ -20,6 +26,7 @@
 	import {BulmaMenu as bm} from "../../types";
 	import BulmaMenu from "../../vuebulma components/components/BulmaMenu.vue";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
 

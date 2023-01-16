@@ -1,15 +1,16 @@
 <template>
-	<bulma-box>
-		<bulma-form-field :help="help" :is-horizontal="horz" :label="label" :label-size="size">
-			<bulma-form-control>
-				<bulma-input />
-			</bulma-form-control>
-		</bulma-form-field>
-	</bulma-box>
-	<bulma-box>
-		<bulma-form-field :help="help" :is-horizontal="horz" :label="label"
-		                  :label-size="size">
-			<BulmaFormControl>
+	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<bulma-box>
+			<bulma-form-field :help="help" :is-horizontal="horz" :label="label" :label-size="size">
+				<bulma-form-control>
+					<bulma-input />
+				</bulma-form-control>
+			</bulma-form-field>
+		</bulma-box>
+		<bulma-box>
+			<bulma-form-field :help="help" :is-horizontal="horz" :label="label"
+			                  :label-size="size">
+				<BulmaFormControl>
 				<BulmaInput size="large " type="date" />
 			</BulmaFormControl>
 		</bulma-form-field>
@@ -79,23 +80,30 @@
 			</bulma-form-control-group>
 		</bulma-form-field>
 	</bulma-box>
+	</bulma-box>
+
+	<bulma-box>
+		<bulma-heading>Props</bulma-heading>
+		<fieldset
+				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+				name="props">
+			<bulma-form-field is-horizontal label="Help text">
+				<bulma-input v-model="help" />
+			</bulma-form-field>
+
+			<bulma-form-field is-horizontal label="Label">
+				<bulma-input v-model="label" />
+			</bulma-form-field>
 
 
-	<bulma-form-field is-horizontal label="Help text">
-		<bulma-input v-model="help" />
-	</bulma-form-field>
-
-	<bulma-form-field is-horizontal label="Label">
-		<bulma-input v-model="label" />
-	</bulma-form-field>
-
-
-	<bulma-form-field is-horizontal label="Size">
-		<bulma-select v-model="size" :options="getBulmaSizes()" />
-	</bulma-form-field>
-	<bulma-form-field is-horizontal label="Horizontal">
-		<input v-model="horz" type="checkbox" />
-	</bulma-form-field>
+			<bulma-form-field is-horizontal label="Label Size">
+				<bulma-select v-model="size" :options="getBulmaSizes()" />
+			</bulma-form-field>
+			<bulma-form-field is-horizontal label="Horizontal">
+				<input v-model="horz" type="checkbox" />
+			</bulma-form-field>
+		</fieldset>
+	</bulma-box>
 </template>
 
 
@@ -104,6 +112,7 @@
 	import {BulmaSize, getBulmaSizes} from "../../types";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
 	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
 	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
 	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";

@@ -3,7 +3,16 @@
 Bulma provides a number of form elements that you can use to create forms. And fields of form inputs to group them
 together.
 
-[//]: # (This is by far the trickiest and most complex/difficult set of components to use, to have them displayed nicely as Bulma provides)
+## Recommendations and use
+
+The [BulmaControl](#bulmaformcontrol) is used to wrap single form inputs or elements you'd like to place within
+a `BulmaFormControlGroup`.
+
+The [BulmaControlGroup](#bulmaformcontrolgroup) is used to wrap multiple `BulmaControl` components to group them
+together. It may also be used to insert multiple controls within a single `BulmaFormField`.
+
+The [BulmaFormField](#bulmaformfield) is to display a label, help text, and a _single_ `BulmaControl`
+or `BulmaControlGroup` together.
 
 ## BulmaFormControl
 
@@ -28,11 +37,11 @@ The HTML tag to use for the form control.
 
 #### isExpanded
 
-*Requires [Control Group](#bulmaformcontrolgroup) parent and siblling control elements*
+*Requires [Control Group](#bulmaformcontrolgroup) parent and sibling control elements*
 
 Type: `boolean` | `undefined`
 
-Whether the form control and input should take up the full width of its container.
+Whether the form control and input should take up the full width of its parent control group.
 
 #### leftIcon
 
@@ -49,15 +58,12 @@ The icon to display on the left side of the form control.
 Type: `string` | [BulmaColouredIcon](../../types/BulmaColouredIcon.md) | [BulmaMultiIcon](../../types/BulmaColouredIcon.md#bulmamultiicon) | `undefined`
 
 The icon to display on the right side of the form control.
-
-### Additional information
-
 ## BulmaFormControlGroup
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-group)
-[Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControlGroup.vue)
+[Source](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControlGroup.vue)
 
-An intermediary component to group form controls (BulmaFormControl) together.
+A container to group `BulmaFormControl`s together.
 
 ### Slots
 
@@ -93,8 +99,8 @@ _has no effect if used with `hasAddons`_
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-field)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormField.vue)
 
-A simple container for a _single_ whole form input; built for an optional label and help text, and form control(s) (
-using [BulmaFormControlGroup](#bulmaformcontrolgroup) or [BulmaFormControl](#bulmaformcontrol)).
+A simple container for a _single_ whole form input; built for an optional label and help text, and form control(
+s) ([`BulmaFormControlGroup`](#bulmaformcontrolgroup) or [`BulmaFormControl`](#bulmaformcontrol)).
 
 ### Slots
 

@@ -1,6 +1,6 @@
 <template>
 	<bulma-box>
-		<bulma-form-control :is-loading="load" :left-icon="rIcon" :tag="tag" :is-expanded="load" :right-icon="lIcon">
+		<bulma-form-control :is-loading="load" :left-icon="rIcon" :tag="tag" :right-icon="lIcon">
 			<bulma-input placeholder="Email@domain.far" type="email" />
 
 		</bulma-form-control>
