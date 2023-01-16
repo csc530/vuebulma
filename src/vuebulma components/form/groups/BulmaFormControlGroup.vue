@@ -10,9 +10,7 @@
 	import {BulmaAlignment, toBulmaAlignmentClasses} from "../../../types";
 
 	const props = withDefaults(defineProps<{
-		/**
-		 * The alignment of the control group
-		 */
+		/** The alignment of the control group */
 		alignment?: BulmaAlignment;
 		/** make form controls [appear] attached together. Not recommended with a label*/
 		hasAddons?: boolean
@@ -24,16 +22,17 @@
 		const classes = []
 		if(!props.hasAddons) {
 			classes.push('is-grouped')
-			classes.push('is-grouped-' + toBulmaAlignmentClasses(props.alignment).substring(3))
+			if(props.alignment)
+				classes.push('is-grouped-' + toBulmaAlignmentClasses(props.alignment).substring(3))
 			if(props.isMultiline)
 				classes.push('is-grouped-multiline')
 		}
 		else {
 			classes.push('has-addons')
-			classes.push('has-addons-' + toBulmaAlignmentClasses(props.alignment).substring(3))
+			if(props.alignment)
+				classes.push('has-addons-' + toBulmaAlignmentClasses(props.alignment).substring(3))
 		}
-		return classes
-			;
+		return classes;
 	});
 
 </script>

@@ -22,10 +22,10 @@ export function getBulmaOptionValue(option: BulmaOption | string): any {
 	return option.value;
 }
 
-export function isBulmaOptionGroup(option: BulmaOptionGroup | BulmaOption): option is BulmaOptionGroup {
-	return option.label !== undefined && Array.isArray((option as BulmaOptionGroup).options);
+export function isBulmaOptionGroup(option: BulmaOption | BulmaOptionGroup | string): option is BulmaOptionGroup {
+	return typeof option === 'object' && option.label !== undefined && Array.isArray((option as BulmaOptionGroup).options);
 }
 
-export function isBulmaOption(option: BulmaOptionGroup | BulmaOption): option is BulmaOption {
-	return option.label !== undefined && (option as BulmaOption).value !== undefined;
+export function isBulmaOption(option: string | BulmaOption): option is BulmaOption {
+	return typeof option === 'object' && option.label !== undefined && (option as BulmaOption).value !== undefined;
 }
