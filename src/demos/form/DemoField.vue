@@ -110,14 +110,14 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaSize, getBulmaSizes} from "../../types";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";
-	import BulmaFormControlGroup from "../../vuebulma components/form/groups/BulmaFormControlGroup.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
+	import BulmaFormControlGroup from "../../vbComponents/form/groups/BulmaFormControlGroup.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const help = ref("Help text");
 	const label = ref("Label");

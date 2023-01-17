@@ -52,12 +52,12 @@
 <script lang="ts" setup>
 	import {onBeforeMount, ref, shallowRef} from "vue";
 	import {BulmaColour, BulmaNavbarItem, getBulmaColours} from "../../types";
-	import BulmaNavbar from "../../vuebulma components/components/navbar/BulmaNavbar.vue";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaImage from "../../vuebulma components/elements/BulmaImage.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaNavbar from "../../vbComponents/components/navbar/BulmaNavbar.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaImage from "../../vbComponents/elements/BulmaImage.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 
 	const colour = ref<BulmaColour>('default');

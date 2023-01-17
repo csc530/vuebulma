@@ -35,14 +35,14 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaLeftRight, getBulmaLeftRight} from "../../types";
-	import BulmaDropdown from "../../vuebulma components/components/BulmaDropdown.vue";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaIcon from "../../vuebulma components/elements/BulmaIcon.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaDropdown from "../../vbComponents/components/BulmaDropdown.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaIcon from "../../vbComponents/elements/BulmaIcon.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const items = ['Banna Bread', 'Apple Pie', null, 'Apple fritter', '(Jamaican) Patty']
 

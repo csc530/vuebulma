@@ -32,11 +32,11 @@
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, BulmaState, getBulmaColours, getBulmaSizes, getBulmaStates} from "../../types";
 
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaTextArea from "../../vuebulma components/form/BulmaTextArea.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaTextArea from "../../vbComponents/form/BulmaTextArea.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const text = ref("Hello World from VueBulma Textarea");
 	const colour = ref<BulmaColour>('default');

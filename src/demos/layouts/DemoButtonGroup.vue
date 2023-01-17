@@ -38,13 +38,13 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaButton from "../../vuebulma components/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
-	import BulmaButtonGroup from "../../vuebulma components/layouts/BulmaButtonGroup.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import BulmaButtonGroup from "../../vbComponents/layouts/BulmaButtonGroup.vue";
 
 	const align = ref<BulmaAlignment>('center');
 	const size = ref<BulmaSize>('medium');

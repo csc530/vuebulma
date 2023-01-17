@@ -24,11 +24,11 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaMenu as bm} from "../../types";
-	import BulmaMenu from "../../vuebulma components/components/BulmaMenu.vue";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaMenu from "../../vbComponents/components/BulmaMenu.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const menu = ref<bm>([
 		{label: 'General', items: ['Dashboard', 'Customers']},

@@ -20,11 +20,11 @@
 
 	import {ref} from "vue";
 	import {BulmaSize, getBulmaSizes} from "../../types";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaDelete from "../../vuebulma components/elements/BulmaDelete.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaDelete from "../../vbComponents/elements/BulmaDelete.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const size = ref<BulmaSize>('default');
 </script>

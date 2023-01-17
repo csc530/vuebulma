@@ -1,23 +1,23 @@
-import BulmaBreadcrumb from './vuebulma components/components/BulmaBreadcrumb.vue';
-import BulmaDropdown from './vuebulma components/components/BulmaDropdown.vue'
-import BulmaMenu from './vuebulma components/components/BulmaMenu.vue'
-import BulmaMessage from './vuebulma components/components/BulmaMessage.vue'
-import BulmaNavbar from "./vuebulma components/components/navbar/BulmaNavbar.vue";
-import BulmaBlock from './vuebulma components/elements/BulmaBlock.vue';
-import BulmaBox from './vuebulma components/elements/BulmaBox.vue';
-import BulmaButton from "./vuebulma components/elements/BulmaButton.vue";
-import BulmaHeading from './vuebulma components/elements/BulmaHeading.vue';
-import BulmaIcon from './vuebulma components/elements/BulmaIcon.vue';
-import BulmaImage from './vuebulma components/elements/BulmaImage.vue';
-import BulmaFileInput from "./vuebulma components/form/BulmaFileInput.vue";
-import BulmaInput from "./vuebulma components/form/BulmaInput.vue";
-import BulmaSelect from "./vuebulma components/form/BulmaSelect.vue";
-import BulmaTextArea from "./vuebulma components/form/BulmaTextArea.vue";
-import BulmaFormControl from "./vuebulma components/form/groups/BulmaFormControl.vue";
-import BulmaFormControlGroup from "./vuebulma components/form/groups/BulmaFormControlGroup.vue";
-import BulmaFormField from "./vuebulma components/form/groups/BulmaFormField.vue";
-import BulmaButtonGroup from "./vuebulma components/layouts/BulmaButtonGroup.vue";
-
+import BulmaBreadcrumb from './vbComponents/components/BulmaBreadcrumb.vue';
+import BulmaDropdown from './vbComponents/components/BulmaDropdown.vue'
+import BulmaMenu from './vbComponents/components/BulmaMenu.vue'
+import BulmaMessage from './vbComponents/components/BulmaMessage.vue'
+import BulmaNavbar from "./vbComponents/components/navbar/BulmaNavbar.vue";
+import BulmaBlock from './vbComponents/elements/BulmaBlock.vue';
+import BulmaBox from './vbComponents/elements/BulmaBox.vue';
+import BulmaButton from "./vbComponents/elements/BulmaButton.vue";
+import BulmaDelete from "./vbComponents/elements/BulmaDelete.vue";
+import BulmaHeading from './vbComponents/elements/BulmaHeading.vue';
+import BulmaIcon from './vbComponents/elements/BulmaIcon.vue';
+import BulmaImage from './vbComponents/elements/BulmaImage.vue';
+import BulmaFileInput from "./vbComponents/form/BulmaFileInput.vue";
+import BulmaInput from "./vbComponents/form/BulmaInput.vue";
+import BulmaSelect from "./vbComponents/form/BulmaSelect.vue";
+import BulmaTextArea from "./vbComponents/form/BulmaTextArea.vue";
+import BulmaFormControl from "./vbComponents/form/groups/BulmaFormControl.vue";
+import BulmaFormControlGroup from "./vbComponents/form/groups/BulmaFormControlGroup.vue";
+import BulmaFormField from "./vbComponents/form/groups/BulmaFormField.vue";
+import BulmaButtonGroup from "./vbComponents/layouts/BulmaButtonGroup.vue";
 
 const vuebulma = {
 	install(Vue: any) {
@@ -64,5 +64,6 @@ export {
 	BulmaFormControl as vbFormControl,
 	BulmaFormField as vbFormField,
 	BulmaFormControlGroup as vbFormControlGroup,
+	BulmaDelete as vbDelete,
 	vuebulma
 };

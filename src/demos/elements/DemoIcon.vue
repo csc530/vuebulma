@@ -41,11 +41,11 @@
 		getBulmaStateColours
 	} from "../../types";
 	import {BulmaColouredIcon} from "../../types/IconTypes";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaIcon from "../../vuebulma components/elements/BulmaIcon.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaIcon from "../../vbComponents/elements/BulmaIcon.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const text = ref<string>('A house icon');
 	const textPos = ref<boolean>(false);

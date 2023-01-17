@@ -46,14 +46,14 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../../types";
-	import BulmaMessage from "../../vuebulma components/components/BulmaMessage.vue";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vuebulma components/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaSelect from "../../vuebulma components/form/BulmaSelect.vue";
-	import BulmaTextArea from "../../vuebulma components/form/BulmaTextArea.vue";
-	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaMessage from "../../vbComponents/components/BulmaMessage.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
+	import BulmaTextArea from "../../vbComponents/form/BulmaTextArea.vue";
+	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const colour = ref<BulmaColour>('primary');
 	const heading = ref('John 3:16');

@@ -20,10 +20,10 @@
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColouredIcon, BulmaMultiIcon} from "../../types/IconTypes";
-	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
-	import BulmaInput from "../../vuebulma components/form/BulmaInput.vue";
-	import BulmaFormControl from "../../vuebulma components/form/groups/BulmaFormControl.vue";
-	import BulmaFormField from "../../vuebulma components/form/groups/BulmaFormField.vue";
+	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
+	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
+	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
+	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const tag = ref<string>('div');
 	const load = ref<boolean>(false);

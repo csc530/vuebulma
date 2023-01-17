@@ -59,7 +59,7 @@ to [their documentation](https://vuejs.org/guide/introduction.html).
 ### Custom Additions
 
 This library adds some built-in JS to make Bulma's styling and classes work seamlessly
-like [appending is-active](/src/vuebulma%20components/components/BulmaDropdown.vue#L4) to a
+like [appending is-active](/src/vbComponents/components/BulmaDropdown.vue#L4) to a
 clicked [dropdown](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)
 
 ---
