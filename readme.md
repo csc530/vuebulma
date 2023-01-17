@@ -36,7 +36,7 @@ that's compatible with Vue 3.
 
 <script lang="ts" setup>
 	// import the component you want to use
-	import {BulmaHeading} from '@csc530/vuebulma/dist/vuebulma'
+	import {BulmaHeading} from '@csc530/vuebulma'
 </script>
 ```
 

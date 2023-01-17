@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Removed
+
+### Fixed
+
+## [0.0.0-13]
+
+### Added
+
 - `./types` export to package.json for all related package exports
 
 - CSS to [BulmaButton](components/elements/BulmaButton.md) component to not round corners in
@@ -16,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   applied
 
 ### Changed
+
+- names of components to be prefixed with `vb` instead of `Bulma`
 
 - update package.json to include `.` export of `dist/vuebulma`
 
@@ -37,6 +49,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [BulmaSelect](components/form/BulmaSelect.md) - `v-model` to work with multiple property and `multiple` attribute to
+  return an array of selected values and display them in the select element
+
 ## Deprecated
 
 ## [0.0.0-12] - 2023-01-11
@@ -50,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - alignment, multiline and grouped (spacing) classes
   for [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
 - label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
+
 ### Changed
 
 ### Deprecated

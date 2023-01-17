@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-12",
+  "version": "0.0.0-13",
   "description": "Bulma CSS framework components for Vue 3",
   "author": "Christofer Cousins",
   "keywords": [
@@ -30,6 +30,7 @@
   ],
   "module": "./dist/vuebulma.js",
   "main": "./dist/vuebulma.js",
+  "types": "./dist/vuebulma.d.ts",
   "directories": {
 	"doc": "docs",
 	"lib": "dist"
