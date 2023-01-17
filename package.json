@@ -30,6 +30,7 @@
   ],
   "module": "./dist/vuebulma.js",
   "main": "./dist/vuebulma.js",
+  "typings": "./dist/vuebulma.d.ts",
   "types": "./dist/vuebulma.d.ts",
   "directories": {
 	"doc": "docs",
@@ -47,7 +48,8 @@
 	  "default": "./dist/types.js",
 	  "types": "./dist/types.d.ts"
 	},
-	"./dist/types": "./dist/types.js"
+	"./dist/types": "./dist/types.js",
+	"./dist/vuebulma": "./dist/vuebulma.js"
   },
   "scripts": {
 	"dev": "vite --host --open -d --clearScreen",

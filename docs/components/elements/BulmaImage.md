@@ -1,4 +1,4 @@
-# BulmaImage
+# vbImage
 
 [Bulma documentation](https://bulma.io/documentation/elements/image/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaImage.vue)

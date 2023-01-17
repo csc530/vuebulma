@@ -1,4 +1,4 @@
-# Bulma Heading
+# vbHeading
 
 [Bulma Documentation](https://bulma.io/documentation/elements/title/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaHeading.vue)

@@ -1,4 +1,4 @@
-# BulmaBreadcrumb
+# vbBreadcrumb
 
 [Bulma documentation](https://bulma.io/documentation/components/breadcrumb/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaBreadcrumb.vue)

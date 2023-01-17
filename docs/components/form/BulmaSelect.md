@@ -1,4 +1,4 @@
-# BulmaSelect
+# vbSelect
 
 [Bulma documentation](https://bulma.io/documentation/form/select/)
 [Source](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaSelect.vue)

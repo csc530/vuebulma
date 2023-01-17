@@ -64,12 +64,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add docs to props of...
-	- [BulmaControl](components/form/BulmaFormFields.md#bulmaformcontrol)
-	- [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
-	- [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
+	- [BulmaControl](components/form/BulmaFormFields.md#vbformcontrol)
+	- [BulmaControlGroup](components/form/BulmaFormFields.md#vbformcontrolgroup)
+	- [BulmaFormField](components/form/BulmaFormFields.md#vbformfield)
 - alignment, multiline and grouped (spacing) classes
-  for [BulmaControlGroup](components/form/BulmaFormFields.md#bulmaformcontrolgroup)
-- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#bulmaformfield)
+  for [BulmaControlGroup](components/form/BulmaFormFields.md#vbformcontrolgroup)
+- label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#vbformfield)
 
 ### Changed
 
@@ -88,7 +88,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add docs to props of...
 	- [BulmaFileInput](components/form/BulmaFileInput.md)
 - Add state prop to BulmaInput
-- Icon support for [BulmaControl](components/form/BulmaFormFields.md#bulmaformcontrol)
+- Icon support for [BulmaControl](components/form/BulmaFormFields.md#vbformcontrol)
 
 ### Removed
 

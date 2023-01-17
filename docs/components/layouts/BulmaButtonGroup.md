@@ -1,4 +1,4 @@
-# BulmaButtonGroup
+# vbButtonGroup
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/#list-of-buttons)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaButtonGroup.vue)

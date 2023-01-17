@@ -1,4 +1,4 @@
-# BulmaNavbar
+# vbNavbar
 
 [Bulma Documentation](https://bulma.io/documentation/components/navbar/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/navbar/BulmaNavbar.vue)

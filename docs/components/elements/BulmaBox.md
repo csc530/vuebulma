@@ -1,4 +1,4 @@
-# BulmaBox
+# vbBox
 
 [Bulma documentation](https://bulma.io/documentation/elements/box/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/containers/BulmaBox.vue)

@@ -1,4 +1,4 @@
-# BulmaTextArea
+# vbTextArea
 
 [Bulma documentation](https://bulma.io/documentation/form/textarea/)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaTextArea.vue)

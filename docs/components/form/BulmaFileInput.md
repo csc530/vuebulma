@@ -1,4 +1,4 @@
-# BulmaFileInput
+# vbFileInput
 
 [Bulma documentation](https://bulma.io/documentation/form/file/)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaFileInput.vue)

@@ -1,4 +1,4 @@
-# BulmaInput
+# vbInput
 
 [Bulma documentation](https://bulma.io/documentation/form/input/)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/BulmaInput.vue)

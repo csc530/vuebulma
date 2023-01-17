@@ -1,4 +1,4 @@
-# BulmaButton
+# vbButton
 
 [Bulma documentation](https://bulma.io/documentation/elements/button/)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaButton.vue)

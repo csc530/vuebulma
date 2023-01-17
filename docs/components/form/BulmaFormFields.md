@@ -5,16 +5,16 @@ together.
 
 ## Recommendations and use
 
-The [BulmaControl](#bulmaformcontrol) is used to wrap single form inputs or elements you'd like to place within
+The [BulmaControl](#vbformcontrol) is used to wrap single form inputs or elements you'd like to place within
 a `BulmaFormControlGroup`.
 
-The [BulmaControlGroup](#bulmaformcontrolgroup) is used to wrap multiple `BulmaControl` components to group them
+The [BulmaControlGroup](#vbformcontrolgroup) is used to wrap multiple `BulmaControl` components to group them
 together. It may also be used to insert multiple controls within a single `BulmaFormField`.
 
-The [BulmaFormField](#bulmaformfield) is to display a label, help text, and a _single_ `BulmaControl`
+The [BulmaFormField](#vbformfield) is to display a label, help text, and a _single_ `BulmaControl`
 or `BulmaControlGroup` together.
 
-## BulmaFormControl
+## vbFormControl
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-control)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControl.vue)
@@ -37,7 +37,7 @@ The HTML tag to use for the form control.
 
 #### isExpanded
 
-*Requires [Control Group](#bulmaformcontrolgroup) parent and sibling control elements*
+*Requires [Control Group](#vbformcontrolgroup) parent and sibling control elements*
 
 Type: `boolean` | `undefined`
 
@@ -58,7 +58,8 @@ The icon to display on the left side of the form control.
 Type: `string` | [BulmaColouredIcon](../../types/BulmaColouredIcon.md) | [BulmaMultiIcon](../../types/BulmaColouredIcon.md#bulmamultiicon) | `undefined`
 
 The icon to display on the right side of the form control.
-## BulmaFormControlGroup
+
+## vbFormControlGroup
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-group)
 [Source](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormControlGroup.vue)
@@ -69,7 +70,7 @@ A container to group `BulmaFormControl`s together.
 
 #### default
 
-The form [controls](#bulmaformcontrol) to be grouped together.
+The form [controls](#vbformcontrol) to be grouped together.
 
 ### Props
 
@@ -94,13 +95,13 @@ Whether the form controls should be displayed on multiple lines.
 
 _has no effect if used with `hasAddons`_
 
-## BulmaFormField
+## vbFormField
 
 [Bulma documentation](https://bulma.io/documentation/form/general/#form-field)
 [Source code](https://github.com/csc530/vuebulma/blob/main/src/components/form/groups/BulmaFormField.vue)
 
 A simple container for a _single_ whole form input; built for an optional label and help text, and form control(
-s) ([`BulmaFormControlGroup`](#bulmaformcontrolgroup) or [`BulmaFormControl`](#bulmaformcontrol)).
+s) ([`BulmaFormControlGroup`](#vbformcontrolgroup) or [`BulmaFormControl`](#vbformcontrol)).
 
 ### Slots
 
