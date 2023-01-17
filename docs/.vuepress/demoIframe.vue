@@ -18,11 +18,7 @@
 	defineProps<{ name: string }>();
 	const component = ref<HTMLSpanElement | null>();
 	const iframe = ref<HTMLIFrameElement | null>();
-	const link = document.createElement("link");
-	link.rel = "stylesheet";
-	link.href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css";
-	link.as = "style";
-	link.type = "text/css";
+
 
 	onMounted(() => {
 		if(!(component.value && iframe.value))
@@ -30,6 +26,16 @@
 		const iframeDocument = iframe.value.contentDocument;
 		if(!iframeDocument)
 			return;
+		var link;
+		if(!document)
+			link = iframeDocument.createElement("link");
+		else
+			link = document.createElement("link");
+		link.rel = "stylesheet";
+		link.href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css";
+		link.as = "style";
+		link.type = "text/css";
+
 		const iframeBody = iframeDocument.body;
 		iframeBody.appendChild(component.value);
 		iframeDocument.head.appendChild(link);
