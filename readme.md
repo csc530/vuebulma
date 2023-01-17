@@ -31,12 +31,12 @@ that's compatible with Vue 3.
 
 <template>
 	<!-- Use Bulma component-->
-	<BulmaHeading>I'm a Bulma styled heading</BulmaHeading>
+	<vbHeading>I'm a Bulma styled heading</vbHeading>
 </template>
 
 <script lang="ts" setup>
 	// import the component you want to use
-	import {BulmaHeading} from '@csc530/vuebulma'
+	import {vbHeading} from '@csc530/vuebulma'
 </script>
 ```
 

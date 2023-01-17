@@ -20,17 +20,17 @@ Example:
 ```vue
 
 <template>
-	<BulmaNavbar :start-items="items">
+	<vbNavbar :start-items="items">
 		<template #start-items="{ data }">
 			<h1>{{ data.title }}</h1>
 			<pre>{{ data.important }}</pre>
 		</template>
-	</BulmaNavbar>
+	</vbNavbar>
 </template>
 
 <script setup>
 	import {ref} from 'vue'
-	import {BulmaNavbar} from '@csc530/vuebulma'
+	import {vbNavbar} from '@csc530/vuebulma'
 
 	const items = ref([
 		{title: 'Hello', important: true},
@@ -49,7 +49,7 @@ Example: using dummy list
 ```vue
 
 <template>
-	<BulmaNavbar :end-items="items">
+	<vbNavbar :end-items="items">
 		<template #end-items="{ data }">
 			<h1 v-if="data===1">{{ data.title }}</h1>
 			<ul v-if="data === 2">
@@ -58,11 +58,12 @@ Example: using dummy list
 				<li>But works for smaller and static elements</li>
 			</ul>
 		</template>
-	</BulmaNavbar>
+	</vbNavbar>
 </template>
 
 <script setup>
 	import {ref} from 'vue'
+	import {vbNavbar} from "@csc530/vuebulma";
 
 	const items = ref([1, 2]);
 </script>
@@ -205,14 +206,14 @@ Component
 ```vue
 
 <template>
-	<BulmaNavbar :middle-items="items" />
+	<vbNavbar :middle-items="items" />
 </template>
 
 <script lang="ts" setup>
 	import {BulmaNavBarItem} from '@csc530/vuebulma/types'
-	//If you are going to dynamically render component from component definitions, it must be explicitly imported
-	import {BulmaImage} from "@csc530/vuebulma";
-	import myCustomComponent from "./MyCustomComponent.vue";
+		//If you are going to dynamically render component from component definitions, it must be explicitly imported
+		import {vbImage, vbNavbar} from "@csc530/vuebulma";
+		import myCustomComponent from "./MyCustomComponent.vue";
 
 	const customComponent: BulmaNavBarItem = {
 		type: 'component',
@@ -224,9 +225,9 @@ Component
 		}
 	};
 	const bulmaImg = {
-		type: 'component',
-		component: BulmaImage,
-		props: {src: 'https://bulma.io/images/bulma-logo.png'},
+			type: 'component',
+			component: vbImage,
+			props: {src: 'https://bulma.io/images/bulma-logo.png'},
 	};
 
 	const items: BulmaNavBarItem[] = [customComponent, bulmaImg];
@@ -238,11 +239,12 @@ HTML
 ```vue
 
 <template>
-	<BulmaNavbar :start-items="items" />
+	<vbNavbar :start-items="items" />
 </template>
 
 <script lang="ts" setup>
 	import {BulmaNavBarItem} from '@csc530/vuebulma/types';
+	import {vbNavbar} from "@csc530/vuebulma";
 
 	const fancyButton = document.createElement('button');
 	fancyButton.innerText = 'Fancy Button';
@@ -264,11 +266,12 @@ Dropdown
 ```vue
 
 <template>
-	<BulmaNavbar :end-items="items" />
+	<vbNavbar :end-items="items" />
 </template>
 
 <script lang="ts" setup>
 	import {BulmaNavBarItem} from '@csc530/vuebulma/types';
+	import {vbNavbar} from "@csc530/vuebulma";
 
 	const dropdown: BulmaNavBarItem = {
 		type: 'dropdown',
