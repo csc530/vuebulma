@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `./types` export to package.json for all related package exports
 
+- CSS to [BulmaButton](components/elements/BulmaButton.md) component to not round corners in
+  a [BulmaButtonGroup](components/layouts/BulmaButtonGroup.md) when it's small and `has-addons` is
+  applied
+
 ### Changed
 
 - update package.json to include `.` export of `dist/vuebulma`
