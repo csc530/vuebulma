@@ -6,6 +6,7 @@ The components are within the green box, and the code is within the blue box.
 
 ## Textarea
 
+<ClientOnly>
 <demo-iframe name="demo textarea">
  <demo-text-area/>
 </demo-iframe>
@@ -93,3 +94,4 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo button group">
  <demo-button-group/>
 </demo-iframe>
+</ClientOnly>
