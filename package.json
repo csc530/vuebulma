@@ -1,6 +1,6 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-13",
+  "version": "0.0.0-14",
   "description": "Bulma CSS framework components for Vue 3",
   "author": "Christofer Cousins",
   "keywords": [
@@ -70,18 +70,13 @@
 	"vite": "^3.2.4",
 	"vue": "^3.2.45",
 	"vue-loader": "^17.0.1",
-	"vue-tsc": "^1.0.24"
-  },
-  "peerDependencies": {
-	"vue": "^3.2.45"
-  },
-  "optionalDependencies": {
-	"ts-node": "^10.9.1",
-	"nodemon": "^2.0.20",
+	"vue-tsc": "^1.0.24",
 	"@vuepress/client": "2.0.0-beta.60",
-	"yarn": "^1.22.19",
 	"vuepress": "2.0.0-beta.60",
 	"vuepress-plugin-clipboard": "^2.1.4",
 	"vuepress-plugin-markdown-checkbox": "^1.0.8"
+  },
+  "peerDependencies": {
+	"vue": "^3.2.45"
   }
 }
