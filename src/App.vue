@@ -1,6 +1,6 @@
 <template>
-	<demo-notification />
+	<demo-progress />
 </template>
 
 <script lang="ts" setup>
-	import DemoNotification from "./demos/elements/DemoNotification.vue";</script>
+	import DemoProgress from "./demos/elements/DemoProgress.vue";</script>

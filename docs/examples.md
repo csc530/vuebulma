@@ -101,9 +101,9 @@ The components are within the green box, and the code is within the blue box.
  <demo-delete/>
 </demo-iframe>
 
-## Delete
+## Progress bar
 
 <demo-iframe name="demo button group">
- <demo-notification/>
+ <demo-progress/>
 </demo-iframe>
 </ClientOnly>
