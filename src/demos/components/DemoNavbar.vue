@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-	import {ref, shallowRef} from "vue";
+	import {onBeforeMount, ref, shallowRef} from "vue";
 	import {BulmaColour, BulmaNavbarItem, getBulmaColours} from "../../types";
 	import BulmaNavbar from "../../vuebulma components/components/navbar/BulmaNavbar.vue";
 	import BulmaBox from "../../vuebulma components/elements/BulmaBox.vue";
@@ -68,77 +68,81 @@
 	const shadow = ref(false);
 	const boxed = ref(false);
 
+	onBeforeMount(() => {
+		const img = document.createElement('img');
+		img.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7b/DCUniverse.svg';
+		img.style.height = '50px'
+		start.value.push({
+			type: 'html',
+			display: img,
+			isExpanded: false
+		})
 
-	const img = document.createElement('img');
-	img.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7b/DCUniverse.svg';
-	img.style.height = '50px'
-	const start = ref<BulmaNavbarItem[]>([{
-		type: 'html',
-		display: img,
-		isExpanded: false
-	}])
-	const tags = ref(['Heroes', 'Villains', 'Legends']);
+		const bats = <BulmaNavbarItem> ({
+			type: 'component',
+			display: BulmaImage,
+			props: {
+				src: 'https://www.svgrepo.com/show/485626/batman.svg'
+			}
+		});
 
-	const bats = <BulmaNavbarItem> ({
-		type: 'component',
-		display: BulmaImage,
-		props: {
-			src: 'https://www.svgrepo.com/show/485626/batman.svg'
-		}
-	});
-
-	const supes = <BulmaNavbarItem> ({
-		type: 'component',
-		display: BulmaImage,
-		props: {
-			src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Superman_shield.svg'
-		}
-	});
-	const wonderWoman = <BulmaNavbarItem> ({
-		type: 'component',
-		display: BulmaImage,
-		props: {
-			src: 'https://www.svgrepo.com/show/303166/wonder-woman-logo.svg'
-		},
-		isExpanded: true
-	});
-
-
-	const logos = [bats, supes, wonderWoman];
-	const characters = shallowRef<BulmaNavbarItem[]>([
-		{
-			type: 'dropdown',
-			display: 'Heroes',
-
-			dropdown: {
-				items: logos
+		const supes = <BulmaNavbarItem> ({
+			type: 'component',
+			display: BulmaImage,
+			props: {
+				src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Superman_shield.svg'
+			}
+		});
+		const wonderWoman = <BulmaNavbarItem> ({
+			type: 'component',
+			display: BulmaImage,
+			props: {
+				src: 'https://www.svgrepo.com/show/303166/wonder-woman-logo.svg'
 			},
 			isExpanded: true
-		},
-		{
-			type: 'dropdown',
-			display: 'Villains',
-			isActive: true,
-			dropdown: {
-				isBoxed: true,
-				isRight: true,
-				items: ['Joker', null, 'Lex Luthor', null, 'Cheetah']
+		});
+
+
+		const logos = [bats, supes, wonderWoman];
+		characters.value = ([
+			{
+				type: 'dropdown',
+				display: 'Heroes',
+
+				dropdown: {
+					items: logos
+				},
+				isExpanded: true
+			},
+			{
+				type: 'dropdown',
+				display: 'Villains',
+				isActive: true,
+				dropdown: {
+					isBoxed: true,
+					isRight: true,
+					items: ['Joker', null, 'Lex Luthor', null, 'Cheetah']
+				}
+			},
+			{
+				type: 'dropdown',
+				display: 'Legends',
+				dropdown: {
+					isDropUp: true,
+					isHoverable: true,
+					items: <BulmaNavbarItem[]> [{
+						type: 'component',
+						display: BulmaHeading,
+						props: {size: 6},
+						slot: {default: 'You cutie..😘'}
+					}]
+				}
 			}
-		},
-		{
-			type: 'dropdown',
-			display: 'Legends',
-			dropdown: {
-				isDropUp: true,
-				isHoverable: true,
-				items: <BulmaNavbarItem[]> [{
-					type: 'component',
-					display: BulmaHeading,
-					props: {size: 6},
-					slot: {default: 'You cutie..😘'}
-				}]
-			}
-		}
-	]);
+		]);
+	});
+	const start = ref<BulmaNavbarItem[]>([]);
+	const tags = ref(['Heroes', 'Villains', 'Legends']);
+
+	const characters = shallowRef<BulmaNavbarItem[]>([]);
 </script>
 
