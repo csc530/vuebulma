@@ -7,6 +7,7 @@
 	import {BulmaSize, toSizeClasses} from "../../types";
 
 	const props = defineProps<{
+		/** The size of the delete button */
 		size?: BulmaSize
 	}>();
 	const size = computed(() => toSizeClasses(props.size));

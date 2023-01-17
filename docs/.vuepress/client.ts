@@ -9,6 +9,7 @@ import DemoDelete from "../../src/demos/elements/DemoDelete.vue";
 import DemoHeading from "../../src/demos/elements/DemoHeading.vue";
 import DemoIcon from "../../src/demos/elements/DemoIcon.vue";
 import DemoImage from "../../src/demos/elements/DemoImage.vue";
+import DemoNotification from "../../src/demos/elements/DemoNotification.vue";
 import DemoControl from "../../src/demos/form/DemoControl.vue";
 import DemoControlGroup from "../../src/demos/form/DemoControlGroup.vue";
 import DemoField from "../../src/demos/form/DemoField.vue";
@@ -40,6 +41,6 @@ export default defineClientConfig({
 		app.component('DemoTextArea', DemoTextArea);
 		app.component('DemoButton', DemoButton);
 		app.component('DemoDelete', DemoDelete);
-
+		app.component('DemoNotification', DemoNotification);
 	}
 })

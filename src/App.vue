@@ -1,6 +1,6 @@
 <template>
-	<demo-delete />
+	<demo-notification />
 </template>
 
 <script lang="ts" setup>
-	import DemoDelete from "./demos/elements/DemoDelete.vue";</script>
+	import DemoNotification from "./demos/elements/DemoNotification.vue";</script>

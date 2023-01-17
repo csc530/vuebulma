@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Add Delete element
+- Add elements
+	- Delete
+	- notification
+	- Progress bar
 
 ### Changed
 
