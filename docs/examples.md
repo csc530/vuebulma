@@ -94,4 +94,10 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo button group">
  <demo-button-group/>
 </demo-iframe>
+
+## Delete
+
+<demo-iframe name="demo button group">
+ <demo-delete/>
+</demo-iframe>
 </ClientOnly>

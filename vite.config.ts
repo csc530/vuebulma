@@ -8,7 +8,6 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			sass: {
-				// language=SASS
 				additionalData: ''
 			}
 		},

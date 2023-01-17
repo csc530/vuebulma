@@ -7,7 +7,7 @@ title: vuebulma Docs
 heroAlt: logo
 ################## heroText: stuff
 
-tagline: 👨🏿‍💻Improving current components⚡
+tagline: 👨🏿‍💻Adding **new** components🆕
 
 actions:
 

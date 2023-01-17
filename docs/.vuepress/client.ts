@@ -5,6 +5,7 @@ import DemoMenu from "../../src/demos/components/DemoMenu.vue";
 import DemoMessage from "../../src/demos/components/DemoMessage.vue";
 import DemoNavbar from "../../src/demos/components/DemoNavbar.vue";
 import DemoButton from "../../src/demos/elements/DemoButton.vue";
+import DemoDelete from "../../src/demos/elements/DemoDelete.vue";
 import DemoHeading from "../../src/demos/elements/DemoHeading.vue";
 import DemoIcon from "../../src/demos/elements/DemoIcon.vue";
 import DemoImage from "../../src/demos/elements/DemoImage.vue";
@@ -38,6 +39,7 @@ export default defineClientConfig({
 		app.component('DemoSelect', DemoSelect);
 		app.component('DemoTextArea', DemoTextArea);
 		app.component('DemoButton', DemoButton);
+		app.component('DemoDelete', DemoDelete);
 
 	}
 })

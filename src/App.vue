@@ -1,6 +1,6 @@
 <template>
-	<demo-field />
+	<demo-delete />
 </template>
 
 <script lang="ts" setup>
-	import DemoField from "./demos/form/DemoField.vue";</script>
+	import DemoDelete from "./demos/elements/DemoDelete.vue";</script>
