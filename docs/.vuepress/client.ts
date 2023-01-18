@@ -19,6 +19,8 @@ import DemoSelect from "../../src/demos/form/DemoSelect.vue";
 import DemoTextArea from "../../src/demos/form/DemoTextArea.vue";
 import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
 import IframeVue from "./demoIframe.vue";
+import DemoProgressbar from "../../src/demos/elements/DemoProgress.vue";
+import DemoTable from "../../src/demos/elements/DemoTable.vue";
 
 export default defineClientConfig({
 	enhance({app}) {
@@ -42,5 +44,7 @@ export default defineClientConfig({
 		app.component('DemoButton', DemoButton);
 		app.component('DemoDelete', DemoDelete);
 		app.component('DemoNotification', DemoNotification);
+		app.component('DemoProgressbar', DemoProgressbar);
+		app.component('DemoTable', DemoTable);
 	}
 })

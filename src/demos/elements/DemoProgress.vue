@@ -34,7 +34,7 @@
 
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../../types";
-	import BulmaProgressbar from "../../vbComponents/BulmaProgressbar.vue";
+	import BulmaProgressbar from "../../vbComponents/elements/BulmaProgressbar.vue";
 	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
 	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
 	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";

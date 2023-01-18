@@ -1,7 +1,7 @@
-import sCase from "case";
-import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
-import {BulmaButtonColour} from "./types/ButtonTypes";
-import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
+import Case from "case";
+import { toBulmaSeparatorClass } from "./types/BreadcrumbTypes";
+import { BulmaButtonColour } from "./types/ButtonTypes";
+import { toBulmaAspectRatioClass, toBulmaDimensionsClass } from "./types/ImageTypes";
 // ? export all types from ./types/ for build and ease of use
 export * from './types/BreadcrumbTypes';
 export * from './types/ImageTypes';
@@ -27,7 +27,7 @@ export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] 
 	const states: BulmaStateColour[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
 	// const colours: BulmaColour[] = [...states, ...shades];
 	//set shade to default if not provided
-	return states.map<BulmaColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
+	return states.map<BulmaColourHelper>(colour => ({ colour: colour, shade: shade ? shade : 'default' }));
 }
 
 export type BulmaColourHelper = {
@@ -37,16 +37,16 @@ export type BulmaColourHelper = {
 }
 
 export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: 'background' | 'text'): string {
-	if(!colour || colour === 'default')
+	if (!colour || colour === 'default')
 		return '';
-	else if(typeof colour === 'string')
-		if(!type)
+	else if (typeof colour === 'string')
+		if (!type)
 			return `is-${colour}`;
 		else
 			return `has-${type}-${colour}`;
-	else if(!colour.shade || colour.shade === 'default')
+	else if (!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
-	else if(colour.shade === 'dark' || colour.shade === 'black')
+	else if (colour.shade === 'dark' || colour.shade === 'black')
 		return `has-${type}-${colour.colour}-dark`;
 	return `has-${type}-${colour.colour}-light`;
 }
@@ -73,7 +73,7 @@ export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
 export function getBulmaSizes(): BulmaSize[] { return ['small', 'default', 'medium', 'large']; }
 
 export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
-	if(!size || size === 'default')
+	if (!size || size === 'default')
 		return 'is-normal';
 	return areClasses ? `are-${size}` : `is-${size}`;
 }
@@ -85,16 +85,16 @@ export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'ri
 
 export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
-	if(!alignment)
+	if (!alignment)
 		return '';
 	//todo: double check and verify this is true for all uses; needed for breadcrumb's at least
-	else if(alignment === 'center')
+	else if (alignment === 'center')
 		return 'is-centered';
 	return `is-${alignment}`;
 }
 
 export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void {
-	if(!invoke) return;
+	if (!invoke) return;
 	const target = element ? element : event.target as HTMLElement;
 	target.classList.toggle('is-active');
 }
@@ -102,52 +102,48 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 
 export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
+	console.log(classes);
+	
 	const classList: string[] = [];
 	const isClasses = Object.keys(classes)
-	                        .filter(key => classes[key] && key.startsWith('is'))
-	                        .map(key => {
-		                        let className = key.toLowerCase();
-		                        if(className === 'isdropup')
-			                        className = 'is-up';
-		                        else if(className === 'isfixed')
-			                        className = 'is-fixed-' + classes[key];
-		                        // ? no need to check for `-` in key as vue transforms it to camelCase
-		                        else
-			                        className = sCase.kebab(key);
-		                        return className;
-	                        });
-	const hasClasses = Object.keys(classes)
-	                         .filter(key => classes[key] && key.startsWith('has'))
-	                         .map(key => {
-		                         let className = key.toLowerCase();
-		                         if(className === 'hasicons' && classes[key] !== false) {
-			                         className = 'has-icons-';
-			                         if(classes[key] === 'both' || classes[key] === true)
-				                         className += 'left has-icons-right';
-			                         else
-				                         className += classes[key];
-		                         }
-		                         else
-			                         // ? replace `has` followed by a capital letter with `has-`
-			                         className = sCase.kebab(key)
+		.filter(key => classes[key] && (key.startsWith('is') || key.startsWith('has')))
+		.map(key => {
+			let className = key.toLowerCase();
+			if (className === 'isdropup')
+				className = 'is-up';
+			else if (className === 'isfixed')
+				className = 'is-fixed-' + classes[key];
+			if (className === 'hasicons' && classes[key] !== false) {
+				className = 'has-icons-';
+				if (classes[key] === 'both' || classes[key] === true)
+					className += 'left has-icons-right';
+				else
+					className += classes[key];
+			}
+			// ? no need to check for `-` in key as vue transforms it to camelCase
+			// ? replace `has` followed by a capital letter with `has-`
+			else
+				className = Case.kebab(key);
 
-		                         return className;
-	                         });
-	classList.push(...isClasses, ...hasClasses);
-	if(classes['colour'])
+			return className;
+		});
+		
+	classList.push(...isClasses);
+	if (classes['colour'])
 		classList.push(toBulmaColourClass(classes['colour']));
-	if(classes["alignment"])
+	if (classes["alignment"])
 		classList.push(toBulmaAlignmentClasses(classes.alignment));
-	if(classes.size)
+	if (classes.size)
 		classList.push(toSizeClasses(classes.size, areSizes));
-	if(classes.separator)
+	if (classes.separator)
 		classList.push(toBulmaSeparatorClass(classes.separator));
-	if(classes.aspectRatio)
+	if (classes.aspectRatio)
 		classList.push(toBulmaAspectRatioClass(classes.aspectRatio));
-	if(classes.dimensions)
+	if (classes.dimensions)
 		classList.push(toBulmaDimensionsClass(classes.dimensions));
-	if(classes['state'])
-		classList.push(toBulmaStateClass(classes.state));
+	if (classes['state'])
+		classList.push(toBulmaStateClass(classes.state));console
+		
 	//remove blank or undefined entries
 	return classList.filter(x => x);
 }
@@ -163,7 +159,7 @@ export type BulmaState = 'active' | 'hovered' | 'focused' | 'default';
 export const getBulmaStates = (): BulmaState[] => ['active', 'hovered', 'focused', 'default'];
 
 /** Converts a {@link BulmaState} to its bulma class */
-export function toBulmaStateClass(state: BulmaState | BulmaInputState): string { return state === 'default' ? '' : `is-${state}`;}
+export function toBulmaStateClass(state: BulmaState | BulmaInputState): string { return state === 'default' ? '' : `is-${state}`; }
 
 export type BulmaInputState = BulmaState | 'loading';
 
