@@ -1,14 +1,13 @@
 {
   "name": "@csc530/vuebulma",
-  "version": "0.0.0-14",
+  "version": "0.0.0-14.1",
   "description": "Bulma CSS framework components for Vue 3",
   "author": "Christofer Cousins",
   "keywords": [
 	"vue3",
 	"Bulma",
 	"vue3 component library",
-	"Vue",
-	"components",
+	"vue",
 	"component library"
   ],
   "repository": {
@@ -61,7 +60,6 @@
 	"start": "npm run dev"
   },
   "dependencies": {
-	"vue": "^3.2.45",
 	"case": "^1.6.3"
   },
   "devDependencies": {

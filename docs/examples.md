@@ -97,13 +97,19 @@ The components are within the green box, and the code is within the blue box.
 
 ## Delete
 
-<demo-iframe name="demo button group">
+<demo-iframe name="demo delete">
  <demo-delete/>
 </demo-iframe>
 
 ## Progress bar
 
-<demo-iframe name="demo button group">
+<demo-iframe name="demo progress bar">
  <demo-progress/>
+</demo-iframe>
+
+## Table
+
+<demo-iframe name="demo table">
+ <demo-table/>
 </demo-iframe>
 </ClientOnly>

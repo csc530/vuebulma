@@ -10,6 +10,9 @@ import BulmaDelete from "./vbComponents/elements/BulmaDelete.vue";
 import BulmaHeading from './vbComponents/elements/BulmaHeading.vue';
 import BulmaIcon from './vbComponents/elements/BulmaIcon.vue';
 import BulmaImage from './vbComponents/elements/BulmaImage.vue';
+import BulmaNotification from './vbComponents/elements/BulmaNotification.vue'
+import BulmaProgressbar from "./vbComponents/elements/BulmaProgressbar.vue";
+import BulmaTable from "./vbComponents/elements/BulmaTable.vue";
 import BulmaFileInput from "./vbComponents/form/BulmaFileInput.vue";
 import BulmaInput from "./vbComponents/form/BulmaInput.vue";
 import BulmaSelect from "./vbComponents/form/BulmaSelect.vue";
@@ -41,6 +44,7 @@ const vuebulma = {
 		Vue.component('BulmaFormField', BulmaFormField);
 		Vue.component('BulmaFormControlGroup', BulmaFormControlGroup);
 		Vue.component('BulmaTextArea', BulmaTextArea);
+
 	}
 };
 
@@ -65,5 +69,8 @@ export {
 	BulmaFormField as vbFormField,
 	BulmaFormControlGroup as vbFormControlGroup,
 	BulmaDelete as vbDelete,
+	BulmaNotification as vbNotification,
+	BulmaTable as vbTable,
+	BulmaProgressbar as vbProgressbar,
 	vuebulma
 };
