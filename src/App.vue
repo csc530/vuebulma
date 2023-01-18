@@ -1,7 +1,6 @@
 <template>
-	<demo-table />
+	<demo-card />
 </template>
 
 <script lang="ts" setup>
-	import DemoProgress from "./demos/elements/DemoProgress.vue";
-	import DemoTable from "./demos/elements/DemoTable.vue";</script>
+	import DemoCard from "./demos/components/DemoCard.vue";</script>
