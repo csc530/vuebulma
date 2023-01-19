@@ -1,6 +1,6 @@
 <template>
-	<demo-modal />
+	<demo-pagination />
 </template>
 
 <script lang="ts" setup>
-	import DemoModal from "./demos/components/DemoModal.vue";</script>
+	import DemoPagination from "./demos/components/DemoPagination.vue";</script>

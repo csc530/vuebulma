@@ -11,6 +11,7 @@ export * from './types/ButtonTypes';
 export * from './types/NavbarTypes';
 export * from './types/MenuTypes';
 export * from './types/SelectTypes';
+export * from './types/PaginationTypes'
 
 
 export type BulmaStateColour = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
