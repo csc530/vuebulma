@@ -11,7 +11,7 @@
 - [ ] Backwards compatibility with Vue 2
 
 - [ ] Add vuejs Debugger tools compatibility
-
+-[ ] add feature to add link straight to dropdown item
 
 - [ ] Add keys to `v-for` loops
 - [ ] use `toggleActivation` to activate items (apply `is-active` class)
@@ -20,4 +20,4 @@
 - [ ] attributes are removed in bulmaselect options, probably other component slots too; is this vue feature?
 - [ ] some types are the same as the component causing collision since they're meant to be used together
 - [ ] simplify exports to remove dist folder in path when importing
-- [  0 ] possibility to rearrange card parts location/order
+- [ ] possibility to rearrange card parts location/order

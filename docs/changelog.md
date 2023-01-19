@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - width prop to [image](components/elements/BulmaImage.md)
 - components...
 	- Card
+	- modal and modal card
 
 ### Changed
 

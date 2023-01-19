@@ -118,6 +118,11 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo card">
  <demo-card/>
 </demo-iframe>
+## Modal and Modal Card
+
+<demo-iframe name="demo modals">
+ <demo-modal/>
+</demo-iframe>
 
 
 </ClientOnly>

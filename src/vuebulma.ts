@@ -3,6 +3,8 @@ import BulmaCard from "./vbComponents/components/BulmaCard.vue";
 import BulmaDropdown from './vbComponents/components/BulmaDropdown.vue'
 import BulmaMenu from './vbComponents/components/BulmaMenu.vue'
 import BulmaMessage from './vbComponents/components/BulmaMessage.vue'
+import BulmaModal from "./vbComponents/components/BulmaModal.vue";
+import BulmaModalCard from "./vbComponents/components/BulmaModalCard.vue";
 import BulmaNavbar from "./vbComponents/components/navbar/BulmaNavbar.vue";
 import BulmaBlock from './vbComponents/elements/BulmaBlock.vue';
 import BulmaBox from './vbComponents/elements/BulmaBox.vue';
@@ -45,6 +47,8 @@ const vuebulma = {
 		Vue.component('vbFormControlGroup', BulmaFormControlGroup);
 		Vue.component('vbTextArea', BulmaTextArea);
 		Vue.component('vbCard', BulmaCard)
+		Vue.component('vbModal', BulmaModal);
+		Vue.component('vbModalCard', BulmaModalCard);
 
 	}
 };

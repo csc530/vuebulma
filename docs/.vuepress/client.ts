@@ -4,6 +4,7 @@ import DemoCard from "../../src/demos/components/DemoCard.vue";
 import DemoDropdown from "../../src/demos/components/DemoDropdown.vue";
 import DemoMenu from "../../src/demos/components/DemoMenu.vue";
 import DemoMessage from "../../src/demos/components/DemoMessage.vue";
+import DemoModal from "../../src/demos/components/DemoModal.vue";
 import DemoNavbar from "../../src/demos/components/DemoNavbar.vue";
 import DemoButton from "../../src/demos/elements/DemoButton.vue";
 import DemoDelete from "../../src/demos/elements/DemoDelete.vue";
@@ -48,5 +49,7 @@ export default defineClientConfig({
 		app.component('DemoProgressbar', DemoProgressbar);
 		app.component('DemoTable', DemoTable);
 		app.component('DemoCard', DemoCard)
+		app.component('DemoModal', DemoModal);
+
 	}
 })

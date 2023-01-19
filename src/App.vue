@@ -1,6 +1,6 @@
 <template>
-	<demo-control />
+	<demo-modal />
 </template>
 
 <script lang="ts" setup>
-	import DemoControl from "./demos/form/DemoControl.vue";</script>
+	import DemoModal from "./demos/components/DemoModal.vue";</script>
