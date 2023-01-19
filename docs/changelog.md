@@ -5,21 +5,56 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+[//]: # (## [Unreleased])
+
+[//]: # ()
+
+[//]: # (### Added)
+
+[//]: # ()
+
+[//]: # (### Changed)
+
+[//]: # ()
+
+[//]: # (### Deprecated)
+
+[//]: # ()
+
+[//]: # (### Removed)
+
+[//]: # ()
+
+[//]: # (### Fixed)
+
+## [Unreleased]
+
+### Added
+
+- components...
+	- Card
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
 ## [0.0.0-14.1] 2023-01-17
 
 ### Added
+
 - Add elements
 	- Delete
 	- notification
 	- Progress bar
 	- table
 
-### Changed
-
 ### Removed
-- unnecessary vuepress and etc. dependencies
 
-### Fixed
+- unnecessary vuepress and etc. dependencies
 
 ## [0.0.0-13]
 
@@ -51,14 +86,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- getSizeClasses
 	- getNavbarItemClasses
 
-### Removed
-
 ### Fixed
 
 - [BulmaSelect](components/form/BulmaSelect.md) - `v-model` to work with multiple property and `multiple` attribute to
   return an array of selected values and display them in the select element
-
-## Deprecated
 
 ## [0.0.0-12] - 2023-01-11
 
@@ -71,14 +102,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - alignment, multiline and grouped (spacing) classes
   for [BulmaControlGroup](components/form/BulmaFormFields.md#vbformcontrolgroup)
 - label size and `for` attribute for [BulmaFormField](components/form/BulmaFormFields.md#vbformfield)
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
 
 - colour of `BulmaIcon` when a single icon is passed in as a prop or slot
 

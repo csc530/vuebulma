@@ -112,4 +112,12 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo table">
  <demo-table/>
 </demo-iframe>
+
+## Card
+
+<demo-iframe name="demo card">
+ <demo-card/>
+</demo-iframe>
+
+
 </ClientOnly>

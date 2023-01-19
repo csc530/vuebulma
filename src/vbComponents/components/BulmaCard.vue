@@ -30,10 +30,17 @@
 	import {toBulmaAlignmentClasses} from "../../types";
 
 	const props = withDefaults(defineProps<{
+		/** parent tag of the card
+		 * @default div     */
 		tag?: string
+		/** text for card header */
 		title?: string
+		/** canter the header title */
 		centerTitle?: boolean
+		/** items to display in the card footer */
 		footerItems?: any[]
+		/** tag to wrap footer items in
+		 * @default p */
 		footerTag?: string
 	}>(), {
 		tag: 'div',

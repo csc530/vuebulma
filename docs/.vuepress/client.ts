@@ -1,5 +1,6 @@
 import {defineClientConfig} from '@vuepress/client'
 import DemoBreadcrumb from '../../src/demos/components/DemoBreadcrumb.vue'
+import DemoCard from "../../src/demos/components/DemoCard.vue";
 import DemoDropdown from "../../src/demos/components/DemoDropdown.vue";
 import DemoMenu from "../../src/demos/components/DemoMenu.vue";
 import DemoMessage from "../../src/demos/components/DemoMessage.vue";
@@ -10,6 +11,8 @@ import DemoHeading from "../../src/demos/elements/DemoHeading.vue";
 import DemoIcon from "../../src/demos/elements/DemoIcon.vue";
 import DemoImage from "../../src/demos/elements/DemoImage.vue";
 import DemoNotification from "../../src/demos/elements/DemoNotification.vue";
+import DemoProgressbar from "../../src/demos/elements/DemoProgress.vue";
+import DemoTable from "../../src/demos/elements/DemoTable.vue";
 import DemoControl from "../../src/demos/form/DemoControl.vue";
 import DemoControlGroup from "../../src/demos/form/DemoControlGroup.vue";
 import DemoField from "../../src/demos/form/DemoField.vue";
@@ -19,8 +22,6 @@ import DemoSelect from "../../src/demos/form/DemoSelect.vue";
 import DemoTextArea from "../../src/demos/form/DemoTextArea.vue";
 import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
 import IframeVue from "./demoIframe.vue";
-import DemoProgressbar from "../../src/demos/elements/DemoProgress.vue";
-import DemoTable from "../../src/demos/elements/DemoTable.vue";
 
 export default defineClientConfig({
 	enhance({app}) {
@@ -46,5 +47,6 @@ export default defineClientConfig({
 		app.component('DemoNotification', DemoNotification);
 		app.component('DemoProgressbar', DemoProgressbar);
 		app.component('DemoTable', DemoTable);
+		app.component('DemoCard', DemoCard)
 	}
 })
