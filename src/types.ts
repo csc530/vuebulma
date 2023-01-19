@@ -1,7 +1,7 @@
 import Case from "case";
-import { toBulmaSeparatorClass } from "./types/BreadcrumbTypes";
-import { BulmaButtonColour } from "./types/ButtonTypes";
-import { toBulmaAspectRatioClass, toBulmaDimensionsClass } from "./types/ImageTypes";
+import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
+import {BulmaButtonColour} from "./types/ButtonTypes";
+import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
 // ? export all types from ./types/ for build and ease of use
 export * from './types/BreadcrumbTypes';
 export * from './types/ImageTypes';
@@ -102,33 +102,22 @@ export function toggleActivation(event: Event, element?: HTMLElement, invoke?: b
 
 export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
-	console.log(classes);
-	
-	const classList: string[] = [];
-	const isClasses = Object.keys(classes)
-		.filter(key => classes[key] && (key.startsWith('is') || key.startsWith('has')))
-		.map(key => {
-			let className = key.toLowerCase();
-			if (className === 'isdropup')
-				className = 'is-up';
-			else if (className === 'isfixed')
-				className = 'is-fixed-' + classes[key];
-			if (className === 'hasicons' && classes[key] !== false) {
-				className = 'has-icons-';
-				if (classes[key] === 'both' || classes[key] === true)
-					className += 'left has-icons-right';
-				else
-					className += classes[key];
-			}
-			// ? no need to check for `-` in key as vue transforms it to camelCase
-			// ? replace `has` followed by a capital letter with `has-`
-			else
-				className = Case.kebab(key);
 
+	const classList = Object.keys(classes)
+	                        .filter(key => classes[key] && (key.startsWith('is') || key.startsWith('has')))
+	                        .map(key => {
+		                        let className = key.toLowerCase();
+		                        if(className === 'isdropup')
+			                        className = 'is-up';
+		                        else if(className === 'isfixed')
+			                        className = 'is-fixed-' + classes[key].toLowerCase();
+			                        //? no need to check for `-` in key as vue transforms it to camelCase
+		                        //? append dash (-) to  `has` or `is` followed by a capital letter
+		                        else
+			                        className = Case.kebab(key);
 			return className;
 		});
-		
-	classList.push(...isClasses);
+
 	if (classes['colour'])
 		classList.push(toBulmaColourClass(classes['colour']));
 	if (classes["alignment"])
@@ -142,8 +131,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	if (classes.dimensions)
 		classList.push(toBulmaDimensionsClass(classes.dimensions));
 	if (classes['state'])
-		classList.push(toBulmaStateClass(classes.state));console
-		
+		classList.push(toBulmaStateClass(classes.state));
 	//remove blank or undefined entries
 	return classList.filter(x => x);
 }

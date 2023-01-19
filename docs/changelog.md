@@ -30,11 +30,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-
+- width prop to [image](components/elements/BulmaImage.md)
 - components...
 	- Card
 
 ### Changed
+
+- type of icons for a formcontrol to be objects of [icon props](components/elements/BulmaIcon.md#props)
 
 ### Deprecated
 

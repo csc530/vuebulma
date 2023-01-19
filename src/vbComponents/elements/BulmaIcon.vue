@@ -57,8 +57,7 @@
 		containerSize?: BulmaSize,
 		/**adds this prefix as a separate class entry to icon element*/
 		prefix?: string,
-		/**
-		 * If the text appears before the icon
+		/** If the text appears before the icon
 		 *
 		 * requires {@link text} or text slot*/
 		textFirst?: boolean,
@@ -94,12 +93,11 @@
 			return null;
 	});
 
-	const iconColourClass = (index: number) => {
-
+	function iconColourClass(index: number): null | string {
 		if(props.icon && Array.isArray(props.icon) && typeof props.icon[index] !== 'string')
 			return toBulmaColourClass((props.icon[index] as BulmaColouredIcon).colour, 'text')
 		return null;
-	};
+	}
 
 	const sizeClass = computed(() => toSizeClasses(props.containerSize));
 

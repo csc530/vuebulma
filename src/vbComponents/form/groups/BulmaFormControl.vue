@@ -1,12 +1,10 @@
 <template>
 	<component :is="tag" :class="classes" class="control">
 		<slot />
-		<bulma-icon v-if="rightIcon || $slots['right-icon']" :colour="rightIcon.colour" :icon="getIcon(rightIcon)"
-		            :stacked="rightIcon?.stacked" class="is-right">
+		<bulma-icon v-if="rightIcon || $slots['right-icon']" v-bind="rightIcon" class="is-right">
 			<slot name="right-icon" />
 		</bulma-icon>
-		<bulma-icon v-if="leftIcon || $slots['left-icon']" :colour="leftIcon.colour" :icon="getIcon(leftIcon)"
-		            :stacked="leftIcon?.stacked" class="is-left">
+		<bulma-icon v-if="leftIcon || $slots['left-icon']" v-bind="leftIcon" class="is-left">
 			<slot name="left-icon" />
 		</bulma-icon>
 	</component>
@@ -14,8 +12,10 @@
 <!--todo: simplify or well document/explain how to use and properly nest all these form controls 🙃 so much for making the library an easier version of Bulma to work with-->
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaColouredIcon, BulmaMultiIcon, getBulmaClassesFromProps} from "../../../types";
+	import {getBulmaClassesFromProps} from "../../../types";
 	import BulmaIcon from "../../elements/BulmaIcon.vue";
+
+	type IconProps = InstanceType<typeof BulmaIcon>["$props"];
 
 	const props = withDefaults(defineProps<{
 		tag?: string
@@ -28,9 +28,9 @@
 		//todo: vue emits [warn] that the expected props are only String | Boolean | Null
 		//Why is my custom props being ignored/turned to null
 		/** Left icon to display within input*/
-		leftIcon?: BulmaMultiIcon | BulmaColouredIcon | string
+		leftIcon?: IconProps
 		/** Right icon to display within input*/
-		rightIcon?: BulmaMultiIcon | BulmaColouredIcon | string
+		rightIcon?: IconProps
 	}>(), {tag: 'p'});
 
 	const classes = computed(() => {
@@ -41,12 +41,4 @@
 			classes.push('has-icons-right');
 		return classes;
 	});
-
-	function getIcon(icon?: string | BulmaColouredIcon | BulmaMultiIcon) {
-		if(!icon)
-			return undefined;
-		if(typeof icon === 'string')
-			return icon;
-		return icon.icon;
-	}
 </script>

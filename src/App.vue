@@ -1,6 +1,6 @@
 <template>
-	<demo-card />
+	<demo-control />
 </template>
 
 <script lang="ts" setup>
-	import DemoCard from "./demos/components/DemoCard.vue";</script>
+	import DemoControl from "./demos/form/DemoControl.vue";</script>

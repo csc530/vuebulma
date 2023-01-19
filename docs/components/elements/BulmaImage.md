@@ -56,6 +56,12 @@ Type: `string` | `undefined`
 
 Optional caption text to display in figcaption
 
+### width
+
+type: `string` | `undefined`
+
+Sets the css style of the image parent element (figure) to the width. Made for use with aspect ratio
+
 ## Additional information
 
 The `src` and `alt` will be used if there is no present slot content.

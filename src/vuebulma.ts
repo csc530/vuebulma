@@ -1,4 +1,5 @@
 import BulmaBreadcrumb from './vbComponents/components/BulmaBreadcrumb.vue';
+import BulmaCard from "./vbComponents/components/BulmaCard.vue";
 import BulmaDropdown from './vbComponents/components/BulmaDropdown.vue'
 import BulmaMenu from './vbComponents/components/BulmaMenu.vue'
 import BulmaMessage from './vbComponents/components/BulmaMessage.vue'
@@ -24,26 +25,26 @@ import BulmaButtonGroup from "./vbComponents/layouts/BulmaButtonGroup.vue";
 
 const vuebulma = {
 	install(Vue: any) {
-		Vue.component('BulmaHeading', BulmaHeading);
-		Vue.component('BulmaIcon', BulmaIcon);
-		Vue.component('BulmaImage', BulmaImage);
-		Vue.component('BulmaBreadcrumb', BulmaBreadcrumb);
-		Vue.component('BulmaMessage', BulmaMessage);
-		Vue.component('BulmaBox', BulmaBox);
-		Vue.component('BulmaBlock', BulmaBlock);
-		Vue.component('BulmaDropdown', BulmaDropdown);
-		Vue.component('BulmaNavBar', BulmaNavbar);
-		Vue.component('BulmaMenu', BulmaMenu);
-		Vue.component('BulmaButton', BulmaButton);
-		//todo: come up with a better name than buttonS to make the difference and use clear
-		Vue.component('BulmaButtonGroup', BulmaButtonGroup);
-		Vue.component('BulmaFileInput', BulmaFileInput);
-		Vue.component('BulmaInput', BulmaInput);
-		Vue.component('BulmaSelect', BulmaSelect);
-		Vue.component('BulmaFormControl', BulmaFormControl);
-		Vue.component('BulmaFormField', BulmaFormField);
-		Vue.component('BulmaFormControlGroup', BulmaFormControlGroup);
-		Vue.component('BulmaTextArea', BulmaTextArea);
+		Vue.component('vbHeading', BulmaHeading);
+		Vue.component('vbIcon', BulmaIcon);
+		Vue.component('vbImage', BulmaImage);
+		Vue.component('vbBreadcrumb', BulmaBreadcrumb);
+		Vue.component('vbMessage', BulmaMessage);
+		Vue.component('vbBox', BulmaBox);
+		Vue.component('vbBlock', BulmaBlock);
+		Vue.component('vbDropdown', BulmaDropdown);
+		Vue.component('vbNavBar', BulmaNavbar);
+		Vue.component('vbMenu', BulmaMenu);
+		Vue.component('vbButton', BulmaButton);
+		Vue.component('vbButtonGroup', BulmaButtonGroup);
+		Vue.component('vbFileInput', BulmaFileInput);
+		Vue.component('vbInput', BulmaInput);
+		Vue.component('vbSelect', BulmaSelect);
+		Vue.component('vbFormControl', BulmaFormControl);
+		Vue.component('vbFormField', BulmaFormField);
+		Vue.component('vbFormControlGroup', BulmaFormControlGroup);
+		Vue.component('vbTextArea', BulmaTextArea);
+		Vue.component('vbCard', BulmaCard)
 
 	}
 };
@@ -72,5 +73,6 @@ export {
 	BulmaNotification as vbNotification,
 	BulmaTable as vbTable,
 	BulmaProgressbar as vbProgressbar,
+	BulmaCard as vbCard,
 	vuebulma
 };
