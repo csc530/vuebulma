@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [//]: # (### Fixed)
 
-## [Unreleased]
+## [0.0.0-15] - 2023-01-19
 
 ### Added
 - width prop to [image](components/elements/BulmaImage.md)
@@ -60,7 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - unnecessary vuepress and etc. dependencies
 
-## [0.0.0-13]
+## [0.0.0-13] - 2023-01-16
 
 ### Added
 

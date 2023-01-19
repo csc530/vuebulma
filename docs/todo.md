@@ -21,3 +21,4 @@
 - [ ] some types are the same as the component causing collision since they're meant to be used together
 - [ ] simplify exports to remove dist folder in path when importing
 - [ ] possibility to rearrange card parts location/order
+- [ ] Renmae types with vbt (= vuebulma type) prefix
