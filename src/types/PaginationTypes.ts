@@ -1,1 +1,1 @@
-export type vbtPagination = { link?: string, txt?: string };
+export {}

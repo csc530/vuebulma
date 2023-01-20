@@ -6,19 +6,19 @@
 
 ### list:
 
-Type: `{link?: string, txt?: string}[]`
+Type: `{vbLink?: string, vbTxt?: string}[]`
 
 List of pagination links/items. Any falsy values will become an ellipsis
 
 ### prev
 
-Type: `{link?: string, txt?: string}` | `undefined`
+Type: `{vbLink?: string, vbTxt?: string}` | `undefined`
 
 The previous pagination button's text and link, if not undefined it will not be displayed
 
 ### next
 
-Type: `{link?: string, txt?: string}` | `undefined`
+Type: `{vbLink?: string, vbTxt?: string}` | `undefined`
 
 The next pagination button's text and link, if not undefined it will not be displayed
 

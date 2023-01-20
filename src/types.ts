@@ -14,6 +14,9 @@ export * from './types/SelectTypes';
 export * from './types/PaginationTypes'
 
 
+export function exhaustion(arg: never) {return arg;}
+
+export type BulmaLink = { vbLink?: string, vbTxt?: string };
 export type BulmaStateColour = 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'link' | 'default';
 export const getBulmaStateColours = (): BulmaStateColour[] => ['info', 'danger', 'warning', 'success', 'primary', 'link', 'default'];
 export type BulmaShade = 'white' | 'black' | 'light' | 'dark' | 'default';

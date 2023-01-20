@@ -1,12 +1,12 @@
 <template>
 	<nav :class="classes" aria-label="pagination" class="pagination">
-		<a v-if="prev" :href="prev.link" class="pagination-previous">{{ prev.txt }}</a>
-		<a v-if="next" :href="next.link" class="pagination-next">{{ next.txt }}</a>
+		<a v-if="prev" :href="prev.vbLink" class="pagination-previous">{{ prev.vbTxt }}</a>
+		<a v-if="next" :href="next.vbLink" class="pagination-next">{{ next.vbTxt }}</a>
 		<ul class="pagination-list">
 			<li>
 				<template v-for="item in list">
 					<span v-if="!item" class="pagination-ellipsis">&hellip;</span>
-					<a v-else :href="item.link" class="pagination-link">{{ item.txt }}</a>
+					<a v-else :href="item.vbLink" class="pagination-link">{{ item.vbTxt }}</a>
 				</template>
 			</li>
 		</ul>
@@ -16,16 +16,15 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps} from "../../types";
-	import {vbtPagination} from "../../types/PaginationTypes";
+	import {BulmaAlignment, BulmaLink, BulmaSize, getBulmaClassesFromProps} from "../../types";
 
 	const props = defineProps<{
 		/** pagination links */
-		list: vbtPagination[]
+		list: BulmaLink[]
 		/** txt and href for the previous page link */
-		prev?: vbtPagination,
+		prev?: BulmaLink,
 		/** txt and href for the next page link */
-		next?: vbtPagination,
+		next?: BulmaLink,
 		/** size of pagination items */
 		size?: BulmaSize
 		/** The alignment of the pagination items; within the next and previous links */

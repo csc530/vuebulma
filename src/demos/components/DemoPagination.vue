@@ -41,8 +41,7 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
-	import {vbtPagination} from "../../types/PaginationTypes";
+	import {BulmaAlignment, BulmaLink, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
 	import BulmaPagination from "../../vbComponents/components/BulmaPagination.vue";
 	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
 	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
@@ -52,7 +51,7 @@
 	import BulmaFormControlGroup from "../../vbComponents/form/groups/BulmaFormControlGroup.vue";
 	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
-	const list: vbtPagination[] = [
+	const list: BulmaLink[] = [
 		NaN,
 		{txt: 'A', link: ''},
 		{txt: '2', link: ''},
@@ -66,7 +65,7 @@
 
 	const size = ref<BulmaSize>('default');
 	const align = ref<BulmaAlignment>('right');
-	const prev = ref<vbtPagination>({link: '', txt: 'Last time'})
-	const next = ref<vbtPagination>({link: '', txt: 'Apres ça'})
+	const prev = ref<BulmaLink>({vbLink: '', vbTxt: 'Last time'})
+	const next = ref<BulmaLink>({vbLink: '', vbTxt: 'Apres ça'})
 	const round = ref<boolean>(false)
 </script>
