@@ -131,5 +131,11 @@ The components are within the green box, and the code is within the blue box.
  <demo-pagination/>
 </demo-iframe>
 
+## Panel
+
+<demo-iframe name="demo panel">
+ <demo-panel/>
+</demo-iframe>
+
 
 </ClientOnly>

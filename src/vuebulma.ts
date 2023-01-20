@@ -6,6 +6,7 @@ import BulmaMessage from './vbComponents/components/BulmaMessage.vue'
 import BulmaModal from "./vbComponents/components/BulmaModal.vue";
 import BulmaModalCard from "./vbComponents/components/BulmaModalCard.vue";
 import BulmaPagination from "./vbComponents/components/BulmaPagination.vue";
+import BulmaPanel from "./vbComponents/components/BulmaPanel.vue";
 import BulmaNavbar from "./vbComponents/components/navbar/BulmaNavbar.vue";
 import BulmaBlock from './vbComponents/elements/BulmaBlock.vue';
 import BulmaBox from './vbComponents/elements/BulmaBox.vue';
@@ -51,6 +52,7 @@ const vuebulma = {
 		Vue.component('vbModal', BulmaModal);
 		Vue.component('vbModalCard', BulmaModalCard);
 		Vue.component('vbPagination', BulmaPagination);
+		Vue.component('vbPanel', BulmaPanel);
 
 	}
 };
@@ -83,5 +85,6 @@ export {
 	BulmaPagination as vbPagination,
 	BulmaModal as vbModal,
 	BulmaModalCard as vbModalCard,
+	BulmaPanel as vbPanel,
 	vuebulma
 };

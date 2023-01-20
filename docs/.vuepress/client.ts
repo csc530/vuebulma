@@ -7,6 +7,7 @@ import DemoMessage from "../../src/demos/components/DemoMessage.vue";
 import DemoModal from "../../src/demos/components/DemoModal.vue";
 import DemoNavbar from "../../src/demos/components/DemoNavbar.vue";
 import DemoPagination from "../../src/demos/components/DemoPagination.vue";
+import DemoPanel from "../../src/demos/components/DemoPanel.vue";
 import DemoButton from "../../src/demos/elements/DemoButton.vue";
 import DemoDelete from "../../src/demos/elements/DemoDelete.vue";
 import DemoHeading from "../../src/demos/elements/DemoHeading.vue";
@@ -52,6 +53,7 @@ export default defineClientConfig({
 		app.component('DemoCard', DemoCard)
 		app.component('DemoModal', DemoModal);
 		app.component('DemoPagination', DemoPagination);
+		app.component('DemoPanel', DemoPanel);
 
 	}
 })

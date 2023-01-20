@@ -11,7 +11,8 @@ export * from './types/ButtonTypes';
 export * from './types/NavbarTypes';
 export * from './types/MenuTypes';
 export * from './types/SelectTypes';
-export * from './types/PaginationTypes'
+export * from './types/PaginationTypes';
+export * from './types/PanelTypes';
 
 
 export function exhaustion(arg: never) {return arg;}
@@ -31,7 +32,7 @@ export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] 
 	const states: BulmaStateColour[] = ['info', 'danger', 'warning', 'success', 'primary', 'link'];
 	// const colours: BulmaColour[] = [...states, ...shades];
 	//set shade to default if not provided
-	return states.map<BulmaColourHelper>(colour => ({ colour: colour, shade: shade ? shade : 'default' }));
+	return states.map<BulmaColourHelper>(colour => ({colour: colour, shade: shade ? shade : 'default'}));
 }
 
 export type BulmaColourHelper = {
@@ -41,16 +42,16 @@ export type BulmaColourHelper = {
 }
 
 export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: 'background' | 'text'): string {
-	if (!colour || colour === 'default')
+	if(!colour || colour === 'default')
 		return '';
-	else if (typeof colour === 'string')
-		if (!type)
+	else if(typeof colour === 'string')
+		if(!type)
 			return `is-${colour}`;
 		else
 			return `has-${type}-${colour}`;
-	else if (!colour.shade || colour.shade === 'default')
+	else if(!colour.shade || colour.shade === 'default')
 		return `has-${type}-${colour.colour}`;
-	else if (colour.shade === 'dark' || colour.shade === 'black')
+	else if(colour.shade === 'dark' || colour.shade === 'black')
 		return `has-${type}-${colour.colour}-dark`;
 	return `has-${type}-${colour.colour}-light`;
 }
@@ -77,7 +78,7 @@ export type BulmaSize = 'small' | 'default' | 'medium' | 'large';
 export function getBulmaSizes(): BulmaSize[] { return ['small', 'default', 'medium', 'large']; }
 
 export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
-	if (!size || size === 'default')
+	if(!size || size === 'default')
 		return 'is-normal';
 	return areClasses ? `are-${size}` : `is-${size}`;
 }
@@ -89,16 +90,16 @@ export const getBulmaAlignments = (): BulmaAlignment[] => ['left', 'center', 'ri
 
 export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
 	//todo: check is-left is ever used and can be removed when the value
-	if (!alignment)
+	if(!alignment)
 		return '';
 	//todo: double check and verify this is true for all uses; needed for breadcrumb's at least
-	else if (alignment === 'center')
+	else if(alignment === 'center')
 		return 'is-centered';
 	return `is-${alignment}`;
 }
 
 export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void {
-	if (!invoke) return;
+	if(!invoke) return;
 	const target = element ? element : event.target as HTMLElement;
 	target.classList.toggle('is-active');
 }
@@ -119,22 +120,22 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		                        //? append dash (-) to  `has` or `is` followed by a capital letter
 		                        else
 			                        className = Case.kebab(key);
-			return className;
-		});
+		                        return className;
+	                        });
 
-	if (classes['colour'])
+	if(classes['colour'])
 		classList.push(toBulmaColourClass(classes['colour']));
-	if (classes["alignment"])
+	if(classes["alignment"])
 		classList.push(toBulmaAlignmentClasses(classes.alignment));
-	if (classes.size)
+	if(classes.size)
 		classList.push(toSizeClasses(classes.size, areSizes));
-	if (classes.separator)
+	if(classes.separator)
 		classList.push(toBulmaSeparatorClass(classes.separator));
-	if (classes.aspectRatio)
+	if(classes.aspectRatio)
 		classList.push(toBulmaAspectRatioClass(classes.aspectRatio));
-	if (classes.dimensions)
+	if(classes.dimensions)
 		classList.push(toBulmaDimensionsClass(classes.dimensions));
-	if (classes['state'])
+	if(classes['state'])
 		classList.push(toBulmaStateClass(classes.state));
 	//remove blank or undefined entries
 	return classList.filter(x => x);

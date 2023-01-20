@@ -1,6 +1,6 @@
 <template>
-	<demo-pagination />
+	<demo-panel />
 </template>
 
 <script lang="ts" setup>
-	import DemoPagination from "./demos/components/DemoPagination.vue";</script>
+	import DemoPanel from "./demos/components/DemoPanel.vue";</script>
