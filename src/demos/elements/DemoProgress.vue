@@ -1,6 +1,6 @@
 <template>
 	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-progressbar :size="size" :colour="colour" :max="max" :value="val" />
+		<bulma-progressbar :colour="colour" :max="max" :size="size" :value="val" />
 	</bulma-box>
 
 	<bulma-box>
@@ -34,16 +34,16 @@
 
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../../types";
-	import BulmaProgressbar from "../../vbComponents/elements/BulmaProgressbar.vue";
 	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
 	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
+	import BulmaProgressbar from "../../vbComponents/elements/BulmaProgressbar.vue";
 	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
 	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
 	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
 
 	const colour = ref<BulmaColour>('default');
 	const max = ref<number>(100);
-	const val = ref<number>(NaN);
+	const val = ref<number>(-0);
 	const size = ref<BulmaSize>('default');
 
 </script>

@@ -48,7 +48,7 @@ export default defineClientConfig({
 		app.component('DemoButton', DemoButton);
 		app.component('DemoDelete', DemoDelete);
 		app.component('DemoNotification', DemoNotification);
-		app.component('DemoProgressbar', DemoProgressbar);
+		app.component('DemoProgress', DemoProgressbar);
 		app.component('DemoTable', DemoTable);
 		app.component('DemoCard', DemoCard)
 		app.component('DemoModal', DemoModal);
