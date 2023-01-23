@@ -12,10 +12,9 @@
 <!--todo: simplify or well document/explain how to use and properly nest all these form controls 🙃 so much for making the library an easier version of Bulma to work with-->
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {getBulmaClassesFromProps} from "../../../types";
+	import {getBulmaClassesFromProps, IconProps} from "../../../types";
 	import BulmaIcon from "../../elements/BulmaIcon.vue";
 
-	type IconProps = InstanceType<typeof BulmaIcon>["$props"];
 
 	const props = withDefaults(defineProps<{
 		tag?: string
@@ -27,9 +26,9 @@
 		isLoading?: boolean
 		//todo: vue emits [warn] that the expected props are only String | Boolean | Null
 		//Why is my custom props being ignored/turned to null
-		/** Left icon to display within input*/
+		/** Left icon (Bulma Icon props) to display within input*/
 		leftIcon?: IconProps
-		/** Right icon to display within input*/
+		/** Right icon (Bulma Icon props) to display within input*/
 		rightIcon?: IconProps
 	}>(), {tag: 'p'});
 
