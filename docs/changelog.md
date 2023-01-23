@@ -7,29 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [//]: # (## [Unreleased])
 
-[//]: # ()
-
 [//]: # (### Added)
-
-[//]: # ()
 
 [//]: # (### Changed)
 
-[//]: # ()
-
 [//]: # (### Deprecated)
-
-[//]: # ()
 
 [//]: # (### Removed)
 
-[//]: # ()
-
 [//]: # (### Fixed)
+
+## [Unreleased]
+
+### Added
+
+- icon support for [panel component](components/BulmaPanel.md)
+
+### Changed
+
+- IconProps to be statically typed from current [icon component](components/elements/BulmaIcon.md)
+
+### Deprecated
+
+### Removed
+
+### Fixed
 
 ## [0.0.0-15] - 2023-01-19
 
 ### Added
+
 - width prop to [image](components/elements/BulmaImage.md)
 - components...
 	- Card
@@ -72,7 +79,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- names of components to be prefixed with `vb` instead of `Bulma`
+- **names of components to be prefixed with `vb` instead of `Bulma`**
 
 - update package.json to include `.` export of `dist/vuebulma`
 

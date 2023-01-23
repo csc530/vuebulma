@@ -1,5 +1,5 @@
 <template>
-	<component :is="tag" class="panel" :class="classes">
+	<component :is="tag" :class="classes" class="panel">
 		<p class="panel-heading">
 			<slot name="header">{{ title }}</slot>
 		</p>
@@ -12,6 +12,15 @@
 				</slot>
 			</p>
 			<div v-else class="panel-block">
+				<span v-if="item.icon || $slots.icon || $slots[`icon${i}`]" class="panel-icon">
+						<bulma-icon v-if="$slots.icon || item.icon" class="is-align-items-baseline" v-bind="item.icon">
+							<template #icon>
+								<slot :name="`icon${i}`" v-bind:data="item">
+									<slot name="icon" v-bind:data="item" />
+								</slot>
+							</template>
+						</bulma-icon>
+				</span>
 				<slot :name="`block${i}`">
 					<slot name="block" v-bind:data="item">{{ item.vbTxt }}</slot>
 				</slot>
@@ -24,6 +33,7 @@
 	import {computed} from "vue";
 	import {BulmaColour, BulmaPanelOptions, exhaustion, getBulmaClassesFromProps} from "../../types";
 	import {BulmaPanelItem, BulmaPanelType} from "../../types/PanelTypes";
+	import BulmaIcon from "../elements/BulmaIcon.vue";
 	// todo panel icon support in block
 	const props = withDefaults(defineProps<{
 		/** Text to place in panel header */

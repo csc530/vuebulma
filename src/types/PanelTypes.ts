@@ -1,9 +1,10 @@
-import {BulmaLink} from "../types";
+import {BulmaLink, IconProps} from "../types";
 
 export type BulmaPanelItem = {
 	vbType: BulmaPanelType;
 	vbTabs?: BulmaLink[];
 	vbTxt?: string;
+	vbIcon?: IconProps;
 	[other: string | symbol | number]: unknown;
 };
 export type BulmaPanelType = 'block' | 'tabs';

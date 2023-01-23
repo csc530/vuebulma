@@ -1,11 +1,12 @@
 <template>
 	<bulma-box>
 		<bulma-panel :title="title" :items="panels" :colour="colour">
-			<template #block="{data}">
-				<input type="checkbox" />{{ data.vbTxt }}
-			</template>
+
 			<template #block3>
 				<bulma-progressbar :colour="colour">Bye for now</bulma-progressbar>
+			</template>
+			<template #icon>
+				<i class="fa-solid fa-gun"></i>
 			</template>
 		</bulma-panel>
 	</bulma-box>
@@ -23,10 +24,6 @@
 		</fieldset>
 	</bulma-box>
 </template>
-
-<style scoped>
-
-</style>
 
 <script setup lang="ts">
 

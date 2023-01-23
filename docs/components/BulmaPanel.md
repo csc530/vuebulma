@@ -30,6 +30,19 @@ The item at index `#` is bound to the slot.
 
 _Bulma recommended to use an `a` or `label` as the root element_
 
+### icon
+
+[icon slot](elements/BulmaIcon.md#icon) for an [Icon component](elements/BulmaIcon.md) to display before each block item
+
+### icon#
+
+where `#` is a number
+
+A dynamic slot name used to input content for the panel _block_ item's icon at index `#` from the [items](#items) array
+The item at index `#` is bound to the slot.
+
+The slot is used for [icon component](elements/BulmaIcon.md) _icon_ slot.
+
 ## Props
 
 ### tag
