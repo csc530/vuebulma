@@ -136,6 +136,11 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo panel">
  <demo-panel/>
 </demo-iframe>
+## Container
+
+<demo-iframe name="demo container">
+ <demo-container/>
+</demo-iframe>
 
 
 </ClientOnly>

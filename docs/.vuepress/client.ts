@@ -24,6 +24,7 @@ import DemoInput from "../../src/demos/form/DemoInput.vue";
 import DemoSelect from "../../src/demos/form/DemoSelect.vue";
 import DemoTextArea from "../../src/demos/form/DemoTextArea.vue";
 import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
+import DemoContainer from "../../src/demos/layouts/DemoContainer.vue";
 import IframeVue from "./demoIframe.vue";
 
 export default defineClientConfig({
@@ -54,6 +55,6 @@ export default defineClientConfig({
 		app.component('DemoModal', DemoModal);
 		app.component('DemoPagination', DemoPagination);
 		app.component('DemoPanel', DemoPanel);
-
+		app.component('DemoContainer', DemoContainer);
 	}
 })

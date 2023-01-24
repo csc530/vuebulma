@@ -1,6 +1,6 @@
 <template>
-	<demo-panel />
+	<demo-container />
 </template>
 
 <script lang="ts" setup>
-	import DemoPanel from "./demos/components/DemoPanel.vue";</script>
+	import DemoContainer from "./demos/layouts/DemoContainer.vue";</script>

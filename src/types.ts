@@ -158,3 +158,8 @@ export type BulmaInputState = BulmaState | 'loading';
 
 /** An array of all {@link BulmaInputState}s */
 export const getBulmaInputStates = (): BulmaInputState[] => ['active', 'hovered', 'focused', 'default', 'loading'];
+export type BulmaMediaSizes = 'auto' | 'desktop' | 'widescreen' | 'fullhd';
+
+export function getBulmaMediaSizes(): BulmaMediaSizes[] {
+	return ["auto", "desktop", "widescreen", "fullhd"];
+}
