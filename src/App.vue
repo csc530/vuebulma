@@ -1,6 +1,5 @@
 <template>
-	<demo-container />
+
 </template>
 
-<script lang="ts" setup>
-	import DemoContainer from "./demos/layouts/DemoContainer.vue";</script>
+<script lang="ts" setup></script>
