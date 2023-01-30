@@ -1,5 +1,12 @@
 <template>
-
+<demo-media/>
 </template>
 
-<script lang="ts" setup></script>
+<script>
+import {defineComponent} from 'vue';
+import DemoMedia from './demos/layouts/DemoMedia.vue';
+
+export default defineComponent({
+  components: {DemoMedia}
+})
+</script>

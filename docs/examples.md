@@ -142,5 +142,11 @@ The components are within the green box, and the code is within the blue box.
  <demo-container/>
 </demo-iframe>
 
+## Media Objects
+
+<demo-iframe name="demo media objects">
+ <demo-media/>
+</demo-iframe>
+
 
 </ClientOnly>
