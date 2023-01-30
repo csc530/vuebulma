@@ -20,7 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - container component
+- Default text for [textarea](components/form/BulmaTextArea.md) component
 - icon support for [panel component](components/BulmaPanel.md)
 
 ### Changed
@@ -32,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+
+- Fix overrided image css with custom style
 
 ## [0.0.0-15] - 2023-01-19
 
