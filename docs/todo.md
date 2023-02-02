@@ -23,3 +23,4 @@
 - [ ] possibility to rearrange card parts location/order
 - [ ] Renmae types with vbt (= vuebulma type) prefix
 - [ ] Add working dynamic component props type
+- [ ] add onclick for layouts child elements (thinking specifically of table)

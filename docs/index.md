@@ -7,7 +7,7 @@ title: vuebulma Docs
 heroAlt: logo
 ################## heroText: stuff
 
-tagline: 😴Taking a break (~ 1 week-ish)💤
+tagline: 🎒Doing school work😖 Restart development soon🤞
 
 actions:
 
