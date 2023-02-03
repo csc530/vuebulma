@@ -19,6 +19,8 @@ Type: `boolean` | `undefined`
 
 Default: `false`
 
+_Apply on the heading **above** sibling heading component_
+
 Adds a normalized space between the title and subtitle. Only visible if both title and subtitle are present
 sequentially (one after another).
 
