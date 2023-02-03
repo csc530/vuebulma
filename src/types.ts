@@ -13,6 +13,7 @@ export * from './types/MenuTypes';
 export * from './types/SelectTypes';
 export * from './types/PaginationTypes';
 export * from './types/PanelTypes';
+export * from './types/HeroTypes';
 
 
 export function exhaustion(arg: never) {return arg;}

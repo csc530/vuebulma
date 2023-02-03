@@ -148,5 +148,11 @@ The components are within the green box, and the code is within the blue box.
  <demo-media/>
 </demo-iframe>
 
+## Hero
+
+<demo-iframe name="demo hero">
+ <demo-hero/>
+</demo-iframe>
+
 
 </ClientOnly>

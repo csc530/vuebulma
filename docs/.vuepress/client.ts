@@ -27,6 +27,7 @@ import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
 import DemoContainer from "../../src/demos/layouts/DemoContainer.vue";
 import IframeVue from "./demoIframe.vue";
 import DemoMedia from "../../src/demos/layouts/DemoMedia.vue";
+import DemoHero from "../../src/demos/layouts/DemoHero.vue";
 
 export default defineClientConfig({
 	enhance({app}) {
@@ -58,5 +59,6 @@ export default defineClientConfig({
 		app.component('DemoPanel', DemoPanel);
 		app.component('DemoContainer', DemoContainer);
 		app.component('DemoMedia', DemoMedia);
+		app.component('DemoHero', DemoHero);
 	}
 })
