@@ -55,6 +55,7 @@ const vuebulma = {
 		Vue.component('vbPagination', BulmaPagination);
 		Vue.component('vbPanel', BulmaPanel);
 		Vue.component('vbHero', BulmaHero);
+		Vue.component('vbSection', BulmaHero);
 
 	}
 };

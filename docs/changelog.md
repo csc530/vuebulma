@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - container component
 - hero layout
+- section layout
 - Default text for [textarea](components/form/BulmaTextArea.md) component
 - icon support for [panel component](components/BulmaPanel.md)
 
