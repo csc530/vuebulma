@@ -27,37 +27,42 @@ import BulmaFormControlGroup from "./vbComponents/form/groups/BulmaFormControlGr
 import BulmaFormField from "./vbComponents/form/groups/BulmaFormField.vue";
 import BulmaButtonGroup from "./vbComponents/layouts/BulmaButtonGroup.vue";
 import BulmaHero from "./vbComponents/layouts/BulmaHero.vue";
+import BulmaColumn from "./vbComponents/layouts/Columns/BulmaColumn.vue";
+import BulmaColumnGroup from "./vbComponents/layouts/Columns/BulmaColumnGroup.vue";
 import BulmaLevel from "./vbComponents/layouts/Level/BulmaLevel.vue";
 
 const vuebulma = {
 	install(Vue: any) {
-		Vue.component('vbHeading', BulmaHeading);
-		Vue.component('vbIcon', BulmaIcon);
-		Vue.component('vbImage', BulmaImage);
-		Vue.component('vbBreadcrumb', BulmaBreadcrumb);
-		Vue.component('vbMessage', BulmaMessage);
-		Vue.component('vbBox', BulmaBox);
-		Vue.component('vbBlock', BulmaBlock);
-		Vue.component('vbDropdown', BulmaDropdown);
-		Vue.component('vbNavBar', BulmaNavbar);
-		Vue.component('vbMenu', BulmaMenu);
-		Vue.component('vbButton', BulmaButton);
-		Vue.component('vbButtonGroup', BulmaButtonGroup);
-		Vue.component('vbFileInput', BulmaFileInput);
-		Vue.component('vbInput', BulmaInput);
-		Vue.component('vbSelect', BulmaSelect);
-		Vue.component('vbFormControl', BulmaFormControl);
-		Vue.component('vbFormField', BulmaFormField);
-		Vue.component('vbFormControlGroup', BulmaFormControlGroup);
-		Vue.component('vbTextArea', BulmaTextArea);
-		Vue.component('vbCard', BulmaCard)
-		Vue.component('vbModal', BulmaModal);
-		Vue.component('vbModalCard', BulmaModalCard);
-		Vue.component('vbPagination', BulmaPagination);
-		Vue.component('vbPanel', BulmaPanel);
-		Vue.component('vbHero', BulmaHero);
+		Vue.component("vbHeading", BulmaHeading);
+		Vue.component("vbIcon", BulmaIcon);
+		Vue.component("vbImage", BulmaImage);
+		Vue.component("vbBreadcrumb", BulmaBreadcrumb);
+		Vue.component("vbMessage", BulmaMessage);
+		Vue.component("vbBox", BulmaBox);
+		Vue.component("vbBlock", BulmaBlock);
+		Vue.component("vbDropdown", BulmaDropdown);
+		Vue.component("vbNavBar", BulmaNavbar);
+		Vue.component("vbMenu", BulmaMenu);
+		Vue.component("vbButton", BulmaButton);
+		Vue.component("vbButtonGroup", BulmaButtonGroup);
+		Vue.component("vbFileInput", BulmaFileInput);
+		Vue.component("vbInput", BulmaInput);
+		Vue.component("vbSelect", BulmaSelect);
+		Vue.component("vbFormControl", BulmaFormControl);
+		Vue.component("vbFormField", BulmaFormField);
+		Vue.component("vbFormControlGroup", BulmaFormControlGroup);
+		Vue.component("vbTextArea", BulmaTextArea);
+		Vue.component("vbCard", BulmaCard);
+		Vue.component("vbModal", BulmaModal);
+		Vue.component("vbModalCard", BulmaModalCard);
+		Vue.component("vbPagination", BulmaPagination);
+		Vue.component("vbPanel", BulmaPanel);
+		Vue.component("vbHero", BulmaHero);
 		Vue.component("vbSection", BulmaHero);
 		Vue.component("vbLevel", BulmaLevel);
+		Vue.component("vbColumnGroup", BulmaColumnGroup);
+		Vue.component("vbColumn", BulmaColumn);
+
 
 	}
 };
@@ -93,5 +98,7 @@ export {
 	BulmaPanel as vbPanel,
 	BulmaHero as vbHero,
 	BulmaLevel as vbLevel,
+	BulmaColumnGroup as vbColumnGroup,
+	BulmaColumn as vbColumn,
 	vuebulma
 };

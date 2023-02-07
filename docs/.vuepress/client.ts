@@ -24,6 +24,7 @@ import DemoInput from "../../src/demos/form/DemoInput.vue";
 import DemoSelect from "../../src/demos/form/DemoSelect.vue";
 import DemoTextArea from "../../src/demos/form/DemoTextArea.vue";
 import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
+import DemoColumns from "../../src/demos/layouts/DemoColumns.vue";
 import DemoContainer from "../../src/demos/layouts/DemoContainer.vue";
 import DemoLevel from "../../src/demos/layouts/DemoLevel.vue";
 import IframeVue from "./demoIframe.vue";
@@ -62,5 +63,6 @@ export default defineClientConfig({
 		app.component('DemoMedia', DemoMedia);
 		app.component("DemoHero", DemoHero);
 		app.component("DemoLevel", DemoLevel);
+		app.component("DemoColumn", DemoColumns);
 	}
 })

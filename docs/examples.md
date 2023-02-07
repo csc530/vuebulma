@@ -159,5 +159,11 @@ The components are within the green box, and the code is within the blue box.
  <demo-level/>
 </demo-iframe>
 
+## Columns
+
+<demo-iframe name="demo column">
+ <demo-column/>
+</demo-iframe>
+
 
 </ClientOnly>

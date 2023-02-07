@@ -1,3 +1,5 @@
+import {_TweleveType} from "../types";
+
 /**
  *
  *  - ancestor: if the tile is the root; has no direct parent tile components
@@ -11,6 +13,6 @@ type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] exte
                                                               ? Acc[number]
                                                               : Enumerate<N, [...Acc, Acc["length"]]>
 
-type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+export type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
 
-export type BulmaTileSize = IntRange<1, 12> | "half" | "full" | "1/4" | "1/3"
+export type BulmaTileSize = _TweleveType | "half" | "full" | "1/4" | "1/3"
