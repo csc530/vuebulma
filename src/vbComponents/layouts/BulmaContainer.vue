@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaMediaSizes} from "../../types";
+	import {BulmaMediaSizes, BulmaMobileSizes} from "../../types";
 
 	const props = withDefaults(defineProps<{
 		tag?: string,
@@ -15,10 +15,11 @@
 		 * @default false */
 		isFluid?: boolean;
 		/** For the selected media it will have a max width that will center it with appropriate margins */
-		breakpoint?: BulmaMediaSizes;
+		//export type BulmaMediaSizes = 'auto' | 'desktop' | 'widescreen' | 'fullhd';
+		breakpoint?: Exclude<BulmaMediaSizes, BulmaMobileSizes>;
 		/** narrow will have margins applied to and lower than it's modifier breakpoint (only for `fullwidth` and `fullhd`)
 		 * fullwidth will have no margins until media breakpoint */
-		modifier?: 'narrow' | 'fullwidth'
+		modifier?: "narrow" | "fullwidth"
 
 	}>(), {tag: 'div', modifier: 'narrow'});
 

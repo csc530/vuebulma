@@ -159,8 +159,9 @@ export function toBulmaStateClass(state: BulmaState | BulmaInputState): string {
 export type BulmaInputState = BulmaState | 'loading';
 
 /** An array of all {@link BulmaInputState}s */
-export const getBulmaInputStates = (): BulmaInputState[] => ['active', 'hovered', 'focused', 'default', 'loading'];
-export type BulmaMediaSizes = 'auto' | 'desktop' | 'widescreen' | 'fullhd';
+export const getBulmaInputStates = (): BulmaInputState[] => ["active", "hovered", "focused", "default", "loading"];
+export type BulmaMediaSizes = "auto" | BulmaMobileSizes | "desktop" | "widescreen" | "fullhd";
+export type BulmaMobileSizes = "mobile" | "tablet"
 
 export function getBulmaMediaSizes(): BulmaMediaSizes[] {
 	return ["auto", "desktop", "widescreen", "fullhd"];
