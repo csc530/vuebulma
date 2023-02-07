@@ -7,7 +7,7 @@ title: vuebulma Docs
 heroAlt: logo
 ################## heroText: stuff
 
-tagline: 🎒Doing school work😖 Restart development soon🤞
+tagline: 😃New components soon🆕
 
 actions:
 
