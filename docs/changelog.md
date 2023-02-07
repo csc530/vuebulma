@@ -22,8 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - container component
-- hero layout
-- section layout
+- layouts
+	- hero
+	- section
+	- level
 - Default text for [textarea](components/form/BulmaTextArea.md) component
 - icon support for [panel component](components/BulmaPanel.md)
 

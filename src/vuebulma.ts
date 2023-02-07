@@ -27,6 +27,7 @@ import BulmaFormControlGroup from "./vbComponents/form/groups/BulmaFormControlGr
 import BulmaFormField from "./vbComponents/form/groups/BulmaFormField.vue";
 import BulmaButtonGroup from "./vbComponents/layouts/BulmaButtonGroup.vue";
 import BulmaHero from "./vbComponents/layouts/BulmaHero.vue";
+import BulmaLevel from "./vbComponents/layouts/Level/BulmaLevel.vue";
 
 const vuebulma = {
 	install(Vue: any) {
@@ -55,7 +56,8 @@ const vuebulma = {
 		Vue.component('vbPagination', BulmaPagination);
 		Vue.component('vbPanel', BulmaPanel);
 		Vue.component('vbHero', BulmaHero);
-		Vue.component('vbSection', BulmaHero);
+		Vue.component("vbSection", BulmaHero);
+		Vue.component("vbLevel", BulmaLevel);
 
 	}
 };
@@ -90,5 +92,6 @@ export {
 	BulmaModalCard as vbModalCard,
 	BulmaPanel as vbPanel,
 	BulmaHero as vbHero,
+	BulmaLevel as vbLevel,
 	vuebulma
 };

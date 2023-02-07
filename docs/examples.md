@@ -153,6 +153,11 @@ The components are within the green box, and the code is within the blue box.
 <demo-iframe name="demo hero">
  <demo-hero/>
 </demo-iframe>
+## Level
+
+<demo-iframe name="demo level">
+ <demo-level/>
+</demo-iframe>
 
 
 </ClientOnly>
