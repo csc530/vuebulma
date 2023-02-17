@@ -165,5 +165,10 @@ The components are within the green box, and the code is within the blue box.
  <demo-column/>
 </demo-iframe>
 
+## Tiles
+
+<demo-iframe name="demo tile">
+<demo-tile/>
+</demo-iframe>
 
 </ClientOnly>

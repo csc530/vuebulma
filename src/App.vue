@@ -1,14 +1,14 @@
 <template>
-<demo-columns/>
+<demo-tile/>
 </template>
 
 <script>
 	import {defineComponent} from "vue";
-	import DemoColumns from "./demos/layouts/DemoColumns.vue";
-	import DemoMedia from "./demos/layouts/DemoMedia.vue";
 	import DemoLevel from "./demos/layouts/DemoLevel.vue";
+	import DemoMedia from "./demos/layouts/DemoMedia.vue";
+	import DemoTile from "./demos/layouts/DemoTile.vue";
 
 	export default defineComponent({
-		components: {DemoColumns, DemoLevel, DemoMedia}
+		components: {DemoTile, DemoLevel, DemoMedia}
 	});
 </script>

@@ -1,21 +1,21 @@
-import BulmaBreadcrumb from './vbComponents/components/BulmaBreadcrumb.vue';
+import BulmaBreadcrumb from "./vbComponents/components/BulmaBreadcrumb.vue";
 import BulmaCard from "./vbComponents/components/BulmaCard.vue";
-import BulmaDropdown from './vbComponents/components/BulmaDropdown.vue'
-import BulmaMenu from './vbComponents/components/BulmaMenu.vue'
-import BulmaMessage from './vbComponents/components/BulmaMessage.vue'
+import BulmaDropdown from "./vbComponents/components/BulmaDropdown.vue";
+import BulmaMenu from "./vbComponents/components/BulmaMenu.vue";
+import BulmaMessage from "./vbComponents/components/BulmaMessage.vue";
 import BulmaModal from "./vbComponents/components/BulmaModal.vue";
 import BulmaModalCard from "./vbComponents/components/BulmaModalCard.vue";
 import BulmaPagination from "./vbComponents/components/BulmaPagination.vue";
 import BulmaPanel from "./vbComponents/components/BulmaPanel.vue";
 import BulmaNavbar from "./vbComponents/components/navbar/BulmaNavbar.vue";
-import BulmaBlock from './vbComponents/elements/BulmaBlock.vue';
-import BulmaBox from './vbComponents/elements/BulmaBox.vue';
+import BulmaBlock from "./vbComponents/elements/BulmaBlock.vue";
+import BulmaBox from "./vbComponents/elements/BulmaBox.vue";
 import BulmaButton from "./vbComponents/elements/BulmaButton.vue";
 import BulmaDelete from "./vbComponents/elements/BulmaDelete.vue";
-import BulmaHeading from './vbComponents/elements/BulmaHeading.vue';
-import BulmaIcon from './vbComponents/elements/BulmaIcon.vue';
-import BulmaImage from './vbComponents/elements/BulmaImage.vue';
-import BulmaNotification from './vbComponents/elements/BulmaNotification.vue'
+import BulmaHeading from "./vbComponents/elements/BulmaHeading.vue";
+import BulmaIcon from "./vbComponents/elements/BulmaIcon.vue";
+import BulmaImage from "./vbComponents/elements/BulmaImage.vue";
+import BulmaNotification from "./vbComponents/elements/BulmaNotification.vue";
 import BulmaProgressbar from "./vbComponents/elements/BulmaProgressbar.vue";
 import BulmaTable from "./vbComponents/elements/BulmaTable.vue";
 import BulmaFileInput from "./vbComponents/form/BulmaFileInput.vue";
@@ -30,6 +30,7 @@ import BulmaHero from "./vbComponents/layouts/BulmaHero.vue";
 import BulmaColumn from "./vbComponents/layouts/Columns/BulmaColumn.vue";
 import BulmaColumnGroup from "./vbComponents/layouts/Columns/BulmaColumnGroup.vue";
 import BulmaLevel from "./vbComponents/layouts/Level/BulmaLevel.vue";
+import BulmaTile from "./vbComponents/layouts/Tile/BulmaTile.vue";
 
 const vuebulma = {
 	install(Vue: any) {
@@ -62,6 +63,7 @@ const vuebulma = {
 		Vue.component("vbLevel", BulmaLevel);
 		Vue.component("vbColumnGroup", BulmaColumnGroup);
 		Vue.component("vbColumn", BulmaColumn);
+		Vue.component("vbTile", BulmaTile);
 
 
 	}
@@ -100,5 +102,6 @@ export {
 	BulmaLevel as vbLevel,
 	BulmaColumnGroup as vbColumnGroup,
 	BulmaColumn as vbColumn,
+	BulmaTile as vbTile,
 	vuebulma
 };

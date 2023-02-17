@@ -1,7 +1,6 @@
 import {_TweleveType} from "../types";
 
 /**
- *
  *  - ancestor: if the tile is the root; has no direct parent tile components
  *  - tile: child of ancestor and no child tiles (all children are 2 ir more levels of tiles)
  *  - parent: has child tile

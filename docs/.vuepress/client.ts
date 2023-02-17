@@ -1,5 +1,5 @@
-import {defineClientConfig} from '@vuepress/client'
-import DemoBreadcrumb from '../../src/demos/components/DemoBreadcrumb.vue'
+import {defineClientConfig} from "@vuepress/client";
+import DemoBreadcrumb from "../../src/demos/components/DemoBreadcrumb.vue";
 import DemoCard from "../../src/demos/components/DemoCard.vue";
 import DemoDropdown from "../../src/demos/components/DemoDropdown.vue";
 import DemoMenu from "../../src/demos/components/DemoMenu.vue";
@@ -26,20 +26,21 @@ import DemoTextArea from "../../src/demos/form/DemoTextArea.vue";
 import DemoButtonGroup from "../../src/demos/layouts/DemoButtonGroup.vue";
 import DemoColumns from "../../src/demos/layouts/DemoColumns.vue";
 import DemoContainer from "../../src/demos/layouts/DemoContainer.vue";
-import DemoLevel from "../../src/demos/layouts/DemoLevel.vue";
-import IframeVue from "./demoIframe.vue";
-import DemoMedia from "../../src/demos/layouts/DemoMedia.vue";
 import DemoHero from "../../src/demos/layouts/DemoHero.vue";
+import DemoLevel from "../../src/demos/layouts/DemoLevel.vue";
+import DemoMedia from "../../src/demos/layouts/DemoMedia.vue";
+import DemoTile from "../../src/demos/layouts/DemoTile.vue";
+import IframeVue from "./demoIframe.vue";
 
 export default defineClientConfig({
 	enhance({app}) {
-		app.component('demoIframe', IframeVue);
-		app.component('DemoBreadcrumb', DemoBreadcrumb);
-		app.component('DemoButtonGroup', DemoButtonGroup)
-		app.component('DemoControl', DemoControl);
-		app.component('DemoControlGroup', DemoControlGroup);
-		app.component('DemoDropdown', DemoDropdown);
-		app.component('DemoField', DemoField);
+		app.component("demoIframe", IframeVue);
+		app.component("DemoBreadcrumb", DemoBreadcrumb);
+		app.component("DemoButtonGroup", DemoButtonGroup);
+		app.component("DemoControl", DemoControl);
+		app.component("DemoControlGroup", DemoControlGroup);
+		app.component("DemoDropdown", DemoDropdown);
+		app.component("DemoField", DemoField);
 		app.component('DemoFileInput', DemoFileInput);
 		app.component('DemoHeading', DemoHeading);
 		app.component('DemoIcon', DemoIcon);
@@ -64,5 +65,6 @@ export default defineClientConfig({
 		app.component("DemoHero", DemoHero);
 		app.component("DemoLevel", DemoLevel);
 		app.component("DemoColumn", DemoColumns);
+		app.component("DemoTile", DemoTile);
 	}
 })
