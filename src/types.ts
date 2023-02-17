@@ -16,6 +16,7 @@ export * from "./types/PanelTypes";
 export * from "./types/HeroTypes";
 export * from "./types/SectionTypes";
 export * from "./types/ColumnTypes";
+export * from "./types/TileTypes";
 
 export type _EightType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 export type _TweleveType = _EightType | 9 | 10 | 11 | 12;
