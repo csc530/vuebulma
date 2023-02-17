@@ -58,4 +58,4 @@
 <script lang="ts" setup>
 	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
 	import BulmaNotification from "../../vbComponents/elements/BulmaNotification.vue";
-	import BulmaTile from "../../vbComponents/layouts/Tile/BulmaTile.vue";</script>
+	import BulmaTile from "../../vbComponents/layouts/BulmaTile.vue";</script>

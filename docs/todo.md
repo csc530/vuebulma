@@ -24,3 +24,5 @@
 - [ ] Renmae types with vbt (= vuebulma type) prefix
 - [ ] Add working dynamic component props type
 - [ ] add onclick for layouts child elements (thinking specifically of table)
+- [ ] for components that can have their colour light (isLight) merge with colour property (obj {col,isl} or
+  colourhelper)

@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 	import {computed} from "vue";
-	import {BulmaTileContext, BulmaTileSize} from "../../../types/TileTypes";
+	import {BulmaTileContext, BulmaTileSize} from "../../types/TileTypes";
 
 	const props = withDefaults(defineProps<{
 		/**

@@ -20,12 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-
+- tag component and tag group
 - layouts
 	- container
 	- hero
 	- section
 	- level
+	- tile
 - Default text for [textarea](components/form/BulmaTextArea.md) component
 - icon support for [panel component](components/BulmaPanel.md)
 
