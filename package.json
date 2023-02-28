@@ -71,7 +71,7 @@
     "vue": "^3.2.45",
     "vue-loader": "^17.0.1",
     "vue-tsc": "^1.0.24",
-    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.61",
     "vuepress": "2.0.0-beta.60",
     "vuepress-plugin-clipboard": "^2.1.4",
     "vuepress-plugin-markdown-checkbox": "^1.0.8"
