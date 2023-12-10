@@ -1,18 +1,17 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<BulmaDelete :size="size" />
-	</bulma-box>
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<VBulmaDelete :size="size" />
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
-		<fieldset
-				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
+		<fieldset class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="size">
-				<bulma-select v-model="size" :options="getBulmaSizes()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="size">
+				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 
 </template>
 
@@ -20,11 +19,11 @@
 
 	import {ref} from "vue";
 	import {BulmaSize, getBulmaSizes} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaDelete from "../../vbComponents/elements/BulmaDelete.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaDelete from "../../vbComponents/elements/VBulmaDelete.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const size = ref<BulmaSize>('default');
 </script>

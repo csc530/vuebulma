@@ -1,59 +1,59 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-message @close-msg.prevent="test" :colour="colour" :delete-btn="deleteBtn" :size="size"
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-message @close-msg.prevent="test" :colour="colour" :delete-btn="deleteBtn" :size="size"
 		               :heading="heading">
 			{{ body }}
-		</bulma-message>
-	</bulma-box>
+		</v-bulma-message>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Heading">
-				<bulma-form-control>
-					<bulma-input v-model="heading" />
-				</bulma-form-control>
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Heading">
+				<v-bulma-form-control>
+					<v-bulma-input v-model="heading" />
+				</v-bulma-form-control>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Body">
-				<bulma-form-control>
-					<bulma-text-area v-model="body" />
-				</bulma-form-control>
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Body">
+				<v-bulma-form-control>
+					<v-bulma-text-area v-model="body" />
+				</v-bulma-form-control>
+			</v-bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Colour">
-		<bulma-form-control>
-			<bulma-select v-model="colour" :options="getBulmaColours()" />
-		</bulma-form-control>
-	</bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Colour">
+		<v-bulma-form-control>
+			<v-bulma-select v-model="colour" :options="getBulmaColours()" />
+		</v-bulma-form-control>
+	</v-bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Delete Button">
-		<bulma-form-control>
+	<v-bulma-form-field is-horizontal label="Delete Button">
+		<v-bulma-form-control>
 			<input v-model="deleteBtn" type="checkbox" />
-		</bulma-form-control>
-	</bulma-form-field>
+		</v-bulma-form-control>
+	</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Size">
-				<bulma-form-control>
-					<bulma-select v-model="size" :options="getBulmaSizes()" />
-				</bulma-form-control>
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Size">
+				<v-bulma-form-control>
+					<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				</v-bulma-form-control>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../../types";
-	import BulmaMessage from "../../vbComponents/components/BulmaMessage.vue";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaTextArea from "../../vbComponents/form/BulmaTextArea.vue";
-	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaMessage from "../../vbComponents/components/VBulmaMessage.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaTextArea from "../../vbComponents/form/VBulmaTextArea.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const colour = ref<BulmaColour>('primary');
 	const heading = ref('John 3:16');

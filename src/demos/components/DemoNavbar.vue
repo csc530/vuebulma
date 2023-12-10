@@ -1,63 +1,63 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-navbar :boxed-dropdowns="boxed" :colour="colour" :end-items="characters" :has-shadow="shadow"
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-navbar :boxed-dropdowns="boxed" :colour="colour" :end-items="characters" :has-shadow="shadow"
 		              :is-fixed="fixed" :is-spaced="space" :is-transparent="transparent" :middle-items="tags"
 		              :start-items="start" :tabbed-items="tab">
 			<template #middle-items="{ data }">
 				<em>{{ data.label ? data.label : data }}</em>
 			</template>
-		</bulma-navbar>
-	</bulma-box>
+		</v-bulma-navbar>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap"
 		          name="props">
 
-			<bulma-form-field is-horizontal label="Space">
+			<v-bulma-form-field is-horizontal label="Space">
 				<input v-model="space" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Transparent">
+			<v-bulma-form-field is-horizontal label="Transparent">
 				<input v-model="transparent" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
 
-			<bulma-form-field is-horizontal label="Shadows">
+			<v-bulma-form-field is-horizontal label="Shadows">
 				<input v-model="shadow" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Boxed Dropdowns">
+			<v-bulma-form-field is-horizontal label="Boxed Dropdowns">
 				<input v-model="boxed" type="checkbox" />
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Colour">
-				<bulma-select v-model="colour" :options="getBulmaColours()" />
-			</bulma-form-field>
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Colour">
+				<v-bulma-select v-model="colour" :options="getBulmaColours()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Fixed">
-				<bulma-select v-model="fixed">
+			<v-bulma-form-field is-horizontal label="Fixed">
+				<v-bulma-select v-model="fixed">
 					<option :value="undefined">False</option>
 					<option :value="'top'">Top</option>
 					<option value="bottom">Bottom</option>
-				</bulma-select>
-			</bulma-form-field>
+				</v-bulma-select>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Tab">
-				<bulma-select v-model="tab" :options="['brand','start','end']" is-multiple />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Tab">
+				<v-bulma-select v-model="tab" :options="['brand','start','end']" is-multiple />
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script lang="ts" setup>
 	import {onBeforeMount, ref, shallowRef} from "vue";
 	import {BulmaColour, BulmaNavbarItem, getBulmaColours} from "../../types";
-	import BulmaNavbar from "../../vbComponents/components/navbar/BulmaNavbar.vue";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaImage from "../../vbComponents/elements/BulmaImage.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaNavbar from "../../vbComponents/components/navbar/VBulmaNavbar.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaImage from "../../vbComponents/elements/VBulmaImage.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 
 	const colour = ref<BulmaColour>('default');
@@ -80,7 +80,7 @@
 
 		const bats = <BulmaNavbarItem> ({
 			type: 'component',
-			display: BulmaImage,
+			display: VBulmaImage,
 			props: {
 				src: 'https://www.svgrepo.com/show/485626/batman.svg'
 			}
@@ -88,14 +88,14 @@
 
 		const supes = <BulmaNavbarItem> ({
 			type: 'component',
-			display: BulmaImage,
+			display: VBulmaImage,
 			props: {
 				src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Superman_shield.svg'
 			}
 		});
 		const wonderWoman = <BulmaNavbarItem> ({
 			type: 'component',
-			display: BulmaImage,
+			display: VBulmaImage,
 			props: {
 				src: 'https://www.svgrepo.com/show/303166/wonder-woman-logo.svg'
 			},
@@ -132,7 +132,7 @@
 					isHoverable: true,
 					items: <BulmaNavbarItem[]> [{
 						type: 'component',
-						display: BulmaHeading,
+						display: VBulmaHeading,
 						props: {size: 6},
 						slot: {default: 'You cutie..😘'}
 					}]

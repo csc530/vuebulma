@@ -1,17 +1,17 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-heading>Value: <code v-if="modelValue">{{ modelValue }}</code></bulma-heading>
-		<bulma-input v-model="modelValue" :colour="colour" :is-loading="isLoading" :state="state" :is-static="isStatic"
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-heading>Value: <code v-if="modelValue">{{ modelValue }}</code></v-bulma-heading>
+		<v-bulma-input v-model="modelValue" :colour="colour" :is-loading="isLoading" :state="state" :is-static="isStatic"
 		             :size="size" :type="type" />
-	</bulma-box>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Type">
-				<bulma-select v-model="type">
+			<v-bulma-form-field is-horizontal label="Type">
+				<v-bulma-select v-model="type">
 					<optgroup label="Textlike">
 						<option value="text">Text</option>
 						<option value="number">Number</option>
@@ -28,36 +28,36 @@
 			<option value="week">Week</option>
 			<option value="color">Colour</option>
 			<option value="range">Range</option>
-		</bulma-select>
-	</bulma-form-field>
+		</v-bulma-select>
+	</v-bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Colour">
-		<bulma-select v-model="colour" :options="getBulmaColours()" />
-	</bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Colour">
+		<v-bulma-select v-model="colour" :options="getBulmaColours()" />
+	</v-bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Size">
-		<bulma-select v-model="size" :options="getBulmaSizes()" />
-	</bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Size">
+		<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+	</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Static">
+			<v-bulma-form-field is-horizontal label="Static">
 				<input v-model="isStatic" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="State">
-				<bulma-select v-model="state" :options="getBulmaStates()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="State">
+				<v-bulma-select v-model="state" :options="getBulmaStates()" />
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColour, BulmaSize, BulmaState, getBulmaColours, getBulmaSizes, getBulmaStates} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const colour = ref<BulmaColour>("default");
 	const size = ref<BulmaSize>("default");

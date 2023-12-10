@@ -1,63 +1,63 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-file-input v-model="filename" :alignment="align" :colour="colour" :file-name="file" :is-boxed="boxed"
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-file-input v-model="filename" :alignment="align" :colour="colour" :file-name="file" :is-boxed="boxed"
 		                  :is-fullwidth="full" :label="label" :size="size">
-			<bulma-icon v-if="icon" icon="fas fa-upload" />
-		</bulma-file-input>
-	</bulma-box>
+			<v-bulma-icon v-if="icon" icon="fas fa-upload" />
+		</v-bulma-file-input>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Size">
-				<bulma-select v-model="size" :options="getBulmaSizes()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Size">
+				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Colour">
-				<bulma-select v-model="colour" :options="getBulmaColours()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Colour">
+				<v-bulma-select v-model="colour" :options="getBulmaColours()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Alignment">
-				<bulma-select v-model="align" :options="getBulmaAlignments()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Alignment">
+				<v-bulma-select v-model="align" :options="getBulmaAlignments()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Label">
-				<bulma-form-control-group has-addons>
-					<bulma-form-control>
-						<bulma-input v-model="label" />
-					</bulma-form-control>
-					<bulma-form-control>
-						<bulma-button colour="danger" @click="label = null">Clear</bulma-button>
-					</bulma-form-control>
-				</bulma-form-control-group>
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Label">
+				<v-bulma-form-control-group has-addons>
+					<v-bulma-form-control>
+						<v-bulma-input v-model="label" />
+					</v-bulma-form-control>
+					<v-bulma-form-control>
+						<v-bulma-button colour="danger" @click="label = null">Clear</v-bulma-button>
+					</v-bulma-form-control>
+				</v-bulma-form-control-group>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="File Name">
-				<bulma-form-control-group has-addons>
-					<bulma-form-control>
-						<bulma-input v-model="filename" />
-					</bulma-form-control>
-					<bulma-form-control>
-						<bulma-button colour="danger" @click="filename = null">Clear</bulma-button>
-					</bulma-form-control>
-				</bulma-form-control-group>
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="File Name">
+				<v-bulma-form-control-group has-addons>
+					<v-bulma-form-control>
+						<v-bulma-input v-model="filename" />
+					</v-bulma-form-control>
+					<v-bulma-form-control>
+						<v-bulma-button colour="danger" @click="filename = null">Clear</v-bulma-button>
+					</v-bulma-form-control>
+				</v-bulma-form-control-group>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Full Width">
+			<v-bulma-form-field is-horizontal label="Full Width">
 				<input v-model="full" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Boxed">
+			<v-bulma-form-field is-horizontal label="Boxed">
 				<input v-model="boxed" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Icon">
+			<v-bulma-form-field is-horizontal label="Icon">
 				<input v-model="icon" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script lang="ts" setup>
@@ -70,16 +70,16 @@
 		getBulmaColours,
 		getBulmaSizes
 	} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaIcon from "../../vbComponents/elements/BulmaIcon.vue";
-	import BulmaFileInput from "../../vbComponents/form/BulmaFileInput.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
-	import BulmaFormControlGroup from "../../vbComponents/form/groups/BulmaFormControlGroup.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaIcon from "../../vbComponents/elements/VBulmaIcon.vue";
+	import VBulmaFileInput from "../../vbComponents/form/VBulmaFileInput.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormControlGroup from "../../vbComponents/form/groups/VBulmaFormControlGroup.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const size = ref<BulmaSize>('default');
 	const colour = ref<BulmaColour>('default');

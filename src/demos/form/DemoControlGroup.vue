@@ -1,117 +1,116 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
 
-		<bulma-box>
-			<bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
-				<bulma-form-control>
-					<bulma-button colour="danger" is-static>Name</bulma-button>
-				</bulma-form-control>
-				<bulma-form-control>
-					<bulma-input placeholder="Text input" />
-				</bulma-form-control>
-				<bulma-form-control>
-					<bulma-button>Submit</bulma-button>
-				</bulma-form-control>
+		<v-bulma-box>
+			<v-bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
+				<v-bulma-form-control>
+					<v-bulma-button colour="danger" is-static>Name</v-bulma-button>
+				</v-bulma-form-control>
+				<v-bulma-form-control>
+					<v-bulma-input placeholder="Text input" />
+				</v-bulma-form-control>
+				<v-bulma-form-control>
+					<v-bulma-button>Submit</v-bulma-button>
+				</v-bulma-form-control>
 
-		</bulma-form-control-group>
-	</bulma-box>
-	<bulma-box>
-		<bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
+		</v-bulma-form-control-group>
+	</v-bulma-box>
+	<v-bulma-box>
+		<v-bulma-form-control-group :has-addons="addons" :alignment="alignment" :isMultiline="multiline">
 
-			<bulma-form-control>
-				<bulma-button colour="danger">Fire burns</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="warning">Water puts it out</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="success">Fire extinguisher</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-select>
+			<v-bulma-form-control>
+				<v-bulma-button colour="danger">Fire burns</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="warning">Water puts it out</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="success">Fire extinguisher</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-select>
 					<option>earth</option>
 					<option>air</option>
 					<option>fire</option>
 					<option>water</option>
-				</bulma-select>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="info">Fireman</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="primary">Police</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="link">Brap-BRap-BBRRAAHH</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-file-input label="Special" file-name="File.X" colour="dark" is-boxed is-fullwidth />
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="dark">Lights out</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="light">Lights on</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="white">White out</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="black">Black out</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-input type="date" />
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button is-static colour="ghost" is-rounded>Begginnings hsve no end</bulma-button>
-			</bulma-form-control>
-			<bulma-form-control>
-				<bulma-button colour="text" is-rounded>Ends never start</bulma-button>
-			</bulma-form-control>
-		</bulma-form-control-group>
-	</bulma-box>
-	</bulma-box>
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+				</v-bulma-select>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="info">Fireman</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="primary">Police</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="link">Brap-BRap-BBRRAAHH</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-file-input label="Special" file-name="File.X" colour="dark" is-boxed is-fullwidth />
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="dark">Lights out</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="light">Lights on</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="white">White out</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="black">Black out</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-input type="date" />
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button is-static colour="ghost" is-rounded>Begginnings hsve no end</v-bulma-button>
+			</v-bulma-form-control>
+			<v-bulma-form-control>
+				<v-bulma-button colour="text" is-rounded>Ends never start</v-bulma-button>
+			</v-bulma-form-control>
+		</v-bulma-form-control-group>
+	</v-bulma-box>
+	</v-bulma-box>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Addons">
+			<v-bulma-form-field is-horizontal label="Addons">
 				<input v-model="addons" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<BulmaFormField is-horizontal label="Alignment">
-				<BulmaFormControlGroup has-addons>
-					<bulma-form-control is-expanded>
-						<bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
+			<VBulmaFormField is-horizontal label="Alignment">
+				<VBulmaFormControlGroup has-addons>
+					<v-bulma-form-control is-expanded>
+						<v-bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
 						             @update:model-value="(newVal)=> alignment = getBulmaAlignments()[newVal-1]" />
-					</bulma-form-control>
-					<bulma-form-control>
-						<BulmaButton is-static>{{ alignment }}</BulmaButton>
-					</bulma-form-control>
-				</BulmaFormControlGroup>
-			</BulmaFormField>
+					</v-bulma-form-control>
+					<v-bulma-form-control>
+						<VBulmaButton is-static>{{ alignment }}</VBulmaButton>
+					</v-bulma-form-control>
+				</VBulmaFormControlGroup>
+			</VBulmaFormField>
 
-			<bulma-form-field is-horizontal label="Multiline">
+			<v-bulma-form-field is-horizontal label="Multiline">
 				<input v-model="multiline" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script setup lang="ts">
-
 	import {ref} from "vue";
 	import {BulmaAlignment, getBulmaAlignments} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaFileInput from "../../vbComponents/form/BulmaFileInput.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
-	import BulmaFormControlGroup from "../../vbComponents/form/groups/BulmaFormControlGroup.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaFileInput from "../../vbComponents/form/VBulmaFileInput.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormControlGroup from "../../vbComponents/form/groups/VBulmaFormControlGroup.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const addons = ref<boolean>(false);
 	const alignment = ref<BulmaAlignment>("center");

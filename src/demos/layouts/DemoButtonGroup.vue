@@ -1,50 +1,50 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-button-group :alignment="align" :has-addons="addons" :items="buttons" :size="size" :tag="tag">
-			<BulmaButton colour="danger">poppy</BulmaButton>
-			<BulmaButton is-static>seeds</BulmaButton>
-			<BulmaButton colour="success" is-inverted>are</BulmaButton>
-			<BulmaButton colour="info" is-outlined>the</BulmaButton>
-			<BulmaButton colour="warning" is-rounded>best</BulmaButton>
-			<BulmaButton colour="primary" is-loading>ever</BulmaButton>
-		</bulma-button-group>
-	</bulma-box>
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-button-group :alignment="align" :has-addons="addons" :items="buttons" :size="size" :tag="tag">
+			<VBulmaButton colour="danger">poppy</VBulmaButton>
+			<VBulmaButton is-static>seeds</VBulmaButton>
+			<VBulmaButton colour="success" is-inverted>are</VBulmaButton>
+			<VBulmaButton colour="info" is-outlined>the</VBulmaButton>
+			<VBulmaButton colour="warning" is-rounded>best</VBulmaButton>
+			<VBulmaButton colour="primary" is-loading>ever</VBulmaButton>
+		</v-bulma-button-group>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Alignment">
-				<bulma-select v-model="align" :options="getBulmaAlignments()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Alignment">
+				<v-bulma-select v-model="align" :options="getBulmaAlignments()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Size">
-				<bulma-select v-model="size" :options="getBulmaSizes()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Size">
+				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Tag">
-				<bulma-input v-model="tag" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Tag">
+				<v-bulma-input v-model="tag" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Has Addons">
+			<v-bulma-form-field is-horizontal label="Has Addons">
 				<input v-model="addons" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
-	import BulmaButtonGroup from "../../vbComponents/layouts/BulmaButtonGroup.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
+	import VBulmaButtonGroup from "../../vbComponents/layouts/VBulmaButtonGroup.vue";
 
 	const align = ref<BulmaAlignment>('center');
 	const size = ref<BulmaSize>('medium');

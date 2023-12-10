@@ -1,48 +1,48 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-notification :colour="col" :is-light="light" :tag="t">
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-notification :colour="col" :is-light="light" :tag="t">
 			<template v-if="del" #delete>
-				<bulma-delete />
+				<v-bulma-delete />
 			</template>
 			Hey just letting you know <em>this a notification</em> courtesy of <a href="http://bulma.io">Bulma</a>
 			brought to
 			you by me Chris 😃
-		</bulma-notification>
-	</bulma-box>
+		</v-bulma-notification>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse">
-			<BulmaFormField is-horizontal label="Colour">
-				<bulma-select v-model="col" :options="getBulmaColours()" />
-			</BulmaFormField>
+			<VBulmaFormField is-horizontal label="Colour">
+				<v-bulma-select v-model="col" :options="getBulmaColours()" />
+			</VBulmaFormField>
 
 
-			<BulmaFormField is-horizontal label="Light colour">
+			<VBulmaFormField is-horizontal label="Light colour">
 				<input v-model="light" type="checkbox" />
-			</BulmaFormField>
-			<BulmaFormField is-horizontal label="Delete">
+			</VBulmaFormField>
+			<VBulmaFormField is-horizontal label="Delete">
 				<input v-model="del" type="checkbox" />
-			</BulmaFormField>
+			</VBulmaFormField>
 
 
-			<BulmaFormField is-horizontal label="Tag">
-				<bulma-input v-model="t" />
-			</BulmaFormField>
+			<VBulmaFormField is-horizontal label="Tag">
+				<v-bulma-input v-model="t" />
+			</VBulmaFormField>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColour, getBulmaColours} from "../../types";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaDelete from "../../vbComponents/elements/BulmaDelete.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaNotification from "../../vbComponents/elements/BulmaNotification.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaDelete from "../../vbComponents/elements/VBulmaDelete.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaNotification from "../../vbComponents/elements/VBulmaNotification.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const t = ref('div');
 	const col = ref<BulmaColour>('default');

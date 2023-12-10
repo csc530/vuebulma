@@ -1,38 +1,38 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-form-control :is-loading="load" :left-icon="rIcon" :tag="tag" :right-icon="lIcon">
-			<bulma-input placeholder="Email@domain.far" type="email" />
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-form-control :is-loading="load" :left-icon="rIcon" :tag="tag" :right-icon="lIcon">
+			<v-bulma-input placeholder="Email@domain.far" type="email" />
 
-		</bulma-form-control>
-	</bulma-box>
+		</v-bulma-form-control>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
 
-			<bulma-form-field is-horizontal label="Tag">
-				<bulma-input v-model="tag" type="text" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Tag">
+				<v-bulma-input v-model="tag" type="text" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Loading">
+			<v-bulma-form-field is-horizontal label="Loading">
 				<input v-model="load" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 
 </template>
 
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaColouredIcon, BulmaMultiIcon} from "../../types/IconTypes";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const tag = ref<string>('div');
 	const load = ref<boolean>(false);

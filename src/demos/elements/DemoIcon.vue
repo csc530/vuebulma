@@ -1,31 +1,31 @@
 <template>
-	<bulma-box>
-		<bulma-icon :colour="{colour: colour, shade: colourShade}" :container-size="size" :flex="flex" :icon="icon"
+	<v-bulma-box>
+		<v-bulma-icon :colour="{colour: colour, shade: colourShade}" :container-size="size" :flex="flex" :icon="icon"
 		            :text="text" :text-first="textPos" prefix="fas" stacked="fa-stack fa-lg" />
-	</bulma-box>
+	</v-bulma-box>
 
-	<bulma-form-field is-horizontal label="Text" label-width="2">
-		<bulma-input v-model="text" />
-	</bulma-form-field>
-	<bulma-form-field is-horizontal label="Text Before Icon" width="2">
+	<v-bulma-form-field is-horizontal label="Text" label-width="2">
+		<v-bulma-input v-model="text" />
+	</v-bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Text Before Icon" width="2">
 		<input v-model="textPos" type="checkbox" />
-	</bulma-form-field>
+	</v-bulma-form-field>
 
-	<bulma-form-field is-horizontal label="Colour">
-		<bulma-select v-model="colour" :options="getBulmaStateColours()" />
-	</bulma-form-field>
-	<bulma-form-field is-horizontal label="Colour Shade">
-		<bulma-select v-model="colourShade" :options="getBulmaShades()" />
-	</bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Colour">
+		<v-bulma-select v-model="colour" :options="getBulmaStateColours()" />
+	</v-bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Colour Shade">
+		<v-bulma-select v-model="colourShade" :options="getBulmaShades()" />
+	</v-bulma-form-field>
 
 
-	<bulma-form-field is-horizontal label="Container Size">
-		<bulma-select v-model="size" :options="getBulmaSizes()" />
-	</bulma-form-field>
+	<v-bulma-form-field is-horizontal label="Container Size">
+		<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+	</v-bulma-form-field>
 
-	<bulma-form-field help="" is-horizontal label="Flex">
+	<v-bulma-form-field help="" is-horizontal label="Flex">
 		<input v-model="flex" type="checkbox" />
-	</bulma-form-field>
+	</v-bulma-form-field>
 
 </template>
 
@@ -41,11 +41,11 @@
 		getBulmaStateColours
 	} from "../../types";
 	import {BulmaColouredIcon} from "../../types/IconTypes";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaIcon from "../../vbComponents/elements/BulmaIcon.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaIcon from "../../vbComponents/elements/VBulmaIcon.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const text = ref<string>('A house icon');
 	const textPos = ref<boolean>(false);

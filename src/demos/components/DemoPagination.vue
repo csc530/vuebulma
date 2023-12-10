@@ -1,40 +1,40 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, rgba(0,209,178,0.2) 0%, rgba(65,184,131,0.23) 100%);">
-		<BulmaPagination :is-rounded="round" :list="list" :alignment="align" :size="size"
+	<v-bulma-box style="background-image: linear-gradient(120deg, rgba(0,209,178,0.2) 0%, rgba(65,184,131,0.23) 100%);">
+		<VBulmaPagination :is-rounded="round" :list="list" :alignment="align" :size="size"
 		                 :next="next.txt !== '' ? next:null" :prev="prev.txt !== '' ? prev:null" />
-	</bulma-box>
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	</v-bulma-box>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap"
 		          name="props">
 
-			<bulma-form-field is-horizontal label="Next">
-				<bulma-form-control-group has-addons>
-					<bulma-form-control>
-						<bulma-input v-model="next.txt" />
-					</bulma-form-control>
-				</bulma-form-control-group>
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Previous">
-				<bulma-form-control-group has-addons>
-					<bulma-form-control>
-						<bulma-input v-model="prev.txt" />
-					</bulma-form-control>
-				</bulma-form-control-group>
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Alignment/Order">
-				<bulma-select :options="getBulmaAlignments()" v-model="align" />
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Size">
-				<bulma-select :options="getBulmaSizes()" v-model="size" />
+			<v-bulma-form-field is-horizontal label="Next">
+				<v-bulma-form-control-group has-addons>
+					<v-bulma-form-control>
+						<v-bulma-input v-model="next.txt" />
+					</v-bulma-form-control>
+				</v-bulma-form-control-group>
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Previous">
+				<v-bulma-form-control-group has-addons>
+					<v-bulma-form-control>
+						<v-bulma-input v-model="prev.txt" />
+					</v-bulma-form-control>
+				</v-bulma-form-control-group>
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Alignment/Order">
+				<v-bulma-select :options="getBulmaAlignments()" v-model="align" />
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Size">
+				<v-bulma-select :options="getBulmaSizes()" v-model="size" />
 
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Rounded">
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Rounded">
 				<input type="checkbox" v-model="round" />
 
-			</bulma-form-field>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 
@@ -42,14 +42,14 @@
 
 	import {ref} from "vue";
 	import {BulmaAlignment, BulmaLink, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
-	import BulmaPagination from "../../vbComponents/components/BulmaPagination.vue";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormControl from "../../vbComponents/form/groups/BulmaFormControl.vue";
-	import BulmaFormControlGroup from "../../vbComponents/form/groups/BulmaFormControlGroup.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaPagination from "../../vbComponents/components/VBulmaPagination.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormControlGroup from "../../vbComponents/form/groups/VBulmaFormControlGroup.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const list: BulmaLink[] = [
 		NaN,

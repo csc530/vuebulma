@@ -1,50 +1,50 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-dropdown :alignment="alignment" :content="items" :is-dropup="dropup" :is-hoverable="hoverable"
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-dropdown :alignment="alignment" :content="items" :is-dropup="dropup" :is-hoverable="hoverable"
 		                item-tag="a">
-			<bulma-button>
-				<bulma-icon :colour="'info'" :text="trigger" icon="fas fa-angle-down" text-first />
-			</bulma-button>
-		</bulma-dropdown>
-	</bulma-box>
+			<v-bulma-button>
+				<v-bulma-icon :colour="'info'" :text="trigger" icon="fas fa-angle-down" text-first />
+			</v-bulma-button>
+		</v-bulma-dropdown>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Trigger">
-				<bulma-input v-model="trigger" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Trigger">
+				<v-bulma-input v-model="trigger" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Alignment">
-				<bulma-select v-model="alignment" :options="getBulmaLeftRight()" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Alignment">
+				<v-bulma-select v-model="alignment" :options="getBulmaLeftRight()" />
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Hoverable">
+			<v-bulma-form-field is-horizontal label="Hoverable">
 				<input v-model="hoverable" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Dropup">
+			<v-bulma-form-field is-horizontal label="Dropup">
 				<input v-model="dropup" type="checkbox" />
-			</bulma-form-field>
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script lang="ts" setup>
 	import {ref} from "vue";
 	import {BulmaLeftRight, getBulmaLeftRight} from "../../types";
-	import BulmaDropdown from "../../vbComponents/components/BulmaDropdown.vue";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaIcon from "../../vbComponents/elements/BulmaIcon.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaSelect from "../../vbComponents/form/BulmaSelect.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaDropdown from "../../vbComponents/components/VBulmaDropdown.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaIcon from "../../vbComponents/elements/VBulmaIcon.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
-	const items = ['Banna Bread', 'Apple Pie', null, 'Apple fritter', '(Jamaican) Patty']
+	const items = ['Banana Bread', 'Apple Pie', null, 'Apple fritter', '(Jamaican) Patty']
 
 	const trigger = ref('Click me')
 	const alignment = ref<BulmaLeftRight>('left');

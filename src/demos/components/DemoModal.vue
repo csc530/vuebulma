@@ -1,62 +1,62 @@
 <template>
-	<bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<bulma-modal v-model:is-active="active" @closed="(val)=>active=val">
-			<bulma-box>
-				<bulma-heading>{{ title }}</bulma-heading>
+	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
+		<v-bulma-modal v-model:is-active="active" @closed="(val)=>active=val">
+			<v-bulma-box>
+				<v-bulma-heading>{{ title }}</v-bulma-heading>
 				{{ body }}
-				<bulma-button is-static>{{ footer }}</bulma-button>
-			</bulma-box>
-		</bulma-modal>
+				<v-bulma-button is-static>{{ footer }}</v-bulma-button>
+			</v-bulma-box>
+		</v-bulma-modal>
 
-		<bulma-modal-card v-model:is-active="card" :title="title">
+		<v-bulma-modal-card v-model:is-active="card" :title="title">
 			<p>{{ body }}</p>
-			<bulma-dropdown :content="dropdown" item-tag="a">
-				<bulma-button>Learn more..?</bulma-button>
+			<v-bulma-dropdown :content="dropdown" item-tag="a">
+				<v-bulma-button>Learn more..?</v-bulma-button>
 				<template #dropdown-item="{data}">
 					<a :href="data.link">{{ data.txt }}</a>
 				</template>
-			</bulma-dropdown>
+			</v-bulma-dropdown>
 			<template #footer>
 				<p>{{ footer }}</p>
 			</template>
-		</bulma-modal-card>
-	</bulma-box>
+		</v-bulma-modal-card>
+	</v-bulma-box>
 
-	<bulma-box>
-		<bulma-heading>Props</bulma-heading>
+	<v-bulma-box>
+		<v-bulma-heading>Props</v-bulma-heading>
 		<fieldset
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
-			<bulma-form-field is-horizontal label="Activate">
-				<bulma-button colour="primary" @click="active = true">Open Modal!</bulma-button>
-				<bulma-button colour="ghost" is-inverted @click="card = !card">Open Modal--card</bulma-button>
+			<v-bulma-form-field is-horizontal label="Activate">
+				<v-bulma-button colour="primary" @click="active = true">Open Modal!</v-bulma-button>
+				<v-bulma-button colour="ghost" is-inverted @click="card = !card">Open Modal--card</v-bulma-button>
 
-			</bulma-form-field>
+			</v-bulma-form-field>
 
-			<bulma-form-field is-horizontal label="Title">
-				<bulma-input v-model="title" />
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Body">
-				<bulma-input v-model="body" />
-			</bulma-form-field>
-			<bulma-form-field is-horizontal label="Footer">
-				<bulma-input v-model="footer" />
-			</bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Title">
+				<v-bulma-input v-model="title" />
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Body">
+				<v-bulma-input v-model="body" />
+			</v-bulma-form-field>
+			<v-bulma-form-field is-horizontal label="Footer">
+				<v-bulma-input v-model="footer" />
+			</v-bulma-form-field>
 		</fieldset>
-	</bulma-box>
+	</v-bulma-box>
 </template>
 
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import BulmaDropdown from "../../vbComponents/components/BulmaDropdown.vue";
-	import BulmaModal from "../../vbComponents/components/BulmaModal.vue";
-	import BulmaModalCard from "../../vbComponents/components/BulmaModalCard.vue";
-	import BulmaBox from "../../vbComponents/elements/BulmaBox.vue";
-	import BulmaButton from "../../vbComponents/elements/BulmaButton.vue";
-	import BulmaHeading from "../../vbComponents/elements/BulmaHeading.vue";
-	import BulmaInput from "../../vbComponents/form/BulmaInput.vue";
-	import BulmaFormField from "../../vbComponents/form/groups/BulmaFormField.vue";
+	import VBulmaDropdown from "../../vbComponents/components/VBulmaDropdown.vue";
+	import VBulmaModal from "../../vbComponents/components/VBulmaModal.vue";
+	import VBulmaModalCard from "../../vbComponents/components/VBulmaModalCard.vue";
+	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
+	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
+	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
 
 	const active = ref()
 	const card = ref();
