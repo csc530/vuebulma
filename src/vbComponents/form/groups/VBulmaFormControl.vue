@@ -1,19 +1,19 @@
 <template>
 	<component :is="tag" :class="classes" class="control">
 		<slot />
-		<bulma-icon v-if="rightIcon || $slots['right-icon']" v-bind="rightIcon" class="is-right">
+		<v-bulma-icon v-if="rightIcon || $slots['right-icon']" v-bind="rightIcon" class="is-right">
 			<slot name="right-icon" />
-		</bulma-icon>
-		<bulma-icon v-if="leftIcon || $slots['left-icon']" v-bind="leftIcon" class="is-left">
+		</v-bulma-icon>
+		<v-bulma-icon v-if="leftIcon || $slots['left-icon']" v-bind="leftIcon" class="is-left">
 			<slot name="left-icon" />
-		</bulma-icon>
+		</v-bulma-icon>
 	</component>
 </template>
 <!--todo: simplify or well document/explain how to use and properly nest all these form controls 🙃 so much for making the library an easier version of Bulma to work with-->
 <script lang="ts" setup>
 	import {computed} from "vue";
 	import {getBulmaClassesFromProps, IconProps} from "../../../types";
-	import BulmaIcon from "../../elements/BulmaIcon.vue";
+	import VBulmaIcon from "../../elements/VBulmaIcon.vue";
 
 
 	const props = withDefaults(defineProps<{

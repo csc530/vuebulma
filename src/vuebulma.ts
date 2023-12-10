@@ -1,111 +1,116 @@
-import BulmaBreadcrumb from "./vbComponents/components/BulmaBreadcrumb.vue";
-import BulmaCard from "./vbComponents/components/BulmaCard.vue";
-import BulmaDropdown from "./vbComponents/components/BulmaDropdown.vue";
-import BulmaMenu from "./vbComponents/components/BulmaMenu.vue";
-import BulmaMessage from "./vbComponents/components/BulmaMessage.vue";
-import BulmaModal from "./vbComponents/components/BulmaModal.vue";
-import BulmaModalCard from "./vbComponents/components/BulmaModalCard.vue";
-import BulmaPagination from "./vbComponents/components/BulmaPagination.vue";
-import BulmaPanel from "./vbComponents/components/BulmaPanel.vue";
-import BulmaNavbar from "./vbComponents/components/navbar/BulmaNavbar.vue";
-import BulmaBlock from "./vbComponents/elements/BulmaBlock.vue";
-import BulmaBox from "./vbComponents/elements/BulmaBox.vue";
-import BulmaButton from "./vbComponents/elements/BulmaButton.vue";
-import BulmaDelete from "./vbComponents/elements/BulmaDelete.vue";
-import BulmaHeading from "./vbComponents/elements/BulmaHeading.vue";
-import BulmaIcon from "./vbComponents/elements/BulmaIcon.vue";
-import BulmaImage from "./vbComponents/elements/BulmaImage.vue";
-import BulmaNotification from "./vbComponents/elements/BulmaNotification.vue";
-import BulmaProgressbar from "./vbComponents/elements/BulmaProgressbar.vue";
-import BulmaTable from "./vbComponents/elements/BulmaTable.vue";
-import BulmaTag from "./vbComponents/elements/BulmaTag.vue";
-import BulmaFileInput from "./vbComponents/form/BulmaFileInput.vue";
-import BulmaInput from "./vbComponents/form/BulmaInput.vue";
-import BulmaSelect from "./vbComponents/form/BulmaSelect.vue";
-import BulmaTextArea from "./vbComponents/form/BulmaTextArea.vue";
-import BulmaFormControl from "./vbComponents/form/groups/BulmaFormControl.vue";
-import BulmaFormControlGroup from "./vbComponents/form/groups/BulmaFormControlGroup.vue";
-import BulmaFormField from "./vbComponents/form/groups/BulmaFormField.vue";
-import BulmaButtonGroup from "./vbComponents/layouts/BulmaButtonGroup.vue";
-import BulmaHero from "./vbComponents/layouts/BulmaHero.vue";
-import BulmaTagGroup from "./vbComponents/layouts/BulmaTagGroup.vue";
-import BulmaTile from "./vbComponents/layouts/BulmaTile.vue";
-import BulmaColumn from "./vbComponents/layouts/Columns/BulmaColumn.vue";
-import BulmaColumnGroup from "./vbComponents/layouts/Columns/BulmaColumnGroup.vue";
-import BulmaLevel from "./vbComponents/layouts/Level/BulmaLevel.vue";
+import VBulmaBreadcrumb from "./vbComponents/components/VBulmaBreadcrumb.vue";
+import VBulmaCard from "./vbComponents/components/VBulmaCard.vue";
+import VBulmaDropdown from "./vbComponents/components/VBulmaDropdown.vue";
+import VBulmaMenu from "./vbComponents/components/VBulmaMenu.vue";
+import VBulmaMessage from "./vbComponents/components/VBulmaMessage.vue";
+import VBulmaModal from "./vbComponents/components/VBulmaModal.vue";
+import VBulmaModalCard from "./vbComponents/components/VBulmaModalCard.vue";
+import VBulmaPagination from "./vbComponents/components/VBulmaPagination.vue";
+import VBulmaPanel from "./vbComponents/components/VBulmaPanel.vue";
+import VBulmaNavbar from "./vbComponents/components/navbar/VBulmaNavbar.vue";
+import VBulmaBlock from "./vbComponents/elements/VBulmaBlock.vue";
+import VBulmaBox from "./vbComponents/elements/VBulmaBox.vue";
+import VBulmaButton from "./vbComponents/elements/VBulmaButton.vue";
+import VBulmaDelete from "./vbComponents/elements/VBulmaDelete.vue";
+import VBulmaHeading from "./vbComponents/elements/VBulmaHeading.vue";
+import VBulmaIcon from "./vbComponents/elements/VBulmaIcon.vue";
+import VBulmaImage from "./vbComponents/elements/VBulmaImage.vue";
+import VBulmaNotification from "./vbComponents/elements/VBulmaNotification.vue";
+import VBulmaProgressbar from "./vbComponents/elements/VBulmaProgressbar.vue";
+import VBulmaTable from "./vbComponents/elements/VBulmaTable.vue";
+import VBulmaTag from "./vbComponents/elements/VBulmaTag.vue";
+import VBulmaFileInput from "./vbComponents/form/VBulmaFileInput.vue";
+import VBulmaInput from "./vbComponents/form/VBulmaInput.vue";
+import VBulmaSelect from "./vbComponents/form/VBulmaSelect.vue";
+import VBulmaTextArea from "./vbComponents/form/VBulmaTextArea.vue";
+import VBulmaFormControl from "./vbComponents/form/groups/VBulmaFormControl.vue";
+import VBulmaFormControlGroup from "./vbComponents/form/groups/VBulmaFormControlGroup.vue";
+import VBulmaFormField from "./vbComponents/form/groups/VBulmaFormField.vue";
+import VBulmaButtonGroup from "./vbComponents/layouts/VBulmaButtonGroup.vue";
+import VBulmaHero from "./vbComponents/layouts/VBulmaHero.vue";
+import VBulmaTagGroup from "./vbComponents/layouts/VBulmaTagGroup.vue";
+import VBulmaTile from "./vbComponents/layouts/VBulmaTile.vue";
+import VBulmaColumn from "./vbComponents/layouts/Columns/VBulmaColumn.vue";
+import VBulmaColumnGroup from "./vbComponents/layouts/Columns/VBulmaColumnGroup.vue";
+import VBulmaLevel from "./vbComponents/layouts/Level/VBulmaLevel.vue";
+import {App} from "vue";
 
 const vuebulma = {
-	install(Vue: any) {
-		Vue.component("vbHeading", BulmaHeading);
-		Vue.component("vbIcon", BulmaIcon);
-		Vue.component("vbImage", BulmaImage);
-		Vue.component("vbBreadcrumb", BulmaBreadcrumb);
-		Vue.component("vbMessage", BulmaMessage);
-		Vue.component("vbBox", BulmaBox);
-		Vue.component("vbBlock", BulmaBlock);
-		Vue.component("vbDropdown", BulmaDropdown);
-		Vue.component("vbNavBar", BulmaNavbar);
-		Vue.component("vbMenu", BulmaMenu);
-		Vue.component("vbButton", BulmaButton);
-		Vue.component("vbButtonGroup", BulmaButtonGroup);
-		Vue.component("vbFileInput", BulmaFileInput);
-		Vue.component("vbInput", BulmaInput);
-		Vue.component("vbSelect", BulmaSelect);
-		Vue.component("vbFormControl", BulmaFormControl);
-		Vue.component("vbFormField", BulmaFormField);
-		Vue.component("vbFormControlGroup", BulmaFormControlGroup);
-		Vue.component("vbTextArea", BulmaTextArea);
-		Vue.component("vbCard", BulmaCard);
-		Vue.component("vbModal", BulmaModal);
-		Vue.component("vbModalCard", BulmaModalCard);
-		Vue.component("vbPagination", BulmaPagination);
-		Vue.component("vbPanel", BulmaPanel);
-		Vue.component("vbHero", BulmaHero);
-		Vue.component("vbSection", BulmaHero);
-		Vue.component("vbLevel", BulmaLevel);
-		Vue.component("vbColumnGroup", BulmaColumnGroup);
-		Vue.component("vbColumn", BulmaColumn);
-		Vue.component("vbTile", BulmaTile);
-		Vue.component("vbTag", BulmaTag);
-		Vue.component("vbTagGroup", BulmaTagGroup);
+	install(Vue: App){
+		// 	components
+		Vue.component("VBulmaBreadcrumb", VBulmaBreadcrumb);
+		Vue.component("VBulmaCard", VBulmaCard);
+		Vue.component("VBulmaDropdown", VBulmaDropdown);
+		Vue.component("VBulmaMenu", VBulmaMenu);
+		Vue.component("VBulmaMessage", VBulmaMessage);
+		Vue.component("VBulmaModal", VBulmaModal);
+		Vue.component("VBulmaModalCard", VBulmaModalCard);
+		Vue.component("VBulmaPagination", VBulmaPagination);
+		Vue.component("VBulmaPanel", VBulmaPanel);
+		Vue.component("VBulmaNavbar", VBulmaNavbar);
+		Vue.component("VBulmaBlock", VBulmaBlock);
+		Vue.component("VBulmaBox", VBulmaBox);
+		Vue.component("VBulmaButton", VBulmaButton);
+		Vue.component("VBulmaDelete", VBulmaDelete);
+		Vue.component("VBulmaHeading", VBulmaHeading);
+		Vue.component("VBulmaIcon", VBulmaIcon);
+		Vue.component("VBulmaImage", VBulmaImage);
+		Vue.component("VBulmaNotification", VBulmaNotification);
+		Vue.component("VBulmaProgressbar", VBulmaProgressbar);
+		Vue.component("VBulmaTable", VBulmaTable);
+		Vue.component("VBulmaTag", VBulmaTag);
+		Vue.component("VBulmaFileInput", VBulmaFileInput);
+		Vue.component("VBulmaInput", VBulmaInput);
+		Vue.component("VBulmaSelect", VBulmaSelect);
+		Vue.component("VBulmaTextArea", VBulmaTextArea);
+		Vue.component("VBulmaFormControl", VBulmaFormControl);
+		Vue.component("VBulmaFormControlGroup", VBulmaFormControlGroup);
+		Vue.component("VBulmaFormField", VBulmaFormField);
+		Vue.component("VBulmaButtonGroup", VBulmaButtonGroup);
+		Vue.component("VBulmaHero", VBulmaHero);
+		Vue.component("VBulmaTagGroup", VBulmaTagGroup);
+		Vue.component("VBulmaTile", VBulmaTile);
+		Vue.component("VBulmaColumn", VBulmaColumn);
+		Vue.component("VBulmaColumnGroup", VBulmaColumnGroup);
+		Vue.component("VBulmaLevel", VBulmaLevel);
 	}
 };
 
 export {
-	BulmaHeading as vbHeading,
-	BulmaIcon as vbIcon,
-	BulmaImage as vbImage,
-	BulmaBreadcrumb as vbBreadcrumb,
-	BulmaBox as vbBox,
-	BulmaBlock as vbBlock,
-	BulmaDropdown as vbDropdown,
-	BulmaTextArea as vbTextArea,
-	BulmaMessage as vbMessage,
-	BulmaMenu as vbMenu,
-	BulmaNavbar as vbNavbar,
-	BulmaButton as vbButton,
-	BulmaButtonGroup as vbButtonGroup,
-	BulmaFileInput as vbFileInput,
-	BulmaInput as vbInput,
-	BulmaSelect as vbSelect,
-	BulmaFormControl as vbFormControl,
-	BulmaFormField as vbFormField,
-	BulmaFormControlGroup as vbFormControlGroup,
-	BulmaDelete as vbDelete,
-	BulmaNotification as vbNotification,
-	BulmaTable as vbTable,
-	BulmaProgressbar as vbProgressbar,
-	BulmaCard as vbCard,
-	BulmaPagination as vbPagination,
-	BulmaModal as vbModal,
-	BulmaModalCard as vbModalCard,
-	BulmaPanel as vbPanel,
-	BulmaHero as vbHero,
-	BulmaLevel as vbLevel,
-	BulmaColumnGroup as vbColumnGroup,
-	BulmaColumn as vbColumn,
-	BulmaTile as vbTile,
-	BulmaTagGroup as vbTagGroup,
-	BulmaTag as vbTag,
-	vuebulma
+	vuebulma,
+	VBulmaBreadcrumb,
+	VBulmaCard,
+	VBulmaDropdown,
+	VBulmaMenu,
+	VBulmaMessage,
+	VBulmaModal,
+	VBulmaModalCard,
+	VBulmaPagination,
+	VBulmaPanel,
+	VBulmaNavbar,
+	VBulmaBlock,
+	VBulmaBox,
+	VBulmaButton,
+	VBulmaDelete,
+	VBulmaHeading,
+	VBulmaIcon,
+	VBulmaImage,
+	VBulmaNotification,
+	VBulmaProgressbar,
+	VBulmaTable,
+	VBulmaTag,
+	VBulmaFileInput,
+	VBulmaInput,
+	VBulmaSelect,
+	VBulmaTextArea,
+	VBulmaFormControl,
+	VBulmaFormControlGroup,
+	VBulmaFormField,
+	VBulmaButtonGroup,
+	VBulmaHero,
+	VBulmaTagGroup,
+	VBulmaTile,
+	VBulmaColumn,
+	VBulmaColumnGroup,
+	VBulmaLevel
 };

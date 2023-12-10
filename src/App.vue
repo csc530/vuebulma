@@ -1,5 +1,5 @@
 <template>
-<demo-tile/>
+
 </template>
 
 <script>

@@ -2,11 +2,11 @@
 	<nav :class="classes" class="navbar">
 		<!-- * Left hand side Always visible-->
 		<div class="navbar-brand">
-			<bulma-navbar-item v-for="(item, i) in startItems" ref="startItem" :boxed-dropdown="boxedDropdowns"
+			<v-bulma-navbar-item v-for="(item, i) in startItems" ref="startItem" :boxed-dropdown="boxedDropdowns"
 			                   :is-tab="brandTab" :item="item" :tag="startItemTag"
 			                   @click="activateItem($refs.startItem[i])">
 				<slot name="start-items" v-bind:data="item" />
-			</bulma-navbar-item>
+			</v-bulma-navbar-item>
 
 			<button ref="burger" class="navbar-burger" @click="toggleMenu">
 				<span aria-hidden="true"></span>
@@ -20,20 +20,20 @@
 
 			<!-- * the left part of the menu, which appears next to the navbar brand on desktop-->
 			<div class="navbar-start">
-				<bulma-navbar-item v-for="(item, i) in middleItems" ref="middleItem" :boxed-dropdown="boxedDropdowns"
+				<v-bulma-navbar-item v-for="(item, i) in middleItems" ref="middleItem" :boxed-dropdown="boxedDropdowns"
 				                   :is-tab="startTab" :item="item" :tag="middleItemTag"
 				                   @click="activateItem($refs.middleItem[i])">
 					<slot name="middle-items" v-bind:data="item" />
-				</bulma-navbar-item>
+				</v-bulma-navbar-item>
 			</div>
 
 			<!-- * the right part of the menu, which appears at the end of the navbar-->
 			<div class="navbar-end">
-				<bulma-navbar-item v-for="(item, i) in endItems" ref="endItem" :boxed-dropdown="boxedDropdowns"
+				<v-bulma-navbar-item v-for="(item, i) in endItems" ref="endItem" :boxed-dropdown="boxedDropdowns"
 				                   :is-tab="endTab" :item="item" :tag="endItemTag"
 				                   @click="activateItem($refs.endItem[i])">
 					<slot name="end-items" v-bind:data="item" />
-				</bulma-navbar-item>
+				</v-bulma-navbar-item>
 			</div>
 		</div>
 	</nav>
@@ -42,7 +42,7 @@
 <script lang="ts" setup>
 	import {computed, ref, watch} from "vue";
 	import {BulmaColour, BulmaNavbarItemTag, getBulmaClassesFromProps} from "../../../types";
-	import BulmaNavbarItem from "./BulmaNavbarItem.vue";
+	import VBulmaNavbarItem from "./VBulmaNavbarItem.vue";
 
 	const props = withDefaults(defineProps<{
 		/** Toggle active look of navbar items. If `single` only one item will be active at a time
@@ -117,8 +117,8 @@
 	const startTab = computed(() => isTabbed('start'));
 	const endTab = computed(() => isTabbed('end'));
 
-	const activeItem = ref<InstanceType<typeof BulmaNavbarItem> | null>(null);
-	const activateItem = (item: InstanceType<typeof BulmaNavbarItem>) => {
+	const activeItem = ref<InstanceType<typeof VBulmaNavbarItem> | null>(null);
+	const activateItem = (item: InstanceType<typeof VBulmaNavbarItem>) => {
 		if(props.activateOnClick === 'single') {
 			if(activeItem.value)
 				activeItem.value.isActive['is-active'] = false;
