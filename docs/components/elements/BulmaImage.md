@@ -1,67 +1,70 @@
-# vbImage
+# VBulmaImage
 
 [Bulma documentation](https://bulma.io/documentation/elements/image/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaImage.vue)
 
-An img with a container to hold maintain its size allowing for no page jumping when it's loaded.
+A container to display an image.
+Its size is fixed preventing page jumps when loading child image.
 
 ## Slots
 
 ### default
 
 The image to display.
-
-### figcaption
-
-The caption to display for the image.
+Recommended to use `img` element with `src` and `alt` attributes.
 
 ## Props
 
-### dimensions
+### size
 
-Type: [`BulmaDimension`](../../types/BulmaDimension.md) | `undefined`
+Type: [`BulmaDimension`](../../types/BulmaDimension.md) |  [`BulmaAspectRatio`](../../types/BulmaAspectRatio.md)
 
-Standard dimensions for the image container to be from 16 to 128
+Standard dimensions for the image container to be from 16 to 128, or an arbitrary ratio.
+If an aspect ratio is used, a set width on the VBulmaImage is recommended.
+
+> The only requirement is for the parent element to already have a specific width.
+>
+> The image container will usually take up the whole width while maintaining the perfect ratio.
+> If it doesn't, you can force it by appending the is-fullwidth modifier.
+> 
+> – Bulma documentation
 
 ### isRounded
 
-Type: `boolean` | `undefined`
+Type: `boolean`
 
-If the container should be rounder; clipping whatever does not fit into the image
+If the container should be rounder; clipping whatever does not fit into the image.
+If you [slot](#default) your own content this prop will have no effect.
 
-### aspectRatio
-
-Type: [`BulmaAspectRatio`](../../types/BulmaAspectRatio.md) | `undefined`
-
-_Requires **width** attribute to be set_
-Sets the height based on given width and aspect ratio.
 
 ### src
 
-Type: `string` | `undefined`
+Type: `string`
 
-Src attribute for the img element
+src attribute for the img element
 
 ### alt
 
-_Use recommended_
-
-Type: `string` | `undefined`
+Type: `string`
 
 Alt attribute for the img element;
 
-### caption
+### [tag](../../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
-Optional caption text to display in figcaption
+Default: `figure`
 
-### width
+The tag to use for the container element.
 
-type: `string` | `undefined`
+### isFullwidth
 
-Sets the css style of the image parent element (figure) to the width. Made for use with aspect ratio
+Type: `boolean`
+
+Default: `false`
+
+forcibly set the container to be full width, if 
 
 ## Additional information
 
-The `src` and `alt` will be used if there is no present slot content.
+The `src` and `alt`will be used, to create an img element, if there is no default slot content.

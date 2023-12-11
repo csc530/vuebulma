@@ -1,7 +1,6 @@
 import Case from "case";
 import {toBulmaSeparatorClass} from "./types/BreadcrumbTypes";
 import {BulmaButtonColour} from "./types/ButtonTypes";
-import {toBulmaAspectRatioClass, toBulmaDimensionsClass} from "./types/ImageTypes";
 // ? export all types from ./types/ for build and ease of use
 export * from "./types/BreadcrumbTypes";
 export * from "./types/ImageTypes";
@@ -141,10 +140,6 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 		classList.push(toSizeClasses(classes.size, areSizes));
 	if(classes.separator)
 		classList.push(toBulmaSeparatorClass(classes.separator));
-	if(classes.aspectRatio)
-		classList.push(toBulmaAspectRatioClass(classes.aspectRatio));
-	if(classes.dimensions)
-		classList.push(toBulmaDimensionsClass(classes.dimensions));
 	if(classes["state"])
 		classList.push(toBulmaStateClass(classes.state));
 	//remove blank or undefined entries
