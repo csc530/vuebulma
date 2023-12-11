@@ -1,11 +1,12 @@
 <template>
-	<component :is="tag" class="columns is-" :class="classes">
+	<component :is="tag" class="columns" :class="classes">
 		<slot/>
 	</component>
 </template>
 
 <script setup lang="ts">
 	import {computed} from "vue";
+	import {toGapClass} from "../../../class-transformers/columnTransformers";
 	import {BulmaMediaSizes, getBulmaClassesFromProps} from "../../../types";
 	import {BulmaColumnGapSizes} from "../../../types/ColumnTypes";
 
@@ -13,31 +14,15 @@
 		tag?: string
 		// todo: removing custom gap size but works when just the numbers are used in the union showing
 		// * [Vue warn]: Invalid prop: type check failed for prop "gaps". Expected Boolean | Null, got Number with value 8.
-		gaps?: boolean | BulmaColumnGapSizes
+		gap?: boolean | BulmaColumnGapSizes
 		breakpointGaps?: Record<Exclude<BulmaMediaSizes, "auto">, boolean | BulmaColumnGapSizes>
 		isMultiline?: boolean
-		/** center the child columns vertically
-		 * @default false
-		 */
 		isVcentered?: boolean
-		/** Center child columns horizontally
-		 * @default false
-		 */
 		isCentered?: boolean
 	}>(), {
 		tag: "div",
-		gaps: true
+		gap: true
 	});
-
-	function toGapClass(gap: boolean | BulmaColumnGapSizes) {
-		if(gap === true)
-			return;
-		else if(gap === false)
-			return ("is-gapless");
-		else if(gap !== true) {
-			return [("is-variable"), ("is-" + gap.toString())];
-		}
-	}
 
 	const classes = computed(() => {
 		const classes = [];
@@ -51,10 +36,9 @@
 				classes.push(toGapClass(props.breakpointGaps[breakpoint]));
 			}
 		}
-		classes.push(toGapClass(props.gaps));
+		classes.push(toGapClass(props.gap));
 		classes.push(getBulmaClassesFromProps(props));
 		return classes;
-
 	});
 </script>
 

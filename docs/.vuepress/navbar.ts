@@ -61,7 +61,7 @@ function sortNavbarGroup(group: NavbarGroup) {
 		else
 			return a.text.localeCompare(b.text)
 	});
-	for(var i = 1; i < arguments.length; i++)
+	for(let i = 1; i < arguments.length; i++)
 		if(isNavbarGroup(arguments[i]))
 			sortNavbarGroup(arguments[i]);
 }
@@ -142,9 +142,9 @@ export function createNavbar(home?: boolean, docsPath?: string) {
 
 
 function isNavbarItem(item: any): item is NavbarItem {
-	return item && item.text !== undefined && item.link !== undefined;
+	return item?.text !== undefined && item.link !== undefined;
 }
 
 function isNavbarGroup(item: any): item is NavbarGroup {
-	return item && item.children && item.text;
+	return item?.children && item.text;
 }

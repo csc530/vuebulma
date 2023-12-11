@@ -1,130 +1,81 @@
 <template>
-	<v-bulma-box style="background-image: linear-gradient(120deg, #00d1b2 0%, #41b883 100%);">
-		<v-bulma-column-group :size="2">
-			<v-bulma-column v-for="i in 12">{{ i }} - Evenly-spaced</v-bulma-column>
-		</v-bulma-column-group>
-	</v-bulma-box>
-	<v-bulma-box style="background-image: linear-gradient(120deg, #00d1b2 0%, #41b883 100%);">
-		<v-bulma-heading>Sized columns</v-bulma-heading>
-		<v-bulma-column-group is-multiline>
-			<v-bulma-column size="half">
-				<v-bulma-box>Half</v-bulma-box>
-			</v-bulma-column>
-			<v-bulma-column size="quarter">
-				<v-bulma-box>quarter</v-bulma-box>
-			</v-bulma-column>
-			<v-bulma-column size="1/5">
-				<v-bulma-box>fifth</v-bulma-box>
-			</v-bulma-column>
-			<v-bulma-column size="full">
-				<v-bulma-box>full</v-bulma-box>
-			</v-bulma-column>
-			<v-bulma-column size="10">
-				<v-bulma-box>Ten Twelfths</v-bulma-box>
-			</v-bulma-column>
-			<v-bulma-column size="2/3">
-				<v-bulma-box>Two Thrids</v-bulma-box>
-			</v-bulma-column>
-
-
-		</v-bulma-column-group>
-	</v-bulma-box>
-	<v-bulma-box>
-		<v-bulma-heading>Multiline columns</v-bulma-heading>
-
-		<v-bulma-column-group is-multiline>
-			<v-bulma-column class="" v-for="i in people">
-				<v-bulma-box><q>{{ i.catchphrase }}</q></v-bulma-box>
+	<demo-box>
+		<VBulmaHeading tag="h2">Columns</VBulmaHeading>
+		<v-bulma-column-group style="min-height: 25vb; border: 3px dashed black" :tag="tag" :is-vcentered="isVCentered" :is-centered="centered" :gap="columnGap" :is-multiline="isMultiline">
+			<v-bulma-column v-for="size in columnSizes" :size="size">
+				<v-bulma-box>
+					<p class="has-text-centered">size: {{ size }}</p>
+				</v-bulma-box>
 			</v-bulma-column>
 		</v-bulma-column-group>
-	</v-bulma-box>
 
-	<template v-if="people.length > 0">
-		<v-bulma-box>
-			<v-bulma-heading>Nested columns</v-bulma-heading>
-			<v-bulma-column-group is-multiline>
-				<v-bulma-column v-for="i in Math.round(people.length / 11)">
-					<v-bulma-box>
-						<pre>{{ people[i].first_name }}</pre>
-						<v-bulma-column-group isMultiline>
-							<v-bulma-column class="content" v-for="j in 3">
-								<code>{{ people[people.length - 1 - j].catchphrase }}</code>
-							</v-bulma-column>
-						</v-bulma-column-group>
-					</v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
+		<v-bulma-box tag="section">
+			<v-bulma-heading tag="h3">Props</v-bulma-heading>
+
+			<v-bulma-form-field label="Tag" is-horizontal>
+				<VBulmaFormControl tag="span">
+					<v-bulma-input v-model="tag" />
+				</VBulmaFormControl>
+			</v-bulma-form-field>
+
+			<v-bulma-form-field label="Column gap" is-horizontal>
+				<VBulmaFormControl tag="span">
+					<v-bulma-select v-model="columnGap" :options="columnGapOptions" />
+				</VBulmaFormControl>
+			</v-bulma-form-field>
+
+			<VBulmaFormField is-horizontal label="Multiline">
+				<VBulmaFormControl tag="span">
+					<input type="checkbox" v-model="isMultiline" :checked="isMultiline" />
+				</VBulmaFormControl>
+			</VBulmaFormField>
+
+			<VBulmaFormField is-horizontal label="Centered">
+				<VBulmaFormControl tag="span">
+					<input type="checkbox" v-model="centered" :checked="centered" />
+				</VBulmaFormControl>
+			</VBulmaFormField>
+
+			<VBulmaFormField is-horizontal label="Vertically centered">
+				<VBulmaFormControl tag="span">
+					<input type="checkbox" v-model="isVCentered" :checked="isVCentered" />
+				</VBulmaFormControl>
+			</VBulmaFormField>
 		</v-bulma-box>
-
-		<v-bulma-box>
-			<v-bulma-heading>Horizontally centered columns</v-bulma-heading>
-
-			<v-bulma-column-group is-centered is-multiline>
-				<v-bulma-column size="3">
-					<v-bulma-box><q>{{ people[21].email }}</q></v-bulma-box>
-				</v-bulma-column>
-				<v-bulma-column size="5">
-					<v-bulma-box><q>{{ people[11].email }}</q></v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
-		</v-bulma-box>
-		<v-bulma-box>
-			<v-bulma-heading>Vertically centered columns</v-bulma-heading>
-
-			<v-bulma-column-group is-vcentered is-multiline>
-				<v-bulma-column size="3">
-					<v-bulma-box><p>{{ people[21].first_name + people[2].last_name }}
-						<br/>
-						<a>{{ people[23].email }}</a>
-						<br/>Quote:
-						<q>{{ people[7].catchphrase }}</q>
-					</p>
-					</v-bulma-box>
-				</v-bulma-column>
-				<v-bulma-column size="5">
-					<v-bulma-box><q>{{ people[11].email }}</q></v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
-		</v-bulma-box>
-
-		<v-bulma-box>
-			<v-bulma-heading>Column Gaps</v-bulma-heading>
-
-			<v-bulma-column-group :gaps="4" is-centered is-multiline>
-				<v-bulma-column v-for="i in 5">
-					<v-bulma-box>{{ people[i].email }}</v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
-			<v-bulma-column-group :gaps="8" is-centered is-multiline>
-				<v-bulma-column v-for="i in 5">
-					<v-bulma-box>{{ people[i].email }}</v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
-			<v-bulma-column-group :gaps="false" is-centered is-multiline>
-				<v-bulma-column v-for="i in 5">
-					<v-bulma-box>{{ people[i].email }}</v-bulma-box>
-				</v-bulma-column>
-			</v-bulma-column-group>
-		</v-bulma-box>
-	</template>
+	</demo-box>
 </template>
 
 
 <script setup lang="ts">
-	import {ref} from "vue";
+	import {computed, ref} from "vue";
+	import {BulmaOption} from "../../types/SelectTypes";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
+	import VBulmaFormControl from "../../vbComponents/form/groups/VBulmaFormControl.vue";
+	import VBulmaFormField from "../../vbComponents/form/groups/VBulmaFormField.vue";
+	import VBulmaInput from "../../vbComponents/form/VBulmaInput.vue";
+	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
 	import VBulmaColumnGroup from "../../vbComponents/layouts/Columns/VBulmaColumnGroup.vue";
 	import VBulmaColumn from "../../vbComponents/layouts/Columns/VBulmaColumn.vue";
 
-	const people = ref([]);
-	fetch("https://my.api.mockaroo.com/persons.json?key=d1b450c0").then(value => {
-		(value.json().then(json => {
-			console.log(json);
-			for(let i = 0; i < 24; i++)
-				people.value.push(json[i]);
-		}));
-	});
+	import {BULMA_COLUMN_GAP_SIZES, BULMA_COLUMN_SIZES} from "../../types/ColumnTypes";
+	import DemoBox from "../DemoBox.vue";
 
+	let columnGapOptions: BulmaOption[] = [{value: null, label: "default"}];
+	columnGapOptions = columnGapOptions.concat(BULMA_COLUMN_GAP_SIZES.flatMap(gap => ({
+			label: gap.toString(),
+			value: gap
+		})
+	));
+	const columnGap = ref(columnGapOptions[0].value);
+	const isMultiline = ref(false);
+	const centered = ref(false);
+	const isVCentered = ref(false);
+	const tag = ref("div");
+	let columnSizes = computed((()=>{
+		//shuffle the array BULMA_COLUMN_SIZES
+		const shuffled = BULMA_COLUMN_SIZES.sort(() => 0.5 - Math.random());
+		return shuffled.slice(0, 6);
+	}));
 </script>
 

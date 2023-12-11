@@ -1,22 +1,24 @@
-# vbColumnGroup & vbColumn
+# VBulmaColumnGroup & VBulmaColumn
 
 [Bulma documentation](https://bulma.io/documentation/columns/)
 
-## vbColumnGroup
+## VBulmaColumnGroup
 
-Container for [vbColumn](#vbcolumn)s for an even length of each column
+Container for [VBulmaColumn](#VBulmacolumn)s for an even length of each column
 
 ### Slots
 
 #### default
 
-The vbColumns
+**[VBulmaColumn](#VBulmacolumn) components**.
 
 ### Props
 
 #### [tag](../../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
+
+Default: `div`
 
 #### gaps
 
@@ -28,9 +30,9 @@ Controls The gap size between each column
 
 - `true`: normal-sized gaps between each column
 - `false`: no gaps between columns
-- `number`: The gap size, the larger the number the larger the gap
+- `number`: The gap size – the larger the number the larger the gap
 
-#### breakpointGaps
+#### breakpointGaps - experimental
 
 Type: `Record<"mobile" | "tablet" | "desktop" | "widescreen" | "fullhd", boolean | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>` | `undefinded`
 
@@ -40,22 +42,31 @@ controls individual sizes for column gaps per breakpoint
 
 #### isMultiline
 
-Type: `boolean` | `undefinded`
+Type: `boolean`
 
-If the columns should wrap to a new line
+Default: `false`
+
+If the columns should wrap/overflow to a new line
 
 #### isVcentered
 
-Type: `boolean` | `undefinded`
+Type: `boolean`
+
+Default: `false`
 
 Center the child columns vertically
 
 #### isCentered
 
-Type: `boolean`| `undefinded`
+Type: `boolean`
+
+Default: `false`
+
 Center child columns horizontally
 
-## vbColumn
+--- 
+
+## VBulmaColumn
 
 Container for content within a column
 
@@ -63,38 +74,42 @@ Container for content within a column
 
 #### default
 
-Content to display within the column
+Any content to display within the column
 
 ### Props
 
 #### [tag](../../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
-###size
+#### size
 
-Type:  `full` | `4/5` | `3/4` | `2/3` | `3/5` | `half` | `2/5` | `1/3` | `quarter` | `1/5` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12`| `undefined`
+Type:  `"full"` | `"4/5"` | `"3/4"` | `"2/3"` | `"3/5"` | `"half"` | `"2/5"` | `"1/3"` | `"quarter"` | `"1/5"` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12`
 
-The size the columns should occupy within it parent [column group](#vbcolumngroup). The larger the number the greater
+The size the columns should occupy within it parent [column group](#VBulmacolumngroup). The larger the number the
+greater
 it's occupied space.
 
 [More information](https://bulma.io/documentation/columns/sizes/)
 
 #### offset
 
-Type:   `full` | `4/5` | `3/4` | `2/3` | `3/5` | `half` | `2/5` | `1/3` | `quarter` | `1/5` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12` | `undefined`
+Type:   `"full"` | `"4/5"` | `"3/4"` | `"2/3"` | `"3/5"` | `"half"` | `"2/5"` | `"1/3"` | `"quarter"` | `"1/5"` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12`
 
-The offset (padding) from the left to move the column
+The offset (margin) from the left to move the column
 
 [More information](https://bulma.io/documentation/columns/sizes/#offset)
 
 #### isNarrow
 
-Type: `boolean` | `undefined`
+Type: `boolean`
+
+Default: `false`
 
 If the column should only occupy the space needed to display it's content; to not be equal size with its siblings
+Cannot be used with [`size`](#size).
 
-#### breakpoint
+#### breakpoint - experimental
 
 Type: `false` |`auto` | `mobile` | `tablet` | `desktop` | `widescreen` | `fullhd`
 

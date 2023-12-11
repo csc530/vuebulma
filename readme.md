@@ -7,6 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/@csc530/vuebulma?label=npm%20version&color=teal)](https://www.npmjs.com/package/@csc530/vuebulma?activeTab=versions)
 [![GitHub issues](https://img.shields.io/github/issues/csc530/vuebulma?color=goldenrod)](https://github.com/csc530/vuebulma/issues)
 [![GitHub discussions](https://img.shields.io/badge/Contribute-Discussions-blueviolet)](https://github.com/csc530/vuebulma/discussions)
+[![DeepSource](https://app.deepsource.com/gh/csc530/vuebulma.svg/?label=active+issues&show_trend=true&token=0IgxmClGy_9_VAxF05O_ahpr)](https://app.deepsource.com/gh/csc530/vuebulma/)
 
 ## [Changelog](https://csc530.github.io/vuebulma/changelog.html)
 
@@ -23,20 +24,17 @@ that's compatible with Vue 3.
 
 `npm install @csc530/vuebulma`
 
-`yarn add @csc530/vuebulma`
-
 ## Use
 
 ```vue
-
 <template>
 	<!-- Use Bulma component-->
-	<vbHeading>I'm a Bulma styled heading</vbHeading>
+	<VBulmaHeading>I'm a Bulma styled heading</VBulmaHeading>
 </template>
 
 <script lang="ts" setup>
 	// import the component you want to use
-	import {vbHeading} from '@csc530/vuebulma'
+	import {VBulmaHeading} from '@csc530/vuebulma'
 </script>
 ```
 
