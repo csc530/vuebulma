@@ -35,9 +35,13 @@ concurrency:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
     steps:
       - uses: actions/checkout@v4
         with:
@@ -70,16 +74,6 @@ jobs:
           name: docs
           path: docs/.vuepress/dist
 
-  # Single deploy job since we're just deploying
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
