@@ -1,15 +1,21 @@
 version = 1
 
 exclude_patterns = [
-    "dist/**",
-    ".vuepress/.**"
+  "dist/**",
+  ".vuepress/dist",
+  ".vuepress/.temp",
+  ".vuepress/.cache"
 ]
 
 [[analyzers]]
 name = "javascript"
 
-[analyzers.meta]
-plugins = ["vue"]
+  [analyzers.meta]
+  plugins = ["vue"]
+  environment = [
+    "nodejs",
+    "browser"
+  ]
 
 [[analyzers]]
 name = "secrets"
