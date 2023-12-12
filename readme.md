@@ -22,7 +22,7 @@ that's compatible with Vue 3.
 
 ## Installation
 
-`npm install @csc530/vuebulma`
+[`npm install @csc530/vuebulma`](https://www.npmjs.com/package/@csc530/vuebulma)
 
 ## Use
 
