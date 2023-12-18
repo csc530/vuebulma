@@ -1,10 +1,11 @@
 {
   "conventionalCommits.scopes": [
-	"package",
-	"components",
-	"dependencies",
-	"docs",
-	"workflows",
-	"gh-pages"
-  ]
+    "package",
+    "components",
+    "dependencies",
+    "docs",
+    "workflows",
+    "gh-pages"
+  ],
+  "BracketHighlighter.enableExtension": true
 }

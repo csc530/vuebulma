@@ -1,4 +1,4 @@
-# vbBreadcrumb
+# VBulmaBreadcrumb
 
 [Bulma documentation](https://bulma.io/documentation/components/breadcrumb/)
 [Component source](https://github.com/csc530/vuebulma/blob/main/src/components/BulmaBreadcrumb.vue)
@@ -7,46 +7,45 @@
 
 ### default
 
-Template formatting of the breadcrumb items.
-
-The default is an `a` tag with the `href` attribute set to the `href` property of the item and text set to the `text`
-property of the item or the item itself.
+An `a` elements.
+The slot item is a template for the given item in the [`list`](#list) prop.
+The `list` item is bound to the slot item's `data` property.
 
 ## Props
 
 ### [tag](../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
 Default: `nav`
 
 the tag to render as the breadcrumb's `ul` parent
 
-### lastCrumbIsActive
-
-Type: `boolean` | `undefined`
-
-Default: `true`
-
-Whether the last breadcrumb item should be active
-
 ### list
 
 Type: `any[]`
 
-List of items to render in the breadcrumb
+List of items to render in the breadcrumb.
+Recommended to be a list of strings or `{href: "...", toString(), ...}` objects to have a predictable behaviour and
+display.
+If the array is of strings then the string is displayed and used as the breadcrumb's href as an anchor: for
+example `"#{stringValue}`.
+Likewise, if it's an array of the aforementioned object the href property is used for the href and `toString()` method
+is displayed within the `a`.
+
+If there is an `isActive` property on the object, then the breadcrumb will have an active display depending on its boolean value
 
 ### alignment
 
-Type: [`BulmaAlignment`](../types/common_types.md#bulmaalignment) | `undefined`
+Type: [`BulmaAlignment`](../types/common_types.md#bulmaalignment)
 
-Default: `left`
+Default: `center`
 
 The alignment of the breadcrumbs within its container
 
 ### separator
 
-Type: `arrow` | `bullet` | `dot` | `succeeds` | `slash` | `undefined`
+Type: `arrow` | `bullet` | `dot` | `succeeds` | `slash`
 
 Default: `slash`
 
@@ -54,7 +53,7 @@ The separator to use between breadcrumbs;
 
 ### size
 
-Type: [`BulmaSize`](../types/common_types.md#bulmasize) | `undefined`
+Type: [`BulmaSize`](../types/common_types.md#bulmasize)
 
 Default: `default`
 

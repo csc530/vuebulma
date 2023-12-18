@@ -1,49 +1,45 @@
 <template>
-	<component :is="tag" class="breadcrumb" v-bind:class="classes">
+	<component :is="tag" class="breadcrumb" :class="classes">
 		<ul>
-			<li v-for="(item, index) in list" :key="index" :class="isActiveCrumb(index)">
-				<slot v-bind:data="item">
-					<a :href="item?.href ? item.href : item">{{ item.text ? item.text : item }}</a>
-				</slot>
+			<li v-for="(item, index) in list" :class="isActiveCrumb(index)">
+				<slot v-bind:data="item"><a :href="getHref(item)" v-bind="$attrs">{{ display(item) }}</a></slot>
 			</li>
 		</ul>
 	</component>
 </template>
 
 <script lang="ts" setup>
-	import {computed} from 'vue';
-	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps} from '../../types';
+	import {computed} from "vue";
+	import {BulmaAlignment, BulmaSize, getBulmaClassesFromProps} from "../../types";
 	import {BulmaBreadcrumbSeparator} from "../../types/BreadcrumbTypes";
 
 	const props = withDefaults(defineProps<{
-		/** The tag or component to render as the breadcrumb's ul parent
-		 * @default nav */
 		tag?: string;
-		/** If the last item in the breadcrumb's list should be active; appending 'is-active' to the item
-		 * @default true */
-		lastCrumbIsActive?: boolean;
-		/** list of items to render as breadcrumbs */
-		list: any[];
-		/** the alignment of the breadcrumb within container
-		 * @default left */
+		list?: any[];
 		alignment?: BulmaAlignment;
-		/** the separator to use between breadcrumbs
-		 * @default slash => / */
 		separator?: BulmaBreadcrumbSeparator;
-		/** the size of the breadcrumbs
-		 * @default default */
 		size?: BulmaSize
 	}>(), {
-		tag: 'nav',
-		lastCrumbIsActive: true,
-		alignment: 'left',
-		separator: 'slash',
-		size: 'default'
+		tag: "nav",
+		alignment: "center",
+		separator: "slash",
+		size: "default"
 	});
 
-	const {lastCrumbIsActive, list} = props;
+	const isActiveCrumb = (index: number) => {
+		if(Array.isArray(props.list) && props.list.length - 1 === index || props.list[index].isActive === true)
+			return "is-active";
+	};
 
-	const isActiveCrumb = (index: number) => (lastCrumbIsActive && index === list.length - 1) || list[index].isActive ? 'is-active' : false;
+	const display = (item: any) => typeof item === "string" ? item : item.toString();
+
+	const getHref = (item: any) => {
+		if(typeof item === "object" && Object.hasOwn(item, "href"))
+			return item.href;
+		if(typeof item === "string")
+			return `#${item}`;
+		return "#";
+	};
 
 	const classes = computed(() => getBulmaClassesFromProps(props, false));
 </script>

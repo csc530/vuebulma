@@ -20,7 +20,7 @@ export * from "./types/TileTypes";
 export type _EightType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 export type _TweleveType = _EightType | 9 | 10 | 11 | 12;
 
-export function exhaustion(arg: never) {
+export function exhaustion(arg: never){
 	return arg;
 }
 
@@ -33,7 +33,7 @@ export const getBulmaShades = (): BulmaShade[] => ["white", "black", "light", "d
 export type BulmaColour = BulmaStateColour | BulmaShade;
 export const getBulmaColours = (): BulmaColour[] => ["info", "danger", "warning", "success", "primary", "link", "white", "black", "light", "dark", "default"];
 
-export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] {
+export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[]{
 	//from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
 	// const shades: BulmaShade[] = ['white', 'black', 'light', 'dark', 'default'];
 	const states: BulmaStateColour[] = ["info", "danger", "warning", "success", "primary", "link"];
@@ -48,7 +48,7 @@ export type BulmaColourHelper = {
 	colour: BulmaStateColour;
 }
 
-export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: "background" | "text"): string {
+export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: "background" | "text"): string{
 	if(!colour || colour === "default")
 		return "";
 	else if(typeof colour === "string")
@@ -81,12 +81,9 @@ const getBulmaGrayscaleValues = (): BulmaGrayscale[] => {
 
 
 export type BulmaSize = "small" | "default" | "medium" | "large";
+export const BULMA_SIZES: BulmaSize[] = (() => ["small", "default", "medium", "large"])();
 
-export function getBulmaSizes(): BulmaSize[] {
-	return ["small", "default", "medium", "large"];
-}
-
-export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
+export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string{
 	if(!size || size === "default")
 		return "is-normal";
 	return areClasses ? `are-${size}` : `is-${size}`;
@@ -95,9 +92,9 @@ export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
 export type BulmaLeftRight = "left" | "right";
 export const getBulmaLeftRight = (): BulmaLeftRight[] => ["left", "right"];
 export type BulmaAlignment = "center" | BulmaLeftRight;
-export const getBulmaAlignments = (): BulmaAlignment[] => ["left", "center", "right"];
+export const BULMA_ALIGNMENTS: BulmaAlignment[] = (() => ["left", "center", "right"])();
 
-export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
+export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string{
 	//todo: check is-left is ever used and can be removed when the value
 	if(!alignment)
 		return "";
@@ -107,14 +104,14 @@ export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string {
 	return `is-${alignment}`;
 }
 
-export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void {
+export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void{
 	if(!invoke) return;
 	const target = element ? element : event.target as HTMLElement;
 	target.classList.toggle("is-active");
 }
 
 
-export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[] {
+export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?: boolean): string[]{
 	//todo: replace with switch statement like waterfall of explicit Bulma is/has classes to avoid accidental naming conflict and redundant classes
 
 	const classList = Object.keys(classes)
@@ -146,7 +143,7 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
 	return classList.filter(x => x);
 }
 
-export function removeDecimals(value: number): string {
+export function removeDecimals(value: number): string{
 	return Number(value).toFixed().toString();
 }
 
@@ -157,7 +154,7 @@ export type BulmaState = "active" | "hovered" | "focused" | "default";
 export const getBulmaStates = (): BulmaState[] => ["active", "hovered", "focused", "default"];
 
 /** Converts a {@link BulmaState} to its bulma class */
-export function toBulmaStateClass(state: BulmaState | BulmaInputState): string {
+export function toBulmaStateClass(state: BulmaState | BulmaInputState): string{
 	return state === "default" ? "" : `is-${state}`;
 }
 
@@ -168,6 +165,6 @@ export const getBulmaInputStates = (): BulmaInputState[] => ["active", "hovered"
 export type BulmaMediaSizes = "auto" | BulmaMobileSizes | "desktop" | "widescreen" | "fullhd";
 export type BulmaMobileSizes = "mobile" | "tablet"
 
-export function getBulmaMediaSizes(): BulmaMediaSizes[] {
+export function getBulmaMediaSizes(): BulmaMediaSizes[]{
 	return ["auto", "desktop", "widescreen", "fullhd"];
 }
