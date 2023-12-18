@@ -6,15 +6,15 @@
 
 ### default
 
-content for the card's [main] content
+content for the card's [main] content; ideal for text content.
 
 ### icon
 
-icon for card header
+icon for card header, image or font-awesome icon, [see](https://bulma.io/documentation/components/card/#card-parts)
 
 ### image
 
-card image
+image content
 
 ### footer
 
@@ -24,7 +24,7 @@ template for card footer items. Item is bound to slot `data` property
 
 ### [tag](../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
 Default: `div`
 
@@ -32,21 +32,24 @@ Root tag of the card component
 
 ### title
 
-Type: `string` | `undefined`
+Type: `string`
 
 Text for card header
 
-### centerTitle
+### imageAfterContent
 
-Type: `boolean` | `undefined`
+Type: `boolean`
 
-center the title in card header
+Default: `false`
+
+If true, image will be displayed after the content
+
 
 ### footerItems
 
-Type: `any[]` | `undefined`
+Type: `any[]`
 
-items to display in the card footer
+items to display in the card footer, or data for each footer item
 
 ### footerTag
 
