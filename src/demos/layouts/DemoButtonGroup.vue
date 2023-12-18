@@ -16,11 +16,11 @@
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
 			<v-bulma-form-field is-horizontal label="Alignment">
-				<v-bulma-select v-model="align" :options="getBulmaAlignments()" />
+				<v-bulma-select v-model="align" :options="BULMA_ALIGNMENTS" />
 			</v-bulma-form-field>
 
 			<v-bulma-form-field is-horizontal label="Size">
-				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 			</v-bulma-form-field>
 
 			<v-bulma-form-field is-horizontal label="Tag">
@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {BulmaAlignment, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
+	import {BulmaAlignment, BulmaSize, BULMA_ALIGNMENTS, BULMA_SIZES} from "../../types";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

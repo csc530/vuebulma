@@ -20,7 +20,7 @@
 
 
 	<v-bulma-form-field is-horizontal label="Container Size">
-		<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+		<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 	</v-bulma-form-field>
 
 	<v-bulma-form-field help="" is-horizontal label="Flex">
@@ -37,7 +37,7 @@
 		BulmaSize,
 		BulmaStateColour,
 		getBulmaShades,
-		getBulmaSizes,
+		BULMA_SIZES,
 		getBulmaStateColours
 	} from "../../types";
 	import {BulmaColouredIcon} from "../../types/IconTypes";

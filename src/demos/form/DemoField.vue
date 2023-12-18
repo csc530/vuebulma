@@ -97,7 +97,7 @@
 
 
 			<v-bulma-form-field is-horizontal label="Label Size">
-				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 			</v-bulma-form-field>
 			<v-bulma-form-field is-horizontal label="Horizontal">
 				<input v-model="horz" type="checkbox" />
@@ -109,7 +109,7 @@
 
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {BulmaSize, getBulmaSizes} from "../../types";
+	import {BulmaSize, BULMA_SIZES} from "../../types";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

@@ -37,7 +37,7 @@
 
 			<v-bulma-form-field is-horizontal label="Size">
 				<v-bulma-form-control>
-					<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+					<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 				</v-bulma-form-control>
 			</v-bulma-form-field>
 		</fieldset>
@@ -45,7 +45,7 @@
 </template>
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {BulmaColour, BulmaSize, getBulmaColours, getBulmaSizes} from "../../types";
+	import {BulmaColour, BulmaSize, getBulmaColours, BULMA_SIZES} from "../../types";
 	import VBulmaMessage from "../../vbComponents/components/VBulmaMessage.vue";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

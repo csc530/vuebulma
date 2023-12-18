@@ -4,7 +4,7 @@
 			<template v-if="del" #delete>
 				<v-bulma-delete />
 			</template>
-			Hey just letting you know <em>this a notification</em> courtesy of <a href="http://bulma.io">Bulma</a>
+			Hey just letting you know <em>this a notification</em> courtesy of <a href="https://bulma.io">Bulma</a>
 			brought to
 			you by me Chris 😃
 		</v-bulma-notification>

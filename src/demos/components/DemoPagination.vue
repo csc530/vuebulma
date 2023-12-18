@@ -23,10 +23,10 @@
 				</v-bulma-form-control-group>
 			</v-bulma-form-field>
 			<v-bulma-form-field is-horizontal label="Alignment/Order">
-				<v-bulma-select :options="getBulmaAlignments()" v-model="align" />
+				<v-bulma-select :options="BULMA_ALIGNMENTS" v-model="align" />
 			</v-bulma-form-field>
 			<v-bulma-form-field is-horizontal label="Size">
-				<v-bulma-select :options="getBulmaSizes()" v-model="size" />
+				<v-bulma-select :options="BULMA_SIZES" v-model="size" />
 
 			</v-bulma-form-field>
 			<v-bulma-form-field is-horizontal label="Rounded">
@@ -41,7 +41,7 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import {BulmaAlignment, BulmaLink, BulmaSize, getBulmaAlignments, getBulmaSizes} from "../../types";
+	import {BulmaAlignment, BulmaLink, BulmaSize, BULMA_ALIGNMENTS, BULMA_SIZES} from "../../types";
 	import VBulmaPagination from "../../vbComponents/components/VBulmaPagination.vue";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

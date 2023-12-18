@@ -13,7 +13,7 @@
 			</v-bulma-form-field>
 
 			<v-bulma-form-field is-horizontal label="Size">
-				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 			</v-bulma-form-field>
 
 			<v-bulma-form-field is-horizontal label="State">
@@ -30,7 +30,7 @@
 
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {BulmaColour, BulmaSize, BulmaState, getBulmaColours, getBulmaSizes, getBulmaStates} from "../../types";
+	import {BulmaColour, BulmaSize, BulmaState, getBulmaColours, BULMA_SIZES, getBulmaStates} from "../../types";
 
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

@@ -8,7 +8,7 @@
 		<fieldset class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
 			<v-bulma-form-field is-horizontal label="size">
-				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 			</v-bulma-form-field>
 		</fieldset>
 	</v-bulma-box>
@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import {BulmaSize, getBulmaSizes} from "../../types";
+	import {BulmaSize, BULMA_SIZES} from "../../types";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaDelete from "../../vbComponents/elements/VBulmaDelete.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";

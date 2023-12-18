@@ -1,8 +1,8 @@
 <template>
 	<v-bulma-box style="background-image: linear-gradient(120deg, #00D1B2 0%, #41B883 100%);">
-		<v-bulma-button :is-responsive="respons" :colour="colour" :is-full-width="fullwidth" :is-inverted="inverted"
-		              :is-light="light" :is-loading="loading" :is-outlined="outlined" :is-rounded="rounded"
-		              :is-static="isStatic" :label="text" :size="size" :state="state" />
+		<v-bulma-button :is-responsive="response" :colour="colour" :is-full-width="fullwidth" :is-inverted="inverted"
+		                :is-light="light" :is-loading="loading" :is-outlined="outlined" :is-rounded="rounded"
+		                :is-static="isStatic" :label="text" :size="size" :state="state" />
 	</v-bulma-box>
 
 	<v-bulma-box>
@@ -18,7 +18,7 @@
 
 			<v-bulma-form-field is-horizontal label="Size">
 				<v-bulma-form-control>
-					<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+					<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 				</v-bulma-form-control>
 			</v-bulma-form-field>
 
@@ -76,7 +76,7 @@
 
 			<v-bulma-form-field is-horizontal label="Responsive">
 				<v-bulma-form-control>
-					<input v-model="respons" type="checkbox" />
+					<input v-model="response" type="checkbox" />
 				</v-bulma-form-control>
 			</v-bulma-form-field>
 		</fieldset>
@@ -87,7 +87,7 @@
 <script lang="ts" setup>
 
 	import {ref} from "vue";
-	import {BulmaColour, BulmaSize, BulmaState, getBulmaSizes, getBulmaStates} from "../../types";
+	import {BulmaColour, BulmaSize, BulmaState, BULMA_SIZES, getBulmaStates} from "../../types";
 	import {getBulmaButtonColours} from "../../types/ButtonTypes";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
@@ -108,6 +108,6 @@
 	const isStatic = ref<boolean>(false);
 	const fullwidth = ref<boolean>(false);
 	const state = ref<BulmaState>("default");
-	const respons = ref<boolean>(false);
+	const response = ref<boolean>(false);
 </script>
 

@@ -12,7 +12,7 @@
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
 			<v-bulma-form-field is-horizontal label="Size">
-				<v-bulma-select v-model="size" :options="getBulmaSizes()" />
+				<v-bulma-select v-model="size" :options="BULMA_SIZES" />
 			</v-bulma-form-field>
 
 			<v-bulma-form-field is-horizontal label="State">
@@ -62,7 +62,7 @@
 		BulmaSize,
 		getBulmaColours,
 		getBulmaInputStates,
-		getBulmaSizes
+		BULMA_SIZES
 	} from "../../types";
 	import {BulmaOptionGroup} from "../../types/SelectTypes";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";

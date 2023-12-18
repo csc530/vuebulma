@@ -83,8 +83,8 @@
 			<VBulmaFormField is-horizontal label="Alignment">
 				<VBulmaFormControlGroup has-addons>
 					<v-bulma-form-control is-expanded>
-						<v-bulma-input :max="getBulmaAlignments().length" :model-value="alignment" min="1" type="range"
-						             @update:model-value="(newVal)=> alignment = getBulmaAlignments()[newVal-1]" />
+						<v-bulma-input :max="BULMA_ALIGNMENTS.length" :model-value="alignment" min="1" type="range"
+						               @update:model-value="(newVal)=> alignment = BULMA_ALIGNMENTS[newVal-1]" />
 					</v-bulma-form-control>
 					<v-bulma-form-control>
 						<VBulmaButton is-static>{{ alignment }}</VBulmaButton>
@@ -101,7 +101,7 @@
 
 <script setup lang="ts">
 	import {ref} from "vue";
-	import {BulmaAlignment, getBulmaAlignments} from "../../types";
+	import {BulmaAlignment, BULMA_ALIGNMENTS} from "../../types";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaButton from "../../vbComponents/elements/VBulmaButton.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
