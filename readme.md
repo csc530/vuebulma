@@ -15,7 +15,7 @@
 
 Developed with and for Vue 3 and Bulma v0.9.4
 
-This package is very much still under active development.
+This package is very much still in ~~active~~ development.
 
 My attempt at creating a Vue component library for Bulma elements (because I really love Bulma, and it's styling/style)
 that's compatible with Vue 3.
