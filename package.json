@@ -65,7 +65,7 @@
   "devDependencies": {
     "@types/node": "^20.1.5",
     "@vitejs/plugin-vue": "^5.0.0",
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vue": "^3.2.45",
