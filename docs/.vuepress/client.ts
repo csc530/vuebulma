@@ -1,4 +1,4 @@
-import {defineClientConfig} from "@vuepress/client";
+import {defineClientConfig} from "vuepress/client";
 import DemoBreadcrumb from "../../src/demos/components/DemoBreadcrumb.vue";
 import DemoCard from "../../src/demos/components/DemoCard.vue";
 import DemoDropdown from "../../src/demos/components/DemoDropdown.vue";
@@ -31,40 +31,48 @@ import DemoLevel from "../../src/demos/layouts/DemoLevel.vue";
 import DemoMedia from "../../src/demos/layouts/DemoMedia.vue";
 import DemoTile from "../../src/demos/layouts/DemoTile.vue";
 import IframeVue from "./demoIframe.vue";
+import Demo from "../../src/App.vue"
 
 export default defineClientConfig({
-	enhance({app}) {
-		app.component("demoIframe", IframeVue);
-		app.component("DemoBreadcrumb", DemoBreadcrumb);
-		app.component("DemoButtonGroup", DemoButtonGroup);
-		app.component("DemoControl", DemoControl);
-		app.component("DemoControlGroup", DemoControlGroup);
-		app.component("DemoDropdown", DemoDropdown);
-		app.component("DemoField", DemoField);
-		app.component('DemoFileInput', DemoFileInput);
-		app.component('DemoHeading', DemoHeading);
-		app.component('DemoIcon', DemoIcon);
-		app.component('DemoImage', DemoImage);
-		app.component('DemoInput', DemoInput);
-		app.component('DemoMenu', DemoMenu);
-		app.component('DemoMessage', DemoMessage);
-		app.component('DemoNavbar', DemoNavbar);
-		app.component('DemoSelect', DemoSelect);
-		app.component('DemoTextArea', DemoTextArea);
-		app.component('DemoButton', DemoButton);
-		app.component('DemoDelete', DemoDelete);
-		app.component('DemoNotification', DemoNotification);
-		app.component('DemoProgress', DemoProgressbar);
-		app.component('DemoTable', DemoTable);
-		app.component('DemoCard', DemoCard)
-		app.component('DemoModal', DemoModal);
-		app.component('DemoPagination', DemoPagination);
-		app.component('DemoPanel', DemoPanel);
-		app.component('DemoContainer', DemoContainer);
-		app.component('DemoMedia', DemoMedia);
-		app.component("DemoHero", DemoHero);
-		app.component("DemoLevel", DemoLevel);
-		app.component("DemoColumn", DemoColumns);
-		app.component("DemoTile", DemoTile);
-	}
+    enhance({app}) {
+        app.component("demoIframe", IframeVue);
+        app.component("DemoBreadcrumb", DemoBreadcrumb);
+        app.component("DemoButtonGroup", DemoButtonGroup);
+        app.component("DemoControl", DemoControl);
+        app.component("DemoControlGroup", DemoControlGroup);
+        app.component("DemoDropdown", DemoDropdown);
+        app.component("DemoField", DemoField);
+        app.component('DemoFileInput', DemoFileInput);
+        app.component('DemoHeading', DemoHeading);
+        app.component('DemoIcon', DemoIcon);
+        app.component('DemoImage', DemoImage);
+        app.component('DemoInput', DemoInput);
+        app.component('DemoMenu', DemoMenu);
+        app.component('DemoMessage', DemoMessage);
+        app.component('DemoNavbar', DemoNavbar);
+        app.component('DemoSelect', DemoSelect);
+        app.component('DemoTextArea', DemoTextArea);
+        app.component('DemoButton', DemoButton);
+        app.component('DemoDelete', DemoDelete);
+        app.component('DemoNotification', DemoNotification);
+        app.component('DemoProgress', DemoProgressbar);
+        app.component('DemoTable', DemoTable);
+        app.component('DemoCard', DemoCard)
+        app.component('DemoModal', DemoModal);
+        app.component('DemoPagination', DemoPagination);
+        app.component('DemoPanel', DemoPanel);
+        app.component('DemoContainer', DemoContainer);
+        app.component('DemoMedia', DemoMedia);
+        app.component("DemoHero", DemoHero);
+        app.component("DemoLevel", DemoLevel);
+        app.component("DemoColumn", DemoColumns);
+        app.component("DemoTile", DemoTile);
+        app.component("Demo", Demo);
+    },
+    rootComponents: [
+        // register root components
+    ],
+    setup() {
+
+    },
 })

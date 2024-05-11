@@ -57,6 +57,8 @@
     "preview": "vite preview",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:update-package": "npx vp-update",
     "start": "npm run dev"
   },
   "dependencies": {
@@ -65,16 +67,17 @@
   "devDependencies": {
     "@types/node": "^20.1.5",
     "@vitejs/plugin-vue": "^5.0.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
+    "@vuepress/theme-default": "2.0.0-rc.28",
     "bulma": "^1.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
-    "vue": "^3.2.45",
     "vue-loader": "^17.0.1",
     "vue-tsc": "^2.0.4",
-    "@vuepress/client": "2.0.0-rc.2",
     "vuepress": "2.0.0-rc.9",
-    "vuepress-plugin-clipboard": "^2.1.4",
-    "vuepress-plugin-markdown-checkbox": "^1.0.8"
+    "vuepress-plugin-clipboard": "2.1.5",
+    "vuepress-plugin-markdown-checkbox": "1.0.8",
+    "vue": "^3.4.27"
   },
   "peerDependencies": {
     "vue": "^3.2.45"

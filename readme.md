@@ -13,9 +13,9 @@
 
 ## Disclaimer
 
-Developed with and for Vue 3 and Bulma v0.9.4
+Developed with and for Vue 3 and Bulma v1
 
-This package is very much still in ~~active~~ development.
+This package is very much still in ~active~ development.
 
 My attempt at creating a Vue component library for Bulma elements (because I really love Bulma, and it's styling/style)
 that's compatible with Vue 3.
@@ -25,6 +25,18 @@ that's compatible with Vue 3.
 [`npm install @csc530/vuebulma`](https://www.npmjs.com/package/@csc530/vuebulma)
 
 ## Use
+
+### Dependencies
+
+**You must add a reference to the bulma library externally**
+    
+```html
+...
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+...
+```
+the bulma library is not included in this package
+
 
 ```vue
 <template>
