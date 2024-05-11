@@ -104,10 +104,8 @@ export function toBulmaAlignmentClasses(alignment?: BulmaAlignment): string{
 	return `is-${alignment}`;
 }
 
-export function toggleActivation(event: Event, element?: HTMLElement, invoke?: boolean): void{
-	if(!invoke) return;
-	const target = element ? element : event.target as HTMLElement;
-	target.classList.toggle("is-active");
+export function toggleActiveClass(element: HTMLElement){
+	element.classList.toggle("is-active");
 }
 
 

@@ -1,0 +1,1 @@
+export const VBDROPDOWN_DIVIDER = {vbDivider: true};

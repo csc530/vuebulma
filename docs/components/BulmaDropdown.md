@@ -9,19 +9,20 @@ A dropdown menu.
 
 ### default
 
-The default slot is the (html) `button` to display as the dropdown's _trigger_; it is the element that will be clicked
+The default slot is the element to display as the dropdown's _trigger_; it is the element that will be clicked/hovered
 to open the dropdown.
+By default, a (html) `button` element is used.
 
 ### dropdown-item
 
-This slot is to be used to template the layout of the [dropdown's items](#content). The dropdown item is bound to
-the `data` property.
+This slot is to be used to template the layout of the [dropdown's items](#content).
+The dropdown item is bound to the `data` property.
 
 ## Props
 
 ### alignment
 
-Type: `'left'`| `'right'`| `undefined`
+Type: `'left'`| `'right'`
 
 The alignment of the dropdown menu.
 
@@ -33,11 +34,11 @@ Type: `any[]`
 
 Default: `[]`
 
-The content of the dropdown; `null` will render a dropdown divider
+The content of the dropdown; `undefined` will render a dropdown divider, a horizontal line.
 
 ### [tag](../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
 Default: `div`
 
