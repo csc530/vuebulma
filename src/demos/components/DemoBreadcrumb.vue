@@ -1,7 +1,7 @@
 <template>
 	<v-bulma-box>
 		<v-bulma-breadcrumb :alignment="alignment"
-		                    :list="list"
+		                    :items="list"
 		                    :separator="separator"
 		                    :size="size"
 		                    :tag="tag" />

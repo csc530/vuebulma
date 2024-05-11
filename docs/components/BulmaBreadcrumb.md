@@ -7,9 +7,11 @@
 
 ### default
 
+_recommended: to accurately set href_
+
 An `a` elements.
-The slot item is a template for the given item in the [`list`](#list) prop.
-The `list` item is bound to the slot item's `data` property.
+The slot item is a template for the given item in the [`items`](#items) prop.
+The `items` item is bound to the slot item's `data` property.
 
 ## Props
 
@@ -21,15 +23,15 @@ Default: `nav`
 
 the tag to render as the breadcrumb's `ul` parent
 
-### list
+### items
 
 Type: `any[]`
 
 List of items to render in the breadcrumb.
 Recommended to be a list of strings or `{href: "...", toString(), ...}` objects to have a predictable behaviour and
 display.
-If the array is of strings then the string is displayed and used as the breadcrumb's href as an anchor: for
-example `"#{stringValue}`.
+If the array is of strings, then the string is displayed and used as the breadcrumb's href: for
+example `"stringValue`.
 Likewise, if it's an array of the aforementioned object the href property is used for the href and `toString()` method
 is displayed within the `a`.
 
