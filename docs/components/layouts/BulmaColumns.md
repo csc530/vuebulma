@@ -20,9 +20,9 @@ Type: `string`
 
 Default: `div`
 
-#### gaps
+#### gap
 
-Type: `boolean` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`
+Type: `boolean` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8` | `{breakpoint: number}`
 
 Default: `true`
 
@@ -31,14 +31,8 @@ Controls The gap size between each column
 - `true`: normal-sized gaps between each column
 - `false`: no gaps between columns
 - `number`: The gap size – the larger the number the larger the gap
-
-#### breakpointGaps - experimental
-
-Type: `Record<"mobile" | "tablet" | "desktop" | "widescreen" | "fullhd", boolean | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>` | `undefinded`
-
-tl;dr: `object{key = mediasize : boolean | 1...8}`
-
-controls individual sizes for column gaps per breakpoint
+- `object`: with a breakpoint key and a number value to set the gap size at a specific breakpoint
+    - example: `{mobile: 1, tablet: 2, desktop: 3}`
 
 #### isMultiline
 
@@ -48,7 +42,7 @@ Default: `false`
 
 If the columns should wrap/overflow to a new line
 
-#### isVcentered
+#### isVCentered
 
 Type: `boolean`
 
@@ -63,6 +57,14 @@ Type: `boolean`
 Default: `false`
 
 Center child columns horizontally
+
+
+#### responsive
+
+Type: `BulmaMedia` | `BulmaMedia[]`
+
+An array of or single string of the breakpoints at which the columns should be displayed horizontally (as columns).
+[More information](https://bulma.io/documentation/columns/responsiveness/)
 
 --- 
 
@@ -84,11 +86,14 @@ Type: `string`
 
 #### size
 
-Type:  `"full"` | `"4/5"` | `"3/4"` | `"2/3"` | `"3/5"` | `"half"` | `"2/5"` | `"1/3"` | `"quarter"` | `"1/5"` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12`
+Type:  `"full"` | `"4/5"` | `"3/4"` | `"2/3"` | `"3/5"` | `"half"` | `"2/5"` | `"1/3"` | `"quarter"` | `"1/5"` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8`| `9`| `10`| `11`| `12` | `{breakpoint: size}`
 
-The size the columns should occupy within it parent [column group](#VBulmacolumngroup). The larger the number the
+The size of the columns should occupy within its parent [column group](#VBulmacolumngroup). The larger the number the
 greater
 it's occupied space.
+
+If an object is passed with a breakpoint key and a size value, the column will occupy that size at that breakpoint.
+For example: `{mobile: 6, tablet: "full", desktop: "3/5"}`
 
 [More information](https://bulma.io/documentation/columns/sizes/)
 
@@ -102,18 +107,11 @@ The offset (margin) from the left to move the column
 
 #### isNarrow
 
-Type: `boolean`
+Type: `boolean` | `BulmaMedia` | `BulmaMedia[]`
 
 Default: `false`
 
 If the column should only occupy the space needed to display it's content; to not be equal size with its siblings
 Cannot be used with [`size`](#size).
 
-#### breakpoint - experimental
-
-Type: `false` |`auto` | `mobile` | `tablet` | `desktop` | `widescreen` | `fullhd`
-
-The screen size breakpoint to display the column vertically (displayed above or below its siblings)
-
-_**However**, if `mobile` is chosen it **will** be displayed horizontally (columns are next to one another) on mobile
-devices_
+If a `BulmaMedia` string or array is passed, the column will only be narrow at that (those) breakpoint(s).

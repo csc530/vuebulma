@@ -7,20 +7,21 @@
 <script setup lang="ts">
     import {computed} from "vue";
     import {toGapClass} from "../../../class-transformers/columnTransformers";
-    import {VBulmaBreakpointSize, getBulmaClassesFromProps, BulmaMedia, toResponsiveClass} from "../../../types";
+    import {VBulmaGapBreakpoint, getBulmaClassesFromProps, BulmaMedia, toResponsiveClass} from "../../../types";
     import {BulmaColumnGapSizes} from "../../../types/ColumnTypes";
 
     const props = withDefaults(defineProps<{
         tag?: string
         // todo: removing custom gap size but works when just the numbers are used in the union showing
         // * [Vue warn]: Invalid prop: type check failed for prop "gaps". Expected Boolean | Null, got Number with value 8.
-        gap?: BulmaColumnGapSizes | VBulmaBreakpointSize
+        gap?: boolean | BulmaColumnGapSizes | VBulmaGapBreakpoint
         isMultiline?: boolean
         isVCentered?: boolean
         isCentered?: boolean
         responsive?: BulmaMedia|BulmaMedia[]
     }>(), {
         tag: "section",
+        gap:true,
     });
 
     const classes = computed(() => {
