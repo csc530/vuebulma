@@ -160,9 +160,13 @@ export type BulmaInputState = BulmaState | "loading";
 
 /** An array of all {@link BulmaInputState}s */
 export const getBulmaInputStates = (): BulmaInputState[] => ["active", "hovered", "focused", "default", "loading"];
-export type BulmaMediaSizes = "auto" | BulmaMobileSizes | "desktop" | "widescreen" | "fullhd";
-export type BulmaMobileSizes = "mobile" | "tablet"
+export type BulmaMedia = BulmaMobileSizes | "desktop" | "widescreen" | "fullhd";
+export type BulmaMobileSizes = "mobile" | "tablet" | "touch"
 
-export function getBulmaMediaSizes(): BulmaMediaSizes[]{
-	return ["auto", "desktop", "widescreen", "fullhd"];
+export const BULMA_MEDIA: BulmaMedia[] = (() => ["mobile", "tablet", "touch", "desktop", "widescreen", "fullhd"])();
+
+export function toResponsiveClass(media: BulmaMedia | BulmaMedia[]): string {
+    if(typeof media === "string")
+        return `is-${media}`;
+    return media.map(m => `is-${m}`).join(" ");
 }

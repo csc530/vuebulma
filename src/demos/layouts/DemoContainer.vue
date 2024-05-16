@@ -14,7 +14,7 @@
 				class="is-flex-mobile is-justify-content-center is-justify-content-space-between is-flex-wrap-wrap-reverse"
 				name="props">
 			<v-bulma-form-field isHorizontal label="Breakpoint">
-				<v-bulma-select v-model="breakpoint" :options="getBulmaMediaSizes()" />
+				<v-bulma-select v-model="breakpoint" :options="BULMA_MEDIA" />
 			</v-bulma-form-field>
 			<v-bulma-form-field isHorizontal label="Modifier">
 				<v-bulma-select v-model.trim="modifier">
@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 	import {ref} from "vue";
-	import {getBulmaMediaSizes} from "../../types";
+	import {BULMA_MEDIA} from "../../types";
 	import VBulmaBox from "../../vbComponents/elements/VBulmaBox.vue";
 	import VBulmaHeading from "../../vbComponents/elements/VBulmaHeading.vue";
 	import VBulmaSelect from "../../vbComponents/form/VBulmaSelect.vue";
