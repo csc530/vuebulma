@@ -14,7 +14,7 @@ The main html content
 ### delete
 
 A delete button to display within the corner of the notification
-_Recommended_ to use the [vbDelete](BulmaDelete.md) component
+_Recommended_ to use the [vbButton](BulmaButton.md) component with the `isDelete` prop
 
 ## Props
 

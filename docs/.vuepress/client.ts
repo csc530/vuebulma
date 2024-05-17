@@ -9,7 +9,6 @@ import DemoNavbar from "../../src/demos/components/DemoNavbar.vue";
 import DemoPagination from "../../src/demos/components/DemoPagination.vue";
 import DemoPanel from "../../src/demos/components/DemoPanel.vue";
 import DemoButton from "../../src/demos/elements/DemoButton.vue";
-import DemoDelete from "../../src/demos/elements/DemoDelete.vue";
 import DemoHeading from "../../src/demos/elements/DemoHeading.vue";
 import DemoIcon from "../../src/demos/elements/DemoIcon.vue";
 import DemoImage from "../../src/demos/elements/DemoImage.vue";
@@ -53,7 +52,6 @@ export default defineClientConfig({
         app.component('DemoSelect', DemoSelect);
         app.component('DemoTextArea', DemoTextArea);
         app.component('DemoButton', DemoButton);
-        app.component('DemoDelete', DemoDelete);
         app.component('DemoNotification', DemoNotification);
         app.component('DemoProgress', DemoProgressbar);
         app.component('DemoTable', DemoTable);

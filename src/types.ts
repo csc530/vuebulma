@@ -5,7 +5,6 @@ import {BulmaButtonColour} from "./types/ButtonTypes";
 export * from "./types/BreadcrumbTypes";
 export * from "./types/ImageTypes";
 export * from "./types/HeadingTypes";
-export * from "./types/IconTypes";
 export * from "./types/ButtonTypes";
 export * from "./types/NavbarTypes";
 export * from "./types/MenuTypes";
@@ -33,15 +32,6 @@ export const getBulmaShades = (): BulmaShade[] => ["white", "black", "light", "d
 export type BulmaColour = BulmaStateColour | BulmaShade;
 export const getBulmaColours = (): BulmaColour[] => ["info", "danger", "warning", "success", "primary", "link", "white", "black", "light", "dark", "default"];
 
-export function getBulmaColoursHelpers(shade?: BulmaShade): BulmaColourHelper[] {
-    //from GH-copilot (inspired) if it says this is the best way to get values form type and not interface then I guess it is (explicit typing not functional parse)
-    // const shades: BulmaShade[] = ['white', 'black', 'light', 'dark', 'default'];
-    const states: BulmaStateColour[] = ["info", "danger", "warning", "success", "primary", "link"];
-    // const colours: BulmaColour[] = [...states, ...shades];
-    //set shade to default if not provided
-    return states.map<BulmaColourHelper>(colour => ({colour: colour, shade: shade ? shade : "default"}));
-}
-
 export type BulmaColourHelper = {
     shade?: BulmaShade;
     //todo: add bulma 'white ' and 'black' to this type and make compatible in transformer
@@ -49,7 +39,7 @@ export type BulmaColourHelper = {
 }
 
 export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | BulmaButtonColour, type?: "background" | "text"): string {
-    if(!colour || colour === "default")
+    if(!colour || colour === "default"|| colour?.colour === "default")
         return "";
     else if(typeof colour === "string")
         if(!type)
@@ -60,7 +50,10 @@ export function toBulmaColourClass(colour: BulmaColourHelper | BulmaColour | Bul
         return `has-${type}-${colour.colour}`;
     else if(colour.shade === "dark" || colour.shade === "black")
         return `has-${type}-${colour.colour}-dark`;
-    return `has-${type}-${colour.colour}-light`;
+    else if(colour.shade === "light" || colour.shade === "white")
+        return `has-${type}-${colour.colour}-light`;
+
+    return "";
 }
 
 //todo add grayscale option for colour class getters
@@ -80,12 +73,12 @@ const getBulmaGrayscaleValues = (): BulmaGrayscale[] => {
 };
 
 
-export type BulmaSize = "small" | "default" | "medium" | "large";
-export const BULMA_SIZES: BulmaSize[] = (() => ["small", "default", "medium", "large"])();
+export type BulmaSize = "small" | "default" | "normal" | "medium" | "large";
+export const BULMA_SIZES: BulmaSize[] = (() => ["small", "default", "normal", "medium", "large"])();
 
 export function toSizeClasses(size?: BulmaSize, areClasses?: boolean): string {
     if(!size || size === "default")
-        return "is-normal";
+        return "";
     return areClasses ? `are-${size}` : `is-${size}`;
 }
 
@@ -120,6 +113,8 @@ export function getBulmaClassesFromProps(classes: Record<string, any>, areSizes?
                 className = "is-up";
             else if(className === "isfixed")
                 className = "is-fixed-" + classes[key].toLowerCase();
+            else if(className === "isdelete")
+                return "delete"; //used in bulmabutton delete class
                 //? no need to check for `-` in key as vue transforms it to camelCase
             //? append dash (-) to  `has` or `is` followed by a capital letter
             else

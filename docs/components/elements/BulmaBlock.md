@@ -15,6 +15,6 @@ Content to display in the block.
 
 ### [tag](../../types/common_types.md#tag)
 
-Type: `string` | `undefined`
+Type: `string`
 
 Default: `section`

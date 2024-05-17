@@ -13,7 +13,7 @@ The content of the button
 
 ### [tag](../../types/common_types.md#tag)
 
-Type: `button` | `a` | `undefined`
+Type: `string`
 
 Default: `button`
 
@@ -27,57 +27,61 @@ Text to display in the button instead of [slot](#default) content
 
 ### colour
 
-Type: [`BulmaButtonColour`](../../types/BulmaButtonColour.md) | `undefined`
+Type: [`BulmaButtonColour`](../../types/BulmaButtonColour.md)
 
 The button's colour
 
 ### isLight
 
-*Requires [colour](#colour) prop*
-
-Type: `boolean` | `undefined`
+Type: `boolean`
 
 Modifies the colour of the button to be lighter
 
+### isDark
+
+Type: `boolean` 
+
+Modifies the colour of the button to be darker
+
 ### size
 
-Type: [`BulmaSize`](../../types/common_types.md#bulmasize) | `undefined`
+Type: [`BulmaSize`](../../types/common_types.md#bulmasize)
 
 Button's size
 
 ### isResponsive
 
-Type: `boolean` | `undefined`
+Type: `boolean`
 
 When true, the button will be responsive; having a more appropriate size based on the screen size
 
-### isFullWidth
+### isFullwidth
 
-Type:  `boolean` | `undefined`
+Type:  `boolean`
 
 When true, the button will expand to the width of its container
 
 ### isOutlined
 
-Type:  `boolean` | `undefined`
+Type:  `boolean`
 
 When true, the button will have a transparent (default) background and a coloured text and border
 
 ### isInverted
 
-Type:  `boolean` | `undefined`
+Type:  `boolean`
 
 When true, the button will be inverted; where the text color becomes the background color, and vice-versa
 
 ### isRounded
 
-Type:  `boolean` | `undefined`
+Type:  `boolean`
 
 When true, the button will have rounded corners
 
 ### isLoading
 
-Type:  `boolean` | `undefined`
+Type:  `boolean`
 
 When true, the button will have a loading spinner
 
