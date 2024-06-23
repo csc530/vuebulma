@@ -67,7 +67,7 @@
   "devDependencies": {
     "@types/node": "^20.1.5",
     "@vitejs/plugin-vue": "^5.0.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.11",
+    "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/theme-default": "2.0.0-rc.28",
     "bulma": "^1.0.0",
     "typescript": "^5.3.3",
